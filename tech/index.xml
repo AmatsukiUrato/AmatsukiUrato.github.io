@@ -6,10 +6,22 @@
     <description>Recent content in Teches on 天月メモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 30 Jun 2019 20:08:06 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 30 Jun 2019 23:38:31 +0900</lastBuildDate>
     
 	<atom:link href="https://amatsukiurato.github.io/tech/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>UbuntuのClibor的存在CopyQ</title>
+      <link>https://amatsukiurato.github.io/tech/ubuntu%E3%81%AEclibor%E7%9A%84%E5%AD%98%E5%9C%A8copyq/</link>
+      <pubDate>Sun, 30 Jun 2019 23:38:31 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/tech/ubuntu%E3%81%AEclibor%E7%9A%84%E5%AD%98%E5%9C%A8copyq/</guid>
+      <description> 普段windowsではclipboardの履歴にcliborを使ってて、ubuntuでもコピー履歴が欲しくなって探したらCopyQってのが見つかりました。
+Cliborみたいに、ショートカットにAlt*2とかの設定はできなかったけど、無変換に割り当てられたので概ね満足。
+他にもいろいろな機能があるみたいだけど、とりあえずやりたいことができたのでOK。
+参考  https://qualiartz.jp/digitaltransformation/automation/recommend-oss-copyq-clipboard-manager/  </description>
+    </item>
     
     <item>
       <title>IntelliJでwebpack導入後、フォルダが見えなくなる問題の解決法</title>
@@ -23,7 +35,8 @@
 設定は以下の場所にあり、
 Preferences | Languages &amp;amp; Frameworks | JavaScript | Webpackwebpack のconfiguration file:の項目を空文字列にすることによってIntelliJ上から編集できるようになります。
 消している理由は
- パフォーマンスのため そもそも編集する必要がないため  ですかね。 これ解決するのに結構時間かかりました。。。
+ パフォーマンスのため
+ そもそも編集する必要がないため  ですかね。 これ解決するのに結構時間かかりました。。。
 参考 intellij bundlei_jsが消える理由</description>
     </item>
     

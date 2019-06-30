@@ -23,7 +23,8 @@
 設定は以下の場所にあり、
 Preferences | Languages &amp;amp; Frameworks | JavaScript | Webpackwebpack のconfiguration file:の項目を空文字列にすることによってIntelliJ上から編集できるようになります。
 消している理由は
- パフォーマンスのため そもそも編集する必要がないため  ですかね。 これ解決するのに結構時間かかりました。。。
+ パフォーマンスのため
+ そもそも編集する必要がないため  ですかね。 これ解決するのに結構時間かかりました。。。
 参考 intellij bundlei_jsが消える理由</description>
     </item>
     

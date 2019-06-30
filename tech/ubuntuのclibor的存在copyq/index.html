@@ -5,17 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <title>IntelliJでwebpack導入後、フォルダが見えなくなる問題の解決法 - 天月メモ</title>
+    <title>UbuntuのClibor的存在CopyQ - 天月メモ</title>
     
-    <meta name="description" content="TL;DR 設定からWebpackを開いて、configuration fileのパスを消す
-原因 IntelliJが賢すぎた。
-というのも、webpackのアウトプット先が intelliJ IDEA上でExcluded(非表示になりIntellij上から閲覧できなくなる)のは、 webpackの出力先フォルダだからです。
-設定は以下の場所にあり、
-Preferences | Languages &amp; Frameworks | JavaScript | Webpackwebpack のconfiguration file:の項目を空文字列にすることによってIntelliJ上から編集できるようになります。
-消している理由は
- パフォーマンスのため
- そもそも編集する必要がないため  ですかね。 これ解決するのに結構時間かかりました。。。
-参考 intellij bundlei_jsが消える理由">
+    <meta name="description" content=" 普段windowsではclipboardの履歴にcliborを使ってて、ubuntuでもコピー履歴が欲しくなって探したらCopyQってのが見つかりました。
+Cliborみたいに、ショートカットにAlt*2とかの設定はできなかったけど、無変換に割り当てられたので概ね満足。
+他にもいろいろな機能があるみたいだけど、とりあえずやりたいことができたのでOK。
+参考  https://qualiartz.jp/digitaltransformation/automation/recommend-oss-copyq-clipboard-manager/  ">
     <meta name="author" content="">
     
     <link href="https://amatsukiurato.github.io/css/github-gist.min.css" rel="stylesheet">
@@ -46,48 +41,32 @@ Preferences | Languages &amp; Frameworks | JavaScript | Webpackwebpack のconfig
 
 <article class="post-single">
   <header class="post-header">
-    <h1 class="post-title">IntelliJでwebpack導入後、フォルダが見えなくなる問題の解決法</h1>
+    <h1 class="post-title">UbuntuのClibor的存在CopyQ</h1>
     <div class="post-meta">2019.6.30</div>
   </header>
   <div class="post-content">
 
-<h2 id="tl-dr">TL;DR</h2>
+<p>普段<code>windows</code>では<code>clipboard</code>の履歴に<code>clibor</code>を使ってて、ubuntuでもコピー履歴が欲しくなって探したら<code>CopyQ</code>ってのが見つかりました。</p>
 
-<p>設定からWebpackを開いて、configuration fileのパスを消す</p>
+<p>Cliborみたいに、ショートカットに<code>Alt*2</code>とかの設定はできなかったけど、<code>無変換</code>に割り当てられたので概ね満足。</p>
 
-<h2 id="原因">原因</h2>
+<p><img src="/copyQ/CopyQ-SettingPoint.png" alt="CopyQ解説用" /></p>
 
-<p><strong>IntelliJ</strong>が賢すぎた。<br />
-というのも、webpackのアウトプット先が
-intelliJ IDEA上でExcluded(非表示になりIntellij上から閲覧できなくなる)のは、
-webpackの出力先フォルダだからです。</p>
+<p>他にもいろいろな機能があるみたいだけど、とりあえずやりたいことができたのでOK。</p>
 
-<p>設定は以下の場所にあり、<br />
-<code>Preferences | Languages &amp; Frameworks | JavaScript | Webpackwebpack</code>  の<code>configuration file:</code>の項目を空文字列にすることによってIntelliJ上から編集できるようになります。</p>
+<h4 id="参考">参考</h4>
 
-<p><img src="/intellij/intellij-webpack.png" alt="intellijのsetting画像" /></p>
-
-<p>消している理由は</p>
-
-<ol>
-<li>パフォーマンスのため<br /></li>
-<li>そもそも編集する必要がないため</li>
-</ol>
-
-<p>ですかね。
-これ解決するのに結構時間かかりました。。。</p>
-
-<h2 id="参考">参考</h2>
-
-<p><a href="https://youtrack.jetbrains.com/issue/WEB-35875">intellij bundlei_jsが消える理由</a></p>
+<ul>
+<li><a href="https://qualiartz.jp/digitaltransformation/automation/recommend-oss-copyq-clipboard-manager/">https://qualiartz.jp/digitaltransformation/automation/recommend-oss-copyq-clipboard-manager/</a></li>
+</ul>
 </div>
   <footer class="post-footer">
     
     <ul class="post-tags">
       
-      <li><a href="https://amatsukiurato.github.io/tags/intellij/">IntelliJ</a></li>
+      <li><a href="https://amatsukiurato.github.io/tags/ubuntu/">Ubuntu</a></li>
       
-      <li><a href="https://amatsukiurato.github.io/tags/webpack/">Webpack</a></li>
+      <li><a href="https://amatsukiurato.github.io/tags/copyq/">CopyQ</a></li>
       
     </ul>
     
