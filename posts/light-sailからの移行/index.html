@@ -1,63 +1,52 @@
 <!DOCTYPE html>
-<head>
+<html lang="ja-jp">
+  <head>
     <meta charset="utf-8">
-    <base href="">
-
-    <title>天月メモ</title>
-
-    <link
-      rel="canonical"
-      href="/posts/light-sail%E3%81%8B%E3%82%89%E3%81%AE%E7%A7%BB%E8%A1%8C/"
-    />
-
-    <link
-      href=""
-      rel="alternate"
-      type="application/rss+xml"
-      title="天月メモ"
-    />
-
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-    />
-
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"
-    />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js">
-    </script>
-    <script>
-      hljs.initHighlightingOnLoad();
-    </script>
-
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/css/styles.css"
-    />
-</head>
-
-<section id="header">
-  <h1>
-    <a href="">天月メモ</a>
-  </h1>
-  <h2></h2>
-</section>
-
-
-<div id="post">
-<section>
-  <h2>Light Sailからの移行</h2>
-  <time>16. April, 2019</time>
-</section>
-<section>
-  <article>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
+    <title>Light Sailからの移行 - 天月メモ</title>
+    
+    <meta name="description" content=" 移行しました AWSのLight Sail &#43; WordPressでやってましたが、 WordPressがだるすぎたので AWSのAWS Amplify &#43; Hugoに移行しました。 (移行とか言ってるけど全然記事書いてなかった。。。ｗ)
+github pages とかをそのまま使うのも良かったけど、 AWSのサービスを触ってみたかったのでこっちで立ててみました。
+Hugoに移って最初に記事書いていて思うけど、 やっぱMarkdownが最強なんだわ。 スラスラ書ける。
+一応WordPressでもMarkdownで書けるプラグインは少し出てたけど、 どれもこれで決まりだ！みたいなのがなくて そもそももっと軽くて動くものを探してたということを悟った。
+てことで、メモ代わりに書いて、この先生きのこる。
+Hugoで辛かったこと  AWS Amplifyを利用する場合は、gitのsubmoduleを使ってはいけない draftは下書き機能。(これを忘れててずっと表示されないぞおおおお！ってなってました。あほや) テーマが崩れる  テーマによってはWebSite(訂正:baseurl)の箇所を参照しているのでデプロイすると崩れる(ローカルでは崩れない)   ">
+    <meta name="author" content="Amatsuki">
+    
+    <link href="css/github-gist.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="icon" href="img/favicon.ico">
+    
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <link rel="alternate" type="application/atom+xml" href="index.xml" title="天月メモ">
+    
+    
+    
+  </head>
+  <body class="single">
+    <header class="header">
+      <div class="wrap">
+        
+        <p class="logo"><a href="">天月メモ</a></p>
+        
+        
+      </div>
+    </header>
+    
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">Light Sailからの移行</h1>
+    <div class="post-meta">Amatsuki · 2019.4.16</div>
+  </header>
+  <div class="post-content">
 
 <hr />
 
@@ -92,8 +81,57 @@ AWSのサービスを触ってみたかったのでこっちで立ててみま�
 <li>テーマによっては<del>WebSite</del>(訂正:baseurl)の箇所を参照しているのでデプロイすると崩れる(ローカルでは崩れない)</li>
 </ul></li>
 </ul>
-
-  </article>
-</section>
 </div>
+  <footer class="post-footer">
+    
+    <ul class="post-tags">
+      
+      <li><a href="tags/aws/">AWS</a></li>
+      
+      <li><a href="tags/hugo/">Hugo</a></li>
+      
+    </ul>
+    
+  </footer>
+  
+  
+  
+  
+</article>
+
+</main>
+<footer class="footer">
+  <span>&copy; 2019 <a href="">天月メモ</a></span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
+</footer>
+<script src="js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+<script src="js/highlight.min.js" data-no-instant></script>
+<script data-no-instant>
+  let body;
+  function menuToggleListener() {
+    body.classList.toggle('blur');
+  }
+  function setMenuToggleListener() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (!menuToggle) return;
+    body = document.querySelector('body');
+    menuToggle.addEventListener('click', menuToggleListener);
+  }
+
+  hljs.initHighlightingOnLoad();
+  setMenuToggleListener();
+
+  InstantClick.on('change', function () {
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+    setMenuToggleListener();
+  });
+</script>
+</body>
+</html>
 
