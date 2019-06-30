@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Teches on 天月メモ</title>
-    <link>https://amatsukiurato.github.io/tech/</link>
-    <description>Recent content in Teches on 天月メモ</description>
+    <title>IntelliJ on 天月メモ</title>
+    <link>https://amatsukiurato.github.io/tags/intellij/</link>
+    <description>Recent content in IntelliJ on 天月メモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sun, 30 Jun 2019 20:08:06 +0900</lastBuildDate>
     
-	<atom:link href="https://amatsukiurato.github.io/tech/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://amatsukiurato.github.io/tags/intellij/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -25,20 +25,6 @@ Preferences | Languages &amp;amp; Frameworks | JavaScript | Webpackwebpack のco
 消している理由は 1. パフォーマンスのため 2. そもそも編集する必要がないため
 ですかね。 これ解決するのに結構時間かかりました。。。
 参考 intellij bundlei_jsが消える理由</description>
-    </item>
-    
-    <item>
-      <title>Light Sailからの移行</title>
-      <link>https://amatsukiurato.github.io/tech/light-sail%E3%81%8B%E3%82%89%E3%81%AE%E7%A7%BB%E8%A1%8C/</link>
-      <pubDate>Tue, 16 Apr 2019 04:52:33 +0900</pubDate>
-      
-      <guid>https://amatsukiurato.github.io/tech/light-sail%E3%81%8B%E3%82%89%E3%81%AE%E7%A7%BB%E8%A1%8C/</guid>
-      <description> 移行しました AWSのLight Sail + WordPressでやってましたが、 WordPressがだるすぎたので AWSのAWS Amplify + Hugoに移行しました。 (移行とか言ってるけど全然記事書いてなかった。。。ｗ)
-github pages とかをそのまま使うのも良かったけど、 AWSのサービスを触ってみたかったのでこっちで立ててみました。
-Hugoに移って最初に記事書いていて思うけど、 やっぱMarkdownが最強なんだわ。 スラスラ書ける。
-一応WordPressでもMarkdownで書けるプラグインは少し出てたけど、 どれもこれで決まりだ！みたいなのがなくて そもそももっと軽くて動くものを探してたということを悟った。
-てことで、メモ代わりに書いて、この先生きのこる。
-Hugoで辛かったこと  AWS Amplifyを利用する場合は、gitのsubmoduleを使ってはいけない draftは下書き機能。(これを忘れててずっと表示されないぞおおおお！ってなってました。あほや) テーマが崩れる  テーマによってはWebSite(訂正:baseurl)の箇所を参照しているのでデプロイすると崩れる(ローカルでは崩れない)   </description>
     </item>
     
   </channel>
