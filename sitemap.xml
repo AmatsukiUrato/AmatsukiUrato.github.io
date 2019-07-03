@@ -3,13 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://amatsukiurato.github.io/tags/copyq/</loc>
-    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
+    <loc>https://amatsukiurato.github.io/tags/aws/</loc>
+    <lastmod>2019-07-02T23:33:13+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://amatsukiurato.github.io/diary/</loc>
+    <lastmod>2019-07-02T23:33:13+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/s3/</loc>
+    <lastmod>2019-07-02T23:33:13+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/diary/s3%E3%81%AE%E3%83%AA%E3%83%80%E3%82%A4%E3%83%AC%E3%82%AF%E3%83%88%E6%A9%9F%E8%83%BD%E3%81%A7github%E3%81%AEpage%E3%81%B8%E9%A3%9B%E3%81%B0%E3%81%99/</loc>
+    <lastmod>2019-07-02T23:33:13+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://amatsukiurato.github.io/tags/</loc>
+    <lastmod>2019-07-02T23:33:13+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/</loc>
+    <lastmod>2019-07-02T23:33:13+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/copyq/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -32,12 +61,6 @@
   </url>
   
   <url>
-    <loc>https://amatsukiurato.github.io/</loc>
-    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://amatsukiurato.github.io/tags/intellij/</loc>
     <lastmod>2019-06-30T20:08:06+09:00</lastmod>
     <priority>0</priority>
@@ -51,12 +74,6 @@
   <url>
     <loc>https://amatsukiurato.github.io/tags/webpack/</loc>
     <lastmod>2019-06-30T20:08:06+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://amatsukiurato.github.io/tags/aws/</loc>
-    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
