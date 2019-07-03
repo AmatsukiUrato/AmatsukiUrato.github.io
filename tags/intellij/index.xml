@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>IntelliJ on 天月メモ</title>
+    <title>Intellij on 天月メモ</title>
     <link>https://amatsukiurato.github.io/tags/intellij/</link>
-    <description>Recent content in IntelliJ on 天月メモ</description>
+    <description>Recent content in Intellij on 天月メモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sun, 30 Jun 2019 20:08:06 +0900</lastBuildDate>

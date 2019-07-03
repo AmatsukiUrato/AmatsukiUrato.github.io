@@ -6,10 +6,20 @@
     <description>Recent content on 天月メモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 30 Jun 2019 23:38:31 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jul 2019 23:33:13 +0000</lastBuildDate>
     
 	<atom:link href="https://amatsukiurato.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>S3のリダイレクト機能でgithubのpageへ飛ばしたい</title>
+      <link>https://amatsukiurato.github.io/diary/s3%E3%81%AE%E3%83%AA%E3%83%80%E3%82%A4%E3%83%AC%E3%82%AF%E3%83%88%E6%A9%9F%E8%83%BD%E3%81%A7github%E3%81%AEpage%E3%81%B8%E9%A3%9B%E3%81%B0%E3%81%99/</link>
+      <pubDate>Tue, 02 Jul 2019 23:33:13 +0000</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/diary/s3%E3%81%AE%E3%83%AA%E3%83%80%E3%82%A4%E3%83%AC%E3%82%AF%E3%83%88%E6%A9%9F%E8%83%BD%E3%81%A7github%E3%81%AEpage%E3%81%B8%E9%A3%9B%E3%81%B0%E3%81%99/</guid>
+      <description> 表題の通りです。 完成してないです。 前に取得した.netのドメインを踏んだときにS3のリダイレクト機能を使ってこのページに飛べるようにしようと思い設定してました。
+出来たこと  s3のエンドポイント(httpのリンク)にアクセスするとgithubPageにリダイレクトする s3のエイリアスを作成する  出来てないところ  .netドメインにアクセスしてもs3のリダイレクト用エンドポイントにまでたどり着かない  not foundエラーが発生する Route53での設定が正しく行えていないと予想   </description>
+    </item>
     
     <item>
       <title>UbuntuのClibor的存在CopyQ</title>
