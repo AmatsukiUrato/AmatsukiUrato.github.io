@@ -44,6 +44,22 @@
 
 <article class="post-entry">
   <header class="entry-header">
+    <h2>Onsen-UIのDialogコンポーネントサイズを変更する</h2>
+  </header>
+  <section class="entry-content">
+   <p> TL;DR  Onsen-UI読み込み後に出力されるDialogをコピーして手動で使う Dialog群の形だけ取得しているので、Show, Hide共にこちら側で呼ぶ必要あり Onsen-UIのタグオブジェクトから、Onsen-UI側で用意されているshow(), hide()などが呼び出せる  これを使って自分で制御を行う   概要 以下の画像のような、アラートのサイズを変更したいのにできない。 Onsen-UIの公式リファレンスを見てもDialogの項目にそれっぽい動作をしてくれるDialogはない。。 解決方法🤗  ons.notification.alert();を実行して、でOnsen-UIの要素を取得する。 要素をhtmlに貼り付ける。 ons-alert-dialogにidをつけて、手動でDialogの表示/非表示を制御する。  onsタグのオブジェクトをjsで取得すると、show()やhide()などのメソッドが使用できるようになる。
+https://onsen.io/v2/api/js/ons-modal.html#method-show
+実行結果🎥 以下の動画ではwidth=&#34;90%&#34;で設定しています 
+ソースコード📓  ...</p>
+  </section>
+  <footer class="entry-footer">
+    <time>2019.7.4</time>
+  </footer>
+  <a class="entry-link" href="https://amatsukiurato.github.io/posts/onsen-ui%E3%81%AEdialog%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%82%B5%E3%82%A4%E3%82%BA%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B/"></a>
+</article>
+
+<article class="post-entry">
+  <header class="entry-header">
     <h2>S3のリダイレクト機能でgithubのpageへ飛ばしたい</h2>
   </header>
   <section class="entry-content">
@@ -53,7 +69,7 @@
   <footer class="entry-footer">
     <time>2019.7.2</time>
   </footer>
-  <a class="entry-link" href="https://amatsukiurato.github.io/diary/s3%E3%81%AE%E3%83%AA%E3%83%80%E3%82%A4%E3%83%AC%E3%82%AF%E3%83%88%E6%A9%9F%E8%83%BD%E3%81%A7github%E3%81%AEpage%E3%81%B8%E9%A3%9B%E3%81%B0%E3%81%99/"></a>
+  <a class="entry-link" href="https://amatsukiurato.github.io/posts/s3%E3%81%AE%E3%83%AA%E3%83%80%E3%82%A4%E3%83%AC%E3%82%AF%E3%83%88%E6%A9%9F%E8%83%BD%E3%81%A7github%E3%81%AEpage%E3%81%B8%E9%A3%9B%E3%81%B0%E3%81%99/"></a>
 </article>
 
 <article class="post-entry">
@@ -68,7 +84,7 @@
   <footer class="entry-footer">
     <time>2019.6.30</time>
   </footer>
-  <a class="entry-link" href="https://amatsukiurato.github.io/tech/ubuntu%E3%81%AEclibor%E7%9A%84%E5%AD%98%E5%9C%A8copyq/"></a>
+  <a class="entry-link" href="https://amatsukiurato.github.io/posts/ubuntu%E3%81%AEclibor%E7%9A%84%E5%AD%98%E5%9C%A8copyq/"></a>
 </article>
 
 <article class="post-entry">
@@ -89,7 +105,7 @@ Preferences | Languages &amp; Frameworks | JavaScript | Webpackwebpack のconfig
   <footer class="entry-footer">
     <time>2019.6.30</time>
   </footer>
-  <a class="entry-link" href="https://amatsukiurato.github.io/tech/intellij%E3%81%A7webpack%E3%81%AE%E5%87%BA%E5%8A%9B%E5%85%88%E3%81%AB%E3%81%97%E3%81%9F%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%8C%E8%A6%8B%E3%81%88%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/"></a>
+  <a class="entry-link" href="https://amatsukiurato.github.io/posts/intellij%E3%81%A7webpack%E3%81%AE%E5%87%BA%E5%8A%9B%E5%85%88%E3%81%AB%E3%81%97%E3%81%9F%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%8C%E8%A6%8B%E3%81%88%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/"></a>
 </article>
 
 <article class="post-entry">
@@ -108,7 +124,7 @@ Hugoで辛かったこと  AWS Amplifyを利用する場合は、gitのsubmodule
   <footer class="entry-footer">
     <time>2019.4.16</time>
   </footer>
-  <a class="entry-link" href="https://amatsukiurato.github.io/tech/light-sail%E3%81%8B%E3%82%89%E3%81%AE%E7%A7%BB%E8%A1%8C/"></a>
+  <a class="entry-link" href="https://amatsukiurato.github.io/posts/light-sail%E3%81%8B%E3%82%89%E3%81%AE%E7%A7%BB%E8%A1%8C/"></a>
 </article>
 
 

@@ -6,10 +6,28 @@
     <description>Recent content in Tags on 天月メモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 02 Jul 2019 23:33:13 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 04 Jul 2019 03:01:22 +0900</lastBuildDate>
     
 	<atom:link href="https://amatsukiurato.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://amatsukiurato.github.io/tags/javascript/</link>
+      <pubDate>Thu, 04 Jul 2019 03:01:22 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Onsen-UI</title>
+      <link>https://amatsukiurato.github.io/tags/onsen-ui/</link>
+      <pubDate>Thu, 04 Jul 2019 03:01:22 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/tags/onsen-ui/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>AWS</title>

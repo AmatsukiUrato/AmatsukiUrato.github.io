@@ -6,27 +6,39 @@
     <description>Recent content on 天月メモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 02 Jul 2019 23:33:13 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 04 Jul 2019 03:01:22 +0900</lastBuildDate>
     
 	<atom:link href="https://amatsukiurato.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Onsen-UIのDialogコンポーネントサイズを変更する</title>
+      <link>https://amatsukiurato.github.io/posts/onsen-ui%E3%81%AEdialog%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%82%B5%E3%82%A4%E3%82%BA%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B/</link>
+      <pubDate>Thu, 04 Jul 2019 03:01:22 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/posts/onsen-ui%E3%81%AEdialog%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%82%B5%E3%82%A4%E3%82%BA%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B/</guid>
+      <description> TL;DR  Onsen-UI読み込み後に出力されるDialogをコピーして手動で使う Dialog群の形だけ取得しているので、Show, Hide共にこちら側で呼ぶ必要あり Onsen-UIのタグオブジェクトから、Onsen-UI側で用意されているshow(), hide()などが呼び出せる  これを使って自分で制御を行う   概要 以下の画像のような、アラートのサイズを変更したいのにできない。 Onsen-UIの公式リファレンスを見てもDialogの項目にそれっぽい動作をしてくれるDialogはない。。 解決方法🤗  ons.notification.alert();を実行して、でOnsen-UIの要素を取得する。 要素をhtmlに貼り付ける。 ons-alert-dialogにidをつけて、手動でDialogの表示/非表示を制御する。  onsタグのオブジェクトをjsで取得すると、show()やhide()などのメソッドが使用できるようになる。
+https://onsen.io/v2/api/js/ons-modal.html#method-show
+実行結果🎥 以下の動画ではwidth=&amp;quot;90%&amp;quot;で設定しています 
+ソースコード📓  </description>
+    </item>
+    
+    <item>
       <title>S3のリダイレクト機能でgithubのpageへ飛ばしたい</title>
-      <link>https://amatsukiurato.github.io/diary/s3%E3%81%AE%E3%83%AA%E3%83%80%E3%82%A4%E3%83%AC%E3%82%AF%E3%83%88%E6%A9%9F%E8%83%BD%E3%81%A7github%E3%81%AEpage%E3%81%B8%E9%A3%9B%E3%81%B0%E3%81%99/</link>
+      <link>https://amatsukiurato.github.io/posts/s3%E3%81%AE%E3%83%AA%E3%83%80%E3%82%A4%E3%83%AC%E3%82%AF%E3%83%88%E6%A9%9F%E8%83%BD%E3%81%A7github%E3%81%AEpage%E3%81%B8%E9%A3%9B%E3%81%B0%E3%81%99/</link>
       <pubDate>Tue, 02 Jul 2019 23:33:13 +0000</pubDate>
       
-      <guid>https://amatsukiurato.github.io/diary/s3%E3%81%AE%E3%83%AA%E3%83%80%E3%82%A4%E3%83%AC%E3%82%AF%E3%83%88%E6%A9%9F%E8%83%BD%E3%81%A7github%E3%81%AEpage%E3%81%B8%E9%A3%9B%E3%81%B0%E3%81%99/</guid>
+      <guid>https://amatsukiurato.github.io/posts/s3%E3%81%AE%E3%83%AA%E3%83%80%E3%82%A4%E3%83%AC%E3%82%AF%E3%83%88%E6%A9%9F%E8%83%BD%E3%81%A7github%E3%81%AEpage%E3%81%B8%E9%A3%9B%E3%81%B0%E3%81%99/</guid>
       <description> 表題の通りです。 完成してないです。 前に取得した.netのドメインを踏んだときにS3のリダイレクト機能を使ってこのページに飛べるようにしようと思い設定してました。
 出来たこと  s3のエンドポイント(httpのリンク)にアクセスするとgithubPageにリダイレクトする s3のエイリアスを作成する  出来てないところ  .netドメインにアクセスしてもs3のリダイレクト用エンドポイントにまでたどり着かない  not foundエラーが発生する Route53での設定が正しく行えていないと予想   </description>
     </item>
     
     <item>
       <title>UbuntuのClibor的存在CopyQ</title>
-      <link>https://amatsukiurato.github.io/tech/ubuntu%E3%81%AEclibor%E7%9A%84%E5%AD%98%E5%9C%A8copyq/</link>
+      <link>https://amatsukiurato.github.io/posts/ubuntu%E3%81%AEclibor%E7%9A%84%E5%AD%98%E5%9C%A8copyq/</link>
       <pubDate>Sun, 30 Jun 2019 23:38:31 +0900</pubDate>
       
-      <guid>https://amatsukiurato.github.io/tech/ubuntu%E3%81%AEclibor%E7%9A%84%E5%AD%98%E5%9C%A8copyq/</guid>
+      <guid>https://amatsukiurato.github.io/posts/ubuntu%E3%81%AEclibor%E7%9A%84%E5%AD%98%E5%9C%A8copyq/</guid>
       <description> 普段windowsではclipboardの履歴にcliborを使ってて、ubuntuでもコピー履歴が欲しくなって探したらCopyQってのが見つかりました。 Cliborみたいに、ショートカットにAlt*2とかの設定はできなかったけど、無変換に割り当てられたので概ね満足。
 他にもいろいろな機能があるみたいだけど、とりあえずやりたいことができたのでOK。
 参考  https://qualiartz.jp/digitaltransformation/automation/recommend-oss-copyq-clipboard-manager/ https://www.tecmint.com/best-clipboard-managers-for-linux/  </description>
@@ -34,10 +46,10 @@
     
     <item>
       <title>IntelliJでwebpack導入後、フォルダが見えなくなる問題の解決法</title>
-      <link>https://amatsukiurato.github.io/tech/intellij%E3%81%A7webpack%E3%81%AE%E5%87%BA%E5%8A%9B%E5%85%88%E3%81%AB%E3%81%97%E3%81%9F%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%8C%E8%A6%8B%E3%81%88%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/</link>
+      <link>https://amatsukiurato.github.io/posts/intellij%E3%81%A7webpack%E3%81%AE%E5%87%BA%E5%8A%9B%E5%85%88%E3%81%AB%E3%81%97%E3%81%9F%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%8C%E8%A6%8B%E3%81%88%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/</link>
       <pubDate>Sun, 30 Jun 2019 20:08:06 +0900</pubDate>
       
-      <guid>https://amatsukiurato.github.io/tech/intellij%E3%81%A7webpack%E3%81%AE%E5%87%BA%E5%8A%9B%E5%85%88%E3%81%AB%E3%81%97%E3%81%9F%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%8C%E8%A6%8B%E3%81%88%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/</guid>
+      <guid>https://amatsukiurato.github.io/posts/intellij%E3%81%A7webpack%E3%81%AE%E5%87%BA%E5%8A%9B%E5%85%88%E3%81%AB%E3%81%97%E3%81%9F%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%8C%E8%A6%8B%E3%81%88%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/</guid>
       <description>TL;DR 設定からWebpackを開いて、configuration fileのパスを消す
 原因 IntelliJが賢すぎた。
 というのも、webpackのアウトプット先が intelliJ IDEA上でExcluded(非表示になりIntellij上から閲覧できなくなる)のは、 webpackの出力先フォルダだからです。
@@ -51,10 +63,10 @@ Preferences | Languages &amp;amp; Frameworks | JavaScript | Webpackwebpack のco
     
     <item>
       <title>Light Sailからの移行</title>
-      <link>https://amatsukiurato.github.io/tech/light-sail%E3%81%8B%E3%82%89%E3%81%AE%E7%A7%BB%E8%A1%8C/</link>
+      <link>https://amatsukiurato.github.io/posts/light-sail%E3%81%8B%E3%82%89%E3%81%AE%E7%A7%BB%E8%A1%8C/</link>
       <pubDate>Tue, 16 Apr 2019 04:52:33 +0900</pubDate>
       
-      <guid>https://amatsukiurato.github.io/tech/light-sail%E3%81%8B%E3%82%89%E3%81%AE%E7%A7%BB%E8%A1%8C/</guid>
+      <guid>https://amatsukiurato.github.io/posts/light-sail%E3%81%8B%E3%82%89%E3%81%AE%E7%A7%BB%E8%A1%8C/</guid>
       <description>移行しました AWSのLight Sail + WordPressでやってましたが、 WordPressがだるすぎたので AWSのAWS Amplify + Hugoに移行しました。 (移行とか言ってるけど全然記事書いてなかった。。。ｗ)
 github pages とかをそのまま使うのも良かったけど、 AWSのサービスを触ってみたかったのでこっちで立ててみました。
 Hugoに移って最初に記事書いていて思うけど、 やっぱMarkdownが最強なんだわ。 スラスラ書ける。
