@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://amatsukiurato.github.io/tags/aws/</loc>
+    <lastmod>2019-07-15T18:58:56+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/posts/</loc>
+    <lastmod>2019-07-15T18:58:56+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/route53/</loc>
+    <lastmod>2019-07-15T18:58:56+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/posts/route53%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E5%95%8F%E9%A1%8C%E3%82%92%E8%A7%A3%E6%B1%BA%E3%81%97%E3%81%9F%E8%A9%B1/</loc>
+    <lastmod>2019-07-15T18:58:56+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/</loc>
+    <lastmod>2019-07-15T18:58:56+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/</loc>
+    <lastmod>2019-07-15T18:58:56+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://amatsukiurato.github.io/tags/javascript/</loc>
     <lastmod>2019-07-04T03:01:22+09:00</lastmod>
     <priority>0</priority>
@@ -17,36 +52,6 @@
   <url>
     <loc>https://amatsukiurato.github.io/posts/onsen-ui%E3%81%AEdialog%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%82%B5%E3%82%A4%E3%82%BA%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B/</loc>
     <lastmod>2019-07-04T03:01:22+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://amatsukiurato.github.io/posts/</loc>
-    <lastmod>2019-07-04T03:01:22+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://amatsukiurato.github.io/tags/</loc>
-    <lastmod>2019-07-04T03:01:22+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://amatsukiurato.github.io/</loc>
-    <lastmod>2019-07-04T03:01:22+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://amatsukiurato.github.io/tags/aws/</loc>
-    <lastmod>2019-07-02T23:33:13+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://amatsukiurato.github.io/tags/route53/</loc>
-    <lastmod>2019-07-02T23:33:13+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

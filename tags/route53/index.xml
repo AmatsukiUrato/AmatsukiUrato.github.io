@@ -6,10 +6,22 @@
     <description>Recent content in Route53 on 天月メモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 02 Jul 2019 23:33:13 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jul 2019 18:58:56 +0900</lastBuildDate>
     
 	<atom:link href="https://amatsukiurato.github.io/tags/route53/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Route53のルーティング問題を解決した話</title>
+      <link>https://amatsukiurato.github.io/posts/route53%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E5%95%8F%E9%A1%8C%E3%82%92%E8%A7%A3%E6%B1%BA%E3%81%97%E3%81%9F%E8%A9%B1/</link>
+      <pubDate>Mon, 15 Jul 2019 18:58:56 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/posts/route53%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E5%95%8F%E9%A1%8C%E3%82%92%E8%A7%A3%E6%B1%BA%E3%81%97%E3%81%9F%E8%A9%B1/</guid>
+      <description>TL;DR  外部からホストゾーンのネームサーバを指定してあげないと、レコードが帰ってこなかった Route53のドメインのネームサーバとホストゾーンのネームサーバを一緒にする  概要 前に[Route53] -&amp;gt; [S3のリダイレクト] -&amp;gt; [リダイレクト先ページ]
+のルーティングを行おうと思いましたがうまく行きませんでした。
+該当記事
+原因 Route53にて、登録していたドメインに記述されているネームサーバの一覧と ホストゾーンに記載されているNSレコードの値が違っていたため、 正しくルーティングされなかったみたいです。</description>
+    </item>
     
     <item>
       <title>S3のリダイレクト機能でgithubのpageへ飛ばしたい</title>

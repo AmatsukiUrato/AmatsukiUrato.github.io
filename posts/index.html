@@ -60,6 +60,22 @@
 
 <article class="post-entry">
   <header class="entry-header">
+    <h2>Route53のルーティング問題を解決した話</h2>
+  </header>
+  <section class="entry-content">
+   <p>TL;DR  外部からホストゾーンのネームサーバを指定してあげないと、レコードが帰ってこなかった Route53のドメインのネームサーバとホストゾーンのネームサーバを一緒にする  概要 前に[Route53] -&gt; [S3のリダイレクト] -&gt; [リダイレクト先ページ]
+のルーティングを行おうと思いましたがうまく行きませんでした。
+該当記事
+原因 Route53にて、登録していたドメインに記述されているネームサーバの一覧と ホストゾーンに記載されているNSレコードの値が違っていたため、 正しくルーティングされなかったみたいです。...</p>
+  </section>
+  <footer class="entry-footer">
+    <time>2019.7.15</time>
+  </footer>
+  <a class="entry-link" href="https://amatsukiurato.github.io/posts/route53%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E5%95%8F%E9%A1%8C%E3%82%92%E8%A7%A3%E6%B1%BA%E3%81%97%E3%81%9F%E8%A9%B1/"></a>
+</article>
+
+<article class="post-entry">
+  <header class="entry-header">
     <h2>Onsen-UIのDialogコンポーネントサイズを変更する</h2>
   </header>
   <section class="entry-content">
