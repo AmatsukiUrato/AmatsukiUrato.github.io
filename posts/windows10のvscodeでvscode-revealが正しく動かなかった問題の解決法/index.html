@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143787598-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-143787598-1');
+  </script>
+
+    
+    <title>Windows10のVSCodeでvscode Revealが正しく動かなかった問題の解決法 - 天月メモ</title>
+    
+    <meta name="description" content=" TL;DR  改行コードをLFに変える 拡張機能でCRLFにする  原因 TL;DRでだいたい判ると思いますが、vscode-revealのスライド仕切りの---がデフォではLFの設定で登録されているのが問題でした。 - revealjsの改行コード指摘ページ - 日本語訳版
+解決法 普通に使う場合は前者の方を実施したほうがいいと思います。 後者のやり方だと設定ファイルに書かない限り、正しく表示させる作業が毎日必要になります。
+revealjsに読み込ませる改行コードを変える場合  拡張機能の設定画面を開く(Ctrl &#43; ,) reveal JSの項目を探し、Revealjs: Separatorの内容にある\nを\r?\nに修正する  VSCodeの改行コードを変更する場合  VSCodeのfooter右にある改行コードCRLFをクリック LFに変更する  ">
+    <meta name="author" content="Amatsuki">
+    
+    <link href="https://amatsukiurato.github.io/css/github-gist.min.css" rel="stylesheet">
+    <link href="https://amatsukiurato.github.io/css/style.css" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" href="https://amatsukiurato.github.io/img/apple-touch-icon.png">
+    <link rel="icon" href="https://amatsukiurato.github.io/img/favicon.ico">
+    
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <link rel="alternate" type="application/atom+xml" href="https://amatsukiurato.github.io/index.xml" title="天月メモ">
+    
+    
+    
+  </head>
+  <body class="single">
+    <header class="header">
+      <div class="wrap">
+        
+        <p class="logo"><a href="https://amatsukiurato.github.io/">天月メモ</a></p>
+        
+        
+      </div>
+    </header>
+    
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">Windows10のVSCodeでvscode Revealが正しく動かなかった問題の解決法</h1>
+    <div class="post-meta">Amatsuki · 
+      create:2019.7.18 · 
+      update:2019.7.18 </div>
+  </header>
+  <div class="post-content">
+
+<h2 id="tl-dr">TL;DR</h2>
+
+<ol>
+<li>改行コードをLFに変える</li>
+<li>拡張機能でCRLFにする</li>
+</ol>
+
+<h2 id="原因">原因</h2>
+
+<p>TL;DRでだいたい判ると思いますが、vscode-revealのスライド仕切りの<code>---</code>がデフォでは<code>LF</code>の設定で登録されているのが問題でした。
+- <a href="https://github.com/hakimel/reveal.js/#external-markdown">revealjsの改行コード指摘ページ</a>
+- <a href="https://qiita.com/takayu90/items/0af9bd125e6704803c0d">日本語訳版</a></p>
+
+<h2 id="解決法">解決法</h2>
+
+<p>普通に使う場合は前者の方を実施したほうがいいと思います。
+後者のやり方だと設定ファイルに書かない限り、正しく表示させる作業が毎日必要になります。</p>
+
+<h3 id="revealjsに読み込ませる改行コードを変える場合">revealjsに読み込ませる改行コードを変える場合</h3>
+
+<ol>
+<li>拡張機能の設定画面を開く(<code>Ctrl + ,</code>)</li>
+<li>reveal JSの項目を探し、<strong>Revealjs: Separator</strong>の内容にある<code>\n</code>を<code>\r?\n</code>に修正する</li>
+</ol>
+
+<p><img src="/resources/vscode/vscode-reveal-new-line.png" alt="変更する場所" /></p>
+
+<h3 id="vscodeの改行コードを変更する場合">VSCodeの改行コードを変更する場合</h3>
+
+<ol>
+<li>VSCodeのfooter右にある改行コード<code>CRLF</code>をクリック</li>
+<li><code>LF</code>に変更する</li>
+</ol>
+
+<p><img src="/resources/vscode/vscode-footer-new-line.png" alt="変更する場所" /></p>
+</div>
+  <footer class="post-footer">
+    
+    <ul class="post-tags">
+      
+      <li><a href="https://amatsukiurato.github.io/tags/vscode/">VSCode</a></li>
+      
+      <li><a href="https://amatsukiurato.github.io/tags/revealjs/">revealjs</a></li>
+      
+      <li><a href="https://amatsukiurato.github.io/tags/extention/">extention</a></li>
+      
+      <li><a href="https://amatsukiurato.github.io/tags/markdown/">markdown</a></li>
+      
+    </ul>
+    
+  </footer>
+  
+  
+  
+  
+</article>
+
+</main>
+<footer class="footer">
+  <span>&copy; 2019 <a href="https://amatsukiurato.github.io/">天月メモ</a></span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
+</footer>
+<script src="https://amatsukiurato.github.io/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+<script src="https://amatsukiurato.github.io/js/highlight.min.js" data-no-instant></script>
+<script data-no-instant>
+  let body;
+  function menuToggleListener() {
+    body.classList.toggle('blur');
+  }
+  function setMenuToggleListener() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (!menuToggle) return;
+    body = document.querySelector('body');
+    menuToggle.addEventListener('click', menuToggleListener);
+  }
+
+  hljs.initHighlightingOnLoad();
+  setMenuToggleListener();
+
+  InstantClick.on('change', function () {
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+    setMenuToggleListener();
+  });
+</script>
+</body>
+</html>
+

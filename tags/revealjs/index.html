@@ -15,7 +15,7 @@
   </script>
 
     
-    <title> - 天月メモ</title>
+    <title>revealjs - 天月メモ</title>
     
     <meta name="description" content="">
     <meta name="author" content="Amatsuki">
@@ -49,7 +49,7 @@
 
 <header class="page-header">
   <h1>
-  
+  revealjs
   </h1>
 </header>
 
@@ -60,67 +60,21 @@
 
 <article class="post-entry">
   <header class="entry-header">
-    <h2>Ubuntu</h2>
+    <h2>Windows10のVSCodeでvscode Revealが正しく動かなかった問題の解決法</h2>
   </header>
   <section class="entry-content">
-   <p>...</p>
+   <p> TL;DR  改行コードをLFに変える 拡張機能でCRLFにする  原因 TL;DRでだいたい判ると思いますが、vscode-revealのスライド仕切りの---がデフォではLFの設定で登録されているのが問題でした。 - revealjsの改行コード指摘ページ - 日本語訳版
+解決法 普通に使う場合は前者の方を実施したほうがいいと思います。 後者のやり方だと設定ファイルに書かない限り、正しく表示させる作業が毎日必要になります。
+revealjsに読み込ませる改行コードを変える場合  拡張機能の設定画面を開く(Ctrl &#43; ,) reveal JSの項目を探し、Revealjs: Separatorの内容にある\nを\r?\nに修正する  VSCodeの改行コードを変更する場合  VSCodeのfooter右にある改行コードCRLFをクリック LFに変更する  ...</p>
   </section>
   <footer class="entry-footer">
-    <time>2019.6.30</time>
+    <time>2019.7.18</time>
   </footer>
-  <a class="entry-link" href="https://amatsukiurato.github.io/tags/ubuntu/"></a>
-</article>
-
-<article class="post-entry">
-  <header class="entry-header">
-    <h2>IntelliJ</h2>
-  </header>
-  <section class="entry-content">
-   <p>...</p>
-  </section>
-  <footer class="entry-footer">
-    <time>2019.6.30</time>
-  </footer>
-  <a class="entry-link" href="https://amatsukiurato.github.io/tags/intellij/"></a>
-</article>
-
-<article class="post-entry">
-  <header class="entry-header">
-    <h2>Webpack</h2>
-  </header>
-  <section class="entry-content">
-   <p>...</p>
-  </section>
-  <footer class="entry-footer">
-    <time>2019.6.30</time>
-  </footer>
-  <a class="entry-link" href="https://amatsukiurato.github.io/tags/webpack/"></a>
-</article>
-
-<article class="post-entry">
-  <header class="entry-header">
-    <h2>Hugo</h2>
-  </header>
-  <section class="entry-content">
-   <p>...</p>
-  </section>
-  <footer class="entry-footer">
-    <time>2019.4.16</time>
-  </footer>
-  <a class="entry-link" href="https://amatsukiurato.github.io/tags/hugo/"></a>
+  <a class="entry-link" href="https://amatsukiurato.github.io/posts/windows10%E3%81%AEvscode%E3%81%A7vscode-reveal%E3%81%8C%E6%AD%A3%E3%81%97%E3%81%8F%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/"></a>
 </article>
 
 
 
-
-<footer class="page-footer">
-  <nav class="pagination">
-    
-    <a class="prev" href="/tags/">← Prev Page</a>
-    
-    
-  </nav>
-</footer>
 
 
 </main>

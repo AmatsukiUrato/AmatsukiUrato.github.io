@@ -3,13 +3,54 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://amatsukiurato.github.io/tags/aws/</loc>
-    <lastmod>2019-07-15T18:58:56+09:00</lastmod>
+    <loc>https://amatsukiurato.github.io/posts/</loc>
+    <lastmod>2019-07-18T05:18:30+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://amatsukiurato.github.io/posts/</loc>
+    <loc>https://amatsukiurato.github.io/tags/</loc>
+    <lastmod>2019-07-18T05:18:30+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/vscode/</loc>
+    <lastmod>2019-07-18T05:18:30+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/posts/windows10%E3%81%AEvscode%E3%81%A7vscode-reveal%E3%81%8C%E6%AD%A3%E3%81%97%E3%81%8F%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/</loc>
+    <lastmod>2019-07-18T05:18:30+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/extention/</loc>
+    <lastmod>2019-07-18T05:18:30+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/markdown/</loc>
+    <lastmod>2019-07-18T05:18:30+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/revealjs/</loc>
+    <lastmod>2019-07-18T05:18:30+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/</loc>
+    <lastmod>2019-07-18T05:18:30+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/aws/</loc>
     <lastmod>2019-07-15T18:58:56+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -23,18 +64,6 @@
   <url>
     <loc>https://amatsukiurato.github.io/posts/route53%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E5%95%8F%E9%A1%8C%E3%82%92%E8%A7%A3%E6%B1%BA%E3%81%97%E3%81%9F%E8%A9%B1/</loc>
     <lastmod>2019-07-15T18:58:56+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://amatsukiurato.github.io/tags/</loc>
-    <lastmod>2019-07-15T18:58:56+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://amatsukiurato.github.io/</loc>
-    <lastmod>2019-07-15T18:58:56+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
