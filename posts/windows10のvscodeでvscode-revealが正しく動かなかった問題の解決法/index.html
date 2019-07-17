@@ -17,8 +17,8 @@
     
     <title>Windows10のVSCodeでvscode Revealが正しく動かなかった問題の解決法 - 天月メモ</title>
     
-    <meta name="description" content=" TL;DR  改行コードをLFに変える 拡張機能でCRLFにする  原因 TL;DRでだいたい判ると思いますが、vscode-revealのスライド仕切りの---がデフォではLFの設定で登録されているのが問題でした。 - revealjsの改行コード指摘ページ - 日本語訳版
-解決法 普通に使う場合は前者の方を実施したほうがいいと思います。 後者のやり方だと設定ファイルに書かない限り、正しく表示させる作業が毎日必要になります。
+    <meta name="description" content=" TL;DR  改行コードをLFに変える 拡張機能でLFで書かれている部分をCRLFで書き直す  原因 TL;DRでだいたい判ると思いますが、vscode-revealのスライド仕切りの---がデフォではLFの設定で登録されているのが問題でした。
+ revealjsの改行コード指摘ページ 日本語訳版  解決法 普通に使う場合は前者の方を実施したほうがいいと思います。 後者のやり方だと設定ファイルに書かない限り、正しく表示させる作業が毎日必要になります。
 revealjsに読み込ませる改行コードを変える場合  拡張機能の設定画面を開く(Ctrl &#43; ,) reveal JSの項目を探し、Revealjs: Separatorの内容にある\nを\r?\nに修正する  VSCodeの改行コードを変更する場合  VSCodeのfooter右にある改行コードCRLFをクリック LFに変更する  ">
     <meta name="author" content="Amatsuki">
     
@@ -60,15 +60,18 @@ revealjsに読み込ませる改行コードを変える場合  拡張機能の�
 <h2 id="tl-dr">TL;DR</h2>
 
 <ol>
-<li>改行コードをLFに変える</li>
-<li>拡張機能でCRLFにする</li>
+<li>改行コードを<code>LF</code>に変える</li>
+<li>拡張機能で<code>LF</code>で書かれている部分を<code>CRLF</code>で書き直す</li>
 </ol>
 
 <h2 id="原因">原因</h2>
 
-<p>TL;DRでだいたい判ると思いますが、vscode-revealのスライド仕切りの<code>---</code>がデフォでは<code>LF</code>の設定で登録されているのが問題でした。
-- <a href="https://github.com/hakimel/reveal.js/#external-markdown">revealjsの改行コード指摘ページ</a>
-- <a href="https://qiita.com/takayu90/items/0af9bd125e6704803c0d">日本語訳版</a></p>
+<p>TL;DRでだいたい判ると思いますが、vscode-revealのスライド仕切りの<code>---</code>がデフォでは<code>LF</code>の設定で登録されているのが問題でした。</p>
+
+<ul>
+<li><a href="https://github.com/hakimel/reveal.js/#external-markdown">revealjsの改行コード指摘ページ</a></li>
+<li><a href="https://qiita.com/takayu90/items/0af9bd125e6704803c0d">日本語訳版</a></li>
+</ul>
 
 <h2 id="解決法">解決法</h2>
 
