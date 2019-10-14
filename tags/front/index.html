@@ -15,7 +15,7 @@
   </script>
 
     
-    <title>JavaScript - 天月メモ</title>
+    <title>Front - 天月メモ</title>
     
     <meta name="description" content="">
     <meta name="author" content="Amatsuki">
@@ -49,7 +49,7 @@
 
 <header class="page-header">
   <h1>
-  JavaScript
+  Front
   </h1>
 </header>
 
@@ -60,18 +60,18 @@
 
 <article class="post-entry">
   <header class="entry-header">
-    <h2>Onsen-UIのDialogコンポーネントサイズを変更する</h2>
+    <h2>Material-uiのmakestyleにて、複数のクラスを動的に指定する方法</h2>
   </header>
   <section class="entry-content">
-   <p> TL;DR  Onsen-UI読み込み後に出力されるDialogをコピーして手動で使う Dialog群の形だけ取得しているので、Show, Hide共にこちら側で呼ぶ必要あり Onsen-UIのタグオブジェクトから、Onsen-UI側で用意されているshow(), hide()などが呼び出せる  これを使って自分で制御を行う   概要 以下の画像のような、アラートのサイズを変更したいのにできない。 Onsen-UIの公式リファレンスを見てもDialogの項目にそれっぽい動作をしてくれるDialogはない。。 解決方法🤗  ons.notification.alert();を実行して、でOnsen-UIの要素を取得する。 要素をhtmlに貼り付ける。 ons-alert-dialogにidをつけて、手動でDialogの表示/非表示を制御する。  onsタグのオブジェクトをjsで取得すると、show()やhide()などのメソッドが使用できるようになる。
-https://onsen.io/v2/api/js/ons-modal.html#method-show
-実行結果🎥 以下の動画ではwidth=&#34;90%&#34;で設定しています 
-ソースコード📓  ...</p>
+   <p>TL;DR  classデータをstring配列として持つ 配列.join(&#39; &#39;)を該当のclassName={}の中に記述する  概要 最近、Reactについての勉強を行っていたところ、classの指定に手間取ってしまったのでメモ。 方法としては、探したところ、以下2つがあるみたい。 1. class名の配列を作成して、最後にjoinで配列の間にを入れて出力 2. classNameの中で、２つのclass名を呼び出す。
+面倒くさいのでソースベタ貼りしてます。
+BoxはMaterial-uiのUtil-componentです。
+方法1 return ( &lt;Box display=&#34;flex&#34; alignItems=&#34;center&#34; justifyContent=&#34;center&#34; className={classes.block}&gt; {(() =&gt; { const discClass: string[] = [classes.disc]; if (props.discStatus === DiscStatus.White) { discClass.push(classes.discWhite); } else if (props.discStatus === DiscStatus.Black) { discClass.push(classes.discBlack); } return &lt;Box component=&#34;div&#34; onClick={handleOnClickDisc} className={discClass.join(&#39; &#39;)}&gt;&lt;/Box&gt; })()} &lt;/Box&gt; );  方法2 return ( &lt;Box display=&#34;flex&#34; alignItems=&#34;center&#34; justifyContent=&#34;center&#34; className={classes.block}&gt; {(() =&gt; { if (props.discStatus === DiscStatus....</p>
   </section>
   <footer class="entry-footer">
-    <time>2019.7.4</time>
+    <time>2019.10.14</time>
   </footer>
-  <a class="entry-link" href="https://amatsukiurato.github.io/posts/onsen-ui%E3%81%AEdialog%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%82%B5%E3%82%A4%E3%82%BA%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B/"></a>
+  <a class="entry-link" href="https://amatsukiurato.github.io/posts/react%E3%81%AB%E3%81%A6%E8%A4%87%E6%95%B0%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/"></a>
 </article>
 
 

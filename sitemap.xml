@@ -3,21 +3,58 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://amatsukiurato.github.io/tags/css/</loc>
+    <lastmod>2019-10-14T15:28:36+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/front/</loc>
+    <lastmod>2019-10-14T15:28:36+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/posts/react%E3%81%AB%E3%81%A6%E8%A4%87%E6%95%B0%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/</loc>
+    <lastmod>2019-10-14T15:28:36+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://amatsukiurato.github.io/posts/</loc>
-    <lastmod>2019-07-18T05:18:30+09:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-10-14T15:28:36+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/react/</loc>
+    <lastmod>2019-10-14T15:28:36+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://amatsukiurato.github.io/tags/</loc>
+    <lastmod>2019-10-14T15:28:36+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/</loc>
+    <lastmod>2019-10-14T15:28:36+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/extention/</loc>
     <lastmod>2019-07-18T05:18:30+09:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/markdown/</loc>
+    <lastmod>2019-07-18T05:18:30+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/revealjs/</loc>
+    <lastmod>2019-07-18T05:18:30+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://amatsukiurato.github.io/tags/vscode/</loc>
     <lastmod>2019-07-18T05:18:30+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -26,39 +63,13 @@
   </url>
   
   <url>
-    <loc>https://amatsukiurato.github.io/tags/extention/</loc>
-    <lastmod>2019-07-18T05:18:30+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://amatsukiurato.github.io/tags/markdown/</loc>
-    <lastmod>2019-07-18T05:18:30+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://amatsukiurato.github.io/tags/revealjs/</loc>
-    <lastmod>2019-07-18T05:18:30+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://amatsukiurato.github.io/</loc>
-    <lastmod>2019-07-18T05:18:30+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://amatsukiurato.github.io/tags/aws/</loc>
     <lastmod>2019-07-15T18:58:56+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://amatsukiurato.github.io/tags/route53/</loc>
     <lastmod>2019-07-15T18:58:56+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -69,13 +80,11 @@
   <url>
     <loc>https://amatsukiurato.github.io/tags/javascript/</loc>
     <lastmod>2019-07-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://amatsukiurato.github.io/tags/onsen-ui/</loc>
     <lastmod>2019-07-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -86,7 +95,6 @@
   <url>
     <loc>https://amatsukiurato.github.io/tags/s3/</loc>
     <lastmod>2019-07-02T23:33:13+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -97,13 +105,11 @@
   <url>
     <loc>https://amatsukiurato.github.io/tags/copyq/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://amatsukiurato.github.io/tags/ubuntu/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -114,7 +120,6 @@
   <url>
     <loc>https://amatsukiurato.github.io/tags/intellij/</loc>
     <lastmod>2019-06-30T20:08:06+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -125,13 +130,11 @@
   <url>
     <loc>https://amatsukiurato.github.io/tags/webpack/</loc>
     <lastmod>2019-06-30T20:08:06+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://amatsukiurato.github.io/tags/hugo/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -141,7 +144,6 @@
   
   <url>
     <loc>https://amatsukiurato.github.io/categories/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>
