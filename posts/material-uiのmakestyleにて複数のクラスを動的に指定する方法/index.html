@@ -18,9 +18,10 @@
     <title>Material-uiのmakestyleにて、複数のクラスを動的に指定する方法 - 天月メモ</title>
     
     <meta name="description" content="TL;DR  classデータをstring配列として持つ 配列.join(&#39; &#39;)を該当のclassName={}の中に記述する  概要 最近、Reactについての勉強を行っていたところ、classの指定に手間取ってしまったのでメモ。 方法としては、探したところ、以下2つがあるみたい。 1. class名の配列を作成して、最後にjoinで配列の間にを入れて出力 2. classNameの中で、２つのclass名を呼び出す。
+汎用性があるのは方法1のほうだと思われます。
 面倒くさいのでソースベタ貼りしてます。
 BoxはMaterial-uiのUtil-componentです。
-方法1 return ( &lt;Box display=&quot;flex&quot; alignItems=&quot;center&quot; justifyContent=&quot;center&quot; className={classes.block}&gt; {(() =&gt; { const discClass: string[] = [classes.disc]; if (props.discStatus === DiscStatus.White) { discClass.push(classes.discWhite); } else if (props.discStatus === DiscStatus.Black) { discClass.push(classes.discBlack); } return &lt;Box component=&quot;div&quot; onClick={handleOnClickDisc} className={discClass.join(&#39; &#39;)}&gt;&lt;/Box&gt; })()} &lt;/Box&gt; );  方法2 return ( &lt;Box display=&quot;flex&quot; alignItems=&quot;center&quot; justifyContent=&quot;center&quot; className={classes.block}&gt; {(() =&gt; { if (props.discStatus === DiscStatus.">
+最後に各クラスをjoinでくっつける方法 return ( &lt;Box display=&quot;flex&quot; alignItems=&quot;center&quot; justifyContent=&quot;center&quot; className={classes.block}&gt; {(() =&gt; { const discClass: string[] = [classes.disc]; if (props.discStatus === DiscStatus.White) { discClass.push(classes.discWhite); } else if (props.discStatus === DiscStatus.Black) { discClass.push(classes.discBlack); } return &lt;Box component=&quot;div&quot; onClick={handleOnClickDisc} className={discClass.join(&#39; &#39;)}&gt;&lt;/Box&gt; })()} &lt;/Box&gt; );  classNameに２つのclass名を直接入れる方法 return ( &lt;Box display=&quot;flex&quot; alignItems=&quot;center&quot; justifyContent=&quot;center&quot; className={classes.block}&gt; {(() =&gt; { if (props.">
     <meta name="author" content="Amatsuki">
     
     <link href="https://amatsukiurato.github.io/css/github-gist.min.css" rel="stylesheet">
@@ -72,49 +73,51 @@ BoxはMaterial-uiのUtil-componentです。
 1. class名の配列を作成して、最後にjoinで配列の間にを入れて出力
 2. <code>className</code>の中で、２つのclass名を呼び出す。</p>
 
+<p>汎用性があるのは方法1のほうだと思われます。</p>
+
 <p>面倒くさいのでソースベタ貼りしてます。<br />
 <code>Box</code>は<code>Material-ui</code>のUtil-componentです。</p>
 
-<h2 id="方法1">方法1</h2>
+<h2 id="最後に各クラスをjoinでくっつける方法">最後に各クラスをjoinでくっつける方法</h2>
 
-<pre><code class="language-js">    return (
-        &lt;Box display=&quot;flex&quot; alignItems=&quot;center&quot; justifyContent=&quot;center&quot;
-            className={classes.block}&gt;
-            {(() =&gt; {
-                const discClass: string[] = [classes.disc];
+<pre><code class="language-js">return (
+    &lt;Box display=&quot;flex&quot; alignItems=&quot;center&quot; justifyContent=&quot;center&quot;
+        className={classes.block}&gt;
+        {(() =&gt; {
+            const discClass: string[] = [classes.disc];
 
-                if (props.discStatus === DiscStatus.White) {
-                    discClass.push(classes.discWhite);
-                } else if (props.discStatus === DiscStatus.Black) {
-                    discClass.push(classes.discBlack);
-                }
-                return &lt;Box component=&quot;div&quot; 
-                            onClick={handleOnClickDisc} 
-                            className={discClass.join(' ')}&gt;&lt;/Box&gt;
-            })()}
-        &lt;/Box&gt;
-    );
+            if (props.discStatus === DiscStatus.White) {
+                discClass.push(classes.discWhite);
+            } else if (props.discStatus === DiscStatus.Black) {
+                discClass.push(classes.discBlack);
+            }
+            return &lt;Box component=&quot;div&quot; 
+                        onClick={handleOnClickDisc} 
+                        className={discClass.join(' ')}&gt;&lt;/Box&gt;
+        })()}
+    &lt;/Box&gt;
+);
 </code></pre>
 
-<h2 id="方法2">方法2</h2>
+<h2 id="classnameに２つのclass名を直接入れる方法">classNameに２つのclass名を直接入れる方法</h2>
 
-<pre><code class="language-js">    return (
-        &lt;Box display=&quot;flex&quot; alignItems=&quot;center&quot; justifyContent=&quot;center&quot;
-            className={classes.block}&gt;
-            {(() =&gt; {
-                if (props.discStatus === DiscStatus.White) {
-                    return &lt;Box component=&quot;div&quot;
-                        className={`${classes.disc} ${classes.discWhite}`}&gt;&lt;/Box&gt;
-                } else if (props.discStatus === DiscStatus.Black) {
-                    return &lt;Box component=&quot;div&quot;
-                        className={`${classes.disc} ${classes.discBlack}`}&gt;&lt;/Box&gt;
-                } else if (props.discStatus === DiscStatus.Empty) {
-                    return &lt;Box component=&quot;div&quot;
-                        className={classes.disc}&gt;&lt;/Box&gt;
-                }
-            })()}
-        &lt;/Box&gt;
-    );
+<pre><code class="language-js">return (
+    &lt;Box display=&quot;flex&quot; alignItems=&quot;center&quot; justifyContent=&quot;center&quot;
+        className={classes.block}&gt;
+        {(() =&gt; {
+            if (props.discStatus === DiscStatus.White) {
+                return &lt;Box component=&quot;div&quot;
+                    className={`${classes.disc} ${classes.discWhite}`}&gt;&lt;/Box&gt;
+            } else if (props.discStatus === DiscStatus.Black) {
+                return &lt;Box component=&quot;div&quot;
+                    className={`${classes.disc} ${classes.discBlack}`}&gt;&lt;/Box&gt;
+            } else if (props.discStatus === DiscStatus.Empty) {
+                return &lt;Box component=&quot;div&quot;
+                    className={classes.disc}&gt;&lt;/Box&gt;
+            }
+        })()}
+    &lt;/Box&gt;
+);
 </code></pre>
 </div>
   <footer class="post-footer">
