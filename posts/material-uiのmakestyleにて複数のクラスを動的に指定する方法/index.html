@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143787598-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-143787598-1');
+  </script>
+
+    
+    <title>Material-uiのmakestyleにて、複数のクラスを動的に指定する方法 - 天月メモ</title>
+    
+    <meta name="description" content="TL;DR  classデータをstring配列として持つ 配列.join(&#39; &#39;)を該当のclassName={}の中に記述する  概要 最近、Reactについての勉強を行っていたところ、classの指定に手間取ってしまったのでメモ。 方法としては、探したところ、以下2つがあるみたい。 1. class名の配列を作成して、最後にjoinで配列の間にを入れて出力 2. classNameの中で、２つのclass名を呼び出す。
+面倒くさいのでソースベタ貼りしてます。
+BoxはMaterial-uiのUtil-componentです。
+方法1 return ( &lt;Box display=&quot;flex&quot; alignItems=&quot;center&quot; justifyContent=&quot;center&quot; className={classes.block}&gt; {(() =&gt; { const discClass: string[] = [classes.disc]; if (props.discStatus === DiscStatus.White) { discClass.push(classes.discWhite); } else if (props.discStatus === DiscStatus.Black) { discClass.push(classes.discBlack); } return &lt;Box component=&quot;div&quot; onClick={handleOnClickDisc} className={discClass.join(&#39; &#39;)}&gt;&lt;/Box&gt; })()} &lt;/Box&gt; );  方法2 return ( &lt;Box display=&quot;flex&quot; alignItems=&quot;center&quot; justifyContent=&quot;center&quot; className={classes.block}&gt; {(() =&gt; { if (props.discStatus === DiscStatus.">
+    <meta name="author" content="Amatsuki">
+    
+    <link href="https://amatsukiurato.github.io/css/github-gist.min.css" rel="stylesheet">
+    <link href="https://amatsukiurato.github.io/css/style.css" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" href="https://amatsukiurato.github.io/img/apple-touch-icon.png">
+    <link rel="icon" href="https://amatsukiurato.github.io/img/favicon.ico">
+    
+    <meta name="generator" content="Hugo 0.58.3" />
+    
+    <link rel="alternate" type="application/atom+xml" href="https://amatsukiurato.github.io/index.xml" title="天月メモ">
+    
+    
+    
+  </head>
+  <body class="single">
+    <header class="header">
+      <div class="wrap">
+        
+        <p class="logo"><a href="https://amatsukiurato.github.io/">天月メモ</a></p>
+        
+        
+      </div>
+    </header>
+    
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">Material-uiのmakestyleにて、複数のクラスを動的に指定する方法</h1>
+    <div class="post-meta">Amatsuki · 
+      create:2019.10.14 · 
+      update:2019.10.14 </div>
+  </header>
+  <div class="post-content">
+
+<h2 id="tl-dr">TL;DR</h2>
+
+<ol>
+<li>classデータをstring配列として持つ</li>
+<li><code>配列.join(' ')</code>を該当の<code>className={}</code>の中に記述する</li>
+</ol>
+
+<h2 id="概要">概要</h2>
+
+<p>最近、Reactについての勉強を行っていたところ、<code>class</code>の指定に手間取ってしまったのでメモ。
+方法としては、探したところ、以下2つがあるみたい。
+1. class名の配列を作成して、最後にjoinで配列の間にを入れて出力
+2. <code>className</code>の中で、２つのclass名を呼び出す。</p>
+
+<p>面倒くさいのでソースベタ貼りしてます。<br />
+<code>Box</code>は<code>Material-ui</code>のUtil-componentです。</p>
+
+<h2 id="方法1">方法1</h2>
+
+<pre><code class="language-js">    return (
+        &lt;Box display=&quot;flex&quot; alignItems=&quot;center&quot; justifyContent=&quot;center&quot;
+            className={classes.block}&gt;
+            {(() =&gt; {
+                const discClass: string[] = [classes.disc];
+
+                if (props.discStatus === DiscStatus.White) {
+                    discClass.push(classes.discWhite);
+                } else if (props.discStatus === DiscStatus.Black) {
+                    discClass.push(classes.discBlack);
+                }
+                return &lt;Box component=&quot;div&quot; 
+                            onClick={handleOnClickDisc} 
+                            className={discClass.join(' ')}&gt;&lt;/Box&gt;
+            })()}
+        &lt;/Box&gt;
+    );
+</code></pre>
+
+<h2 id="方法2">方法2</h2>
+
+<pre><code class="language-js">    return (
+        &lt;Box display=&quot;flex&quot; alignItems=&quot;center&quot; justifyContent=&quot;center&quot;
+            className={classes.block}&gt;
+            {(() =&gt; {
+                if (props.discStatus === DiscStatus.White) {
+                    return &lt;Box component=&quot;div&quot;
+                        className={`${classes.disc} ${classes.discWhite}`}&gt;&lt;/Box&gt;
+                } else if (props.discStatus === DiscStatus.Black) {
+                    return &lt;Box component=&quot;div&quot;
+                        className={`${classes.disc} ${classes.discBlack}`}&gt;&lt;/Box&gt;
+                } else if (props.discStatus === DiscStatus.Empty) {
+                    return &lt;Box component=&quot;div&quot;
+                        className={classes.disc}&gt;&lt;/Box&gt;
+                }
+            })()}
+        &lt;/Box&gt;
+    );
+</code></pre>
+</div>
+  <footer class="post-footer">
+    
+    <ul class="post-tags">
+      
+      <li><a href="https://amatsukiurato.github.io/tags/react/">React</a></li>
+      
+      <li><a href="https://amatsukiurato.github.io/tags/front/">Front</a></li>
+      
+      <li><a href="https://amatsukiurato.github.io/tags/css/">CSS</a></li>
+      
+    </ul>
+    
+  </footer>
+  
+  
+  
+  
+</article>
+
+</main>
+<footer class="footer">
+  <span>&copy; 2019 <a href="https://amatsukiurato.github.io/">天月メモ</a></span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
+</footer>
+<script src="https://amatsukiurato.github.io/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+<script src="https://amatsukiurato.github.io/js/highlight.min.js" data-no-instant></script>
+<script data-no-instant>
+  let body;
+  function menuToggleListener() {
+    body.classList.toggle('blur');
+  }
+  function setMenuToggleListener() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (!menuToggle) return;
+    body = document.querySelector('body');
+    menuToggle.addEventListener('click', menuToggleListener);
+  }
+
+  hljs.initHighlightingOnLoad();
+  setMenuToggleListener();
+
+  InstantClick.on('change', function () {
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+    setMenuToggleListener();
+  });
+</script>
+</body>
+</html>
+
