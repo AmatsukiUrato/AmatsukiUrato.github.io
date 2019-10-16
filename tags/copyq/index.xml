@@ -1,0 +1,25 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CopyQ on My New Hugo Site</title>
+    <link>https://amatsukiurato.github.io/tags/copyq/</link>
+    <description>Recent content in CopyQ on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 30 Jun 2019 23:38:31 +0900</lastBuildDate>
+    
+        <atom:link href="https://amatsukiurato.github.io/tags/copyq/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>UbuntuのClibor的存在CopyQ</title>
+      <link>https://amatsukiurato.github.io/2019/ubuntu%E3%81%AEclibor%E7%9A%84%E5%AD%98%E5%9C%A8copyq/</link>
+      <pubDate>Sun, 30 Jun 2019 23:38:31 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/2019/ubuntu%E3%81%AEclibor%E7%9A%84%E5%AD%98%E5%9C%A8copyq/</guid>
+      <description> 普段windowsではclipboardの履歴にcliborを使ってて、ubuntuでもコピー履歴が欲しくなって探したらCopyQってのが見つかりました。 Cliborみたいに、ショートカットにAlt*2とかの設定はできなかったけど、無変換に割り当てられたので概ね満足。
+他にもいろいろな機能があるみたいだけど、とりあえずやりたいことができたのでOK。
+参考  https://qualiartz.jp/digitaltransformation/automation/recommend-oss-copyq-clipboard-manager/ https://www.tecmint.com/best-clipboard-managers-for-linux/  </description>
+    </item>
+    
+  </channel>
+</rss>
