@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143787598-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-143787598-1');
+  </script>
+
+    
+    <title>Route53のルーティング問題を解決した話 - 天月メモ</title>
+    
+    <meta name="description" content="TL;DR  外部からホストゾーンのネームサーバを指定してあげないと、レコードが帰ってこなかった Route53のドメインのネームサーバとホストゾーンのネームサーバを一緒にする  概要 前に[Route53] -&gt; [S3のリダイレクト] -&gt; [リダイレクト先ページ]
+のルーティングを行おうと思いましたがうまく行きませんでした。
+該当記事
+原因 Route53にて、登録していたドメインに記述されているネームサーバの一覧と ホストゾーンに記載されているNSレコードの値が違っていたため、 正しくルーティングされなかったみたいです。
+解決方法としては、下記画像のように値を揃えることによって、正しくルーティングが行えるようになりました。
+思っていたよりも単純なことでミスっていたので、基礎的な知識をもう少し深めたほうが良いと感じました。。">
+    <meta name="author" content="Amatsuki">
+    
+    <link href="https://amatsukiurato.github.io/css/github-gist.min.css" rel="stylesheet">
+    <link href="https://amatsukiurato.github.io/css/style.css" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" href="https://amatsukiurato.github.io/img/apple-touch-icon.png">
+    <link rel="icon" href="https://amatsukiurato.github.io/img/favicon.ico">
+    
+    <meta name="generator" content="Hugo 0.58.3" />
+    
+    <link rel="alternate" type="application/atom+xml" href="https://amatsukiurato.github.io/index.xml" title="天月メモ">
+    
+    
+    
+  </head>
+  <body class="single">
+    <header class="header">
+      <div class="wrap">
+        
+        <p class="logo"><a href="https://amatsukiurato.github.io/">天月メモ</a></p>
+        
+        
+      </div>
+    </header>
+    
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">Route53のルーティング問題を解決した話</h1>
+    <div class="post-meta">Amatsuki · 
+      create:2019.7.15 · 
+      update:2019.7.15 </div>
+  </header>
+  <div class="post-content">
+
+<h2 id="tl-dr">TL;DR</h2>
+
+<ul>
+<li>外部からホストゾーンのネームサーバを指定してあげないと、レコードが帰ってこなかった</li>
+<li>Route53のドメインのネームサーバとホストゾーンのネームサーバを一緒にする</li>
+</ul>
+
+<h2 id="概要">概要</h2>
+
+<p>前に[Route53] -&gt; [S3のリダイレクト] -&gt; [リダイレクト先ページ]<br />
+のルーティングを行おうと思いましたがうまく行きませんでした。<br />
+<a href="https://amatsukiurato.github.io/posts/s3%E3%81%AE%E3%83%AA%E3%83%80%E3%82%A4%E3%83%AC%E3%82%AF%E3%83%88%E6%A9%9F%E8%83%BD%E3%81%A7github%E3%81%AEpage%E3%81%B8%E9%A3%9B%E3%81%B0%E3%81%99/">該当記事</a></p>
+
+<h2 id="原因">原因</h2>
+
+<p>Route53にて、登録していたドメインに記述されているネームサーバの一覧と
+ホストゾーンに記載されているNSレコードの値が違っていたため、
+正しくルーティングされなかったみたいです。<br />
+解決方法としては、下記画像のように値を揃えることによって、正しくルーティングが行えるようになりました。</p>
+
+<p><img src="/resources/aws/route53_dns.png" alt="Route53の設定用画像" /></p>
+
+<p>思っていたよりも単純なことでミスっていたので、基礎的な知識をもう少し深めたほうが良いと感じました。。</p>
+</div>
+  <footer class="post-footer">
+    
+    <ul class="post-tags">
+      
+      <li><a href="https://amatsukiurato.github.io/tags/route53/">Route53</a></li>
+      
+      <li><a href="https://amatsukiurato.github.io/tags/aws/">AWS</a></li>
+      
+    </ul>
+    
+  </footer>
+  
+  
+  
+  
+</article>
+
+</main>
+<footer class="footer">
+  <span>&copy; 2019 <a href="https://amatsukiurato.github.io/">天月メモ</a></span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
+</footer>
+<script src="https://amatsukiurato.github.io/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+<script src="https://amatsukiurato.github.io/js/highlight.min.js" data-no-instant></script>
+<script data-no-instant>
+  let body;
+  function menuToggleListener() {
+    body.classList.toggle('blur');
+  }
+  function setMenuToggleListener() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (!menuToggle) return;
+    body = document.querySelector('body');
+    menuToggle.addEventListener('click', menuToggleListener);
+  }
+
+  hljs.initHighlightingOnLoad();
+  setMenuToggleListener();
+
+  InstantClick.on('change', function () {
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+    setMenuToggleListener();
+  });
+</script>
+</body>
+</html>
+

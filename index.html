@@ -1,301 +1,107 @@
 <!DOCTYPE html>
-<html lang="en-us">
-<head>
-	<meta name="generator" content="Hugo 0.58.3" />
+<html lang="ja-jp">
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My New Hugo Site  | My New Hugo Site</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
-    <link rel="stylesheet" href="https://amatsukiurato.github.io/css/blog.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-  <link href="https://amatsukiurato.github.io/index.xml" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
-  <link href="https://amatsukiurato.github.io/index.xml" rel="feed" type="application/rss+xml" title="My New Hugo Site" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143787598-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-</head>
-<body>
+    gtag('config', 'UA-143787598-1');
+  </script>
 
     
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="https://amatsukiurato.github.io">Home</a>
-            <div class="navbar-item">
-                    
-                        My New Hugo Site
-                    
-            </div>
-        </div>
-        <div class="navbar-end">
-                <a class="navbar-item nav-right" href="https://amatsukiurato.github.io/about">About</a>
-        </div>
-    </nav>
+    <title>天月メモ</title>
     
-
-
-<div class="container">
-    <div class="section">
+    <meta name="description" content="">
+    <meta name="author" content="Amatsuki">
     
+    <link href="https://amatsukiurato.github.io/css/github-gist.min.css" rel="stylesheet">
+    <link href="https://amatsukiurato.github.io/css/style.css" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" href="https://amatsukiurato.github.io/img/apple-touch-icon.png">
+    <link rel="icon" href="https://amatsukiurato.github.io/img/favicon.ico">
+    
+    <meta name="generator" content="Hugo 0.58.3" />
+    
+    <link rel="alternate" type="application/atom+xml" href="https://amatsukiurato.github.io/index.xml" title="天月メモ">
+    
+    
+    
+  </head>
+  <body class="list home">
+    <header class="header">
+      <div class="wrap">
+        
+        <h1 class="logo"><a href="https://amatsukiurato.github.io/">天月メモ</a></h1>
+        
+        
+      </div>
+    </header>
+    
+    <main class="main">
 
 
-<div class="columns">
-    <div class="column is-9">
-        <div class="tile is-child box">
-            <div class="content">
-                <h3>Welcome to my blog !</h3>
-                <hr>
-                
-                    <article class="media">
-                        <div class="media-content">
-                            <div class="content">
-                                <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/material-ui%E3%81%AEmakestyle%E3%81%AB%E3%81%A6%E8%A4%87%E6%95%B0%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/">Material-uiのmakestyleにて、複数のクラスを動的に指定する方法</a></p>
-                                <p class="subtitle is-size-6 has-text-grey-light">
-                                    Published at October 14, 2019 &middot;
-                                    <i class="far fa-clock"></i>&nbsp;1 min read
-                                </p>
-                                <p>TL;DR  classデータをstring配列として持つ 配列.join(' ')を該当のclassName={}の中に記述する  概要 最近、Reactについての勉強を行っていたところ、classの指定に手間取ってしまったのでメモ。 方法としては、探したところ、以下2つがあるみたい。 1. class名の配列を作成して、最後にjoinで配列の間にを入れて出力 2. classNameの中で、２つのclass名を呼び出す。
-汎用性があるのは方法1のほうだと思われます。
-面倒くさいのでソースベタ貼りしてます。
-BoxはMaterial-uiのUtil-componentです。
-最後に各クラスをjoinでくっつける方法 return ( &lt;Box display=&quot;flex&quot; alignItems=&quot;center&quot; justifyContent=&quot;center&quot; className={classes.block}&gt; {(() =&gt; { const discClass: string[] = [classes.disc]; if (props.discStatus === DiscStatus.White) { discClass.push(classes.discWhite); } else if (props.discStatus === DiscStatus.Black) { discClass.push(classes.discBlack); } return &lt;Box component=&quot;div&quot; onClick={handleOnClickDisc} className={discClass.join(' ')}&gt;&lt;/Box&gt; })()} &lt;/Box&gt; );  classNameに２つのclass名を直接入れる方法 return ( &lt;Box display=&quot;flex&quot; alignItems=&quot;center&quot; justifyContent=&quot;center&quot; className={classes.block}&gt; {(() =&gt; { if (props....</p>
-                            </div>
-                        </div>
-                    </article>
-                
-                    <article class="media">
-                        <div class="media-content">
-                            <div class="content">
-                                <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/windows10%E3%81%AEvscode%E3%81%A7vscode-reveal%E3%81%8C%E6%AD%A3%E3%81%97%E3%81%8F%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/">Windows10のVSCodeでvscode Revealが正しく動かなかった問題の解決法</a></p>
-                                <p class="subtitle is-size-6 has-text-grey-light">
-                                    Published at July 18, 2019 &middot;
-                                    <i class="far fa-clock"></i>&nbsp;1 min read
-                                </p>
-                                <p> TL;DR 方法1 改行コードをLFに変える
-方法2 拡張機能でLFで書かれている部分をCRLFで書き直す
-原因 TL;DRでだいたい判ると思いますが、vscode-revealのスライド仕切りの---がデフォではLFの設定で登録されているのが問題でした。
- revealjsの改行コード指摘ページ 日本語訳版  解決法 普通に使う場合は前者の方を実施したほうがいいと思います。 後者のやり方だと設定ファイルに書かない限り、正しく表示させる作業が毎日必要になります。
-revealjsに読み込ませる改行コードを変える場合  拡張機能の設定画面を開く(Ctrl + ,) reveal JSの項目を探し、Revealjs: Separatorの内容にある\nを\r?\nに修正する  VSCodeの改行コードを変更する場合  VSCodeのfooter右にある改行コードCRLFをクリック LFに変更する  ...</p>
-                            </div>
-                        </div>
-                    </article>
-                
-                    <article class="media">
-                        <div class="media-content">
-                            <div class="content">
-                                <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/route53%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E5%95%8F%E9%A1%8C%E3%82%92%E8%A7%A3%E6%B1%BA%E3%81%97%E3%81%9F%E8%A9%B1/">Route53のルーティング問題を解決した話</a></p>
-                                <p class="subtitle is-size-6 has-text-grey-light">
-                                    Published at July 15, 2019 &middot;
-                                    <i class="far fa-clock"></i>&nbsp;1 min read
-                                </p>
-                                <p>TL;DR  外部からホストゾーンのネームサーバを指定してあげないと、レコードが帰ってこなかった Route53のドメインのネームサーバとホストゾーンのネームサーバを一緒にする  概要 前に[Route53] -&gt; [S3のリダイレクト] -&gt; [リダイレクト先ページ]
-のルーティングを行おうと思いましたがうまく行きませんでした。
-該当記事
-原因 Route53にて、登録していたドメインに記述されているネームサーバの一覧と ホストゾーンに記載されているNSレコードの値が違っていたため、 正しくルーティングされなかったみたいです。
-解決方法としては、下記画像のように値を揃えることによって、正しくルーティングが行えるようになりました。
-思っていたよりも単純なことでミスっていたので、基礎的な知識をもう少し深めたほうが良いと感じました。。...</p>
-                            </div>
-                        </div>
-                    </article>
-                
-                    <article class="media">
-                        <div class="media-content">
-                            <div class="content">
-                                <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/onsen-ui%E3%81%AEdialog%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%82%B5%E3%82%A4%E3%82%BA%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B/">Onsen-UIのDialogコンポーネントサイズを変更する</a></p>
-                                <p class="subtitle is-size-6 has-text-grey-light">
-                                    Published at July 4, 2019 &middot;
-                                    <i class="far fa-clock"></i>&nbsp;1 min read
-                                </p>
-                                <p> TL;DR  Onsen-UI読み込み後に出力されるDialogをコピーして手動で使う Dialog群の形だけ取得しているので、Show, Hide共にこちら側で呼ぶ必要あり Onsen-UIのタグオブジェクトから、Onsen-UI側で用意されているshow(), hide()などが呼び出せる  これを使って自分で制御を行う   概要 以下の画像のような、アラートのサイズを変更したいのにできない。 Onsen-UIの公式リファレンスを見てもDialogの項目にそれっぽい動作をしてくれるDialogはない。。 解決方法🤗  ons.notification.alert();を実行して、でOnsen-UIの要素を取得する。 要素をhtmlに貼り付ける。 ons-alert-dialogにidをつけて、手動でDialogの表示/非表示を制御する。  onsタグのオブジェクトをjsで取得すると、show()やhide()などのメソッドが使用できるようになる。
-https://onsen.io/v2/api/js/ons-modal.html#method-show
-実行結果🎥 以下の動画ではwidth=&quot;90%&quot;で設定しています 
-ソースコード📓  ...</p>
-                            </div>
-                        </div>
-                    </article>
-                
-                    <article class="media">
-                        <div class="media-content">
-                            <div class="content">
-                                <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/s3%E3%81%AE%E3%83%AA%E3%83%80%E3%82%A4%E3%83%AC%E3%82%AF%E3%83%88%E6%A9%9F%E8%83%BD%E3%81%A7github%E3%81%AEpage%E3%81%B8%E9%A3%9B%E3%81%B0%E3%81%99/">S3のリダイレクト機能でgithubのpageへ飛ばしたい</a></p>
-                                <p class="subtitle is-size-6 has-text-grey-light">
-                                    Published at July 2, 2019 &middot;
-                                    <i class="far fa-clock"></i>&nbsp;1 min read
-                                </p>
-                                <p> 表題の通りです。 完成してないです。 前に取得した.netのドメインを踏んだときにS3のリダイレクト機能を使ってこのページに飛べるようにしようと思い設定してました。
-出来たこと  s3のエンドポイント(httpのリンク)にアクセスするとgithubPageにリダイレクトする s3のエイリアスを作成する  出来てないところ  .netドメインにアクセスしてもs3のリダイレクト用エンドポイントにまでたどり着かない  not foundエラーが発生する Route53での設定が正しく行えていないと予想   ...</p>
-                            </div>
-                        </div>
-                    </article>
-                
-                    <article class="media">
-                        <div class="media-content">
-                            <div class="content">
-                                <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/ubuntu%E3%81%AEclibor%E7%9A%84%E5%AD%98%E5%9C%A8copyq/">UbuntuのClibor的存在CopyQ</a></p>
-                                <p class="subtitle is-size-6 has-text-grey-light">
-                                    Published at June 30, 2019 &middot;
-                                    <i class="far fa-clock"></i>&nbsp;1 min read
-                                </p>
-                                <p> 普段windowsではclipboardの履歴にcliborを使ってて、ubuntuでもコピー履歴が欲しくなって探したらCopyQってのが見つかりました。 Cliborみたいに、ショートカットにAlt*2とかの設定はできなかったけど、無変換に割り当てられたので概ね満足。
-他にもいろいろな機能があるみたいだけど、とりあえずやりたいことができたのでOK。
-参考  https://qualiartz.jp/digitaltransformation/automation/recommend-oss-copyq-clipboard-manager/ https://www.tecmint.com/best-clipboard-managers-for-linux/  ...</p>
-                            </div>
-                        </div>
-                    </article>
-                
-                    <article class="media">
-                        <div class="media-content">
-                            <div class="content">
-                                <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/intellij%E3%81%A7webpack%E3%81%AE%E5%87%BA%E5%8A%9B%E5%85%88%E3%81%AB%E3%81%97%E3%81%9F%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%8C%E8%A6%8B%E3%81%88%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/">IntelliJでwebpack導入後、フォルダが見えなくなる問題の解決法</a></p>
-                                <p class="subtitle is-size-6 has-text-grey-light">
-                                    Published at June 30, 2019 &middot;
-                                    <i class="far fa-clock"></i>&nbsp;1 min read
-                                </p>
-                                <p>TL;DR 設定からWebpackを開いて、configuration fileのパスを消す
-原因 IntelliJが賢すぎた。
-というのも、webpackのアウトプット先が intelliJ IDEA上でExcluded(非表示になりIntellij上から閲覧できなくなる)のは、 webpackの出力先フォルダだからです。
-設定は以下の場所にあり、
-Preferences | Languages &amp; Frameworks | JavaScript | Webpackwebpack のconfiguration file:の項目を空文字列にすることによってIntelliJ上から編集できるようになります。
-消している理由は
- パフォーマンスのため
- そもそも編集する必要がないため  ですかね。 これ解決するのに結構時間かかりました。。。
-参考 intellij bundlei_jsが消える理由...</p>
-                            </div>
-                        </div>
-                    </article>
-                
-                    <article class="media">
-                        <div class="media-content">
-                            <div class="content">
-                                <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/light-sail%E3%81%8B%E3%82%89%E3%81%AE%E7%A7%BB%E8%A1%8C/">Light Sailからの移行</a></p>
-                                <p class="subtitle is-size-6 has-text-grey-light">
-                                    Published at April 16, 2019 &middot;
-                                    <i class="far fa-clock"></i>&nbsp;1 min read
-                                </p>
-                                <p>移行しました AWSのLight Sail + WordPressでやってましたが、 WordPressがだるすぎたので AWSのAWS Amplify + Hugoに移行しました。 (移行とか言ってるけど全然記事書いてなかった。。。ｗ)
-github pages とかをそのまま使うのも良かったけど、 AWSのサービスを触ってみたかったのでこっちで立ててみました。
-Hugoに移って最初に記事書いていて思うけど、 やっぱMarkdownが最強なんだわ。 スラスラ書ける。
-一応WordPressでもMarkdownで書けるプラグインは少し出てたけど、 どれもこれで決まりだ！みたいなのがなくて そもそももっと軽くて動くものを探してたということを悟った。
-てことで、メモ代わりに書いて、この先生きのこる。
-Hugoで辛かったこと  AWS Amplifyを利用する場合は、gitのsubmoduleを使ってはいけない draftは下書き機能。(これを忘れててずっと表示されないぞおおおお！ってなってました。あほや) テーマが崩れる  テーマによってはWebSite(訂正:baseurl)の箇所を参照しているのでデプロイすると崩れる(ローカルでは崩れない)   追記 結局上記のいろいろな問題で萎えて、止まってました。 現在はgithub-pagesに移して動かしてます。草も生えるし無料だし特に重要じゃないhomepageだったらこっちでいいね。
-前Amplify触ってたのは勉強もかねてだったので、それはそれでよかったです。...</p>
-                            </div>
-                        </div>
-                    </article>
-                
-            </div>
-        </div>
-    </div>
-    <div class="column is-3">
-        <div class="card">
-    <div class="card-content">
-        <h1 class="title is-5">Tags</h1>
-        <div class="tags">
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/aws">aws</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/copyq">copyq</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/css">css</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/extention">extention</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/front">front</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/hugo">hugo</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/intellij">intellij</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/javascript">javascript</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/markdown">markdown</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/onsen-ui">onsen-ui</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/react">react</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/revealjs">revealjs</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/route53">route53</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/s3">s3</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/ubuntu">ubuntu</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/vscode">vscode</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/webpack">webpack</a></span>
-        
-        </div>          
-    </div>
-</div><br>
-        <div class="card">
-    <div class="card-content">
-        <h1 class="title is-5">Recent posts</h1>
-        
-            <h1><a href="https://amatsukiurato.github.io/2019/material-ui%E3%81%AEmakestyle%E3%81%AB%E3%81%A6%E8%A4%87%E6%95%B0%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/">Material-uiのmakestyleにて、複数のクラスを動的に指定する方法</a></h1>
-            <time class="has-text-grey-light is-size-7">14 October 2019</time>
-        
-            <h1><a href="https://amatsukiurato.github.io/2019/windows10%E3%81%AEvscode%E3%81%A7vscode-reveal%E3%81%8C%E6%AD%A3%E3%81%97%E3%81%8F%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/">Windows10のVSCodeでvscode Revealが正しく動かなかった問題の解決法</a></h1>
-            <time class="has-text-grey-light is-size-7">18 July 2019</time>
-        
-            <h1><a href="https://amatsukiurato.github.io/2019/route53%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E5%95%8F%E9%A1%8C%E3%82%92%E8%A7%A3%E6%B1%BA%E3%81%97%E3%81%9F%E8%A9%B1/">Route53のルーティング問題を解決した話</a></h1>
-            <time class="has-text-grey-light is-size-7">15 July 2019</time>
-        
-            <h1><a href="https://amatsukiurato.github.io/2019/onsen-ui%E3%81%AEdialog%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%82%B5%E3%82%A4%E3%82%BA%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B/">Onsen-UIのDialogコンポーネントサイズを変更する</a></h1>
-            <time class="has-text-grey-light is-size-7">4 July 2019</time>
-        
-            <h1><a href="https://amatsukiurato.github.io/2019/s3%E3%81%AE%E3%83%AA%E3%83%80%E3%82%A4%E3%83%AC%E3%82%AF%E3%83%88%E6%A9%9F%E8%83%BD%E3%81%A7github%E3%81%AEpage%E3%81%B8%E9%A3%9B%E3%81%B0%E3%81%99/">S3のリダイレクト機能でgithubのpageへ飛ばしたい</a></h1>
-            <time class="has-text-grey-light is-size-7">2 July 2019</time>
-        
-    </div>
-</div>
-    <br>
-        <div class="card">
-    <div class="card-content">
-        <h1 class="title is-5">Archives</h1>
-        
-            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (8)<br>
-        
-    </div>
-</div>
-
-    </div>
-</div>
-<div class="columns">
-    <div class="column is-9">
-        <nav class="pagination is-centered is-rounded" role="navigation" aria-label="pagination">
-            
-            
-            <ul class="pagination-list">
-                
-                <li class="pagination__item">
-                    <a class="pagination-link is-current" aria-label="Goto page 1" href="/">1</a>
-                </li>
-                
-            </ul>
-        </nav>
-    </div>
-</div>
 
 
-    </div>
-</div>
 
-<footer class="footer has-background-grey-darker has-text-white">
-    <div class="content has-text-centered">
-        <p>
-            <span class="icon is-large"><a href="https://twitter.com/" class="mysocial" rel="me"><i class="fab fa-twitter fa-3x"></i></a></span>&nbsp;&nbsp;
-            <span class="icon is-large"><a href="https://www.youtube.com/" class="mysocial" rel="me"><i class="fab fa-youtube fa-3x"></i></a></span>&nbsp;&nbsp;
-            <span class="icon is-large"><a href="https://github.com/" class="mysocial" rel="me"><i class="fab fa-github fa-3x"></i></a></span>&nbsp;&nbsp;
-            <br><br>
-            Copyright &copy; My New Hugo Site 2019 - Theme by <a href="https://jeffprod.com" class="mysocial">JeffProd.com</a>
-            - <a class="mysocial" href="https://amatsukiurato.github.io/about">About</a>
-        </p>
-    </div>
+
+
+
+<article class="post-entry">
+  <header class="entry-header">
+    <h2>Posts</h2>
+  </header>
+  <section class="entry-content">
+   <p>...</p>
+  </section>
+  <footer class="entry-footer">
+    <time>2019.10.14</time>
+  </footer>
+  <a class="entry-link" href="https://amatsukiurato.github.io/posts/"></a>
+</article>
+
+
+
+
+
+</main>
+<footer class="footer">
+  <span>&copy; 2019 <a href="https://amatsukiurato.github.io/">天月メモ</a></span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
 </footer>
+<script src="https://amatsukiurato.github.io/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+<script src="https://amatsukiurato.github.io/js/highlight.min.js" data-no-instant></script>
+<script data-no-instant>
+  let body;
+  function menuToggleListener() {
+    body.classList.toggle('blur');
+  }
+  function setMenuToggleListener() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (!menuToggle) return;
+    body = document.querySelector('body');
+    menuToggle.addEventListener('click', menuToggleListener);
+  }
 
-<script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+  hljs.initHighlightingOnLoad();
+  setMenuToggleListener();
+
+  InstantClick.on('change', function () {
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+    setMenuToggleListener();
+  });
+</script>
 </body>
 </html>
+
