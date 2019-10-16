@@ -1,22 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>extention on 天月メモ</title>
+    <title>extention on Amatsukiメモ</title>
     <link>https://amatsukiurato.github.io/tags/extention/</link>
-    <description>Recent content in extention on 天月メモ</description>
+    <description>Recent content in extention on Amatsukiメモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Thu, 18 Jul 2019 05:18:30 +0900</lastBuildDate>
     
-	<atom:link href="https://amatsukiurato.github.io/tags/extention/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://amatsukiurato.github.io/tags/extention/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Windows10のVSCodeでvscode Revealが正しく動かなかった問題の解決法</title>
-      <link>https://amatsukiurato.github.io/posts/windows10%E3%81%AEvscode%E3%81%A7vscode-reveal%E3%81%8C%E6%AD%A3%E3%81%97%E3%81%8F%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/</link>
+      <link>https://amatsukiurato.github.io/2019/windows10%E3%81%AEvscode%E3%81%A7vscode-reveal%E3%81%8C%E6%AD%A3%E3%81%97%E3%81%8F%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/</link>
       <pubDate>Thu, 18 Jul 2019 05:18:30 +0900</pubDate>
       
-      <guid>https://amatsukiurato.github.io/posts/windows10%E3%81%AEvscode%E3%81%A7vscode-reveal%E3%81%8C%E6%AD%A3%E3%81%97%E3%81%8F%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/</guid>
+      <guid>https://amatsukiurato.github.io/2019/windows10%E3%81%AEvscode%E3%81%A7vscode-reveal%E3%81%8C%E6%AD%A3%E3%81%97%E3%81%8F%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/</guid>
       <description> TL;DR 方法1 改行コードをLFに変える
 方法2 拡張機能でLFで書かれている部分をCRLFで書き直す
 原因 TL;DRでだいたい判ると思いますが、vscode-revealのスライド仕切りの---がデフォではLFの設定で登録されているのが問題でした。

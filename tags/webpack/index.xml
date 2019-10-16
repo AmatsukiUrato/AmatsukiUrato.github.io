@@ -1,22 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Webpack on 天月メモ</title>
+    <title>Webpack on Amatsukiメモ</title>
     <link>https://amatsukiurato.github.io/tags/webpack/</link>
-    <description>Recent content in Webpack on 天月メモ</description>
+    <description>Recent content in Webpack on Amatsukiメモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sun, 30 Jun 2019 20:08:06 +0900</lastBuildDate>
     
-	<atom:link href="https://amatsukiurato.github.io/tags/webpack/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://amatsukiurato.github.io/tags/webpack/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>IntelliJでwebpack導入後、フォルダが見えなくなる問題の解決法</title>
-      <link>https://amatsukiurato.github.io/posts/intellij%E3%81%A7webpack%E3%81%AE%E5%87%BA%E5%8A%9B%E5%85%88%E3%81%AB%E3%81%97%E3%81%9F%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%8C%E8%A6%8B%E3%81%88%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/</link>
+      <link>https://amatsukiurato.github.io/2019/intellij%E3%81%A7webpack%E3%81%AE%E5%87%BA%E5%8A%9B%E5%85%88%E3%81%AB%E3%81%97%E3%81%9F%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%8C%E8%A6%8B%E3%81%88%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/</link>
       <pubDate>Sun, 30 Jun 2019 20:08:06 +0900</pubDate>
       
-      <guid>https://amatsukiurato.github.io/posts/intellij%E3%81%A7webpack%E3%81%AE%E5%87%BA%E5%8A%9B%E5%85%88%E3%81%AB%E3%81%97%E3%81%9F%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%8C%E8%A6%8B%E3%81%88%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/</guid>
+      <guid>https://amatsukiurato.github.io/2019/intellij%E3%81%A7webpack%E3%81%AE%E5%87%BA%E5%8A%9B%E5%85%88%E3%81%AB%E3%81%97%E3%81%9F%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%8C%E8%A6%8B%E3%81%88%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/</guid>
       <description>TL;DR 設定からWebpackを開いて、configuration fileのパスを消す
 原因 IntelliJが賢すぎた。
 というのも、webpackのアウトプット先が intelliJ IDEA上でExcluded(非表示になりIntellij上から閲覧できなくなる)のは、 webpackの出力先フォルダだからです。

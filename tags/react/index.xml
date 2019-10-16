@@ -1,22 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>React on 天月メモ</title>
+    <title>React on Amatsukiメモ</title>
     <link>https://amatsukiurato.github.io/tags/react/</link>
-    <description>Recent content in React on 天月メモ</description>
+    <description>Recent content in React on Amatsukiメモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Mon, 14 Oct 2019 15:28:36 +0900</lastBuildDate>
     
-	<atom:link href="https://amatsukiurato.github.io/tags/react/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://amatsukiurato.github.io/tags/react/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Material-uiのmakestyleにて、複数のクラスを動的に指定する方法</title>
-      <link>https://amatsukiurato.github.io/posts/material-ui%E3%81%AEmakestyle%E3%81%AB%E3%81%A6%E8%A4%87%E6%95%B0%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/</link>
+      <link>https://amatsukiurato.github.io/2019/material-ui%E3%81%AEmakestyle%E3%81%AB%E3%81%A6%E8%A4%87%E6%95%B0%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/</link>
       <pubDate>Mon, 14 Oct 2019 15:28:36 +0900</pubDate>
       
-      <guid>https://amatsukiurato.github.io/posts/material-ui%E3%81%AEmakestyle%E3%81%AB%E3%81%A6%E8%A4%87%E6%95%B0%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://amatsukiurato.github.io/2019/material-ui%E3%81%AEmakestyle%E3%81%AB%E3%81%A6%E8%A4%87%E6%95%B0%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/</guid>
       <description>TL;DR  classデータをstring配列として持つ 配列.join(&#39; &#39;)を該当のclassName={}の中に記述する  概要 最近、Reactについての勉強を行っていたところ、classの指定に手間取ってしまったのでメモ。 方法としては、探したところ、以下2つがあるみたい。 1. class名の配列を作成して、最後にjoinで配列の間にを入れて出力 2. classNameの中で、２つのclass名を呼び出す。
 汎用性があるのは方法1のほうだと思われます。
 面倒くさいのでソースベタ貼りしてます。

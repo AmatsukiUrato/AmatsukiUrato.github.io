@@ -1,10 +1,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Archives on My New Hugo Site</title>
+    <title>Archives on Amatsukiメモ</title>
     <link>https://amatsukiurato.github.io/archives/</link>
-    <description>Recent content in Archives on My New Hugo Site</description>
+    <description>Recent content in Archives on Amatsukiメモ</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>ja-jp</language>
     
         <atom:link href="https://amatsukiurato.github.io/archives/index.xml" rel="self" type="application/rss+xml" />
     
