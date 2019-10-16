@@ -10,10 +10,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
     <link rel="stylesheet" href="https://amatsukiurato.github.io/css/blog.css" />
+    <link rel="stylesheet" href="https://amatsukiurato.github.io/css/syntax.css" />
     
-  <link href="https://amatsukiurato.github.io/tags/vscode/index.xml" rel="alternate" type="application/rss+xml" title="Amatsukiメモ" />
-  <link href="https://amatsukiurato.github.io/tags/vscode/index.xml" rel="feed" type="application/rss+xml" title="Amatsukiメモ" />
+    <link href="https://amatsukiurato.github.io/tags/vscode/index.xml" rel="alternate" type="application/rss+xml" title="Amatsukiメモ" />
+    <link href="https://amatsukiurato.github.io/tags/vscode/index.xml" rel="feed" type="application/rss+xml" title="Amatsukiメモ" />
+    
 
+        
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143787598-1"></script>
 </head>
 <body>
 
@@ -48,7 +52,25 @@
                 <article class="media">
                     <div class="media-content">
                         <div class="content">
-                            <p class="title is-4"><a href="/2019/windows10%E3%81%AEvscode%E3%81%A7vscode-reveal%E3%81%8C%E6%AD%A3%E3%81%97%E3%81%8F%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/">Windows10のVSCodeでvscode Revealが正しく動かなかった問題の解決法</a></p>
+                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/windows10%E3%81%AEvscode%E3%81%A7vscode-reveal%E3%81%8C%E6%AD%A3%E3%81%97%E3%81%8F%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/">Windows10のVSCodeでvscode Revealが正しく動かなかった問題の解決法</a></p>
+                            <p class="subtitle is-size-6 has-text-grey-light">
+                                Published at July 18, 2019 &middot;
+                                <i class="far fa-clock"></i>&nbsp;1 min read
+                            </p>
+                            <p> TL;DR 方法1 改行コードをLFに変える
+方法2 拡張機能でLFで書かれている部分をCRLFで書き直す
+原因 TL;DRでだいたい判ると思いますが、vscode-revealのスライド仕切りの---がデフォではLFの設定で登録されているのが問題でした。
+ revealjsの改行コード指摘ページ 日本語訳版  解決法 普通に使う場合は前者の方を実施したほうがいいと思います。 後者のやり方だと設定ファイルに書かない限り、正しく表示させる作業が毎日必要になります。
+revealjsに読み込ませる改行コードを変える場合  拡張機能の設定画面を開く(Ctrl + ,) reveal JSの項目を探し、Revealjs: Separatorの内容にある\nを\r?\nに修正する  VSCodeの改行コードを変更する場合  VSCodeのfooter右にある改行コードCRLFをクリック LFに変更する  ...</p>
+                        </div>
+                    </div>
+                </article>
+                <br>
+
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+                            <p class="title is-4"><a href="https://amatsukiurato.github.io/posts/windows10%E3%81%AEvscode%E3%81%A7vscode-reveal%E3%81%8C%E6%AD%A3%E3%81%97%E3%81%8F%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/">Windows10のVSCodeでvscode Revealが正しく動かなかった問題の解決法</a></p>
                             <p class="subtitle is-size-6 has-text-grey-light">
                                 Published at July 18, 2019 &middot;
                                 <i class="far fa-clock"></i>&nbsp;1 min read
@@ -71,8 +93,6 @@ revealjsに読み込ませる改行コードを変える場合  拡張機能の�
     <div class="card-content">
         <h1 class="title is-5">Tags</h1>
         <div class="tags">
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/aboutme">aboutme</a></span>
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/aws">aws</a></span>
         
@@ -152,9 +172,8 @@ revealjsに読み込ませる改行コードを変える場合  拡張機能の�
 <footer class="footer has-background-grey-darker has-text-white">
     <div class="content has-text-centered">
         <p>
-            <span class="icon is-large"><a href="https://twitter.com/" class="mysocial" rel="me"><i class="fab fa-twitter fa-3x"></i></a></span>&nbsp;&nbsp;
-            <span class="icon is-large"><a href="https://www.youtube.com/" class="mysocial" rel="me"><i class="fab fa-youtube fa-3x"></i></a></span>&nbsp;&nbsp;
-            <span class="icon is-large"><a href="https://github.com/" class="mysocial" rel="me"><i class="fab fa-github fa-3x"></i></a></span>&nbsp;&nbsp;
+            <span class="icon is-large"><a href="https://twitter.com/AmatsukiUrato" class="mysocial" rel="me"><i class="fab fa-twitter fa-3x"></i></a></span>&nbsp;&nbsp;
+            <span class="icon is-large"><a href="https://github.com/AmatsukiUrato" class="mysocial" rel="me"><i class="fab fa-github fa-3x"></i></a></span>&nbsp;&nbsp;
             <br><br>
             Copyright &copy; Amatsukiメモ 2019 - Theme by <a href="https://jeffprod.com" class="mysocial">JeffProd.com</a>
             - <a class="mysocial" href="https://amatsukiurato.github.io/about">About</a>

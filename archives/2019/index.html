@@ -10,10 +10,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
     <link rel="stylesheet" href="https://amatsukiurato.github.io/css/blog.css" />
+    <link rel="stylesheet" href="https://amatsukiurato.github.io/css/syntax.css" />
     
-  <link href="https://amatsukiurato.github.io/archives/2019/index.xml" rel="alternate" type="application/rss+xml" title="Amatsukiメモ" />
-  <link href="https://amatsukiurato.github.io/archives/2019/index.xml" rel="feed" type="application/rss+xml" title="Amatsukiメモ" />
+    <link href="https://amatsukiurato.github.io/archives/2019/index.xml" rel="alternate" type="application/rss+xml" title="Amatsukiメモ" />
+    <link href="https://amatsukiurato.github.io/archives/2019/index.xml" rel="feed" type="application/rss+xml" title="Amatsukiメモ" />
+    
 
+        
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143787598-1"></script>
 </head>
 <body>
 
@@ -47,12 +51,17 @@
                 <article class="media">
                     <div class="media-content">
                         <div class="content">
-                            <p class="title is-4"><a href="/about/">About</a></p>
+                            <p class="title is-4"><a href="https://amatsukiurato.github.io/about/">About</a></p>
                             <p class="subtitle is-size-6 has-text-grey-light">
                                 Published at October 16, 2019 &middot;
-                                <i class="far fa-clock"></i>&nbsp;0 min read
+                                <i class="far fa-clock"></i>&nbsp;1 min read
                             </p>
-                            <p>...</p>
+                            <p> クソザコナメクジのエンジニア。
+メモ的な感じで書いていってます。
+不定期更新ですが、ブログの見た目も綺麗にしたので更新頑張って継続していきたいです(4敗orz)
+何かあれば↓のTwitterまで。
+興味のある技術  フロントエンド  TS React  バックエンド  Cloud全般 Docker  その他  自動化   リストアップしてみたけど、基本的に技術なら何でも気になってる感じかも
+好き  PCゲーム(BattleField3, Ark, CS:GOをそこそこやってました) 技術情報 頑張ってる人 クド 考えて批判してくれる人 コーラ 静的型付け言語 音楽  Surface いきものがかり Duca yozuca* KOTOKO 佐倉紗織   嫌い  文句ばかり言う人 JQuery 腹痛 クソ長いメソッド  ...</p>
                         </div>
                     </div>
                 </article>
@@ -61,16 +70,16 @@
                 <article class="media">
                     <div class="media-content">
                         <div class="content">
-                            <p class="title is-4"><a href="/2019/material-ui%E3%81%AEmakestyle%E3%81%AB%E3%81%A6%E8%A4%87%E6%95%B0%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/">Material-uiのmakestyleにて、複数のクラスを動的に指定する方法</a></p>
+                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/material-ui%E3%81%AEmakestyle%E3%81%AB%E3%81%A6%E8%A4%87%E6%95%B0%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/">Material-uiのmakestyleにて、複数のクラスを動的に指定する方法</a></p>
                             <p class="subtitle is-size-6 has-text-grey-light">
                                 Published at October 14, 2019 &middot;
                                 <i class="far fa-clock"></i>&nbsp;1 min read
                             </p>
-                            <p>TL;DR  classデータをstring配列として持つ 配列.join(' ')を該当のclassName={}の中に記述する  概要 最近、Reactについての勉強を行っていたところ、classの指定に手間取ってしまったのでメモ。 方法としては、探したところ、以下2つがあるみたい。 1. class名の配列を作成して、最後にjoinで配列の間にを入れて出力 2. classNameの中で、２つのclass名を呼び出す。
-汎用性があるのは方法1のほうだと思われます。
+                            <p>TL;DR  classデータをstring配列として持つ 配列.join(' ')を該当のclassName={}の中に記述する  概要 最近、Reactについての勉強を行っていたところ、classの指定に手間取ってしまったのでメモ。 方法としては、探したところ、以下2つがあるみたい。
+ class名の配列を作成して、最後にjoinで配列の間にを入れて出力 classNameの中で、２つのclass名を呼び出す。  汎用性があるのは方法1のほうだと思われます。
 面倒くさいのでソースベタ貼りしてます。
 BoxはMaterial-uiのUtil-componentです。
-最後に各クラスをjoinでくっつける方法 return ( &lt;Box display=&quot;flex&quot; alignItems=&quot;center&quot; justifyContent=&quot;center&quot; className={classes.block}&gt; {(() =&gt; { const discClass: string[] = [classes.disc]; if (props.discStatus === DiscStatus.White) { discClass.push(classes.discWhite); } else if (props.discStatus === DiscStatus.Black) { discClass.push(classes.discBlack); } return &lt;Box component=&quot;div&quot; onClick={handleOnClickDisc} className={discClass.join(' ')}&gt;&lt;/Box&gt; })()} &lt;/Box&gt; );  classNameに２つのclass名を直接入れる方法 return ( &lt;Box display=&quot;flex&quot; alignItems=&quot;center&quot; justifyContent=&quot;center&quot; className={classes.block}&gt; {(() =&gt; { if (props....</p>
+最後に各クラスをjoinでくっつける方法 return ( &lt;Box display=&#34;flex&#34; alignItems=&#34;center&#34; justifyContent=&#34;center&#34; className={classes.block}&gt; {(() =&gt; { const discClass: string[] = [classes.disc]; if (props.discStatus === DiscStatus.White) { discClass.push(classes.discWhite); } else if (props.discStatus === DiscStatus.Black) { discClass.push(classes.discBlack); } return &lt;Box component=&#34;div&#34; onClick={handleOnClickDisc} className={discClass.join(&#39; &#39;)}&gt;&lt;/Box&gt; })()} &lt;/Box&gt; ); classNameに２つのclass名を直接入れる方法 1package main 2 3import &#34;fmt&#34; 4 5func main() { 6 fmt.Println(&#34;Hello, world!&#34;) 7} return ( &lt;Box display=&#34;flex&#34; alignItems=&#34;center&#34; justifyContent=&#34;center&#34; className={classes....</p>
                         </div>
                     </div>
                 </article>
@@ -79,7 +88,7 @@ BoxはMaterial-uiのUtil-componentです。
                 <article class="media">
                     <div class="media-content">
                         <div class="content">
-                            <p class="title is-4"><a href="/2019/windows10%E3%81%AEvscode%E3%81%A7vscode-reveal%E3%81%8C%E6%AD%A3%E3%81%97%E3%81%8F%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/">Windows10のVSCodeでvscode Revealが正しく動かなかった問題の解決法</a></p>
+                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/windows10%E3%81%AEvscode%E3%81%A7vscode-reveal%E3%81%8C%E6%AD%A3%E3%81%97%E3%81%8F%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/">Windows10のVSCodeでvscode Revealが正しく動かなかった問題の解決法</a></p>
                             <p class="subtitle is-size-6 has-text-grey-light">
                                 Published at July 18, 2019 &middot;
                                 <i class="far fa-clock"></i>&nbsp;1 min read
@@ -97,7 +106,7 @@ revealjsに読み込ませる改行コードを変える場合  拡張機能の�
                 <article class="media">
                     <div class="media-content">
                         <div class="content">
-                            <p class="title is-4"><a href="/2019/route53%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E5%95%8F%E9%A1%8C%E3%82%92%E8%A7%A3%E6%B1%BA%E3%81%97%E3%81%9F%E8%A9%B1/">Route53のルーティング問題を解決した話</a></p>
+                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/route53%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E5%95%8F%E9%A1%8C%E3%82%92%E8%A7%A3%E6%B1%BA%E3%81%97%E3%81%9F%E8%A9%B1/">Route53のルーティング問題を解決した話</a></p>
                             <p class="subtitle is-size-6 has-text-grey-light">
                                 Published at July 15, 2019 &middot;
                                 <i class="far fa-clock"></i>&nbsp;1 min read
@@ -116,7 +125,7 @@ revealjsに読み込ませる改行コードを変える場合  拡張機能の�
                 <article class="media">
                     <div class="media-content">
                         <div class="content">
-                            <p class="title is-4"><a href="/2019/onsen-ui%E3%81%AEdialog%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%82%B5%E3%82%A4%E3%82%BA%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B/">Onsen-UIのDialogコンポーネントサイズを変更する</a></p>
+                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/onsen-ui%E3%81%AEdialog%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%82%B5%E3%82%A4%E3%82%BA%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B/">Onsen-UIのDialogコンポーネントサイズを変更する</a></p>
                             <p class="subtitle is-size-6 has-text-grey-light">
                                 Published at July 4, 2019 &middot;
                                 <i class="far fa-clock"></i>&nbsp;1 min read
@@ -133,7 +142,7 @@ https://onsen.io/v2/api/js/ons-modal.html#method-show
                 <article class="media">
                     <div class="media-content">
                         <div class="content">
-                            <p class="title is-4"><a href="/2019/s3%E3%81%AE%E3%83%AA%E3%83%80%E3%82%A4%E3%83%AC%E3%82%AF%E3%83%88%E6%A9%9F%E8%83%BD%E3%81%A7github%E3%81%AEpage%E3%81%B8%E9%A3%9B%E3%81%B0%E3%81%99/">S3のリダイレクト機能でgithubのpageへ飛ばしたい</a></p>
+                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/s3%E3%81%AE%E3%83%AA%E3%83%80%E3%82%A4%E3%83%AC%E3%82%AF%E3%83%88%E6%A9%9F%E8%83%BD%E3%81%A7github%E3%81%AEpage%E3%81%B8%E9%A3%9B%E3%81%B0%E3%81%99/">S3のリダイレクト機能でgithubのpageへ飛ばしたい</a></p>
                             <p class="subtitle is-size-6 has-text-grey-light">
                                 Published at July 2, 2019 &middot;
                                 <i class="far fa-clock"></i>&nbsp;1 min read
@@ -148,7 +157,7 @@ https://onsen.io/v2/api/js/ons-modal.html#method-show
                 <article class="media">
                     <div class="media-content">
                         <div class="content">
-                            <p class="title is-4"><a href="/2019/ubuntu%E3%81%AEclibor%E7%9A%84%E5%AD%98%E5%9C%A8copyq/">UbuntuのClibor的存在CopyQ</a></p>
+                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/ubuntu%E3%81%AEclibor%E7%9A%84%E5%AD%98%E5%9C%A8copyq/">UbuntuのClibor的存在CopyQ</a></p>
                             <p class="subtitle is-size-6 has-text-grey-light">
                                 Published at June 30, 2019 &middot;
                                 <i class="far fa-clock"></i>&nbsp;1 min read
@@ -164,7 +173,7 @@ https://onsen.io/v2/api/js/ons-modal.html#method-show
                 <article class="media">
                     <div class="media-content">
                         <div class="content">
-                            <p class="title is-4"><a href="/2019/intellij%E3%81%A7webpack%E3%81%AE%E5%87%BA%E5%8A%9B%E5%85%88%E3%81%AB%E3%81%97%E3%81%9F%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%8C%E8%A6%8B%E3%81%88%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/">IntelliJでwebpack導入後、フォルダが見えなくなる問題の解決法</a></p>
+                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/intellij%E3%81%A7webpack%E3%81%AE%E5%87%BA%E5%8A%9B%E5%85%88%E3%81%AB%E3%81%97%E3%81%9F%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%8C%E8%A6%8B%E3%81%88%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/">IntelliJでwebpack導入後、フォルダが見えなくなる問題の解決法</a></p>
                             <p class="subtitle is-size-6 has-text-grey-light">
                                 Published at June 30, 2019 &middot;
                                 <i class="far fa-clock"></i>&nbsp;1 min read
@@ -186,7 +195,7 @@ Preferences | Languages &amp; Frameworks | JavaScript | Webpackwebpack のconfig
                 <article class="media">
                     <div class="media-content">
                         <div class="content">
-                            <p class="title is-4"><a href="/2019/light-sail%E3%81%8B%E3%82%89%E3%81%AE%E7%A7%BB%E8%A1%8C/">Light Sailからの移行</a></p>
+                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/light-sail%E3%81%8B%E3%82%89%E3%81%AE%E7%A7%BB%E8%A1%8C/">Light Sailからの移行</a></p>
                             <p class="subtitle is-size-6 has-text-grey-light">
                                 Published at April 16, 2019 &middot;
                                 <i class="far fa-clock"></i>&nbsp;1 min read
@@ -211,8 +220,6 @@ Hugoで辛かったこと  AWS Amplifyを利用する場合は、gitのsubmodule
     <div class="card-content">
         <h1 class="title is-5">Tags</h1>
         <div class="tags">
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/aboutme">aboutme</a></span>
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/aws">aws</a></span>
         
@@ -293,9 +300,8 @@ Hugoで辛かったこと  AWS Amplifyを利用する場合は、gitのsubmodule
 <footer class="footer has-background-grey-darker has-text-white">
     <div class="content has-text-centered">
         <p>
-            <span class="icon is-large"><a href="https://twitter.com/" class="mysocial" rel="me"><i class="fab fa-twitter fa-3x"></i></a></span>&nbsp;&nbsp;
-            <span class="icon is-large"><a href="https://www.youtube.com/" class="mysocial" rel="me"><i class="fab fa-youtube fa-3x"></i></a></span>&nbsp;&nbsp;
-            <span class="icon is-large"><a href="https://github.com/" class="mysocial" rel="me"><i class="fab fa-github fa-3x"></i></a></span>&nbsp;&nbsp;
+            <span class="icon is-large"><a href="https://twitter.com/AmatsukiUrato" class="mysocial" rel="me"><i class="fab fa-twitter fa-3x"></i></a></span>&nbsp;&nbsp;
+            <span class="icon is-large"><a href="https://github.com/AmatsukiUrato" class="mysocial" rel="me"><i class="fab fa-github fa-3x"></i></a></span>&nbsp;&nbsp;
             <br><br>
             Copyright &copy; Amatsukiメモ 2019 - Theme by <a href="https://jeffprod.com" class="mysocial">JeffProd.com</a>
             - <a class="mysocial" href="https://amatsukiurato.github.io/about">About</a>

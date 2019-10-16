@@ -10,7 +10,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
     <link rel="stylesheet" href="https://amatsukiurato.github.io/css/blog.css" />
+    <link rel="stylesheet" href="https://amatsukiurato.github.io/css/syntax.css" />
     
+
+        
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143787598-1"></script>
 </head>
 <body>
 
@@ -64,9 +68,12 @@
 <h2 id="概要">概要</h2>
 
 <p>最近、Reactについての勉強を行っていたところ、<code>class</code>の指定に手間取ってしまったのでメモ。
-方法としては、探したところ、以下2つがあるみたい。
-1. class名の配列を作成して、最後にjoinで配列の間にを入れて出力
-2. <code>className</code>の中で、２つのclass名を呼び出す。</p>
+方法としては、探したところ、以下2つがあるみたい。</p>
+
+<ol>
+<li>class名の配列を作成して、最後にjoinで配列の間にを入れて出力</li>
+<li><code>className</code>の中で、２つのclass名を呼び出す。</li>
+</ol>
 
 <p>汎用性があるのは方法1のほうだと思われます。</p>
 
@@ -74,52 +81,66 @@
 <code>Box</code>は<code>Material-ui</code>のUtil-componentです。</p>
 
 <h2 id="最後に各クラスをjoinでくっつける方法">最後に各クラスをjoinでくっつける方法</h2>
+<div class="highlight"><pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">Box</span> <span class="nx">display</span><span class="o">=</span><span class="s2">&#34;flex&#34;</span> <span class="nx">alignItems</span><span class="o">=</span><span class="s2">&#34;center&#34;</span> <span class="nx">justifyContent</span><span class="o">=</span><span class="s2">&#34;center&#34;</span>
+        <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">block</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="p">{(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="kr">const</span> <span class="nx">discClass</span>: <span class="kt">string</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">classes</span><span class="p">.</span><span class="nx">disc</span><span class="p">];</span>
 
-<pre><code class="language-js">return (
-    &lt;Box display=&quot;flex&quot; alignItems=&quot;center&quot; justifyContent=&quot;center&quot;
-        className={classes.block}&gt;
-        {(() =&gt; {
-            const discClass: string[] = [classes.disc];
-
-            if (props.discStatus === DiscStatus.White) {
-                discClass.push(classes.discWhite);
-            } else if (props.discStatus === DiscStatus.Black) {
-                discClass.push(classes.discBlack);
-            }
-            return &lt;Box component=&quot;div&quot; 
-                        onClick={handleOnClickDisc} 
-                        className={discClass.join(' ')}&gt;&lt;/Box&gt;
-        })()}
-    &lt;/Box&gt;
-);
-</code></pre>
-
+            <span class="k">if</span> <span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">discStatus</span> <span class="o">===</span> <span class="nx">DiscStatus</span><span class="p">.</span><span class="nx">White</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">discClass</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">classes</span><span class="p">.</span><span class="nx">discWhite</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">discStatus</span> <span class="o">===</span> <span class="nx">DiscStatus</span><span class="p">.</span><span class="nx">Black</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">discClass</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">classes</span><span class="p">.</span><span class="nx">discBlack</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="o">&lt;</span><span class="nx">Box</span> <span class="nx">component</span><span class="o">=</span><span class="s2">&#34;div&#34;</span> 
+                        <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleOnClickDisc</span><span class="p">}</span> 
+                        <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">discClass</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)}</span><span class="o">&gt;&lt;</span><span class="err">/Box&gt;</span>
+        <span class="p">})()}</span>
+    <span class="o">&lt;</span><span class="err">/Box&gt;</span>
+<span class="p">);</span></code></pre></div>
 <h2 id="classnameに２つのclass名を直接入れる方法">classNameに２つのclass名を直接入れる方法</h2>
 
-<pre><code class="language-js">return (
-    &lt;Box display=&quot;flex&quot; alignItems=&quot;center&quot; justifyContent=&quot;center&quot;
-        className={classes.block}&gt;
-        {(() =&gt; {
-            if (props.discStatus === DiscStatus.White) {
-                return &lt;Box component=&quot;div&quot;
-                    className={`${classes.disc} ${classes.discWhite}`}&gt;&lt;/Box&gt;
-            } else if (props.discStatus === DiscStatus.Black) {
-                return &lt;Box component=&quot;div&quot;
-                    className={`${classes.disc} ${classes.discBlack}`}&gt;&lt;/Box&gt;
-            } else if (props.discStatus === DiscStatus.Empty) {
-                return &lt;Box component=&quot;div&quot;
-                    className={classes.disc}&gt;&lt;/Box&gt;
-            }
-        })()}
-    &lt;/Box&gt;
-);
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="ln">1</span><span class="kn">package</span> <span class="nx">main</span>
+<span class="ln">2</span>
+<span class="ln">3</span><span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
+<span class="ln">4</span>
+<span class="hl"><span class="ln">5</span><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="hl"><span class="ln">6</span>    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Hello, world!&#34;</span><span class="p">)</span>
+</span><span class="hl"><span class="ln">7</span><span class="p">}</span></span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">Box</span> <span class="nx">display</span><span class="o">=</span><span class="s2">&#34;flex&#34;</span> <span class="nx">alignItems</span><span class="o">=</span><span class="s2">&#34;center&#34;</span> <span class="nx">justifyContent</span><span class="o">=</span><span class="s2">&#34;center&#34;</span>
+        <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">block</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="p">{(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">discStatus</span> <span class="o">===</span> <span class="nx">DiscStatus</span><span class="p">.</span><span class="nx">White</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="o">&lt;</span><span class="nx">Box</span> <span class="nx">component</span><span class="o">=</span><span class="s2">&#34;div&#34;</span>
+                    <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="sb">`</span><span class="si">${</span><span class="nx">classes</span><span class="p">.</span><span class="nx">disc</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">classes</span><span class="p">.</span><span class="nx">discWhite</span><span class="si">}</span><span class="sb">`</span><span class="p">}</span><span class="o">&gt;&lt;</span><span class="err">/Box&gt;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">discStatus</span> <span class="o">===</span> <span class="nx">DiscStatus</span><span class="p">.</span><span class="nx">Black</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="o">&lt;</span><span class="nx">Box</span> <span class="nx">component</span><span class="o">=</span><span class="s2">&#34;div&#34;</span>
+                    <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="sb">`</span><span class="si">${</span><span class="nx">classes</span><span class="p">.</span><span class="nx">disc</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">classes</span><span class="p">.</span><span class="nx">discBlack</span><span class="si">}</span><span class="sb">`</span><span class="p">}</span><span class="o">&gt;&lt;</span><span class="err">/Box&gt;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">discStatus</span> <span class="o">===</span> <span class="nx">DiscStatus</span><span class="p">.</span><span class="nx">Empty</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="o">&lt;</span><span class="nx">Box</span> <span class="nx">component</span><span class="o">=</span><span class="s2">&#34;div&#34;</span>
+                    <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">disc</span><span class="p">}</span><span class="o">&gt;&lt;</span><span class="err">/Box&gt;</span>
+            <span class="p">}</span>
+        <span class="p">})()}</span>
+    <span class="o">&lt;</span><span class="err">/Box&gt;</span>
+<span class="p">);</span></code></pre></div>
 <h2 id="参考">参考</h2>
 
 <p><a href="https://material-ui.com/styles/basics/">https://material-ui.com/styles/basics/</a></p>
 
+
+
             </div>
+            
+            <hr />
+            <div>Tags: <a class="tag is-link" href="https://amatsukiurato.github.io/tags/react/">#React</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/front/">#Front</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/css/">#CSS</a></div>
+            <hr />
+            
+            <div>
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+            </div>
+            
         </div>
     </div>
     <div class="column is-3">
@@ -127,8 +148,6 @@
     <div class="card-content">
         <h1 class="title is-5">Tags</h1>
         <div class="tags">
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/aboutme">aboutme</a></span>
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/aws">aws</a></span>
         
@@ -190,7 +209,20 @@
 </div>
     <br>
                 
+  
 
+
+
+<div class="card">
+    <div class="card-content">
+        <h1 class="title is-5">Related posts</h1>
+      
+      
+            <h1><a href="https://amatsukiurato.github.io/posts/material-ui%E3%81%AEmakestyle%E3%81%AB%E3%81%A6%E8%A4%87%E6%95%B0%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/">Material-uiのmakestyleにて、複数のクラスを動的に指定する方法</a></h1>
+            <time class="has-text-grey-light is-size-7">14 October 2019</time>
+      
+    </div>
+</div>
 
     
 <br>
@@ -206,16 +238,15 @@
     </div>
 </div>
 
-
+    
     </div>
 </div>
 
 <footer class="footer has-background-grey-darker has-text-white">
     <div class="content has-text-centered">
         <p>
-            <span class="icon is-large"><a href="https://twitter.com/" class="mysocial" rel="me"><i class="fab fa-twitter fa-3x"></i></a></span>&nbsp;&nbsp;
-            <span class="icon is-large"><a href="https://www.youtube.com/" class="mysocial" rel="me"><i class="fab fa-youtube fa-3x"></i></a></span>&nbsp;&nbsp;
-            <span class="icon is-large"><a href="https://github.com/" class="mysocial" rel="me"><i class="fab fa-github fa-3x"></i></a></span>&nbsp;&nbsp;
+            <span class="icon is-large"><a href="https://twitter.com/AmatsukiUrato" class="mysocial" rel="me"><i class="fab fa-twitter fa-3x"></i></a></span>&nbsp;&nbsp;
+            <span class="icon is-large"><a href="https://github.com/AmatsukiUrato" class="mysocial" rel="me"><i class="fab fa-github fa-3x"></i></a></span>&nbsp;&nbsp;
             <br><br>
             Copyright &copy; Amatsukiメモ 2019 - Theme by <a href="https://jeffprod.com" class="mysocial">JeffProd.com</a>
             - <a class="mysocial" href="https://amatsukiurato.github.io/about">About</a>
