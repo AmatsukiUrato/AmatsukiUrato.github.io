@@ -57,11 +57,7 @@
                                 Published at October 14, 2019 &middot;
                                 <i class="far fa-clock"></i>&nbsp;1 min read
                             </p>
-                            <p>TL;DR  classデータをstring配列として持つ 配列.join(' ')を該当のclassName={}の中に記述する  概要 最近、Reactについての勉強を行っていたところ、classの指定に手間取ってしまったのでメモ。 方法としては、探したところ、以下2つがあるみたい。
- class名の配列を作成して、最後にjoinで配列の間にを入れて出力 classNameの中で、２つのclass名を呼び出す。  汎用性があるのは方法1のほうだと思われます。
-面倒くさいのでソースベタ貼りしてます。
-BoxはMaterial-uiのUtil-componentです。
-最後に各クラスをjoinでくっつける方法 return ( &lt;Box display=&#34;flex&#34; alignItems=&#34;center&#34; justifyContent=&#34;center&#34; className={classes.block}&gt; {(() =&gt; { const discClass: string[] = [classes.disc]; if (props.discStatus === DiscStatus.White) { discClass.push(classes.discWhite); } else if (props.discStatus === DiscStatus.Black) { discClass.push(classes.discBlack); } return &lt;Box component=&#34;div&#34; onClick={handleOnClickDisc} className={discClass.join(&#39; &#39;)}&gt;&lt;/Box&gt; })()} &lt;/Box&gt; ); classNameに２つのclass名を直接入れる方法 1package main 2 3import &#34;fmt&#34; 4 5func main() { 6 fmt.Println(&#34;Hello, world!&#34;) 7} return ( &lt;Box display=&#34;flex&#34; alignItems=&#34;center&#34; justifyContent=&#34;center&#34; className={classes....</p>
+                            <p>TL;DR classデータをstring配列として持つ 配列.join(' ')を該当のclassName={}の中に記述する 概要 最近、Reactについての勉強を行っていたところ、classの指定に手間取ってしまったのでメモ。 方法としては、探したところ、以下2つがあるみたい。 class名の配列を作成して、最後にjoinで配列の間にを入れて出力 classNameの中で、２つのclass名を呼び出す。 汎用性があるのは方法1のほうだと思われます。 面倒くさいのでソースベタ貼りしてます。 BoxはMaterial-ui...</p>
                         </div>
                     </div>
                 </article>
