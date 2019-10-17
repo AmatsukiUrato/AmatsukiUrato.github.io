@@ -52,6 +52,22 @@
                     <article class="media">
                         <div class="media-content">
                             <div class="content">
+                                <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/onsen-ui%E3%81%AEdialog%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%82%B5%E3%82%A4%E3%82%BA%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B/">Onsen-UIのDialogコンポーネントサイズを変更する</a></p>
+                                <p class="subtitle is-size-6 has-text-grey-light">
+                                    Published at July 4, 2019 &middot;
+                                    <i class="far fa-clock"></i>&nbsp;1 min read
+                                </p>
+                                <p> TL;DR  Onsen-UI読み込み後に出力されるDialogをコピーして手動で使う Dialog群の形だけ取得しているので、Show, Hide共にこちら側で呼ぶ必要あり Onsen-UIのタグオブジェクトから、Onsen-UI側で用意されているshow(), hide()などが呼び出せる  これを使って自分で制御を行う   概要 以下の画像のような、アラートのサイズを変更したいのにできない。 Onsen-UIの公式リファレンスを見てもDialogの項目にそれっぽい動作をしてくれるDialogはない。。 解決方法🤗  ons.notification.alert();を実行して、でOnsen-UIの要素を取得する。 要素をhtmlに貼り付ける。 ons-alert-dialogにidをつけて、手動でDialogの表示/非表示を制御する。  onsタグのオブジェクトをjsで取得すると、show()やhide()などのメソッドが使用できるようになる。
+https://onsen.io/v2/api/js/ons-modal.html#method-show
+実行結果🎥 以下の動画ではwidth=&quot;90%&quot;で設定しています 
+ソースコード📓  ...</p>
+                            </div>
+                        </div>
+                    </article>
+                
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content">
                                 <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/s3%E3%81%AE%E3%83%AA%E3%83%80%E3%82%A4%E3%83%AC%E3%82%AF%E3%83%88%E6%A9%9F%E8%83%BD%E3%81%A7github%E3%81%AEpage%E3%81%B8%E9%A3%9B%E3%81%B0%E3%81%99/">S3のリダイレクト機能でgithubのpageへ飛ばしたい</a></p>
                                 <p class="subtitle is-size-6 has-text-grey-light">
                                     Published at July 2, 2019 &middot;
@@ -99,25 +115,6 @@ Preferences | Languages &amp; Frameworks | JavaScript | Webpackwebpack のconfig
                         </div>
                     </article>
                 
-                    <article class="media">
-                        <div class="media-content">
-                            <div class="content">
-                                <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/light-sail%E3%81%8B%E3%82%89%E3%81%AE%E7%A7%BB%E8%A1%8C/">Light Sailからの移行</a></p>
-                                <p class="subtitle is-size-6 has-text-grey-light">
-                                    Published at April 16, 2019 &middot;
-                                    <i class="far fa-clock"></i>&nbsp;1 min read
-                                </p>
-                                <p>移行しました AWSのLight Sail + WordPressでやってましたが、 WordPressがだるすぎたので AWSのAWS Amplify + Hugoに移行しました。 (移行とか言ってるけど全然記事書いてなかった。。。ｗ)
-github pages とかをそのまま使うのも良かったけど、 AWSのサービスを触ってみたかったのでこっちで立ててみました。
-Hugoに移って最初に記事書いていて思うけど、 やっぱMarkdownが最強なんだわ。 スラスラ書ける。
-一応WordPressでもMarkdownで書けるプラグインは少し出てたけど、 どれもこれで決まりだ！みたいなのがなくて そもそももっと軽くて動くものを探してたということを悟った。
-てことで、メモ代わりに書いて、この先生きのこる。
-Hugoで辛かったこと  AWS Amplifyを利用する場合は、gitのsubmoduleを使ってはいけない draftは下書き機能。(これを忘れててずっと表示されないぞおおおお！ってなってました。あほや) テーマが崩れる  テーマによってはWebSite(訂正:baseurl)の箇所を参照しているのでデプロイすると崩れる(ローカルでは崩れない)   追記 結局上記のいろいろな問題で萎えて、止まってました。 現在はgithub-pagesに移して動かしてます。草も生えるし無料だし特に重要じゃないhomepageだったらこっちでいいね。
-前Amplify触ってたのは勉強もかねてだったので、それはそれでよかったです。...</p>
-                            </div>
-                        </div>
-                    </article>
-                
             </div>
         </div>
     </div>
@@ -161,12 +158,19 @@ Hugoで辛かったこと  AWS Amplifyを利用する場合は、gitのsubmodule
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/webpack">webpack</a></span>
         
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E5%8B%89%E5%BC%B7">勉強</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E6%96%B0%E5%8D%92%E5%AF%BE%E5%BF%9C">新卒対応</a></span>
+        
         </div>          
     </div>
 </div><br>
         <div class="card">
     <div class="card-content">
         <h1 class="title is-5">Recent posts</h1>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/%E6%96%B0%E5%8D%92%E3%81%A8html5%E3%82%92%E5%8B%89%E5%BC%B7%E3%81%97%E3%81%9F%E8%A9%B1/">新卒と２人でhtml5を勉強した話👨‍👦</a></h1>
+            <time class="has-text-grey-light is-size-7">17 October 2019</time>
         
             <h1><a href="https://amatsukiurato.github.io/2019/material-ui%E3%81%AEmakestyle%E3%81%AB%E3%81%A6%E8%A4%87%E6%95%B0%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/">Material-uiのmakestyleにて、複数のクラスを動的に指定する方法</a></h1>
             <time class="has-text-grey-light is-size-7">14 October 2019</time>
@@ -180,9 +184,6 @@ Hugoで辛かったこと  AWS Amplifyを利用する場合は、gitのsubmodule
             <h1><a href="https://amatsukiurato.github.io/2019/onsen-ui%E3%81%AEdialog%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%82%B5%E3%82%A4%E3%82%BA%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B/">Onsen-UIのDialogコンポーネントサイズを変更する</a></h1>
             <time class="has-text-grey-light is-size-7">4 July 2019</time>
         
-            <h1><a href="https://amatsukiurato.github.io/2019/s3%E3%81%AE%E3%83%AA%E3%83%80%E3%82%A4%E3%83%AC%E3%82%AF%E3%83%88%E6%A9%9F%E8%83%BD%E3%81%A7github%E3%81%AEpage%E3%81%B8%E9%A3%9B%E3%81%B0%E3%81%99/">S3のリダイレクト機能でgithubのpageへ飛ばしたい</a></h1>
-            <time class="has-text-grey-light is-size-7">2 July 2019</time>
-        
     </div>
 </div>
     <br>
@@ -190,7 +191,7 @@ Hugoで辛かったこと  AWS Amplifyを利用する場合は、gitのsubmodule
     <div class="card-content">
         <h1 class="title is-5">Archives</h1>
         
-            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (8)<br>
+            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (9)<br>
         
     </div>
 </div>
@@ -201,7 +202,7 @@ Hugoで辛かったこと  AWS Amplifyを利用する場合は、gitのsubmodule
     <div class="column is-9">
         <nav class="pagination is-centered is-rounded" role="navigation" aria-label="pagination">
             <a class="pagination-previous" href="https://amatsukiurato.github.io/">Previous</a>
-            
+            <a class="pagination-next" href="https://amatsukiurato.github.io/page/3/">Next</a>
             <ul class="pagination-list">
                 
                 <li class="pagination__item">
@@ -210,6 +211,10 @@ Hugoで辛かったこと  AWS Amplifyを利用する場合は、gitのsubmodule
                 
                 <li class="pagination__item">
                     <a class="pagination-link is-current" aria-label="Goto page 2" href="https://amatsukiurato.github.io/page/2/">2</a>
+                </li>
+                
+                <li class="pagination__item">
+                    <a class="pagination-link" aria-label="Goto page 3" href="https://amatsukiurato.github.io/page/3/">3</a>
                 </li>
                 
             </ul>

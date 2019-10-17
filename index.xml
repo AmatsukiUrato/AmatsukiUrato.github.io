@@ -5,10 +5,19 @@
     <description>Recent content on Amatsukiメモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 16 Oct 2019 23:36:19 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 17 Oct 2019 03:07:18 +0900</lastBuildDate>
     
         <atom:link href="https://amatsukiurato.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Posts</title>
+      <link>https://amatsukiurato.github.io/post/</link>
+      <pubDate>Thu, 17 Oct 2019 03:07:18 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/post/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>About</title>
@@ -21,25 +30,7 @@
 不定期更新ですが、ブログの見た目も綺麗にしたので更新頑張って継続していきたいです(4敗orz)
 何かあれば↓のTwitterまで。
 興味のある技術  フロントエンド  TS React  バックエンド  Cloud全般 Docker  その他  自動化   リストアップしてみたけど、基本的に技術なら何でも気になってる感じかも
-好き  PCゲーム(BattleField3, Ark, CS:GOをそこそこやってました) 技術情報 頑張ってる人 クド 考えて批判してくれる人 コーラ 静的型付け言語 音楽  Surface いきものがかり Duca yozuca* KOTOKO 佐倉紗織   嫌い  文句ばかり言う人 JQuery 腹痛 クソ長いメソッド  </description>
-    </item>
-    
-    <item>
-      <title>Posts</title>
-      <link>https://amatsukiurato.github.io/posts/</link>
-      <pubDate>Mon, 14 Oct 2019 15:28:36 +0900</pubDate>
-      
-      <guid>https://amatsukiurato.github.io/posts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Posts</title>
-      <link>https://amatsukiurato.github.io/post/</link>
-      <pubDate>Mon, 14 Oct 2019 15:28:36 +0900</pubDate>
-      
-      <guid>https://amatsukiurato.github.io/post/</guid>
-      <description></description>
+好き  PCゲーム(BattleField3, Ark, CS:GOをそこそこやってました) 技術情報 頑張ってる人 考えて批判してくれる人 クド コーラ 静的型付け言語 MarkDown 音楽  Surface いきものがかり Duca yozuca* KOTOKO 真理絵 佐倉紗織   嫌い  文句ばかり言う人 JQuery 腹痛 クソ長いメソッド ネ申Excel  </description>
     </item>
     
   </channel>

@@ -67,24 +67,6 @@ BoxはMaterial-uiのUtil-componentです。
                 </article>
                 <br>
 
-                <article class="media">
-                    <div class="media-content">
-                        <div class="content">
-                            <p class="title is-4"><a href="https://amatsukiurato.github.io/posts/material-ui%E3%81%AEmakestyle%E3%81%AB%E3%81%A6%E8%A4%87%E6%95%B0%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/">Material-uiのmakestyleにて、複数のクラスを動的に指定する方法</a></p>
-                            <p class="subtitle is-size-6 has-text-grey-light">
-                                Published at October 14, 2019 &middot;
-                                <i class="far fa-clock"></i>&nbsp;1 min read
-                            </p>
-                            <p>TL;DR  classデータをstring配列として持つ 配列.join(' ')を該当のclassName={}の中に記述する  概要 最近、Reactについての勉強を行っていたところ、classの指定に手間取ってしまったのでメモ。 方法としては、探したところ、以下2つがあるみたい。 1. class名の配列を作成して、最後にjoinで配列の間にを入れて出力 2. classNameの中で、２つのclass名を呼び出す。
-汎用性があるのは方法1のほうだと思われます。
-面倒くさいのでソースベタ貼りしてます。
-BoxはMaterial-uiのUtil-componentです。
-最後に各クラスをjoinでくっつける方法 return ( &lt;Box display=&#34;flex&#34; alignItems=&#34;center&#34; justifyContent=&#34;center&#34; className={classes.block}&gt; {(() =&gt; { const discClass: string[] = [classes.disc]; if (props.discStatus === DiscStatus.White) { discClass.push(classes.discWhite); } else if (props.discStatus === DiscStatus.Black) { discClass.push(classes.discBlack); } return &lt;Box component=&#34;div&#34; onClick={handleOnClickDisc} className={discClass.join(&#39; &#39;)}&gt;&lt;/Box&gt; })()} &lt;/Box&gt; );  classNameに２つのclass名を直接入れる方法 return ( &lt;Box display=&#34;flex&#34; alignItems=&#34;center&#34; justifyContent=&#34;center&#34; className={classes.block}&gt; {(() =&gt; { if (props....</p>
-                        </div>
-                    </div>
-                </article>
-                <br>
-
             </div>
         </div>
     </div>
@@ -128,12 +110,19 @@ BoxはMaterial-uiのUtil-componentです。
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/webpack">webpack</a></span>
         
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E5%8B%89%E5%BC%B7">勉強</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E6%96%B0%E5%8D%92%E5%AF%BE%E5%BF%9C">新卒対応</a></span>
+        
         </div>          
     </div>
 </div><br>
         <div class="card">
     <div class="card-content">
         <h1 class="title is-5">Recent posts</h1>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/%E6%96%B0%E5%8D%92%E3%81%A8html5%E3%82%92%E5%8B%89%E5%BC%B7%E3%81%97%E3%81%9F%E8%A9%B1/">新卒と２人でhtml5を勉強した話👨‍👦</a></h1>
+            <time class="has-text-grey-light is-size-7">17 October 2019</time>
         
             <h1><a href="https://amatsukiurato.github.io/2019/material-ui%E3%81%AEmakestyle%E3%81%AB%E3%81%A6%E8%A4%87%E6%95%B0%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/">Material-uiのmakestyleにて、複数のクラスを動的に指定する方法</a></h1>
             <time class="has-text-grey-light is-size-7">14 October 2019</time>
@@ -147,9 +136,6 @@ BoxはMaterial-uiのUtil-componentです。
             <h1><a href="https://amatsukiurato.github.io/2019/onsen-ui%E3%81%AEdialog%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%82%B5%E3%82%A4%E3%82%BA%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B/">Onsen-UIのDialogコンポーネントサイズを変更する</a></h1>
             <time class="has-text-grey-light is-size-7">4 July 2019</time>
         
-            <h1><a href="https://amatsukiurato.github.io/2019/s3%E3%81%AE%E3%83%AA%E3%83%80%E3%82%A4%E3%83%AC%E3%82%AF%E3%83%88%E6%A9%9F%E8%83%BD%E3%81%A7github%E3%81%AEpage%E3%81%B8%E9%A3%9B%E3%81%B0%E3%81%99/">S3のリダイレクト機能でgithubのpageへ飛ばしたい</a></h1>
-            <time class="has-text-grey-light is-size-7">2 July 2019</time>
-        
     </div>
 </div>
     <br>
@@ -157,7 +143,7 @@ BoxはMaterial-uiのUtil-componentです。
     <div class="card-content">
         <h1 class="title is-5">Archives</h1>
         
-            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (8)<br>
+            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (9)<br>
         
     </div>
 </div>

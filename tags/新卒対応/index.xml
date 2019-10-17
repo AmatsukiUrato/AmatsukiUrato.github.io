@@ -1,0 +1,44 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>新卒対応 on Amatsukiメモ</title>
+    <link>https://amatsukiurato.github.io/tags/%E6%96%B0%E5%8D%92%E5%AF%BE%E5%BF%9C/</link>
+    <description>Recent content in 新卒対応 on Amatsukiメモ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Thu, 17 Oct 2019 03:07:18 +0900</lastBuildDate>
+    
+        <atom:link href="https://amatsukiurato.github.io/tags/%E6%96%B0%E5%8D%92%E5%AF%BE%E5%BF%9C/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>新卒と２人でhtml5を勉強した話👨‍👦</title>
+      <link>https://amatsukiurato.github.io/2019/%E6%96%B0%E5%8D%92%E3%81%A8html5%E3%82%92%E5%8B%89%E5%BC%B7%E3%81%97%E3%81%9F%E8%A9%B1/</link>
+      <pubDate>Thu, 17 Oct 2019 03:07:18 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/2019/%E6%96%B0%E5%8D%92%E3%81%A8html5%E3%82%92%E5%8B%89%E5%BC%B7%E3%81%97%E3%81%9F%E8%A9%B1/</guid>
+      <description>TL;DR  何かをやらせるときは極力その子がやりたいことに沿って学習させる  ちゃんと意見を聞けていたら、その子からアクションを起こしてくれる 相手が自由にできるように幅をもたせておくことは大切  コミュニケーションを取る 相手のレベルを考える 自分も知識が広がるようなものを取り組むと👍  概要 9月頃から、上司から
+「新卒の面倒を見てやってほしい」
+「案件で使う技術を使えるようにしてほしい」
+と唐突に言われ、
+WTFと心で思いつつ学習プランを新卒と練り、１ヶ月半過ごしました。
+新卒は経済学部出身なので、ちょろっと研修(2ヶ月)+OJTで学んできたぐらいの知識です。
+やる前に話し合ったこと 新卒と話し合う🗣 何をするかも決まっていなかったので
+楽しいことは自分で学習する気になるという考えから
+まず、技術の中で何が一番やってて楽しかったかを伺いました。
+新卒はhtmlが好きでやりたいと話してくれました。
+案件では、SpringBootを利用した基幹システムの改修を行っているので
+html5は関係なくはないけど、どちらかというとJavaとかSQL、JS、gitを学んでほしいというのが正直なところでした。
+htmlが好きということなので、とりあえず以下の方針で
+まずhtml5と何をするにしても必須のツールであるgitについての勉強をしていくことになりました。
+ html5の資格があるので、これの参考書の選択問題を毎朝約15分だけやる gitについて、簡単にまとめてくる(まとめ方は自由)  実際にやってみて html5の勉強について 毎朝15分だけかつ、好きな内容だったので比較的スムーズに学習が進みました🤗
+また、html5とcss3を利用したアニメーションの技術資料展開も行ってくれました😯
+良かった点  自分自身でアニメーションを学習/発表してくれたこと 楽しく学習してくれたこと こちらも勉強になったこと(ServiceWorkerやIndexedDBなどは知らなかった)。  gitについて 3日ぐらいでExcelにまとめてきてくれました。(Excelはやめてくれ😇)
+この後、次はこの資料を元手にプレゼン資料を作成させ、gitについての発表を行うまでに至りました(これはやってほしいとお願いした)
+良かった点  時系列的にはhtmlよりもこちらのほうが先に発表したので、発表するというきっかけ作りになったと感じている 発表させることによって、何が足りていないのかが明確になった  まとめ やはり、今回比較的スムーズに進んだ点として
+相手のやりたいことをやらせる/やるっきっかけを作る
+のが自主的に学習させるための一歩なのかなと思います。
+また、やりたいことのヒヤリングなどを行うときには事前のコミュニケーションが重要とも感じました。</description>
+    </item>
+    
+  </channel>
+</rss>

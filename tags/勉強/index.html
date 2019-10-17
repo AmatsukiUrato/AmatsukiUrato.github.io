@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amatsukiメモ  | JavaScript</title>
+    <title>Amatsukiメモ  | 勉強</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="https://amatsukiurato.github.io/css/blog.css" />
     <link rel="stylesheet" href="https://amatsukiurato.github.io/css/syntax.css" />
     
-    <link href="https://amatsukiurato.github.io/tags/javascript/index.xml" rel="alternate" type="application/rss+xml" title="Amatsukiメモ" />
-    <link href="https://amatsukiurato.github.io/tags/javascript/index.xml" rel="feed" type="application/rss+xml" title="Amatsukiメモ" />
+    <link href="https://amatsukiurato.github.io/tags/%E5%8B%89%E5%BC%B7/index.xml" rel="alternate" type="application/rss+xml" title="Amatsukiメモ" />
+    <link href="https://amatsukiurato.github.io/tags/%E5%8B%89%E5%BC%B7/index.xml" rel="feed" type="application/rss+xml" title="Amatsukiメモ" />
     
 
         
@@ -27,7 +27,7 @@
             <a class="navbar-item" href="https://amatsukiurato.github.io">Home</a>
             <div class="navbar-item">
                     
-                        #JavaScript
+                        #勉強
                     
             </div>
         </div>
@@ -52,15 +52,33 @@
                 <article class="media">
                     <div class="media-content">
                         <div class="content">
-                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/onsen-ui%E3%81%AEdialog%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%82%B5%E3%82%A4%E3%82%BA%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B/">Onsen-UIのDialogコンポーネントサイズを変更する</a></p>
+                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/%E6%96%B0%E5%8D%92%E3%81%A8html5%E3%82%92%E5%8B%89%E5%BC%B7%E3%81%97%E3%81%9F%E8%A9%B1/">新卒と２人でhtml5を勉強した話👨‍👦</a></p>
                             <p class="subtitle is-size-6 has-text-grey-light">
-                                Published at July 4, 2019 &middot;
+                                Published at October 17, 2019 &middot;
                                 <i class="far fa-clock"></i>&nbsp;1 min read
                             </p>
-                            <p> TL;DR  Onsen-UI読み込み後に出力されるDialogをコピーして手動で使う Dialog群の形だけ取得しているので、Show, Hide共にこちら側で呼ぶ必要あり Onsen-UIのタグオブジェクトから、Onsen-UI側で用意されているshow(), hide()などが呼び出せる  これを使って自分で制御を行う   概要 以下の画像のような、アラートのサイズを変更したいのにできない。 Onsen-UIの公式リファレンスを見てもDialogの項目にそれっぽい動作をしてくれるDialogはない。。 解決方法🤗  ons.notification.alert();を実行して、でOnsen-UIの要素を取得する。 要素をhtmlに貼り付ける。 ons-alert-dialogにidをつけて、手動でDialogの表示/非表示を制御する。  onsタグのオブジェクトをjsで取得すると、show()やhide()などのメソッドが使用できるようになる。
-https://onsen.io/v2/api/js/ons-modal.html#method-show
-実行結果🎥 以下の動画ではwidth=&quot;90%&quot;で設定しています 
-ソースコード📓  ...</p>
+                            <p>TL;DR  何かをやらせるときは極力その子がやりたいことに沿って学習させる  ちゃんと意見を聞けていたら、その子からアクションを起こしてくれる 相手が自由にできるように幅をもたせておくことは大切  コミュニケーションを取る 相手のレベルを考える 自分も知識が広がるようなものを取り組むと👍  概要 9月頃から、上司から
+「新卒の面倒を見てやってほしい」
+「案件で使う技術を使えるようにしてほしい」
+と唐突に言われ、
+WTFと心で思いつつ学習プランを新卒と練り、１ヶ月半過ごしました。
+新卒は経済学部出身なので、ちょろっと研修(2ヶ月)+OJTで学んできたぐらいの知識です。
+やる前に話し合ったこと 新卒と話し合う🗣 何をするかも決まっていなかったので
+楽しいことは自分で学習する気になるという考えから
+まず、技術の中で何が一番やってて楽しかったかを伺いました。
+新卒はhtmlが好きでやりたいと話してくれました。
+案件では、SpringBootを利用した基幹システムの改修を行っているので
+html5は関係なくはないけど、どちらかというとJavaとかSQL、JS、gitを学んでほしいというのが正直なところでした。
+htmlが好きということなので、とりあえず以下の方針で
+まずhtml5と何をするにしても必須のツールであるgitについての勉強をしていくことになりました。
+ html5の資格があるので、これの参考書の選択問題を毎朝約15分だけやる gitについて、簡単にまとめてくる(まとめ方は自由)  実際にやってみて html5の勉強について 毎朝15分だけかつ、好きな内容だったので比較的スムーズに学習が進みました🤗
+また、html5とcss3を利用したアニメーションの技術資料展開も行ってくれました😯
+良かった点  自分自身でアニメーションを学習/発表してくれたこと 楽しく学習してくれたこと こちらも勉強になったこと(ServiceWorkerやIndexedDBなどは知らなかった)。  gitについて 3日ぐらいでExcelにまとめてきてくれました。(Excelはやめてくれ😇)
+この後、次はこの資料を元手にプレゼン資料を作成させ、gitについての発表を行うまでに至りました(これはやってほしいとお願いした)
+良かった点  時系列的にはhtmlよりもこちらのほうが先に発表したので、発表するというきっかけ作りになったと感じている 発表させることによって、何が足りていないのかが明確になった  まとめ やはり、今回比較的スムーズに進んだ点として
+相手のやりたいことをやらせる/やるっきっかけを作る
+のが自主的に学習させるための一歩なのかなと思います。
+また、やりたいことのヒヤリングなどを行うときには事前のコミュニケーションが重要とも感じました。...</p>
                         </div>
                     </div>
                 </article>
