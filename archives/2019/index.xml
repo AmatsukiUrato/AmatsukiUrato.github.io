@@ -5,10 +5,19 @@
     <description>Recent content in 2019 on Amatsukiメモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 17 Oct 2019 03:07:18 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 19 Oct 2019 22:21:44 +0900</lastBuildDate>
     
         <atom:link href="https://amatsukiurato.github.io/archives/2019/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Todo</title>
+      <link>https://amatsukiurato.github.io/todo/</link>
+      <pubDate>Sat, 19 Oct 2019 22:21:44 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/todo/</guid>
+      <description>記事更新の自動化 .GitInfoがうまく動かない</description>
+    </item>
     
     <item>
       <title>新卒と２人でhtml5を勉強した話👨‍👦</title>
