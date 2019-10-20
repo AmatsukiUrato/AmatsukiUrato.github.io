@@ -4,32 +4,47 @@
   
   <url>
     <loc>https://amatsukiurato.github.io/archives/2019/</loc>
-    <lastmod>2019-10-20T12:42:39+09:00</lastmod>
+    <lastmod>2019-10-20T12:53:08+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://amatsukiurato.github.io/</loc>
-    <lastmod>2019-10-20T12:42:39+09:00</lastmod>
+    <lastmod>2019-10-20T12:53:08+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://amatsukiurato.github.io/archives/</loc>
-    <lastmod>2019-10-20T12:42:39+09:00</lastmod>
+    <lastmod>2019-10-20T12:53:08+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://amatsukiurato.github.io/todo/</loc>
-    <lastmod>2019-10-19T22:25:48+09:00</lastmod>
+    <loc>https://amatsukiurato.github.io/tags/git/</loc>
+    <lastmod>2019-10-20T12:53:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/hugo/</loc>
+    <lastmod>2019-10-20T12:53:08+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://amatsukiurato.github.io/post/</loc>
-    <lastmod>2019-10-20T12:42:39+09:00</lastmod>
+    <lastmod>2019-10-20T12:53:08+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://amatsukiurato.github.io/tags/</loc>
-    <lastmod>2019-10-20T12:42:39+09:00</lastmod>
+    <lastmod>2019-10-20T12:53:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/2019/adapted-hugo-gitinfo/</loc>
+    <lastmod>2019-10-20T12:53:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/todo/</loc>
+    <lastmod>2019-10-20T12:53:08+09:00</lastmod>
   </url>
   
   <url>
@@ -169,11 +184,6 @@
   
   <url>
     <loc>https://amatsukiurato.github.io/tags/webpack/</loc>
-    <lastmod>2019-10-20T12:37:28+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://amatsukiurato.github.io/tags/hugo/</loc>
     <lastmod>2019-10-20T12:37:28+09:00</lastmod>
   </url>
   

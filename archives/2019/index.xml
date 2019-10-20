@@ -5,10 +5,19 @@
     <description>Recent content in 2019 on Amatsukiメモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 19 Oct 2019 22:21:44 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 20 Oct 2019 12:47:18 +0900</lastBuildDate>
     
         <atom:link href="https://amatsukiurato.github.io/archives/2019/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>理由は不明だが、hugoの`.GitInfo`が適応された話</title>
+      <link>https://amatsukiurato.github.io/2019/adapted-hugo-gitinfo/</link>
+      <pubDate>Sun, 20 Oct 2019 12:47:18 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/2019/adapted-hugo-gitinfo/</guid>
+      <description>ずっと前から、記事の更新はgitのコミット履歴を使いたいと思っていたのですが、 .GitInfoの情報が記事にうまく反映されずnilになっていたため、手動で作業してました😇 .GitInfoが使えるようになった原因は恐らく、記事のパスを /content/post/[記事].md→/content/post/[分類用フォルダ]/[記事].md ※[]内はそれぞれの用途で変更する としたことです。 何故これで.GitInfoが適応されたのかは不明ですが、とにかくずっとやりたかったことなので、大満足😭</description>
+    </item>
     
     <item>
       <title>Todo</title>
@@ -16,7 +25,7 @@
       <pubDate>Sat, 19 Oct 2019 22:21:44 +0900</pubDate>
       
       <guid>https://amatsukiurato.github.io/todo/</guid>
-      <description>記事更新の自動化 .GitInfoが記事のページでうまく動かない</description>
+      <description>記事更新の自動化 .GitInfoが記事のページでうまく動かない 何故か知らんが、post/見出しフォルダ/記事.mdの構成にしたら反映されたっぽい？</description>
     </item>
     
     <item>

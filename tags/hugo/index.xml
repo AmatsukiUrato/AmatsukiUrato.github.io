@@ -1,14 +1,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo on Amatsukiメモ</title>
+    <title>hugo on Amatsukiメモ</title>
     <link>https://amatsukiurato.github.io/tags/hugo/</link>
-    <description>Recent content in Hugo on Amatsukiメモ</description>
+    <description>Recent content in hugo on Amatsukiメモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 16 Apr 2019 04:52:33 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 20 Oct 2019 12:47:18 +0900</lastBuildDate>
     
         <atom:link href="https://amatsukiurato.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>理由は不明だが、hugoの`.GitInfo`が適応された話</title>
+      <link>https://amatsukiurato.github.io/2019/adapted-hugo-gitinfo/</link>
+      <pubDate>Sun, 20 Oct 2019 12:47:18 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/2019/adapted-hugo-gitinfo/</guid>
+      <description>ずっと前から、記事の更新はgitのコミット履歴を使いたいと思っていたのですが、 .GitInfoの情報が記事にうまく反映されずnilになっていたため、手動で作業してました😇 .GitInfoが使えるようになった原因は恐らく、記事のパスを /content/post/[記事].md→/content/post/[分類用フォルダ]/[記事].md ※[]内はそれぞれの用途で変更する としたことです。 何故これで.GitInfoが適応されたのかは不明ですが、とにかくずっとやりたかったことなので、大満足😭</description>
+    </item>
     
     <item>
       <title>Light Sailからの移行</title>

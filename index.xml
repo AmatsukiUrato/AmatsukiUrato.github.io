@@ -5,10 +5,19 @@
     <description>Recent content on Amatsukiメモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 19 Oct 2019 22:21:44 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 20 Oct 2019 12:47:18 +0900</lastBuildDate>
     
         <atom:link href="https://amatsukiurato.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Posts</title>
+      <link>https://amatsukiurato.github.io/post/</link>
+      <pubDate>Sun, 20 Oct 2019 12:47:18 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/post/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Todo</title>
@@ -16,16 +25,7 @@
       <pubDate>Sat, 19 Oct 2019 22:21:44 +0900</pubDate>
       
       <guid>https://amatsukiurato.github.io/todo/</guid>
-      <description>記事更新の自動化 .GitInfoが記事のページでうまく動かない</description>
-    </item>
-    
-    <item>
-      <title>Posts</title>
-      <link>https://amatsukiurato.github.io/post/</link>
-      <pubDate>Thu, 17 Oct 2019 03:07:18 +0900</pubDate>
-      
-      <guid>https://amatsukiurato.github.io/post/</guid>
-      <description></description>
+      <description>記事更新の自動化 .GitInfoが記事のページでうまく動かない 何故か知らんが、post/見出しフォルダ/記事.mdの構成にしたら反映されたっぽい？</description>
     </item>
     
     <item>
