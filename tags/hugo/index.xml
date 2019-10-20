@@ -25,7 +25,7 @@
       <pubDate>Tue, 16 Apr 2019 04:52:33 +0900</pubDate>
       
       <guid>https://amatsukiurato.github.io/2019/migration-from-lightsail/</guid>
-      <description>移行しました AWSのLight Sail + WordPressでやってましたが、 WordPressがだるすぎたので AWSのAWS Amplify + Hugoに移行しました。 (移行とか言ってるけど全然記事書いてなかった。。。ｗ) github pages とかをそのまま使うのも良かったけど、 AWSのサービスを触ってみたかったのでこっちで立ててみました。 Hugoに移って最初に記事書いていて思うけど、 やっぱMarkdownが最強なんだわ。 スラスラ書ける。 一応WordPressでもMarkdownで書けるプラグインは少し出てたけど、 どれもこれで決まりだ</description>
+      <description>移行しました AWSのLight Sail + WordPressでやってましたが、 WordPressがだるすぎたので AWSの[AWS Amplify + Hugo]に移行しました。 現在は[github pages + Hugo] github pages とかをそのまま使うのも良かったけど、 AWSのサービスを触ってみたかったのでこっちで立ててみました。 Hugoに移って最初に記事書いていて思うけど、 やっぱMarkdownが最強なんだわ。 スラスラ書ける😎 一応WordPressでもMarkdownで書けるプラグイン📕は少し出てたけど、 めっちゃこれいいやん、みたいなプラグインは</description>
     </item>
     
   </channel>
