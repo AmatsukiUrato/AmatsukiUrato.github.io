@@ -12,82 +12,82 @@
     
     <item>
       <title>新卒と２人でhtml5を勉強した話👨‍👦</title>
-      <link>https://amatsukiurato.github.io/2019/%E6%96%B0%E5%8D%92%E3%81%A8html5%E3%82%92%E5%8B%89%E5%BC%B7%E3%81%97%E3%81%9F%E8%A9%B1/</link>
+      <link>https://amatsukiurato.github.io/2019/study-html5-with-new-employee/</link>
       <pubDate>Thu, 17 Oct 2019 03:07:18 +0900</pubDate>
       
-      <guid>https://amatsukiurato.github.io/2019/%E6%96%B0%E5%8D%92%E3%81%A8html5%E3%82%92%E5%8B%89%E5%BC%B7%E3%81%97%E3%81%9F%E8%A9%B1/</guid>
+      <guid>https://amatsukiurato.github.io/2019/study-html5-with-new-employee/</guid>
       <description>TL;DR 何かをやらせるときは極力その子がやりたいことに沿って学習させる ちゃんと意見を聞けていたら、その子からアクションを起こしてくれる 相手が自由にできるように幅をもたせておくことは大切 コミュニケーションを取る 相手のレベルを考える 自分も知識が広がるようなものを取り組むと👍 概要 9月頃から、上司から 「新卒の面倒を見てやってほしい」 「案件で使う技術を使えるようにしてほしい」 と唐突に言われ、 WTFと心で思いつつ学習プランを新卒と練り、１ヶ月半過ごしました。 新卒は経済学部出身なので、ちょろっと研修(2ヶ月)+OJ</description>
     </item>
     
     <item>
       <title>Material-uiのmakestyleにて、複数のクラスを動的に指定する方法</title>
-      <link>https://amatsukiurato.github.io/2019/material-ui%E3%81%AEmakestyle%E3%81%AB%E3%81%A6%E8%A4%87%E6%95%B0%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/</link>
+      <link>https://amatsukiurato.github.io/2019/how-to-select-multipulclass-material-ui/</link>
       <pubDate>Mon, 14 Oct 2019 15:28:36 +0900</pubDate>
       
-      <guid>https://amatsukiurato.github.io/2019/material-ui%E3%81%AEmakestyle%E3%81%AB%E3%81%A6%E8%A4%87%E6%95%B0%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%92%E5%8B%95%E7%9A%84%E3%81%AB%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://amatsukiurato.github.io/2019/how-to-select-multipulclass-material-ui/</guid>
       <description>TL;DR classデータをstring配列として持つ 配列.join(&#39; &#39;)を該当のclassName={}の中に記述する 概要 最近、Reactについての勉強を行っていたところ、classの指定に手間取ってしまったのでメモ。 方法としては、探したところ、以下2つがあるみたい。 class名の配列を作成して、最後にjoinで配列の間にを入れて出力 classNameの中で、２つのclass名を呼び出す。 汎用性があるのは方法1のほうだと思われます。 面倒くさいのでソースベタ貼りしてます。 BoxはMaterial-ui</description>
     </item>
     
     <item>
       <title>Windows10のVSCodeでvscode Revealが正しく動かなかった問題の解決法</title>
-      <link>https://amatsukiurato.github.io/2019/windows10%E3%81%AEvscode%E3%81%A7vscode-reveal%E3%81%8C%E6%AD%A3%E3%81%97%E3%81%8F%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/</link>
+      <link>https://amatsukiurato.github.io/2019/fixed-revealjs-vscode-extention-on-windows10/</link>
       <pubDate>Thu, 18 Jul 2019 05:18:30 +0900</pubDate>
       
-      <guid>https://amatsukiurato.github.io/2019/windows10%E3%81%AEvscode%E3%81%A7vscode-reveal%E3%81%8C%E6%AD%A3%E3%81%97%E3%81%8F%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/</guid>
+      <guid>https://amatsukiurato.github.io/2019/fixed-revealjs-vscode-extention-on-windows10/</guid>
       <description>TL;DR 方法1 改行コードをLFに変える 方法2 拡張機能でLFで書かれている部分をCRLFで書き直す 原因 TL;DRでだいたい判ると思いますが、vscode-revealのスライド仕切りの---がデフォではLFの設定で登録されているのが問題でした。 revealjsの改行コード指摘ページ 日本語訳版 解決法 普通に使う場合は前者の方を実施したほうがいいと思います。 後者のやり方だと設定ファイルに書かない限り、正しく表示させる作業が毎日必要になります。 revealjsに読み込ませる改行コードを変える場合 拡張機能の設定画</description>
     </item>
     
     <item>
       <title>Route53のルーティング問題を解決した話</title>
-      <link>https://amatsukiurato.github.io/2019/route53%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E5%95%8F%E9%A1%8C%E3%82%92%E8%A7%A3%E6%B1%BA%E3%81%97%E3%81%9F%E8%A9%B1/</link>
+      <link>https://amatsukiurato.github.io/2019/resolved-routing-problem-on-route53/</link>
       <pubDate>Mon, 15 Jul 2019 18:58:56 +0900</pubDate>
       
-      <guid>https://amatsukiurato.github.io/2019/route53%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E5%95%8F%E9%A1%8C%E3%82%92%E8%A7%A3%E6%B1%BA%E3%81%97%E3%81%9F%E8%A9%B1/</guid>
+      <guid>https://amatsukiurato.github.io/2019/resolved-routing-problem-on-route53/</guid>
       <description>TL;DR 外部からホストゾーンのネームサーバを指定してあげないと、レコードが帰ってこなかった Route53のドメインのネームサーバとホストゾーンのネームサーバを一緒にする 概要 前に[Route53] -&amp;gt; [S3のリダイレクト] -&amp;gt; [リダイレクト先ページ] のルーティングを行おうと思いましたがうまく行きませんでした。 該当記事 原因 Route53にて、登録していたドメインに記述されているネームサーバの一覧と ホストゾーンに記載されているNSレコードの値が違っていたため、 正しくルーティングされなかったみたいです。 解決方法と</description>
     </item>
     
     <item>
       <title>Onsen-UIのDialogコンポーネントサイズを変更する</title>
-      <link>https://amatsukiurato.github.io/2019/onsen-ui%E3%81%AEdialog%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%82%B5%E3%82%A4%E3%82%BA%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B/</link>
+      <link>https://amatsukiurato.github.io/2019/change-onsen-ui-dialog-component-size/</link>
       <pubDate>Thu, 04 Jul 2019 03:01:22 +0900</pubDate>
       
-      <guid>https://amatsukiurato.github.io/2019/onsen-ui%E3%81%AEdialog%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%82%B5%E3%82%A4%E3%82%BA%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B/</guid>
+      <guid>https://amatsukiurato.github.io/2019/change-onsen-ui-dialog-component-size/</guid>
       <description>TL;DR Onsen-UI読み込み後に出力されるDialogをコピーして手動で使う Dialog群の形だけ取得しているので、Show, Hide共にこちら側で呼ぶ必要あり Onsen-UIのタグオブジェクトから、Onsen-UI側で用意されているshow(), hide()などが呼び出せる これを使って自分で制御を行う 概要 以下の画像のような、アラートのサイズを変更したいのにできない。 Onsen-UIの公式リファレンスを見てもDialogの項目にそれっぽい動作をしてくれるDialogはない。。 解決方法🤗 ons.no</description>
     </item>
     
     <item>
       <title>S3のリダイレクト機能でgithubのpageへ飛ばしたい</title>
-      <link>https://amatsukiurato.github.io/2019/s3%E3%81%AE%E3%83%AA%E3%83%80%E3%82%A4%E3%83%AC%E3%82%AF%E3%83%88%E6%A9%9F%E8%83%BD%E3%81%A7github%E3%81%AEpage%E3%81%B8%E9%A3%9B%E3%81%B0%E3%81%99/</link>
+      <link>https://amatsukiurato.github.io/2019/want-to-use-s3-redirect/</link>
       <pubDate>Tue, 02 Jul 2019 23:33:13 +0000</pubDate>
       
-      <guid>https://amatsukiurato.github.io/2019/s3%E3%81%AE%E3%83%AA%E3%83%80%E3%82%A4%E3%83%AC%E3%82%AF%E3%83%88%E6%A9%9F%E8%83%BD%E3%81%A7github%E3%81%AEpage%E3%81%B8%E9%A3%9B%E3%81%B0%E3%81%99/</guid>
+      <guid>https://amatsukiurato.github.io/2019/want-to-use-s3-redirect/</guid>
       <description>表題の通りです。 完成してないです。 前に取得した.netのドメインを踏んだときにS3のリダイレクト機能を使ってこのページに飛べるようにしようと思い設定してました。 出来たこと s3のエンドポイント(httpのリンク)にアクセスするとgithubPageにリダイレクトする s3のエイリアスを作成する 出来てないところ .netドメインにアクセスしてもs3のリダイレクト用エンドポイントにまでたどり着かない not foundエラーが発生する Route53での設定が正しく行えていないと予想</description>
     </item>
     
     <item>
       <title>UbuntuのClibor的存在CopyQ</title>
-      <link>https://amatsukiurato.github.io/2019/ubuntu%E3%81%AEclibor%E7%9A%84%E5%AD%98%E5%9C%A8copyq/</link>
+      <link>https://amatsukiurato.github.io/2019/copyq-like-clibor-can-use-on-ubuntu/</link>
       <pubDate>Sun, 30 Jun 2019 23:38:31 +0900</pubDate>
       
-      <guid>https://amatsukiurato.github.io/2019/ubuntu%E3%81%AEclibor%E7%9A%84%E5%AD%98%E5%9C%A8copyq/</guid>
+      <guid>https://amatsukiurato.github.io/2019/copyq-like-clibor-can-use-on-ubuntu/</guid>
       <description>普段WindowsではClipBoardの履歴にcliborを使っています。 最近OSをubuntuで利用することがあり、ubuntuでコピー履歴管理を探していたところ、 Windows/MacOS/Linux対応のCopyQってのが見つかりました。 Cliborみたいに、ショートカットにAlt*2とかの設定はできませんでしたが、 無変換に割り当てられたので概ね満足。 CopyQには、履歴管理以外にも機能があるみたいですが、 とりあえずやりたいことができたのでOK。 参考 https://qualiartz.jp/digitaltransformation/automation/recommend-oss-copyq-clipboard-manager/ https://www.tecmint.com/best-clipboard-managers-for-linux/</description>
     </item>
     
     <item>
       <title>IntelliJでwebpack導入後、フォルダが見えなくなる問題の解決法</title>
-      <link>https://amatsukiurato.github.io/2019/intellij%E3%81%A7webpack%E3%81%AE%E5%87%BA%E5%8A%9B%E5%85%88%E3%81%AB%E3%81%97%E3%81%9F%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%8C%E8%A6%8B%E3%81%88%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/</link>
+      <link>https://amatsukiurato.github.io/2019/why-did-webpack-hide-outputfile-on-intellij/</link>
       <pubDate>Sun, 30 Jun 2019 20:08:06 +0900</pubDate>
       
-      <guid>https://amatsukiurato.github.io/2019/intellij%E3%81%A7webpack%E3%81%AE%E5%87%BA%E5%8A%9B%E5%85%88%E3%81%AB%E3%81%97%E3%81%9F%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%8C%E8%A6%8B%E3%81%88%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA%E6%B3%95/</guid>
+      <guid>https://amatsukiurato.github.io/2019/why-did-webpack-hide-outputfile-on-intellij/</guid>
       <description>TL;DR 設定からWebpackを開いて、configuration fileのパスを消す 原因 IntelliJが賢すぎた。 というのも、webpackのアウトプット先がintelliJ IDEA上でExcluded(非表示になりIntellij上から閲覧できなくなる)のは、 webpackの出力先フォルダだからです。 設定は以下の場所にあり、 Preferences | Languages &amp;amp; Frameworks | JavaScript | Webpackwebpack のconfiguration file:の項目を空文字列にすることによってIntelliJ上から編集できるようになります。 消している理由は パフォーマンスのため</description>
     </item>
     
     <item>
       <title>Light Sailからの移行</title>
-      <link>https://amatsukiurato.github.io/2019/light-sail%E3%81%8B%E3%82%89%E3%81%AE%E7%A7%BB%E8%A1%8C/</link>
+      <link>https://amatsukiurato.github.io/2019/migration-from-lightsail/</link>
       <pubDate>Tue, 16 Apr 2019 04:52:33 +0900</pubDate>
       
-      <guid>https://amatsukiurato.github.io/2019/light-sail%E3%81%8B%E3%82%89%E3%81%AE%E7%A7%BB%E8%A1%8C/</guid>
+      <guid>https://amatsukiurato.github.io/2019/migration-from-lightsail/</guid>
       <description>移行しました AWSのLight Sail + WordPressでやってましたが、 WordPressがだるすぎたので AWSのAWS Amplify + Hugoに移行しました。 (移行とか言ってるけど全然記事書いてなかった。。。ｗ) github pages とかをそのまま使うのも良かったけど、 AWSのサービスを触ってみたかったのでこっちで立ててみました。 Hugoに移って最初に記事書いていて思うけど、 やっぱMarkdownが最強なんだわ。 スラスラ書ける。 一応WordPressでもMarkdownで書けるプラグインは少し出てたけど、 どれもこれで決まりだ</description>
     </item>
     

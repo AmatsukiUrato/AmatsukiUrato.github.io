@@ -12,10 +12,10 @@
     
     <item>
       <title>UbuntuのClibor的存在CopyQ</title>
-      <link>https://amatsukiurato.github.io/2019/ubuntu%E3%81%AEclibor%E7%9A%84%E5%AD%98%E5%9C%A8copyq/</link>
+      <link>https://amatsukiurato.github.io/2019/copyq-like-clibor-can-use-on-ubuntu/</link>
       <pubDate>Sun, 30 Jun 2019 23:38:31 +0900</pubDate>
       
-      <guid>https://amatsukiurato.github.io/2019/ubuntu%E3%81%AEclibor%E7%9A%84%E5%AD%98%E5%9C%A8copyq/</guid>
+      <guid>https://amatsukiurato.github.io/2019/copyq-like-clibor-can-use-on-ubuntu/</guid>
       <description>普段WindowsではClipBoardの履歴にcliborを使っています。 最近OSをubuntuで利用することがあり、ubuntuでコピー履歴管理を探していたところ、 Windows/MacOS/Linux対応のCopyQってのが見つかりました。 Cliborみたいに、ショートカットにAlt*2とかの設定はできませんでしたが、 無変換に割り当てられたので概ね満足。 CopyQには、履歴管理以外にも機能があるみたいですが、 とりあえずやりたいことができたのでOK。 参考 https://qualiartz.jp/digitaltransformation/automation/recommend-oss-copyq-clipboard-manager/ https://www.tecmint.com/best-clipboard-managers-for-linux/</description>
     </item>
     

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amatsukiメモ  | Windows10のVSCodeでvscode Revealが正しく動かなかった問題の解決法</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://amatsukiurato.github.io/css/blog.css" />
+    <link rel="stylesheet" href="https://amatsukiurato.github.io/css/syntax.css" />
+    
+
+        
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143787598-1"></script>
+</head>
+<body>
+
+    
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://amatsukiurato.github.io">Home</a>
+            <div class="navbar-item">
+                    
+                        Amatsukiメモ
+                    
+            </div>
+        </div>
+        <div class="navbar-end">
+                <a class="navbar-item nav-right" href="https://amatsukiurato.github.io/about">About</a>
+        </div>
+    </nav>
+    
+
+
+<div class="container">
+    <div class="section">
+    
+
+<div class="columns">
+    <div class="column is-9">
+        <div class="tile is-child box">
+            <div class="content">
+                <p class="title is-4">Windows10のVSCodeでvscode Revealが正しく動かなかった問題の解決法</p>
+                
+                <p class="subtitle is-size-6 has-text-grey-light">
+                    Published at July 18, 2019 &middot;
+                    <i class="far fa-clock"></i>&nbsp;1 min read
+                    <br>
+                    
+                    Updated at October 20, 2019 &middot;
+                    <i class="far fa-clock"></i>&nbsp;1 min read
+                    
+                </p>
+                
+                <hr />
+                
+
+<h2 id="tl-dr">TL;DR</h2>
+
+<h3 id="方法1">方法1</h3>
+
+<p>改行コードを<code>LF</code>に変える</p>
+
+<h3 id="方法2">方法2</h3>
+
+<p>拡張機能で<code>LF</code>で書かれている部分を<code>CRLF</code>で書き直す</p>
+
+<h2 id="原因">原因</h2>
+
+<p>TL;DRでだいたい判ると思いますが、vscode-revealのスライド仕切りの<code>---</code>がデフォでは<code>LF</code>の設定で登録されているのが問題でした。</p>
+
+<ul>
+<li><a href="https://github.com/hakimel/reveal.js/#external-markdown">revealjsの改行コード指摘ページ</a></li>
+<li><a href="https://qiita.com/takayu90/items/0af9bd125e6704803c0d">日本語訳版</a></li>
+</ul>
+
+<h2 id="解決法">解決法</h2>
+
+<p>普通に使う場合は前者の方を実施したほうがいいと思います。
+後者のやり方だと設定ファイルに書かない限り、正しく表示させる作業が毎日必要になります。</p>
+
+<h3 id="revealjsに読み込ませる改行コードを変える場合">revealjsに読み込ませる改行コードを変える場合</h3>
+
+<ol>
+<li>拡張機能の設定画面を開く(<code>Ctrl + ,</code>)</li>
+<li>reveal JSの項目を探し、<strong>Revealjs: Separator</strong>の内容にある<code>\n</code>を<code>\r?\n</code>に修正する</li>
+</ol>
+
+<p><img src="https://amatsukiurato.github.io/resources/fixed-revealjs-vscode-extention-on-windows10/vscode-reveal-new-line.png" alt="変更する場所" /></p>
+
+<h3 id="vscodeの改行コードを変更する場合">VSCodeの改行コードを変更する場合</h3>
+
+<ol>
+<li>VSCodeのfooter右にある改行コード<code>CRLF</code>をクリック</li>
+<li><code>LF</code>に変更する</li>
+</ol>
+
+<p><img src="https://amatsukiurato.github.io/resources/fixed-revealjs-vscode-extention-on-windows10/vscode-footer-new-line.png" alt="変更する場所" /></p>
+
+
+
+            </div>
+            
+            <hr />
+            <div>Tags: <a class="tag is-link" href="https://amatsukiurato.github.io/tags/vscode/">#VSCode</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/revealjs/">#revealjs</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/extention/">#extention</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/markdown/">#markdown</a></div>
+            <hr />
+            
+            <div>
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+            </div>
+            <hr />
+            <div>
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-amatsukiurato-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            
+
+
+        </div>
+    </div>
+    <div class="column is-3">
+        <div class="card">
+    <div class="card-content">
+        <h1 class="title is-5">Tags</h1>
+        <div class="tags">
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/aws">aws</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/copyq">copyq</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/css">css</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/extention">extention</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/front">front</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/hugo">hugo</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/intellij">intellij</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/javascript">javascript</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/markdown">markdown</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/onsen-ui">onsen-ui</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/react">react</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/revealjs">revealjs</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/route53">route53</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/s3">s3</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/ubuntu">ubuntu</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/vscode">vscode</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/webpack">webpack</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E5%8B%89%E5%BC%B7">勉強</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E6%96%B0%E5%8D%92%E5%AF%BE%E5%BF%9C">新卒対応</a></span>
+        
+        </div>          
+    </div>
+</div><br>
+        <div class="card">
+    <div class="card-content">
+        <h1 class="title is-5">Recent posts</h1>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/study-html5-with-new-employee/">新卒と２人でhtml5を勉強した話👨‍👦</a></h1>
+            <time class="has-text-grey-light is-size-7">17 October 2019</time>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/how-to-select-multipulclass-material-ui/">Material-uiのmakestyleにて、複数のクラスを動的に指定する方法</a></h1>
+            <time class="has-text-grey-light is-size-7">14 October 2019</time>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/fixed-revealjs-vscode-extention-on-windows10/">Windows10のVSCodeでvscode Revealが正しく動かなかった問題の解決法</a></h1>
+            <time class="has-text-grey-light is-size-7">18 July 2019</time>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/resolved-routing-problem-on-route53/">Route53のルーティング問題を解決した話</a></h1>
+            <time class="has-text-grey-light is-size-7">15 July 2019</time>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/change-onsen-ui-dialog-component-size/">Onsen-UIのDialogコンポーネントサイズを変更する</a></h1>
+            <time class="has-text-grey-light is-size-7">4 July 2019</time>
+        
+    </div>
+</div>
+    <br>
+                
+
+
+    
+<br>
+        <div class="card">
+    <div class="card-content">
+        <h1 class="title is-5">Archives</h1>
+        
+            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (9)<br>
+        
+    </div>
+</div>
+
+    </div>
+</div>
+
+    
+    </div>
+</div>
+
+<footer class="footer has-background-grey-darker has-text-white">
+    <div class="content has-text-centered">
+        <p>
+            <span class="icon is-large"><a href="https://twitter.com/AmatsukiUrato" class="mysocial" rel="me"><i class="fab fa-twitter fa-3x"></i></a></span>&nbsp;&nbsp;
+            <span class="icon is-large"><a href="https://github.com/AmatsukiUrato" class="mysocial" rel="me"><i class="fab fa-github fa-3x"></i></a></span>&nbsp;&nbsp;
+            <br><br>
+            Copyright &copy; Amatsukiメモ 2019 - Theme by <a href="https://jeffprod.com" class="mysocial">JeffProd.com</a>
+            - <a class="mysocial" href="https://amatsukiurato.github.io/about">About</a>
+        </p>
+    </div>
+</footer>
+
+<script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+</body>
+</html>
