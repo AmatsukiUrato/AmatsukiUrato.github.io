@@ -5,10 +5,19 @@
     <description>Recent content in Posts on Amatsukiメモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 27 Oct 2019 18:28:29 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 29 Oct 2019 05:47:19 +0900</lastBuildDate>
     
         <atom:link href="https://amatsukiurato.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>iCloudのディレクトリをホームディレクトリに持ってくる方法</title>
+      <link>https://amatsukiurato.github.io/2019/how-to-display-icloud-doc-on-home/</link>
+      <pubDate>Tue, 29 Oct 2019 05:47:19 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/2019/how-to-display-icloud-doc-on-home/</guid>
+      <description>クラウドストレージを比較している途中で、 iCloudをhomeディレクトリに移す(シンボリックリンクを貼る)作業が少し手間だったので、メモとして載せてます。 ターミナルからアクセスしづらい問題 ターミナル上からiCloud Driveのファイルへアクセスしようとするには、 Users/[userName]/Library/Mobile\ Documents/com~apple~CloudDocs にまでアクセスしなければならないです。 一応シンボリックリンクは貼れますが、これも少し曲者でリンク元の方にスペースが入っているため、クォーテーションでくくってあげないとだめです(自分は気づかずに10分ぐらい悩んだ)。 ln -s &amp;quot;/Users/$USER/Library/Mobile Documents/com~apple~CloudDocs&amp;quot; iCloud 参考 Make</description>
+    </item>
     
     <item>
       <title>CloudStrageのBoxを使ってみた</title>
@@ -17,6 +26,15 @@
       
       <guid>https://amatsukiurato.github.io/2019/tried-to-use-box/</guid>
       <description>最近MacBookProを買ったこともあり、ローカルの環境を見直しておりました。 その際にバックアップ用のクラウドストレージを再検討してみたところ、Boxが良さげだったので使ってみた話です。 TL;DR 無料でクラウドストレージを利用する場合の検討です ファイルの特徴で併用していくのが良さげ 無難に行くならDropBox、容量がほしいならBox 同期時間を気にしないならOneDrive Apple製品統一ならiCloud Driveでもいいかも 以前はDropBoxを利用していた Dropboxはローカルで同期させる際も普</description>
+    </item>
+    
+    <item>
+      <title>Dockerのコマンドメモ</title>
+      <link>https://amatsukiurato.github.io/2019/docker-command-memo/</link>
+      <pubDate>Sun, 27 Oct 2019 16:57:17 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/2019/docker-command-memo/</guid>
+      <description></description>
     </item>
     
     <item>

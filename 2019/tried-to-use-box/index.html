@@ -47,11 +47,11 @@
                 
                 <p class="subtitle is-size-6 has-text-grey-light">
                     Published at October 27, 2019 &middot;
-                    <i class="far fa-clock"></i>&nbsp;5 min read
+                    <i class="far fa-clock"></i>&nbsp;4 min read
                     <br>
                     
-                    Updated at October 27, 2019 &middot;
-                    <i class="far fa-clock"></i>&nbsp;5 min read
+                    Updated at October 29, 2019 &middot;
+                    <i class="far fa-clock"></i>&nbsp;4 min read
                     
                 </p>
                 
@@ -159,28 +159,10 @@
 <h3 id="3-icloud-drive">3. iCloud Drive</h3>
 
 <p>iCloud Driveは5GBと少し心もとないですが、もともと使っていたDropboxと比べれば２倍に増えるのでこちらでも良いかなと思いました。<br />
-しかし、ターミナルからiCloud Driveへアクセスしづらいという問題があります(一応解決済)。<br />
+しかし、ターミナルからiCloud Driveへアクセスしづらいという問題があります(<a href="https://amatsukiurato.github.io/2019/how-to-display-icloud-doc-on-home/">一応解決済</a>)<br />
 バージョン管理機能については、少し探したのですが見つかりませんでした。</p>
 
 <p>ターミナルの調整が面倒だし、特にApple信者でもないので今回は使わない方針で行きました。Apple端末をいっぱい持ってる人なら<code>iCloud Drive</code>は良いかもしれないです。</p>
-
-<h4 id="ターミナルからアクセスしづらい問題">ターミナルからアクセスしづらい問題</h4>
-
-<p>ターミナル上からiCloud Driveのファイルへアクセスしようとするには、</p>
-
-<pre><code>Users/[userName]/Library/Mobile\ Documents/com~apple~CloudDocs
-</code></pre>
-
-<p>にまでアクセスしなければならないです。<br />
-一応シンボリックリンクは貼れますが、これも少し曲者でリンク元の方にスペースが入っているため、クォーテーションでくくってあげないとだめです(自分は気づかずに10分ぐらい悩んだ)。</p>
-
-<pre><code>ln -s &quot;/Users/$USER/Library/Mobile Documents/com~apple~CloudDocs&quot; iCloud
-</code></pre>
-
-<h5 id="参考">参考</h5>
-
-<p><a href="https://levlaz.org/make-a-symbolic-link-to-your-icloud-drive/">Make A Symbolic Link to Your iCloud Drive</a><br />
-<a href="https://qiita.com/mom0tomo/items/aba245bcd4ce07e9a48f">ターミナルからiCloud driveに移動する方法</a></p>
 
 <h3 id="4-onedrive">4. OneDrive</h3>
 
@@ -336,6 +318,8 @@
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/webpack">webpack</a></span>
         
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E3%82%B7%E3%83%B3%E3%83%9C%E3%83%AA%E3%83%83%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%AF">シンボリックリンク</a></span>
+        
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E3%83%9D%E3%82%A8%E3%83%A0">ポエム</a></span>
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E5%8B%89%E5%BC%B7">勉強</a></span>
@@ -349,7 +333,13 @@
     <div class="card-content">
         <h1 class="title is-5">Recent posts</h1>
         
+            <h1><a href="https://amatsukiurato.github.io/2019/how-to-display-icloud-doc-on-home/">iCloudのディレクトリをホームディレクトリに持ってくる方法</a></h1>
+            <time class="has-text-grey-light is-size-7">29 October 2019</time>
+        
             <h1><a href="https://amatsukiurato.github.io/2019/tried-to-use-box/">CloudStrageのBoxを使ってみた</a></h1>
+            <time class="has-text-grey-light is-size-7">27 October 2019</time>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/docker-command-memo/">Dockerのコマンドメモ</a></h1>
             <time class="has-text-grey-light is-size-7">27 October 2019</time>
         
             <h1><a href="https://amatsukiurato.github.io/2019/adapted-hugo-gitinfo/">hugoの.GitInfoが適応された話(理由は不明です…)</a></h1>
@@ -358,17 +348,24 @@
             <h1><a href="https://amatsukiurato.github.io/2019/study-html5-with-new-employee/">新卒と２人でhtml5を勉強した話👨‍👦</a></h1>
             <time class="has-text-grey-light is-size-7">17 October 2019</time>
         
-            <h1><a href="https://amatsukiurato.github.io/2019/how-to-select-multipulclass-material-ui/">Material-uiのmakestyleにて、複数のクラスを動的に指定する方法</a></h1>
-            <time class="has-text-grey-light is-size-7">14 October 2019</time>
-        
-            <h1><a href="https://amatsukiurato.github.io/2019/fixed-revealjs-vscode-extention-on-windows10/">Windows10のVSCodeでvscode Revealが正しく動かなかった問題の解決法</a></h1>
-            <time class="has-text-grey-light is-size-7">18 July 2019</time>
-        
     </div>
 </div>
     <br>
                 
+  
 
+
+
+<div class="card">
+    <div class="card-content">
+        <h1 class="title is-5">Related posts</h1>
+      
+      
+            <h1><a href="https://amatsukiurato.github.io/2019/how-to-display-icloud-doc-on-home/">iCloudのディレクトリをホームディレクトリに持ってくる方法</a></h1>
+            <time class="has-text-grey-light is-size-7">29 October 2019</time>
+      
+    </div>
+</div>
 
     
 <br>
@@ -376,7 +373,7 @@
     <div class="card-content">
         <h1 class="title is-5">Archives</h1>
         
-            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (11)<br>
+            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (13)<br>
         
     </div>
 </div>

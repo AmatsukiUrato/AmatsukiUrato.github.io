@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amatsukiメモ  | Onsen-UI</title>
+    <title>Amatsukiメモ  | シンボリックリンク</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="https://amatsukiurato.github.io/css/blog.css" />
     <link rel="stylesheet" href="https://amatsukiurato.github.io/css/syntax.css" />
     
-    <link href="https://amatsukiurato.github.io/tags/onsen-ui/index.xml" rel="alternate" type="application/rss+xml" title="Amatsukiメモ" />
-    <link href="https://amatsukiurato.github.io/tags/onsen-ui/index.xml" rel="feed" type="application/rss+xml" title="Amatsukiメモ" />
+    <link href="https://amatsukiurato.github.io/tags/%E3%82%B7%E3%83%B3%E3%83%9C%E3%83%AA%E3%83%83%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%AF/index.xml" rel="alternate" type="application/rss+xml" title="Amatsukiメモ" />
+    <link href="https://amatsukiurato.github.io/tags/%E3%82%B7%E3%83%B3%E3%83%9C%E3%83%AA%E3%83%83%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%AF/index.xml" rel="feed" type="application/rss+xml" title="Amatsukiメモ" />
     
 
         
@@ -27,7 +27,7 @@
             <a class="navbar-item" href="https://amatsukiurato.github.io">Home</a>
             <div class="navbar-item">
                     
-                        #Onsen-UI
+                        #シンボリックリンク
                     
             </div>
         </div>
@@ -52,12 +52,12 @@
                 <article class="media">
                     <div class="media-content">
                         <div class="content">
-                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/change-onsen-ui-dialog-component-size/">Onsen-UIのDialogコンポーネントサイズを変更する</a></p>
+                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/how-to-display-icloud-doc-on-home/">iCloudのディレクトリをホームディレクトリに持ってくる方法</a></p>
                             <p class="subtitle is-size-6 has-text-grey-light">
-                                Published at July 4, 2019 &middot;
+                                Published at October 29, 2019 &middot;
                                 <i class="far fa-clock"></i>&nbsp;1 min read
                             </p>
-                            <p>TL;DR Onsen-UI読み込み後に出力されるDialogをコピーして手動で使う Dialog群の形だけ取得しているので、Show, Hide共にこちら側で呼ぶ必要あり Onsen-UIのタグオブジェクトから、Onsen-UI側で用意されているshow(), hide()などが呼び出せる これを使って自分で制御を行う 概要 以下の画像のような、アラートのサイズを変更したいのにできない。 Onsen-UIの公式リファレンスを見てもDialogの項目にそれっぽい動作をしてくれるDialogはない。。 解決方法🤗 ons.no...</p>
+                            <p>クラウドストレージを比較している途中で、 iCloudをhomeディレクトリに移す(シンボリックリンクを貼る)作業が少し手間だったので、メモとして載せてます。 ターミナルからアクセスしづらい問題 ターミナル上からiCloud Driveのファイルへアクセスしようとするには、 Users/[userName]/Library/Mobile\ Documents/com~apple~CloudDocs にまでアクセスしなければならないです。 一応シンボリックリンクは貼れますが、これも少し曲者でリンク元の方にスペースが入っているため、クォーテーションでくくってあげないとだめです(自分は気づかずに10分ぐらい悩んだ)。 ln -s &quot;/Users/$USER/Library/Mobile Documents/com~apple~CloudDocs&quot; iCloud 参考 Make...</p>
                         </div>
                     </div>
                 </article>
