@@ -1,0 +1,23 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud2.0 on Amatsukiメモ</title>
+    <link>https://amatsukiurato.github.io/tags/cloud2.0/</link>
+    <description>Recent content in Cloud2.0 on Amatsukiメモ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Thu, 31 Oct 2019 02:19:44 +0900</lastBuildDate>
+    
+        <atom:link href="https://amatsukiurato.github.io/tags/cloud2.0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Amazon Game Tech Night Osakaに行ってみた</title>
+      <link>https://amatsukiurato.github.io/2019/game-tech-night-cloud2.0/</link>
+      <pubDate>Thu, 31 Oct 2019 02:19:44 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/2019/game-tech-night-cloud2.0/</guid>
+      <description>畑違いの業種なのですが、 AWS Pop-Up Loft Osakaが行われるとのことだったので、Game Tech Nightへ参加しました！ 会場は最初から最後まで、飲食ありのラフな感じで開催されておりました😊 登壇者は全員面白い発表をされていましたが、特に面白かったCloud2.0についての所感を記載しております。 もうそこまで迫っている！ Cloud2.0 時代の開発 info 登壇者 丹羽さん GS2のCEO HP https://gs2.io/ フルマネージドサービスを使おう 処理をフルマネージドで行うことで、復旧対策や管理までAWSが担保してくれる あえてロックインされにいく コントローラブルなも</description>
+    </item>
+    
+  </channel>
+</rss>

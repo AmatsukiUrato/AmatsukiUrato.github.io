@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amatsukiメモ  | S3のリダイレクト機能でgithubのpageへ飛ばしたい</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://amatsukiurato.github.io/css/blog.css" />
+    <link rel="stylesheet" href="https://amatsukiurato.github.io/css/syntax.css" />
+    
+
+        
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143787598-1"></script>
+</head>
+<body>
+
+    
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://amatsukiurato.github.io">Home</a>
+            <div class="navbar-item">
+                    
+                        Amatsukiメモ
+                    
+            </div>
+        </div>
+        <div class="navbar-end">
+                <a class="navbar-item nav-right" href="https://amatsukiurato.github.io/about">About</a>
+        </div>
+    </nav>
+    
+
+
+<div class="container">
+    <div class="section">
+    
+
+<div class="columns">
+    <div class="column is-9">
+        <div class="tile is-child box">
+            <div class="content">
+                <p class="title is-4">S3のリダイレクト機能でgithubのpageへ飛ばしたい</p>
+                
+                <p class="subtitle is-size-6 has-text-grey-light">
+                    Published at July 2, 2019 &middot;
+                    <i class="far fa-clock"></i>&nbsp;1 min read
+                    <br>
+                    
+                    Updated at October 31, 2019 &middot;
+                    <i class="far fa-clock"></i>&nbsp;1 min read
+                    
+                </p>
+                
+                <hr />
+                <div class="card">
+                    <div class="card-content">
+                        <h1 class="title is-5">Contents</h1>
+                        <div class="contents">
+                            <nav id="TableOfContents">
+<ul>
+<li><a href="#出来たこと">出来たこと</a></li>
+<li><a href="#出来てないところ">出来てないところ</a></li>
+</ul>
+</nav>
+                        </div>          
+                    </div>
+                </div>
+                <hr>
+                
+
+<p>表題の通りです。
+完成してないです。
+前に取得した<code>.net</code>のドメインを踏んだときにS3のリダイレクト機能を使ってこのページに飛べるようにしようと思い設定してました。</p>
+
+<h1 id="出来たこと">出来たこと</h1>
+
+<ul>
+<li>s3のエンドポイント(httpのリンク)にアクセスするとgithubPageにリダイレクトする</li>
+<li>s3のエイリアスを作成する</li>
+</ul>
+
+<h1 id="出来てないところ">出来てないところ</h1>
+
+<ul>
+<li><code>.net</code>ドメインにアクセスしてもs3のリダイレクト用エンドポイントにまでたどり着かない
+
+<ul>
+<li>not foundエラーが発生する</li>
+<li>Route53での設定が正しく行えていないと予想</li>
+</ul></li>
+</ul>
+
+
+
+            </div>
+            
+            <hr />
+            <div>Tags: <a class="tag is-link" href="https://amatsukiurato.github.io/tags/aws/">#AWS</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/s3/">#S3</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/route53/">#Route53</a></div>
+            <hr />
+            
+            <div>
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+            </div>
+            <hr />
+            <div>
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-amatsukiurato-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            
+
+
+        </div>
+    </div>
+    <div class="column is-3">
+        <div class="card">
+    <div class="card-content">
+        <h1 class="title is-5">Tags</h1>
+        <div class="tags">
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/aws">aws</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/awsloft">awsloft</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/box">box</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/cloud2.0">cloud2.0</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/cloudstrage">cloudstrage</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/copyq">copyq</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/css">css</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/dropbox">dropbox</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/extention">extention</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/feeling">feeling</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/front">front</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/game">game</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/git">git</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/googledrive">googledrive</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/hugo">hugo</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/icloud">icloud</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/intellij">intellij</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/javascript">javascript</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/markdown">markdown</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/onedrive">onedrive</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/onsen-ui">onsen-ui</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/react">react</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/revealjs">revealjs</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/route53">route53</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/s3">s3</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/ubuntu">ubuntu</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/vscode">vscode</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/webpack">webpack</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E3%82%B7%E3%83%B3%E3%83%9C%E3%83%AA%E3%83%83%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%AF">シンボリックリンク</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E3%83%9D%E3%82%A8%E3%83%A0">ポエム</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E5%8B%89%E5%BC%B7">勉強</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E6%96%B0%E5%8D%92%E5%AF%BE%E5%BF%9C">新卒対応</a></span>
+        
+        </div>          
+    </div>
+</div><br>
+        <div class="card">
+    <div class="card-content">
+        <h1 class="title is-5">Recent posts</h1>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/game-tech-night-cloud2.0/">Amazon Game Tech Night Osakaに行ってみた</a></h1>
+            <time class="has-text-grey-light is-size-7">31 October 2019</time>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/how-to-display-icloud-doc-on-home/">iCloudのディレクトリをホームディレクトリに持ってくる方法</a></h1>
+            <time class="has-text-grey-light is-size-7">29 October 2019</time>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/tried-to-use-box/">CloudStrageのBoxを使ってみた</a></h1>
+            <time class="has-text-grey-light is-size-7">27 October 2019</time>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/adapted-hugo-gitinfo/">hugoの.GitInfoが適応された話(理由は不明です…)</a></h1>
+            <time class="has-text-grey-light is-size-7">20 October 2019</time>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/study-html5-with-new-employee/">新卒と２人でhtml5を勉強した話👨‍👦</a></h1>
+            <time class="has-text-grey-light is-size-7">17 October 2019</time>
+        
+    </div>
+</div>
+    <br>
+                
+  
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h1 class="title is-5">Related posts</h1>
+      
+      
+            <h1><a href="https://amatsukiurato.github.io/2019/game-tech-night-cloud2.0/">Amazon Game Tech Night Osakaに行ってみた</a></h1>
+            <time class="has-text-grey-light is-size-7">31 October 2019</time>
+      
+            <h1><a href="https://amatsukiurato.github.io/2019/resolved-routing-problem-on-route53/">Route53のルーティング問題を解決した話</a></h1>
+            <time class="has-text-grey-light is-size-7">15 July 2019</time>
+      
+            <h1><a href="https://amatsukiurato.github.io/2019/migration-from-lightsail/">Light Sailからの移行</a></h1>
+            <time class="has-text-grey-light is-size-7">16 April 2019</time>
+      
+    </div>
+</div>
+
+    
+<br>
+        <div class="card">
+    <div class="card-content">
+        <h1 class="title is-5">Archives</h1>
+        
+            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (13)<br>
+        
+    </div>
+</div>
+
+    </div>
+</div>
+
+    
+    </div>
+</div>
+
+<footer class="footer has-background-grey-darker has-text-white">
+    <div class="content has-text-centered">
+        <p>
+            <span class="icon is-large"><a href="https://twitter.com/AmatsukiUrato" class="mysocial" rel="me"><i class="fab fa-twitter fa-3x"></i></a></span>&nbsp;&nbsp;
+            <span class="icon is-large"><a href="https://github.com/AmatsukiUrato" class="mysocial" rel="me"><i class="fab fa-github fa-3x"></i></a></span>&nbsp;&nbsp;
+            <br><br>
+            Copyright &copy; Amatsukiメモ 2019 - Theme by <a href="https://jeffprod.com" class="mysocial">JeffProd.com</a>
+            - <a class="mysocial" href="https://amatsukiurato.github.io/about">About</a>
+        </p>
+    </div>
+</footer>
+
+<script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+</body>
+</html>

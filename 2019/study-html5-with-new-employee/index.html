@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amatsukiメモ  | 新卒と２人でhtml5を勉強した話👨‍👦</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://amatsukiurato.github.io/css/blog.css" />
+    <link rel="stylesheet" href="https://amatsukiurato.github.io/css/syntax.css" />
+    
+
+        
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143787598-1"></script>
+</head>
+<body>
+
+    
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://amatsukiurato.github.io">Home</a>
+            <div class="navbar-item">
+                    
+                        Amatsukiメモ
+                    
+            </div>
+        </div>
+        <div class="navbar-end">
+                <a class="navbar-item nav-right" href="https://amatsukiurato.github.io/about">About</a>
+        </div>
+    </nav>
+    
+
+
+<div class="container">
+    <div class="section">
+    
+
+<div class="columns">
+    <div class="column is-9">
+        <div class="tile is-child box">
+            <div class="content">
+                <p class="title is-4">新卒と２人でhtml5を勉強した話👨‍👦</p>
+                
+                <p class="subtitle is-size-6 has-text-grey-light">
+                    Published at October 17, 2019 &middot;
+                    <i class="far fa-clock"></i>&nbsp;3 min read
+                    <br>
+                    
+                    Updated at October 31, 2019 &middot;
+                    <i class="far fa-clock"></i>&nbsp;3 min read
+                    
+                </p>
+                
+                <hr />
+                <div class="card">
+                    <div class="card-content">
+                        <h1 class="title is-5">Contents</h1>
+                        <div class="contents">
+                            <nav id="TableOfContents">
+<ul>
+<li><a href="#tl-dr">TL;DR</a></li>
+<li><a href="#概要">概要</a></li>
+<li><a href="#やる前に話し合ったこと">やる前に話し合ったこと</a>
+<ul>
+<li><a href="#新卒と話し合う">新卒と話し合う🗣</a></li>
+</ul></li>
+<li><a href="#実際にやってみて">実際にやってみて</a>
+<ul>
+<li><a href="#html5の勉強について">html5の勉強について</a>
+<ul>
+<li><a href="#良かった点">良かった点</a></li>
+</ul></li>
+<li><a href="#gitについて">gitについて</a>
+<ul>
+<li><a href="#良かった点-1">良かった点</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#まとめ">まとめ</a></li>
+</ul>
+</nav>
+                        </div>          
+                    </div>
+                </div>
+                <hr>
+                
+
+<h1 id="tl-dr">TL;DR</h1>
+
+<ul>
+<li>何かをやらせるときは極力その子がやりたいことに沿って学習させる
+
+<ul>
+<li>ちゃんと意見を聞けていたら、その子からアクションを起こしてくれる</li>
+<li>相手が自由にできるように幅をもたせておくことは大切</li>
+</ul></li>
+<li>コミュニケーションを取る</li>
+<li>相手のレベルを考える</li>
+<li>自分も知識が広がるようなものを取り組むと👍</li>
+</ul>
+
+<h1 id="概要">概要</h1>
+
+<p>9月頃から、上司から<br />
+「新卒の面倒を見てやってほしい」<br />
+「案件で使う技術を使えるようにしてほしい」<br />
+と唐突に言われ、<br />
+WTFと心で思いつつ学習プランを新卒と練り、１ヶ月半過ごしました。<br />
+新卒は経済学部出身なので、ちょろっと研修(2ヶ月)+OJTで学んできたぐらいの知識です。</p>
+
+<h1 id="やる前に話し合ったこと">やる前に話し合ったこと</h1>
+
+<h2 id="新卒と話し合う">新卒と話し合う🗣</h2>
+
+<p>何をするかも決まっていなかったので<br />
+楽しいことは自分で学習する気になるという考えから<br />
+まず、技術の中で何が一番やってて楽しかったかを伺いました。</p>
+
+<p>新卒は<code>html</code>が好きでやりたいと話してくれました。<br />
+案件では、<code>SpringBoot</code>を利用した基幹システムの改修を行っているので<br />
+<code>html5</code>は関係なくはないけど、どちらかというと<code>Java</code>とか<code>SQL</code>、<code>JS</code>、<code>git</code>を学んでほしいというのが正直なところでした。</p>
+
+<p><code>html</code>が好きということなので、とりあえず以下の方針で<br />
+まず<code>html5</code>と何をするにしても必須のツールである<code>git</code>についての勉強をしていくことになりました。</p>
+
+<ul>
+<li><a href="https://html5exam.jp/">html5の資格</a>があるので、これの参考書の選択問題を毎朝約15分だけやる</li>
+<li><code>git</code>について、簡単にまとめてくる(まとめ方は自由)</li>
+</ul>
+
+<h1 id="実際にやってみて">実際にやってみて</h1>
+
+<h2 id="html5の勉強について">html5の勉強について</h2>
+
+<p>毎朝15分だけかつ、好きな内容だったので比較的スムーズに学習が進みました🤗<br />
+また、<code>html5</code>と<code>css3</code>を利用したアニメーションの技術資料展開も行ってくれました😯</p>
+
+<h3 id="良かった点">良かった点</h3>
+
+<ul>
+<li>自分自身でアニメーションを学習/発表してくれたこと</li>
+<li>楽しく学習してくれたこと</li>
+<li>こちらも勉強になったこと(ServiceWorkerやIndexedDBなどは知らなかった)。</li>
+</ul>
+
+<h2 id="gitについて">gitについて</h2>
+
+<p>3日ぐらいでExcelにまとめてきてくれました。(Excelはやめてくれ😇)<br />
+この後、この資料を元手にプレゼン資料を作成してもらい、<code>git</code>についての発表を行うまでに至りました</p>
+
+<h3 id="良かった点-1">良かった点</h3>
+
+<ul>
+<li>時系列的には<code>html</code>よりもこちらのほうが先に発表したので、発表するというきっかけ作りになったと感じている</li>
+<li>発表させることによって、何が足りていないのかが明確になった</li>
+<li>何かの経験をもたせるために外発的動機づけ(罰と報酬)を行うのは、ありだと思った(キッカケとして行うこと)</li>
+</ul>
+
+<h1 id="まとめ">まとめ</h1>
+
+<p>やはり、今回比較的スムーズに進んだ点として<br />
+<strong>相手のやりたいことをやらせる/やるっきっかけを作る</strong><br />
+のが自主的に学習させるための一歩なのかなと思います😉<br />
+また、やりたいことのヒヤリングなどを行うときには事前のコミュニケーションが重要とも感じました。</p>
+
+
+
+            </div>
+            
+            <hr />
+            <div>Tags: <a class="tag is-link" href="https://amatsukiurato.github.io/tags/%e5%8b%89%e5%bc%b7/">#勉強</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/%e6%96%b0%e5%8d%92%e5%af%be%e5%bf%9c/">#新卒対応</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/%e3%83%9d%e3%82%a8%e3%83%a0/">#ポエム</a></div>
+            <hr />
+            
+            <div>
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+            </div>
+            <hr />
+            <div>
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-amatsukiurato-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            
+
+
+        </div>
+    </div>
+    <div class="column is-3">
+        <div class="card">
+    <div class="card-content">
+        <h1 class="title is-5">Tags</h1>
+        <div class="tags">
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/aws">aws</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/awsloft">awsloft</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/box">box</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/cloud2.0">cloud2.0</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/cloudstrage">cloudstrage</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/copyq">copyq</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/css">css</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/dropbox">dropbox</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/extention">extention</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/feeling">feeling</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/front">front</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/game">game</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/git">git</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/googledrive">googledrive</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/hugo">hugo</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/icloud">icloud</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/intellij">intellij</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/javascript">javascript</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/markdown">markdown</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/onedrive">onedrive</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/onsen-ui">onsen-ui</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/react">react</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/revealjs">revealjs</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/route53">route53</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/s3">s3</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/ubuntu">ubuntu</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/vscode">vscode</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/webpack">webpack</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E3%82%B7%E3%83%B3%E3%83%9C%E3%83%AA%E3%83%83%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%AF">シンボリックリンク</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E3%83%9D%E3%82%A8%E3%83%A0">ポエム</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E5%8B%89%E5%BC%B7">勉強</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E6%96%B0%E5%8D%92%E5%AF%BE%E5%BF%9C">新卒対応</a></span>
+        
+        </div>          
+    </div>
+</div><br>
+        <div class="card">
+    <div class="card-content">
+        <h1 class="title is-5">Recent posts</h1>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/game-tech-night-cloud2.0/">Amazon Game Tech Night Osakaに行ってみた</a></h1>
+            <time class="has-text-grey-light is-size-7">31 October 2019</time>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/how-to-display-icloud-doc-on-home/">iCloudのディレクトリをホームディレクトリに持ってくる方法</a></h1>
+            <time class="has-text-grey-light is-size-7">29 October 2019</time>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/tried-to-use-box/">CloudStrageのBoxを使ってみた</a></h1>
+            <time class="has-text-grey-light is-size-7">27 October 2019</time>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/adapted-hugo-gitinfo/">hugoの.GitInfoが適応された話(理由は不明です…)</a></h1>
+            <time class="has-text-grey-light is-size-7">20 October 2019</time>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/study-html5-with-new-employee/">新卒と２人でhtml5を勉強した話👨‍👦</a></h1>
+            <time class="has-text-grey-light is-size-7">17 October 2019</time>
+        
+    </div>
+</div>
+    <br>
+                
+
+
+    
+<br>
+        <div class="card">
+    <div class="card-content">
+        <h1 class="title is-5">Archives</h1>
+        
+            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (13)<br>
+        
+    </div>
+</div>
+
+    </div>
+</div>
+
+    
+    </div>
+</div>
+
+<footer class="footer has-background-grey-darker has-text-white">
+    <div class="content has-text-centered">
+        <p>
+            <span class="icon is-large"><a href="https://twitter.com/AmatsukiUrato" class="mysocial" rel="me"><i class="fab fa-twitter fa-3x"></i></a></span>&nbsp;&nbsp;
+            <span class="icon is-large"><a href="https://github.com/AmatsukiUrato" class="mysocial" rel="me"><i class="fab fa-github fa-3x"></i></a></span>&nbsp;&nbsp;
+            <br><br>
+            Copyright &copy; Amatsukiメモ 2019 - Theme by <a href="https://jeffprod.com" class="mysocial">JeffProd.com</a>
+            - <a class="mysocial" href="https://amatsukiurato.github.io/about">About</a>
+        </p>
+    </div>
+</footer>
+
+<script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+</body>
+</html>
