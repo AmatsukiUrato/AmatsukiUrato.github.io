@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amatsukiメモ  | DropBox</title>
+    <title>Amatsukiメモ  | Amazon Game Tech Night Osakaに行ってみた</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -11,9 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
     <link rel="stylesheet" href="https://amatsukiurato.github.io/css/blog.css" />
     <link rel="stylesheet" href="https://amatsukiurato.github.io/css/syntax.css" />
-    
-    <link href="https://amatsukiurato.github.io/tags/dropbox/index.xml" rel="alternate" type="application/rss+xml" title="Amatsukiメモ" />
-    <link href="https://amatsukiurato.github.io/tags/dropbox/index.xml" rel="feed" type="application/rss+xml" title="Amatsukiメモ" />
     
 
         
@@ -27,7 +24,7 @@
             <a class="navbar-item" href="https://amatsukiurato.github.io">Home</a>
             <div class="navbar-item">
                     
-                        #DropBox
+                        Amatsukiメモ
                     
             </div>
         </div>
@@ -42,28 +39,126 @@
     <div class="section">
     
 
-
-
 <div class="columns">
     <div class="column is-9">
         <div class="tile is-child box">
             <div class="content">
+                <p class="title is-4">Amazon Game Tech Night Osakaに行ってみた</p>
+                
+                <p class="subtitle is-size-6 has-text-grey-light">
+                    Published at October 31, 2019 &middot;
+                    <i class="far fa-clock"></i>&nbsp;2 min read
+                    <br>
+                    
+                    Updated at October 31, 2019 &middot;
+                    <i class="far fa-clock"></i>&nbsp;2 min read
+                    
+                </p>
+                
+                <hr />
+                
 
-                <article class="media">
-                    <div class="media-content">
-                        <div class="content">
-                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/tried-to-use-box/">CloudStrageのBoxを使ってみた</a></p>
-                            <p class="subtitle is-size-6 has-text-grey-light">
-                                Published at October 27, 2019 &middot;
-                                <i class="far fa-clock"></i>&nbsp;4 min read
-                            </p>
-                            <p>最近MacBookProを買ったこともあり、ローカルの環境を見直しておりました。 その際にバックアップ用のクラウドストレージを再検討してみたところ、Boxが良さげだったので使ってみた話です。 TL;DR 無料でクラウドストレージを利用する場合の検討です ファイルの特徴で併用していくのが良さげ 無難に行くならDropBox、容量がほしいならBox 同期時間を気にしないならOneDrive Apple製品統一ならiCloud Driveでもいいかも 以前はDropBoxを利用していた Dropboxはローカルで同期させる際も普...</p>
-                        </div>
-                    </div>
-                </article>
-                <br>
+<p>畑違いの業種なのですが、<br />
+AWS Pop-Up Loft Osakaが行われるとのことだったので、Game Tech Nightへ参加しました！</p>
+
+<p>会場は最初から最後まで、飲食ありのラフな感じで開催されておりました😊<br />
+登壇者は全員面白い発表をされていましたが、特に面白かったCloud2.0についての所感を記載しております。</p>
+
+<h2 id="もうそこまで迫っている-cloud2-0-時代の開発">もうそこまで迫っている！ Cloud2.0 時代の開発</h2>
+
+<h3 id="フルマネージドサービスを使おう">フルマネージドサービスを使おう</h3>
+
+<ul>
+<li>処理をフルマネージドで行うことで、復旧対策や管理までAWSが担保してくれる
+
+<ul>
+<li>あえてロックインされにいく</li>
+</ul></li>
+<li>コントローラブルなものを利用する=問題が発生したら、自分で解決しなければならない。</li>
+<li>フルマネージドのサービスを利用して自身の責務をなくす
+
+<ul>
+<li>API Gateway</li>
+<li>App Sync</li>
+<li>DynamoDB</li>
+<li>S3</li>
+<li>SNS</li>
+<li>SQS</li>
+<li>Kinesis Data Firehose</li>
+<li>Athena</li>
+</ul></li>
+</ul>
+
+<h3 id="イベントに対してプログラミングを行う">イベントに対してプログラミングを行う</h3>
+
+<p>マイクロサービスを利用し、イベント駆動開発を行う。<br />
+アプリ開発者は、自分のやりたいこと(XXのときの処理)だけを書けば良い形になる。
+マイクロサービスが落ちたときの担保は、途中の通信処理をQueueに入れて行う。</p>
+
+<h3 id="より耐久性の高いものにする">より耐久性の高いものにする</h3>
+
+<ul>
+<li>ステートレスに設計することが大切
+
+<ul>
+<li><strong>ステートフルで設計を行うと耐障害性が下がる</strong></li>
+<li>運用不要にするにはサーバ側で状態を持ってはいけない</li>
+</ul></li>
+<li>状態管理用データをどこかへ避難させることが重要
+
+<ul>
+<li>Lambdaを利用する場合
+
+<ul>
+<li>DynamoDBへ逃がす(コスト高)</li>
+<li>Step Functionsを利用する(コスト高)</li>
+</ul></li>
+</ul></li>
+<li>クライアントに情報を持たす(ロールバックされても良いデータのみ)</li>
+</ul>
+
+<h2 id="さいごに">さいごに</h2>
+
+<p>来月のSoftwareDesignにCloud2.0に関しての記事が掲載されるみたいです</p>
+
+
 
             </div>
+            
+            <hr />
+            <div>Tags: <a class="tag is-link" href="https://amatsukiurato.github.io/tags/aws/">#AWS</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/awsloft/">#AWSLoft</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/cloud2.0/">#Cloud2.0</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/feeling/">#Feeling</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/game/">#Game</a></div>
+            <hr />
+            
+            <div>
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+            </div>
+            <hr />
+            <div>
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-amatsukiurato-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            
+
+
         </div>
     </div>
     <div class="column is-3">
@@ -161,6 +256,30 @@
     </div>
 </div>
     <br>
+                
+  
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h1 class="title is-5">Related posts</h1>
+      
+      
+            <h1><a href="https://amatsukiurato.github.io/2019/resolved-routing-problem-on-route53/">Route53のルーティング問題を解決した話</a></h1>
+            <time class="has-text-grey-light is-size-7">15 July 2019</time>
+      
+            <h1><a href="https://amatsukiurato.github.io/2019/want-to-use-s3-redirect/">S3のリダイレクト機能でgithubのpageへ飛ばしたい</a></h1>
+            <time class="has-text-grey-light is-size-7">2 July 2019</time>
+      
+            <h1><a href="https://amatsukiurato.github.io/2019/migration-from-lightsail/">Light Sailからの移行</a></h1>
+            <time class="has-text-grey-light is-size-7">16 April 2019</time>
+      
+    </div>
+</div>
+
+    
+<br>
         <div class="card">
     <div class="card-content">
         <h1 class="title is-5">Archives</h1>
@@ -173,7 +292,7 @@
     </div>
 </div>
 
-
+    
     </div>
 </div>
 
