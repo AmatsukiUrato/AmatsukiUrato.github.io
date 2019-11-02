@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amatsukiメモ  | 新卒と２人でhtml5を勉強した話👨‍👦</title>
+    <title>Amatsukiメモ  | Marpが前よりも使いやすくなっていたので、触ってみた</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -43,14 +43,14 @@
     <div class="column is-9">
         <div class="tile is-child box">
             <div class="content">
-                <p class="title is-4">新卒と２人でhtml5を勉強した話👨‍👦</p>
+                <p class="title is-4">Marpが前よりも使いやすくなっていたので、触ってみた</p>
                 
                 <p class="subtitle is-size-6 has-text-grey-light">
-                    Published at October 17, 2019 &middot;
+                    Published at October 31, 2019 &middot;
                     <i class="far fa-clock"></i>&nbsp;3 min read
                     <br>
                     
-                    Updated at October 31, 2019 &middot;
+                    Updated at November 2, 2019 &middot;
                     <i class="far fa-clock"></i>&nbsp;3 min read
                     
                 </p>
@@ -63,24 +63,19 @@
                         <div class="contents">
                                 <nav id="TableOfContents">
 <ul>
-<li><a href="#tl-dr">TL;DR</a></li>
-<li><a href="#概要">概要</a></li>
-<li><a href="#やる前に話し合ったこと">やる前に話し合ったこと</a>
+<li><a href="#はじめに">はじめに</a></li>
+<li><a href="#marpの良い点">Marpの良い点</a></li>
+<li><a href="#実際に使ってみる">実際に使ってみる</a>
 <ul>
-<li><a href="#新卒と話し合う">新卒と話し合う🗣</a></li>
-</ul></li>
-<li><a href="#実際にやってみて">実際にやってみて</a>
+<li><a href="#marp-cli">Marp-CLI</a></li>
+<li><a href="#marp-cli-docker">Marp-CLI(Docker)</a>
 <ul>
-<li><a href="#html5の勉強について">html5の勉強について</a>
-<ul>
-<li><a href="#良かった点">良かった点</a></li>
-</ul></li>
-<li><a href="#gitについて">gitについて</a>
-<ul>
-<li><a href="#良かった点-1">良かった点</a></li>
+<li><a href="#dockerコンテナでコンバートする際のfont問題">Dockerコンテナでコンバートする際のfont問題</a></li>
+<li><a href="#解決策">解決策</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#まとめ">まとめ</a></li>
+<li><a href="#さいごに">さいごに</a></li>
+<li><a href="#サンプル">サンプル</a></li>
 </ul>
 </nav>
                         </div>          
@@ -91,90 +86,97 @@
                 
                 
 
-<h1 id="tl-dr">TL;DR</h1>
+<h1 id="はじめに">はじめに</h1>
+
+<p>ずっと前から、スライドを何とかMarkdownでかけないかをずっと考えていまして、昔はMarpを使っていました。<br />
+しかし、かゆいところに手が届かないのが欠点で、ここ最近は<code>revealjs</code>というライブラリのVSCode拡張機能版<code>cscode-reveal</code>を利用しておりました。<br />
+こちらもめちゃくちゃ良くて、htmlでイカしたスライドを作りたいなら、めちゃくちゃありな選択肢だと思います。</p>
+
+<p>ずっと<code>cscode-reveal</code>を利用していたのですが、こちらはpdf化を行うときがうまく行かず、<code>pptx</code>や<code>pdf</code>の資料として作成するには少し辛いものがありました。そこで再度検索したところ、Marpがバージョンアップしており使いやすくなっていたので、今回紹介します。</p>
+
+<p><a href="https://github.com/marp-team/marp">公式Repository</a></p>
+
+<h1 id="marpの良い点">Marpの良い点</h1>
+
+<p>個人的には</p>
 
 <ul>
-<li>何かをやらせるときは極力その子がやりたいことに沿って学習させる
-
-<ul>
-<li>ちゃんと意見を聞けていたら、その子からアクションを起こしてくれる</li>
-<li>相手が自由にできるように幅をもたせておくことは大切</li>
-</ul></li>
-<li>コミュニケーションを取る</li>
-<li>相手のレベルを考える</li>
-<li>自分も知識が広がるようなものを取り組むと👍</li>
+<li><a href="https://github.com/marp-team/marp-cli">Marp-CLI</a>の誕生</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode">Marp for VS Code</a>がある</li>
+<li><a href="https://hub.docker.com/r/marpteam/marp-cli">Dockerコンテナ</a>もあるよ</li>
+<li><a href="https://marpit.marp.app/">公式Document</a>が充実してきた</li>
 </ul>
 
-<h1 id="概要">概要</h1>
+<p>辺りがとても良いと思っており、助かってます。</p>
 
-<p>9月頃から、上司から<br />
-「新卒の面倒を見てやってほしい」<br />
-「案件で使う技術を使えるようにしてほしい」<br />
-と唐突に言われ、<br />
-WTFと心で思いつつ学習プランを新卒と練り、１ヶ月半過ごしました。<br />
-新卒は経済学部出身なので、ちょろっと研修(2ヶ月)+OJTで学んできたぐらいの知識です。</p>
+<h1 id="実際に使ってみる">実際に使ってみる</h1>
 
-<h1 id="やる前に話し合ったこと">やる前に話し合ったこと</h1>
+<h2 id="marp-cli">Marp-CLI</h2>
 
-<h2 id="新卒と話し合う">新卒と話し合う🗣</h2>
+<p>公式の言うとおりに、<code>npm</code>コマンドを用いてインストールする。<br />
+今回はグローバルにインストールしました。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">npm i -g @marp-team/marp-cli</code></pre></div>
+<p>公式のRepositoryに習ってとりあえずpdfを生成してみます。<br />
+MarkdownのSampleは最後に乗せています。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">marp <span class="o">[</span>変換するmarkdownファイル<span class="o">]</span> --pdf</code></pre></div>
+<p>上記コマンドで、pdf化が行えます。<br />
+結構いい感じでpdf化してくれてます。</p>
 
-<p>何をするかも決まっていなかったので<br />
-楽しいことは自分で学習する気になるという考えから<br />
-まず、技術の中で何が一番やってて楽しかったかを伺いました。</p>
+<p><a href="https://amatsukiurato.github.io/resources/updated-marp/marp-sample.pdf">変換後のpdf</a></p>
 
-<p>新卒は<code>html</code>が好きでやりたいと話してくれました。<br />
-案件では、<code>SpringBoot</code>を利用した基幹システムの改修を行っているので<br />
-<code>html5</code>は関係なくはないけど、どちらかというと<code>Java</code>とか<code>SQL</code>、<code>JS</code>、<code>git</code>を学んでほしいというのが正直なところでした。</p>
+<p>他にも<code>--pptx</code>でパワポにもできたりするので、お試しあれ😏</p>
 
-<p><code>html</code>が好きということなので、とりあえず以下の方針で<br />
-まず<code>html5</code>と何をするにしても必須のツールである<code>git</code>についての勉強をしていくことになりました。</p>
+<h2 id="marp-cli-docker">Marp-CLI(Docker)</h2>
 
-<ul>
-<li><a href="https://html5exam.jp/">html5の資格</a>があるので、これの参考書の選択問題を毎朝約15分だけやる</li>
-<li><code>git</code>について、簡単にまとめてくる(まとめ方は自由)</li>
-</ul>
+<p>こちらも、<a href="https://hub.docker.com/r/marpteam/marp-cli/">公式</a>の言うとおりにコマンドを実行します。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker run --rm -v <span class="nv">$PWD</span>:/home/marp/app/ -e <span class="nv">LANG</span><span class="o">=</span><span class="nv">$LANG</span> marpteam/marp-cli <span class="o">[</span>変換するmarkdownファイル<span class="o">]</span></code></pre></div>
+<p>dockerを利用しても、ちゃんとpdf化できていることが確認できます。</p>
 
-<h1 id="実際にやってみて">実際にやってみて</h1>
+<p><a href="https://amatsukiurato.github.io/resources/updated-marp/marp-docker-sample.pdf">変換後のpdf</a></p>
 
-<h2 id="html5の勉強について">html5の勉強について</h2>
+<h3 id="dockerコンテナでコンバートする際のfont問題">Dockerコンテナでコンバートする際のfont問題</h3>
 
-<p>毎朝15分だけかつ、好きな内容だったので比較的スムーズに学習が進みました🤗<br />
-また、<code>html5</code>と<code>css3</code>を利用したアニメーションの技術資料展開も行ってくれました😯</p>
+<p>日本語のフォントがコンテナ内部のものに依存しているからか、微妙なフォントになっています。
+dockerイメージに他のフォントがないからかも(alpine linuxだし)と思い、</p>
 
-<h3 id="良かった点">良かった点</h3>
+<p><a href="https://stackoverflow.com/questions/56937689/alpine-linux-fonts">Alpine Linux fonts</a></p>
 
-<ul>
-<li>自分自身でアニメーションを学習/発表してくれたこと</li>
-<li>楽しく学習してくれたこと</li>
-<li>こちらも勉強になったこと(ServiceWorkerやIndexedDBなどは知らなかった)。</li>
-</ul>
+<p>を参考にGoogle Fontsをインストールしたイメージを作成しましたが、うまくいきませんでした。</p>
 
-<h2 id="gitについて">gitについて</h2>
+<h3 id="解決策">解決策</h3>
 
-<p>3日ぐらいでExcelにまとめてきてくれました。(Excelはやめてくれ😇)<br />
-この後、この資料を元手にプレゼン資料を作成してもらい、<code>git</code>についての発表を行うまでに至りました</p>
+<p>いろいろ試しましたが、styleを利用してフォントを外部インポートする方法でうまくコンバートできました。<br />
+以下の例ではgoogleFontをインポートしてます。Googleが提供しているフォントで良いのであれば、<a href="https://fonts.google.com/">こちら</a>でポチポチすれば下記のインポート用のコードまで作成してくれます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">---
+marp: true
+&lt;!-- marpの設定 --&gt;
+---
+&lt;style&gt;
+<span class="ni">@import</span> url(&#39;https://fonts.googleapis.com/css?family=Noto+Serif+JP&amp;display=swap&#39;);
+section {
+    font-family: &#39;Noto Serif JP&#39;, serif;
+}
+&lt;/style&gt;
 
-<h3 id="良かった点-1">良かった点</h3>
+&lt;!-- 以下より資料用のテキストを記載する --&gt;</code></pre></div>
+<p><a href="https://amatsukiurato.github.io/resources/updated-marp/marp-docker-sample-custom-font.pdf">上記styleを含めてコンバートした際のpdf</a></p>
 
-<ul>
-<li>時系列的には<code>html</code>よりもこちらのほうが先に発表したので、発表するというきっかけ作りになったと感じている</li>
-<li>発表させることによって、何が足りていないのかが明確になった</li>
-<li>何かの経験をもたせるために外発的動機づけ(罰と報酬)を行うのは、ありだと思った(キッカケとして行うこと)</li>
-</ul>
+<h1 id="さいごに">さいごに</h1>
 
-<h1 id="まとめ">まとめ</h1>
+<p>Marpみたいな、イイ感じじゃないものをいい感じにするツールはやっぱり最高だと思いました！<br />
+製作者に感謝🙇‍♂️</p>
 
-<p>やはり、今回比較的スムーズに進んだ点として<br />
-<strong>相手のやりたいことをやらせる/やるっきっかけを作る</strong><br />
-のが自主的に学習させるための一歩なのかなと思います😉<br />
-また、やりたいことのヒヤリングなどを行うときには事前のコミュニケーションが重要とも感じました。</p>
+<h1 id="サンプル">サンプル</h1>
+
+<script type="application/javascript" src="https://gist.github.com/AmatsukiUrato/f3f8ea85d6dbb8e20fd026cd858ca574.js"></script>
+
 
 
 
             </div>
             
             <hr />
-            <div>Tags: <a class="tag is-link" href="https://amatsukiurato.github.io/tags/%e5%8b%89%e5%bc%b7/">#勉強</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/%e6%96%b0%e5%8d%92%e5%af%be%e5%bf%9c/">#新卒対応</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/%e3%83%9d%e3%82%a8%e3%83%a0/">#ポエム</a></div>
+            <div>Tags: <a class="tag is-link" href="https://amatsukiurato.github.io/tags/marp/">#Marp</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/nodejs/">#Nodejs</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/docker/">#Docker</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/extention/">#Extention</a></div>
             <hr />
             
             <div>

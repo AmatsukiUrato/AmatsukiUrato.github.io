@@ -52,6 +52,19 @@
                     <article class="media">
                         <div class="media-content">
                             <div class="content">
+                                <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/resolved-routing-problem-on-route53/">Route53のルーティング問題を解決した話</a></p>
+                                <p class="subtitle is-size-6 has-text-grey-light">
+                                    Published at July 15, 2019 &middot;
+                                    <i class="far fa-clock"></i>&nbsp;1 min read
+                                </p>
+                                <p>TL;DR 外部からホストゾーンのネームサーバを指定してあげないと、レコードが帰ってこなかった Route53のドメインのネームサーバとホストゾーンのネームサーバを一緒にする 概要 前に[Route53] -&gt; [S3のリダイレクト] -&gt; [リダイレクト先ページ] のルーティングを行おうと思いましたがうまく行きませんでした。 該当記事 原因 Route53にて、登録していたドメインに記述されているネームサーバの一覧と ホストゾーンに記載されているNSレコードの値が違っていたため、 正しくルーティングされなかったみたいです。 解決方法と...</p>
+                            </div>
+                        </div>
+                    </article>
+                
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content">
                                 <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/change-onsen-ui-dialog-component-size/">Onsen-UIのDialogコンポーネントサイズを変更する</a></p>
                                 <p class="subtitle is-size-6 has-text-grey-light">
                                     Published at July 4, 2019 &middot;
@@ -88,19 +101,6 @@
                         </div>
                     </article>
                 
-                    <article class="media">
-                        <div class="media-content">
-                            <div class="content">
-                                <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/why-did-webpack-hide-outputfile-on-intellij/">IntelliJでwebpack導入後、フォルダが見えなくなる問題の解決法</a></p>
-                                <p class="subtitle is-size-6 has-text-grey-light">
-                                    Published at June 30, 2019 &middot;
-                                    <i class="far fa-clock"></i>&nbsp;1 min read
-                                </p>
-                                <p>TL;DR 設定からWebpackを開いて、configuration fileのパスを消す 原因 IntelliJが賢すぎた。 というのも、webpackのアウトプット先がintelliJ IDEA上でExcluded(非表示になりIntellij上から閲覧できなくなる)のは、 webpackの出力先フォルダだからです。 設定は以下の場所にあり、 Preferences | Languages &amp; Frameworks | JavaScript | Webpackwebpack のconfiguration file:の項目を空文字列にすることによってIntelliJ上から編集できるようになります。 消している理由は パフォーマンスのため...</p>
-                            </div>
-                        </div>
-                    </article>
-                
             </div>
         </div>
     </div>
@@ -123,6 +123,8 @@
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/copyq">copyq</a></span>
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/css">css</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/docker">docker</a></span>
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/dropbox">dropbox</a></span>
         
@@ -147,6 +149,10 @@
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/javascript">javascript</a></span>
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/markdown">markdown</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/marp">marp</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/nodejs">nodejs</a></span>
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/onedrive">onedrive</a></span>
         
@@ -181,6 +187,9 @@
     <div class="card-content">
         <h1 class="title is-5">Recent posts</h1>
         
+            <h1><a href="https://amatsukiurato.github.io/2019/updated-marp/">Marpが前よりも使いやすくなっていたので、触ってみた</a></h1>
+            <time class="has-text-grey-light is-size-7">31 October 2019</time>
+        
             <h1><a href="https://amatsukiurato.github.io/2019/game-tech-night-cloud2.0/">Amazon Game Tech Night Osakaに行ってみた</a></h1>
             <time class="has-text-grey-light is-size-7">31 October 2019</time>
         
@@ -193,9 +202,6 @@
             <h1><a href="https://amatsukiurato.github.io/2019/adapted-hugo-gitinfo/">hugoの.GitInfoが適応された話(理由は不明です…)</a></h1>
             <time class="has-text-grey-light is-size-7">20 October 2019</time>
         
-            <h1><a href="https://amatsukiurato.github.io/2019/study-html5-with-new-employee/">新卒と２人でhtml5を勉強した話👨‍👦</a></h1>
-            <time class="has-text-grey-light is-size-7">17 October 2019</time>
-        
     </div>
 </div>
     <br>
@@ -203,7 +209,7 @@
     <div class="card-content">
         <h1 class="title is-5">Archives</h1>
         
-            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (13)<br>
+            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (14)<br>
         
     </div>
 </div>

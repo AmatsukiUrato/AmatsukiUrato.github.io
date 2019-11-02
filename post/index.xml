@@ -5,10 +5,19 @@
     <description>Recent content in Posts on Amatsukiメモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 31 Oct 2019 02:19:44 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 31 Oct 2019 22:41:35 +0900</lastBuildDate>
     
         <atom:link href="https://amatsukiurato.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Marpが前よりも使いやすくなっていたので、触ってみた</title>
+      <link>https://amatsukiurato.github.io/2019/updated-marp/</link>
+      <pubDate>Thu, 31 Oct 2019 22:41:35 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/2019/updated-marp/</guid>
+      <description>はじめに ずっと前から、スライドを何とかMarkdownでかけないかをずっと考えていまして、昔はMarpを使っていました。 しかし、かゆいところに手が届かないのが欠点で、ここ最近はrevealjsというライブラリのVSCode拡張機能版cscode-revealを利用しておりました。 こちらもめちゃくちゃ良くて、htmlでイカしたスライドを作りたいなら、めちゃくちゃありな選択肢だと思います。 ずっとcscode-revealを利用していたのですが、こちらはpdf化を行うときがうまく行かず、pptxやpd</description>
+    </item>
     
     <item>
       <title>Amazon Game Tech Night Osakaに行ってみた</title>
