@@ -54,11 +54,11 @@
                 
                 <p class="subtitle is-size-6 has-text-grey-light">
                     Published at November 4, 2019 &middot;
-                    <i class="far fa-clock"></i>&nbsp;3 min read
+                    <i class="far fa-clock"></i>&nbsp;4 min read
                     <br>
                     
                     Updated at November 5, 2019 &middot;
-                    <i class="far fa-clock"></i>&nbsp;3 min read
+                    <i class="far fa-clock"></i>&nbsp;4 min read
                     
                 </p>
                 
@@ -83,7 +83,12 @@
 </ul></li>
 </ul></li>
 <li><a href="#どっちにするか">どっちにするか</a></li>
-<li><a href="#実際に動かしてみる">実際に動かしてみる</a></li>
+<li><a href="#実際に動かしてみる">実際に動かしてみる</a>
+<ul>
+<li><a href="#スマホから繋げない問題">スマホから繋げない問題</a></li>
+<li><a href="#スマホ側から動作させる">スマホ側から動作させる</a></li>
+<li><a href="#pcのカメラで動作させる">PCのカメラで動作させる</a></li>
+</ul></li>
 <li><a href="#さいごに">さいごに</a></li>
 </ul>
 </nav>
@@ -109,7 +114,8 @@
 
 <h1 id="arの実現方法">ARの実現方法</h1>
 
-<p>検索したところ、Unityで実現する方法とWeb技術で実現する方法がありました。</p>
+<p>検索したところ、Unityで実現する方法とWeb技術で実現する方法がありました。<br />
+ネイティブで実現する方法もあると思いますが、今回はこの2つを見ていきます。</p>
 
 <h2 id="unity">Unity</h2>
 
@@ -141,31 +147,19 @@ iOSだと<code>ARkit</code>、Androidだと<code>ARCore</code>というSDKを使
 <ul>
 <li><a href="https://qiita.com/mkoku/items/c635566e829c303a7d3f">A-FrameとAR.jsで超簡単AR（PC・スマホ・マルチマーカー対応）</a></li>
 <li><a href="https://qiita.com/sakaryu/items/769a2a538baf7e4ee1c7">【AR.js入門】簡単にWebARで遊んでみた【A-Frame使うよ】</a></li>
+<li><a href="https://iti.hatenablog.jp/entry/2017/12/04/090023">🐶AR.jsを使ってWebAR年賀状を作る🐶</a></li>
 </ul>
 
 <h1 id="どっちにするか">どっちにするか</h1>
 
-<p>Unityにするなら、アセットなどのデータを使えると思うので資産的にはすごく大きいと思いますが、Unityということは、アプリにする必要があると考えとります(UnityのWebGLビルドは未調査)。</p>
+<p>Unityにするなら、アセットなどのデータを使えると思うので資産的にはすごく大きいと思いますが、Unityということは、アプリにする必要があると考えとります(UnityのWebGLビルドがどうとかは未調査です)。</p>
 
 <p>今回は簡単に実行できてほかったのと、自分がWeb技術を中心に触っていることから、Web技術で作る方針にしました。</p>
 
 <h1 id="実際に動かしてみる">実際に動かしてみる</h1>
 
-<p>とりあえず、「<a href="https://qiita.com/mkoku/items/c635566e829c303a7d3f">A-FrameとAR.jsで超簡単AR（PC・スマホ・マルチマーカー対応）</a>」を参考に作ります。</p>
-
-<p>上記を参考に、<code>index.html</code>を作成します。とりあえずのテストなので、<code>nginx</code>のDockerコンテナを使って立てました。</p>
-
-<p>下記Dockerコマンドを叩くカレントディレクトリに<code>index.html</code>をおいておけば<code>localhost:8080</code>または、同一ネットワークから<code>[dockerを起動しているPCのip]:8080</code>で接続が可能になります。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker run --name nignx -v <span class="nv">$PWD</span>:/usr/share/nginx/html -d -p <span class="m">8080</span>:80 -h <span class="m">0</span>.0.0.0 nginx</code></pre></div>
-<p>自分のスマホでアクセスしてみます。<br />
-&hellip;<br />
-表示されない…だと!?<br />
-どうやら、自分の端末はARCore対応外の端末だったみたいです…<br />
-対応表は <a href="https://developers.google.com/ar/discover/supported-devices">ARCore supported devices</a> に記載されています。</p>
-
-<p><img src="https://amatsukiurato.github.io/resources/try-to-create-ar-page/not-supported.png" alt="not-supported" /></p>
-
-<p>仕方がないので、MacBookProのカメラで無理やり確認しました。今回はとりあえず、自分のInfoをテキストで表示するところまで行いました。</p>
+<p>とりあえず、「<a href="https://qiita.com/mkoku/items/c635566e829c303a7d3f">A-FrameとAR.jsで超簡単AR（PC・スマホ・マルチマーカー対応）</a>」を参考に作ります。
+上記リンクを参考に作ったソースはこちらです(ほぼコピペ🤦‍♂️)。</p>
 
 <blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!doctype HTML&gt;</span>
@@ -186,11 +180,45 @@ iOSだと<code>ARkit</code>、Androidだと<code>ARCore</code>というSDKを使
 <p>a-textの部分以外は、参考先のhtmlを使用しております。</p>
 </blockquote>
 
-<p><img src="https://amatsukiurato.github.io/resources/try-to-create-ar-page/can-display-ar.png" alt="can-display-ar" /></p>
+<h2 id="スマホから繋げない問題">スマホから繋げない問題</h2>
+
+<p><del>上記を参考に、<code>index.html</code>を作成します。とりあえずのテストなので、<code>nginx</code>のDockerコンテナを使って立てました。</del></p>
+
+<p><del>下記Dockerコマンドを叩くカレントディレクトリに<code>index.html</code>をおいておけば<code>localhost:8080</code>または、同一ネットワークから<code>[dockerを起動しているPCのip]:8080</code>で接続が可能になります。</del></p>
+
+<p><del><code>docker run --name nignx -v $PWD:/usr/share/nginx/html -d -p 8080:80 -h 0.0.0.0 nginx</code></del></p>
+
+<p><del>自分のスマホでアクセスしてみます。<br />
+&hellip;<br />
+表示されない…だと!?<br />
+やっぱりhttps通信じゃないのが原因なんですかね？</del></p>
+
+<p><img src="https://amatsukiurato.github.io/resources/try-to-create-ar-page/not-supported.png" alt="not-supported" /></p>
+
+<p>https通信が原因でうまく行ってませんでした。<br />
+同一ネットワーク内からなら行けるんじゃねという謎の考えのせい😭</p>
+
+<h2 id="スマホ側から動作させる">スマホ側から動作させる</h2>
+
+<p><a href="https://iti.hatenablog.jp/entry/2017/12/04/090023">🐶AR.jsを使ってWebAR年賀状を作る🐶</a><br />
+を参考にして、rubyのワンライナーでサーバを立てたところ、うまくいきました(圧倒的感謝…!!)。</p>
+
+<p>下記ワンライナーはカレントディレクトリのデータを外部に公開してくれるものみたいです。</p>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="n">ruby</span> <span class="o">-</span><span class="n">rwebrick</span> <span class="o">-</span><span class="n">rwebrick</span><span class="o">/</span><span class="n">https</span> <span class="o">-</span><span class="n">e</span> <span class="s1">&#39;WEBrick::HTTPServer.new(:DocumentRoot =&gt; &#34;./&#34;, :Port =&gt; 8000, :SSLEnable =&gt; true, :SSLCertName =&gt; [[&#34;CN&#34;, WEBrick::Utils::getservername]] ).start&#39;</span></code></pre></div>
+<p>実際に接続してみた画像がこちらです。
+今回はとりあえず、自分のInfoをテキストで表示するところまで行いました。</p>
+
+<p><img src="https://amatsukiurato.github.io/resources/try-to-create-ar-page/can-display-ar-sp.png" alt="can-display-ar-sp" /></p>
+
+<h2 id="pcのカメラで動作させる">PCのカメラで動作させる</h2>
+
+<p>MacBookProのカメラで無理やり確認したやつも載せておきます。</p>
+
+<p><img src="https://amatsukiurato.github.io/resources/try-to-create-ar-page/can-display-ar-pc.png" alt="can-display-ar-pc" /></p>
 
 <h1 id="さいごに">さいごに</h1>
 
-<p>とりあえず、ARマーカーを使って文字を表示できるところまでは実装できました。<br />
+<p>とりあえず、ARマーカーを使って文字を表示できるところまでは実装できました(ほぼほぼ自分が書いたところがない🙈)。<br />
 次やるときは、<code>Three.js</code>とかも勉強して、もう少し画像とかを表示させてみたいです。</p>
 
 

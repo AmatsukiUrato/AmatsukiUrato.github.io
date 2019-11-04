@@ -16,7 +16,7 @@
       <pubDate>Mon, 04 Nov 2019 13:47:45 +0900</pubDate>
       
       <guid>https://amatsukiurato.github.io/2019/try-to-create-ar-page/</guid>
-      <description>はじめに ふと名刺にARマーカーが記載されていて、 川島教授の顔みたいな(脳トレ)のが出てきたら、とても面白いなと思いついて触ってみました。 https://www.nintendo.co.jp/ds/anmj/index.html (余談ですが、脳トレのSwitch版がでるみたいです) ARの実現方法 検索したところ、Unityで実現する方法とWeb技術で実現する方法がありました。 Unity どうやら、Vuforiaという外部ツールと連携して使うのが主流みたいです。 iOSだとARkit、AndroidだとARCoreというSDKを使って作成できるみたいですが、Vuforiaはこれらをラップしてくれてい</description>
+      <description>はじめに ふと名刺にARマーカーが記載されていて、 川島教授の顔みたいな(脳トレ)のが出てきたら、とても面白いなと思いついて触ってみました。 https://www.nintendo.co.jp/ds/anmj/index.html (余談ですが、脳トレのSwitch版がでるみたいです) ARの実現方法 検索したところ、Unityで実現する方法とWeb技術で実現する方法がありました。 ネイティブで実現する方法もあると思いますが、今回はこの2つを見ていきます。 Unity どうやら、Vuforiaという外部ツールと連携して使うのが主流みたいです。 iOSだとARkit、AndroidだとARCoreというSDK</description>
     </item>
     
   </channel>
