@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amatsukiメモ  | CloudStrageのBoxを使ってみた</title>
+    <title>Amatsukiメモ  | ブラウザを使ってARを使ってみた</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -50,15 +50,15 @@
     <div class="column is-9">
         <div class="tile is-child box">
             <div class="content">
-                <p class="title is-4">CloudStrageのBoxを使ってみた</p>
+                <p class="title is-4">ブラウザを使ってARを使ってみた</p>
                 
                 <p class="subtitle is-size-6 has-text-grey-light">
-                    Published at October 27, 2019 &middot;
-                    <i class="far fa-clock"></i>&nbsp;4 min read
+                    Published at November 4, 2019 &middot;
+                    <i class="far fa-clock"></i>&nbsp;3 min read
                     <br>
                     
-                    Updated at October 31, 2019 &middot;
-                    <i class="far fa-clock"></i>&nbsp;4 min read
+                    Updated at November 5, 2019 &middot;
+                    <i class="far fa-clock"></i>&nbsp;3 min read
                     
                 </p>
                 
@@ -70,17 +70,21 @@
                         <div class="contents">
                                 <nav id="TableOfContents">
 <ul>
-<li><a href="#tl-dr">TL;DR</a></li>
-<li><a href="#以前はdropboxを利用していた">以前はDropBoxを利用していた</a></li>
-<li><a href="#検討したやつ">検討したやつ</a>
+<li><a href="#はじめに">はじめに</a></li>
+<li><a href="#arの実現方法">ARの実現方法</a>
 <ul>
-<li><a href="#googledrive">GoogleDrive</a></li>
-<li><a href="#box">Box</a></li>
-<li><a href="#icloud-drive">iCloud Drive</a></li>
-<li><a href="#onedrive">OneDrive</a></li>
-<li><a href="#dropbox">Dropbox</a></li>
+<li><a href="#unity">Unity</a>
+<ul>
+<li><a href="#参考">参考</a></li>
 </ul></li>
-<li><a href="#今回の選定まとめ">今回の選定まとめ</a></li>
+<li><a href="#web">Web</a>
+<ul>
+<li><a href="#参考-1">参考</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#どっちにするか">どっちにするか</a></li>
+<li><a href="#実際に動かしてみる">実際に動かしてみる</a></li>
+<li><a href="#さいごに">さいごに</a></li>
 </ul>
 </nav>
                         </div>          
@@ -91,178 +95,110 @@
                 
                 
 
-<p>最近MacBookProを買ったこともあり、ローカルの環境を見直しておりました。<br />
-その際にバックアップ用のクラウドストレージを再検討してみたところ、Boxが良さげだったので使ってみた話です。</p>
+<h1 id="はじめに">はじめに</h1>
 
-<h1 id="tl-dr">TL;DR</h1>
+<p>ふと名刺にARマーカーが記載されていて、<br />
+川島教授の顔みたいな(脳トレ)のが出てきたら、とても面白いなと思いついて触ってみました。</p>
+
+<blockquote>
+<p><img src="https://www.nintendo.co.jp/ds/anmj/top/needfla.gif" alt="顔" />
+<a href="https://www.nintendo.co.jp/ds/anmj/index.html">https://www.nintendo.co.jp/ds/anmj/index.html</a></p>
+</blockquote>
+
+<p>(余談ですが、脳トレの<a href="https://topics.nintendo.co.jp/c/article/aa9b7d00-e021-11e9-b641-063b7ac45a6d.html">Switch版</a>がでるみたいです)</p>
+
+<h1 id="arの実現方法">ARの実現方法</h1>
+
+<p>検索したところ、Unityで実現する方法とWeb技術で実現する方法がありました。</p>
+
+<h2 id="unity">Unity</h2>
+
+<p>どうやら、<code>Vuforia</code>という外部ツールと連携して使うのが主流みたいです。
+iOSだと<code>ARkit</code>、Androidだと<code>ARCore</code>というSDKを使って作成できるみたいですが、<code>Vuforia</code>はこれらをラップしてくれているみたい。</p>
+
+<blockquote>
+<p><img src="https://onetech.jp/blog/wp-content/uploads/2019/10/Vuforia-ar-develop-Engine-1024x586.png" alt="Vuforia図" />
+<a href="https://onetech.jp/blog/vuforia-ar-application-development-library-features-6002">https://onetech.jp/blog/vuforia-ar-application-development-library-features-6002</a></p>
+</blockquote>
+
+<h3 id="参考">参考</h3>
 
 <ul>
-<li>無料でクラウドストレージを利用する場合の検討です</li>
-<li>ファイルの特徴で併用していくのが良さげ</li>
-<li>無難に行くなら<code>DropBox</code>、容量がほしいなら<code>Box</code></li>
-<li>同期時間を気にしないなら<code>OneDrive</code></li>
-<li>Apple製品統一なら<code>iCloud Drive</code>でもいいかも</li>
+<li><a href="https://onetech.jp/blog/vuforia-ar-application-development-library-features-6002">VUFORIAとは何か？ARアプリ開発に便利なライブラリの特徴</a></li>
+<li><a href="https://unity3d.com/jp/partners/google/arcore">ARCore</a></li>
+<li><a href="https://qiita.com/rio_matsui/items/32cd036684d7c32f57f9">【Unity】UnityインストールからARアプリ作成まで(iOS, Android)【Vuforia】</a></li>
+<li><a href="http://makers.hatenablog.com/entry/2013/12/27/191636">【３０分でできる】Unityで簡単にARアプリを作る</a></li>
 </ul>
 
-<h1 id="以前はdropboxを利用していた">以前はDropBoxを利用していた</h1>
+<h2 id="web">Web</h2>
 
-<p>Dropboxはローカルで同期させる際も普通のファイルと同様に扱えて非常に便利だったのですが、<br />
-2.88GBの容量が限界を迎えてしまいました。<br />
-ちゃんと整理したら何とかなりそうではありましたが、少し調べたところBoxのほうが良さげだったのでこちら並行しました。</p>
+<p>こちらは、<code>AR.js</code>と<code>A-Frame.js</code>を活用したものが主流みたいです。
+<code>A-Frame.js</code>でオブジェクトをレンダリングして、それを<code>AR.js</code>でAR化しているっぽいです。<br />
+また、今回は使用していませんが<code>Three.js</code>(Webブラウザ上で3Dレンダリングできるようにするライブラリ)を組み合わせ</p>
 
-<h1 id="検討したやつ">検討したやつ</h1>
+<h3 id="参考-1">参考</h3>
 
-<p>一応以下の5つを検討しました。
-やはり、ぱっと見ではGoogleDriveが一番良さげです。</p>
+<ul>
+<li><a href="https://qiita.com/mkoku/items/c635566e829c303a7d3f">A-FrameとAR.jsで超簡単AR（PC・スマホ・マルチマーカー対応）</a></li>
+<li><a href="https://qiita.com/sakaryu/items/769a2a538baf7e4ee1c7">【AR.js入門】簡単にWebARで遊んでみた【A-Frame使うよ】</a></li>
+</ul>
 
-<table>
-<thead>
-<tr>
-<th align="center">ベンダ名</th>
-<th align="center">容量(GB)</th>
-<th align="center">履歴(日)</th>
-<th align="center">備考</th>
-</tr>
-</thead>
+<h1 id="どっちにするか">どっちにするか</h1>
 
-<tbody>
-<tr>
-<td align="center">GoogleDrive</td>
-<td align="center">15</td>
-<td align="center">30</td>
-<td align="center">各種オフィスツールなど</td>
-</tr>
+<p>Unityにするなら、アセットなどのデータを使えると思うので資産的にはすごく大きいと思いますが、Unityということは、アプリにする必要があると考えとります(UnityのWebGLビルドは未調査)。</p>
 
-<tr>
-<td align="center">Box</td>
-<td align="center">10</td>
-<td align="center">-</td>
-<td align="center">履歴自体は保存されてるっぽいが、無料は使えない</td>
-</tr>
+<p>今回は簡単に実行できてほかったのと、自分がWeb技術を中心に触っていることから、Web技術で作る方針にしました。</p>
 
-<tr>
-<td align="center">iCloud Drive</td>
-<td align="center">5</td>
-<td align="center">-</td>
-<td align="center"></td>
-</tr>
+<h1 id="実際に動かしてみる">実際に動かしてみる</h1>
 
-<tr>
-<td align="center">OneDrive</td>
-<td align="center">5</td>
-<td align="center">30</td>
-<td align="center">MSOfiice系のOnline版が利用可能</td>
-</tr>
+<p>とりあえず、「<a href="https://qiita.com/mkoku/items/c635566e829c303a7d3f">A-FrameとAR.jsで超簡単AR（PC・スマホ・マルチマーカー対応）</a>」を参考に作ります。</p>
 
-<tr>
-<td align="center">DropBox</td>
-<td align="center">2</td>
-<td align="center">30</td>
-<td align="center">ミッション達成で容量追加あり(自分は+0.88GB)</td>
-</tr>
-</tbody>
-</table>
+<p>上記を参考に、<code>index.html</code>を作成します。とりあえずのテストなので、<code>nginx</code>のDockerコンテナを使って立てました。</p>
 
-<h2 id="googledrive">GoogleDrive</h2>
+<p>下記Dockerコマンドを叩くカレントディレクトリに<code>index.html</code>をおいておけば<code>localhost:8080</code>または、同一ネットワークから<code>[dockerを起動しているPCのip]:8080</code>で接続が可能になります。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker run --name nignx -v <span class="nv">$PWD</span>:/usr/share/nginx/html -d -p <span class="m">8080</span>:80 -h <span class="m">0</span>.0.0.0 nginx</code></pre></div>
+<p>自分のスマホでアクセスしてみます。<br />
+&hellip;<br />
+表示されない…だと!?<br />
+どうやら、自分の端末はARCore対応外の端末だったみたいです…<br />
+対応表は <a href="https://developers.google.com/ar/discover/supported-devices">ARCore supported devices</a> に記載されています。</p>
 
-<p>一番最初に使おうとしていたのはこいつです。<br />
-会社や個人のWindowsPCにて利用しており、快適に使えていたからです。<br />
-しかし、ドライブファイルストリームが無料で利用できない点に困りました。</p>
+<p><img src="https://amatsukiurato.github.io/resources/try-to-create-ar-page/not-supported.png" alt="not-supported" /></p>
 
-<p>ドライブファイルストリームとは、ローカルフォルダとGoogleのクラウドストレージを同期させて、あたかもローカルフォルダかのように利用できるというものです。
-バックアップと同期を利用するとその名の通り、ローカルにもデータが保存されるため(あくまでもバックアップして利用する形になる)、ローカルのストレージが圧迫されます。</p>
+<p>仕方がないので、MacBookProのカメラで無理やり確認しました。今回はとりあえず、自分のInfoをテキストで表示するところまで行いました。</p>
 
-<p>バックアップとしては利用せず、リモートにあるストレージとしてWebから利用するのが良いと思ってます。</p>
+<blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!doctype HTML&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://aframe.io/releases/0.8.2/aframe.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- スクリプト読み込み --&gt;</span>
 
-<h2 id="box">Box</h2>
+<span class="p">&lt;</span><span class="nt">body</span> <span class="na">style</span><span class="o">=</span><span class="s">&#39;margin:0px; overflow:hidden;&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a-scene</span> <span class="na">embedded</span> <span class="na">arjs</span><span class="o">=</span><span class="s">&#34;debugUIEnabled:false;trackingMethod:best;&#34;</span> <span class="na">vr-mode-ui</span><span class="o">=</span><span class="s">&#34;enabled: false&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a-marker</span> <span class="na">preset</span><span class="o">=</span><span class="s">&#34;hiro&#34;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a-text</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;Name: Urato Amatsuki\nTwitter: @AmatsukiUrato\nGithub: AmatsukiUrato&#34;</span> <span class="na">position</span><span class="o">=</span><span class="s">&#34;0 0.5 0&#34;</span> <span class="na">align</span><span class="o">=</span><span class="s">&#34;center&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">a-text</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">a-marker</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a-entity</span> <span class="na">camera</span><span class="p">&gt;&lt;/</span><span class="nt">a-entity</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">a-scene</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></div>
+<p>a-textの部分以外は、参考先のhtmlを使用しております。</p>
+</blockquote>
 
-<p>今回こいつを利用することにしました。<br />
-ストレージも10GBとそこそこあり、少し使った感じ問題なく利用できそうだったからです。<br />
-ただ、無料プランでは履歴管理ができない点は少し悲しいです。</p>
+<p><img src="https://amatsukiurato.github.io/resources/try-to-create-ar-page/can-display-ar.png" alt="not-supported" /></p>
 
-<p>個人の無料プランを見つけるまでが少し大変でした(自分だけかも)。<br />
-一応下にどこからサインアップできるかを貼っておきます。</p>
+<h1 id="さいごに">さいごに</h1>
 
-<p><img src="https://amatsukiurato.github.io/resources/tried-to-use-box/box-pricing-page1.png" alt="プラン選択1" /></p>
-
-<hr />
-
-<p><img src="https://amatsukiurato.github.io/resources/tried-to-use-box/box-pricing-page2.png" alt="プラン選択2" /></p>
-
-<h2 id="icloud-drive">iCloud Drive</h2>
-
-<p>iCloud Driveは5GBと少し心もとないですが、もともと使っていたDropboxと比べれば２倍に増えるのでこちらでも良いかなと思いました。<br />
-しかし、ターミナルからiCloud Driveへアクセスしづらいという問題があります(<a href="https://amatsukiurato.github.io/2019/how-to-display-icloud-doc-on-home/">一応解決済</a>)<br />
-バージョン管理機能については、少し探したのですが見つかりませんでした。</p>
-
-<p>ターミナルの調整が面倒だし、特にApple信者でもないので今回は使わない方針で行きました。Apple端末をいっぱい持ってる人なら<code>iCloud Drive</code>は良いかもしれないです。</p>
-
-<h2 id="onedrive">OneDrive</h2>
-
-<p>Googleと比べ容量こそ少ないものの、履歴管理は見やすく、Microsoft Office系のOnline版(一部機能制限あり)を使えるのはかなり良いと思います。<br />
-しかし、MacBookProにて、ローカルからリモートへの同期が不安定だったため、要注意です。</p>
-
-<h2 id="dropbox">Dropbox</h2>
-
-<p>ずっと使っていたDropboxも一応再検討してみました。<br />
-再検討はしましたが、やはり2.88GBは少し厳しいものがあります。</p>
-
-<p>しかし、クラウドストレージが流行りだした初期の頃から運営されていることもあり、UIなどは洗礼されていると思います。<br />
-また、同期もスムーズです。<br />
-サブとして使う分にはありかもしれないです。</p>
-
-<h1 id="今回の選定まとめ">今回の選定まとめ</h1>
-
-<table>
-<thead>
-<tr>
-<th align="right">ベンダ名</th>
-<th align="center">利用方法</th>
-<th align="left">コメント</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="right">Box</td>
-<td align="center">メイン</td>
-<td align="left">10GBと容量も多く、同期もスムーズなのでGood。<br/>一度使ってみたかったこともあって、今回はメインで使っていく予定</td>
-</tr>
-
-<tr>
-<td align="right">GoogleDrive</td>
-<td align="center">サブ</td>
-<td align="left">ドライブファイルストリームが使えないため、<br/>データ配布などのローカルであまり触らないファイルを利用する際にWebから利用予定</td>
-</tr>
-
-<tr>
-<td align="right">DropBox</td>
-<td align="center">サブ</td>
-<td align="left">今まで利用していた分があるため、過去のデータへアクセスする際に利用する。</td>
-</tr>
-
-<tr>
-<td align="right">iCloud Drive</td>
-<td align="center">不採用</td>
-<td align="left">ユーザフォルダ直下にフォルダがデフォルトで生成されないのが使いづらい。<br/>また、Webブラウザでの操作も個人的には使いづらかった。</td>
-</tr>
-
-<tr>
-<td align="right">OneDrive</td>
-<td align="center">不採用</td>
-<td align="left">同期が安定するなら使ってもいいかも。<br/>MS系を制限があるとはいえ無料で使えるのはつよつよ。</td>
-</tr>
-</tbody>
-</table>
-
-<p>という形で利用していく予定です。</p>
+<p>とりあえず、ARマーカーを使って文字を表示できるところまでは実装できました。<br />
+次やるときは、<code>Three.js</code>とかも勉強して、もう少し画像とかを表示させてみたいです。</p>
 
 
 
             </div>
             
             <hr />
-            <div>Tags: <a class="tag is-link" href="https://amatsukiurato.github.io/tags/cloudstrage/">#CloudStrage</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/box/">#Box</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/googledrive/">#GoogleDrive</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/onedrive/">#OneDrive</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/icloud/">#iCloud</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/dropbox/">#DropBox</a></div>
+            <div>Tags: <a class="tag is-link" href="https://amatsukiurato.github.io/tags/ar/">#AR</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/ar.js/">#AR.js</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/a-frame/">#A-Frame</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/javascript/">#JavaScript</a></div>
             <hr />
             
             <div>
@@ -414,8 +350,8 @@
         <h1 class="title is-5">Related posts</h1>
       
       
-            <h1><a href="https://amatsukiurato.github.io/2019/how-to-display-icloud-doc-on-home/">iCloudのディレクトリをホームディレクトリに持ってくる方法</a></h1>
-            <time class="has-text-grey-light is-size-7">29 October 2019</time>
+            <h1><a href="https://amatsukiurato.github.io/2019/change-onsen-ui-dialog-component-size/">Onsen-UIのDialogコンポーネントサイズを変更する</a></h1>
+            <time class="has-text-grey-light is-size-7">4 July 2019</time>
       
     </div>
 </div>
