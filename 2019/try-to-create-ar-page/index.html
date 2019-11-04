@@ -102,7 +102,7 @@
 
 <h1 id="はじめに">はじめに</h1>
 
-<p>ふと名刺にARマーカーが記載されていて、<br />
+<p>ふと、名刺にARマーカーが記載されていて、<br />
 川島教授の顔みたいな(脳トレ)のが出てきたら、とても面白いなと思いついて触ってみました。</p>
 
 <blockquote>
@@ -114,7 +114,7 @@
 
 <h1 id="arの実現方法">ARの実現方法</h1>
 
-<p>検索したところ、Unityで実現する方法とWeb技術で実現する方法がありました。<br />
+<p>軽く検索したところ、Unityで実現する方法とWeb技術で実現する方法が見つかりました。<br />
 ネイティブで実現する方法もあると思いますが、今回はこの2つを見ていきます。</p>
 
 <h2 id="unity">Unity</h2>
@@ -159,7 +159,7 @@ iOSだと<code>ARkit</code>、Androidだと<code>ARCore</code>というSDKを使
 <h1 id="実際に動かしてみる">実際に動かしてみる</h1>
 
 <p>とりあえず、「<a href="https://qiita.com/mkoku/items/c635566e829c303a7d3f">A-FrameとAR.jsで超簡単AR（PC・スマホ・マルチマーカー対応）</a>」を参考に作ります。
-上記リンクを参考に作ったソースはこちらです(ほぼコピペ🤦‍♂️)。</p>
+上記リンクを参考に作ったソースはこちらです(ほぼコピペ🤔)。</p>
 
 <blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!doctype HTML&gt;</span>
@@ -191,9 +191,11 @@ iOSだと<code>ARkit</code>、Androidだと<code>ARCore</code>というSDKを使
 <p><del>自分のスマホでアクセスしてみます。<br />
 &hellip;<br />
 表示されない…だと!?<br />
-やっぱりhttps通信じゃないのが原因なんですかね？</del></p>
-
-<p><img src="https://amatsukiurato.github.io/resources/try-to-create-ar-page/not-supported.png" alt="not-supported" /></p>
+やっぱりhttps通信じゃないのが原因なんですかね？</del><br />
+<figure>
+    <img src="https://amatsukiurato.github.io/resources/try-to-create-ar-page/not-supported.png" width="400px"/> 
+</figure>
+</p>
 
 <p>https通信が原因でうまく行ってませんでした。<br />
 同一ネットワーク内からなら行けるんじゃねという謎の考えのせい😭</p>
@@ -201,14 +203,18 @@ iOSだと<code>ARkit</code>、Androidだと<code>ARCore</code>というSDKを使
 <h2 id="スマホ側から動作させる">スマホ側から動作させる</h2>
 
 <p><a href="https://iti.hatenablog.jp/entry/2017/12/04/090023">🐶AR.jsを使ってWebAR年賀状を作る🐶</a><br />
-を参考にして、rubyのワンライナーでサーバを立てたところ、うまくいきました(圧倒的感謝…!!)。</p>
+を参考にして、rubyのワンライナーでhttpsサーバを立てたところ、うまくいきました(圧倒的感謝…!!)。</p>
 
 <p>下記ワンライナーはカレントディレクトリのデータを外部に公開してくれるものみたいです。</p>
 <div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="n">ruby</span> <span class="o">-</span><span class="n">rwebrick</span> <span class="o">-</span><span class="n">rwebrick</span><span class="o">/</span><span class="n">https</span> <span class="o">-</span><span class="n">e</span> <span class="s1">&#39;WEBrick::HTTPServer.new(:DocumentRoot =&gt; &#34;./&#34;, :Port =&gt; 8000, :SSLEnable =&gt; true, :SSLCertName =&gt; [[&#34;CN&#34;, WEBrick::Utils::getservername]] ).start&#39;</span></code></pre></div>
 <p>実際に接続してみた画像がこちらです。
 今回はとりあえず、自分のInfoをテキストで表示するところまで行いました。</p>
 
-<p><img src="https://amatsukiurato.github.io/resources/try-to-create-ar-page/can-display-ar-sp.png" alt="can-display-ar-sp" /></p>
+<figure>
+    <img src="https://amatsukiurato.github.io/resources/try-to-create-ar-page/can-display-ar-sp.png"
+         alt="can-display-ar-sp" width="400px"/> 
+</figure>
+
 
 <h2 id="pcのカメラで動作させる">PCのカメラで動作させる</h2>
 
@@ -219,7 +225,7 @@ iOSだと<code>ARkit</code>、Androidだと<code>ARCore</code>というSDKを使
 <h1 id="さいごに">さいごに</h1>
 
 <p>とりあえず、ARマーカーを使って文字を表示できるところまでは実装できました(ほぼほぼ自分が書いたところがない🙈)。<br />
-次やるときは、<code>Three.js</code>とかも勉強して、もう少し画像とかを表示させてみたいです。</p>
+結局、解説ページの後をなぞって終わりになってしまったので、次やるときは、もう少し違うものを表示させてみたいです。<code>Three.js</code>を触って見るものも面白いかもしれないです。</p>
 
 
 
