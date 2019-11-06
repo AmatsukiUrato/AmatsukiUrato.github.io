@@ -59,12 +59,12 @@
                 <article class="media">
                     <div class="media-content">
                         <div class="content">
-                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/difference-between-multiaz-and-cross-region/">マルチAZのMaster-Slave構成とクロスリージョンレプリケーションの違い</a></p>
+                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/difference-between-multiaz-and-cross-region/">マルチAZとクロスリージョンレプリケーションの違い</a></p>
                             <p class="subtitle is-size-6 has-text-grey-light">
                                 Published at November 6, 2019 &middot;
                                 <i class="far fa-clock"></i>&nbsp;2 min read
                             </p>
-                            <p>つい最近、表題について調べることが合ったため、忘備録として記載しておきます。 違いについて 結論から書くと、 クロスリージョンレプリカはサブがリードレプリカなのに対して、マルチAZではスタンバイレプリカになっている。 という違いがあります。 MultiAZ構成について RDSをマルチAZ構成で起動するとMasterとは別のAZにSlaveのRDSが立ち上げられ、同期レプリケーションが行われます。 Masterがサーバダウンすれば、Slaveくんが変わりに担当してくれるわけです。 クロスリージョンレプリケーション...</p>
+                            <p>つい最近、表題について調べることが合ったため、忘備録として記載しておきます。 違いについて 結論から書くと、 クロスリージョンレプリカはサブがリードレプリカなのに対して、マルチAZではスタンバイレプリカになっている クロスリージョンレプリカは複数リージョンを利用するのに対し、マルチAZでは同一リージョンを利用する という違いがあります。 MultiAZ構成について RDSをマルチAZ構成で起動するとMasterとは別のAZにSlaveのRDSが立ち上げられ、同期レプリケーションが行われます。俗に言うMaste...</p>
                         </div>
                     </div>
                 </article>
@@ -222,7 +222,7 @@
     <div class="card-content">
         <h1 class="title is-5">Recent posts</h1>
         
-            <h1><a href="https://amatsukiurato.github.io/2019/difference-between-multiaz-and-cross-region/">マルチAZのMaster-Slave構成とクロスリージョンレプリケーションの違い</a></h1>
+            <h1><a href="https://amatsukiurato.github.io/2019/difference-between-multiaz-and-cross-region/">マルチAZとクロスリージョンレプリケーションの違い</a></h1>
             <time class="has-text-grey-light is-size-7">6 November 2019</time>
         
             <h1><a href="https://amatsukiurato.github.io/2019/try-to-create-ar-page/">ブラウザでARを使ってみた</a></h1>

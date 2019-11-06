@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amatsukiメモ  | マルチAZのMaster-Slave構成とクロスリージョンレプリケーションの違い</title>
+    <title>Amatsukiメモ  | マルチAZとクロスリージョンレプリケーションの違い</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -50,7 +50,7 @@
     <div class="column is-9">
         <div class="tile is-child box">
             <div class="content">
-                <p class="title is-4">マルチAZのMaster-Slave構成とクロスリージョンレプリケーションの違い</p>
+                <p class="title is-4">マルチAZとクロスリージョンレプリケーションの違い</p>
                 
                 <p class="subtitle is-size-6 has-text-grey-light">
                     Published at November 6, 2019 &middot;
@@ -90,13 +90,18 @@
 
 <h1 id="違いについて">違いについて</h1>
 
-<p>結論から書くと、<br />
-クロスリージョンレプリカはサブがリードレプリカなのに対して、マルチAZではスタンバイレプリカになっている。<br />
-という違いがあります。</p>
+<p>結論から書くと、</p>
+
+<ul>
+<li>クロスリージョンレプリカはサブがリードレプリカなのに対して、マルチAZではスタンバイレプリカになっている</li>
+<li>クロスリージョンレプリカは複数リージョンを利用するのに対し、マルチAZでは同一リージョンを利用する</li>
+</ul>
+
+<p>という違いがあります。</p>
 
 <h1 id="multiaz構成について">MultiAZ構成について</h1>
 
-<p>RDSをマルチAZ構成で起動するとMasterとは別のAZにSlaveのRDSが立ち上げられ、同期レプリケーションが行われます。</p>
+<p>RDSをマルチAZ構成で起動するとMasterとは別のAZにSlaveのRDSが立ち上げられ、同期レプリケーションが行われます。俗に言うMaster-Slave構成。</p>
 
 <p>Masterがサーバダウンすれば、Slaveくんが変わりに担当してくれるわけです。</p>
 
@@ -275,7 +280,7 @@
     <div class="card-content">
         <h1 class="title is-5">Recent posts</h1>
         
-            <h1><a href="https://amatsukiurato.github.io/2019/difference-between-multiaz-and-cross-region/">マルチAZのMaster-Slave構成とクロスリージョンレプリケーションの違い</a></h1>
+            <h1><a href="https://amatsukiurato.github.io/2019/difference-between-multiaz-and-cross-region/">マルチAZとクロスリージョンレプリケーションの違い</a></h1>
             <time class="has-text-grey-light is-size-7">6 November 2019</time>
         
             <h1><a href="https://amatsukiurato.github.io/2019/try-to-create-ar-page/">ブラウザでARを使ってみた</a></h1>
