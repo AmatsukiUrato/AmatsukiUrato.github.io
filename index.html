@@ -59,6 +59,19 @@
                     <article class="media">
                         <div class="media-content">
                             <div class="content">
+                                <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/difference-between-multiaz-and-cross-region/">マルチAZのMaster-Slave構成とクロスリージョンレプリケーションの違い</a></p>
+                                <p class="subtitle is-size-6 has-text-grey-light">
+                                    Published at November 6, 2019 &middot;
+                                    <i class="far fa-clock"></i>&nbsp;2 min read
+                                </p>
+                                <p>つい最近、表題について調べることが合ったため、忘備録として記載しておきます。 違いについて 結論から書くと、 クロスリージョンレプリカはサブがリードレプリカなのに対して、マルチAZではスタンバイレプリカになっている。 という違いがあります。 MultiAZ構成について RDSをマルチAZ構成で起動するとMasterとは別のAZにSlaveのRDSが立ち上げられ、同期レプリケーションが行われます。 Masterがサーバダウンすれば、Slaveくんが変わりに担当してくれるわけです。 クロスリージョンレプリケーション...</p>
+                            </div>
+                        </div>
+                    </article>
+                
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content">
                                 <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/try-to-create-ar-page/">ブラウザを使ってARを使ってみた</a></p>
                                 <p class="subtitle is-size-6 has-text-grey-light">
                                     Published at November 4, 2019 &middot;
@@ -95,19 +108,6 @@
                         </div>
                     </article>
                 
-                    <article class="media">
-                        <div class="media-content">
-                            <div class="content">
-                                <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/how-to-display-icloud-doc-on-home/">iCloudのディレクトリをホームディレクトリに持ってくる方法</a></p>
-                                <p class="subtitle is-size-6 has-text-grey-light">
-                                    Published at October 29, 2019 &middot;
-                                    <i class="far fa-clock"></i>&nbsp;1 min read
-                                </p>
-                                <p>クラウドストレージを比較している途中で、 iCloudをhomeディレクトリに移す(シンボリックリンクを貼る)作業が少し手間だったので、メモとして載せてます。 ターミナルからアクセスしづらい問題 ターミナル上からiCloud Driveのファイルへアクセスしようとするには、 Users/[userName]/Library/Mobile\ Documents/com~apple~CloudDocs にまでアクセスしなければならないです。 一応シンボリックリンクは貼れますが、これも少し曲者でリンク元の方にスペースが入っているため、クォーテーションでくくってあげないとだめです(自分は気づかずに10分ぐらい悩んだ)。 ln -s &quot;/Users/$USER/Library/Mobile Documents/com~apple~CloudDocs&quot; iCloud 参考 Make...</p>
-                            </div>
-                        </div>
-                    </article>
-                
             </div>
         </div>
     </div>
@@ -118,6 +118,8 @@
         <div class="tags">
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/a-frame">a-frame</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/amazon-rds">amazon-rds</a></span>
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/ar">ar</a></span>
         
@@ -136,6 +138,8 @@
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/copyq">copyq</a></span>
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/css">css</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/db">db</a></span>
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/docker">docker</a></span>
         
@@ -200,6 +204,9 @@
     <div class="card-content">
         <h1 class="title is-5">Recent posts</h1>
         
+            <h1><a href="https://amatsukiurato.github.io/2019/difference-between-multiaz-and-cross-region/">マルチAZのMaster-Slave構成とクロスリージョンレプリケーションの違い</a></h1>
+            <time class="has-text-grey-light is-size-7">6 November 2019</time>
+        
             <h1><a href="https://amatsukiurato.github.io/2019/try-to-create-ar-page/">ブラウザを使ってARを使ってみた</a></h1>
             <time class="has-text-grey-light is-size-7">4 November 2019</time>
         
@@ -212,9 +219,6 @@
             <h1><a href="https://amatsukiurato.github.io/2019/how-to-display-icloud-doc-on-home/">iCloudのディレクトリをホームディレクトリに持ってくる方法</a></h1>
             <time class="has-text-grey-light is-size-7">29 October 2019</time>
         
-            <h1><a href="https://amatsukiurato.github.io/2019/tried-to-use-box/">CloudStrageのBoxを使ってみた</a></h1>
-            <time class="has-text-grey-light is-size-7">27 October 2019</time>
-        
     </div>
 </div>
     <br>
@@ -222,7 +226,7 @@
     <div class="card-content">
         <h1 class="title is-5">Archives</h1>
         
-            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (15)<br>
+            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (16)<br>
         
     </div>
 </div>

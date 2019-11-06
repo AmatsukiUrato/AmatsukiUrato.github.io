@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amatsukiメモ  | Marpが前よりも使いやすくなっていたので、触ってみた</title>
+    <title>Amatsukiメモ  | マルチAZのMaster-Slave構成とクロスリージョンレプリケーションの違い</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -50,15 +50,15 @@
     <div class="column is-9">
         <div class="tile is-child box">
             <div class="content">
-                <p class="title is-4">Marpが前よりも使いやすくなっていたので、触ってみた</p>
+                <p class="title is-4">マルチAZのMaster-Slave構成とクロスリージョンレプリケーションの違い</p>
                 
                 <p class="subtitle is-size-6 has-text-grey-light">
-                    Published at October 31, 2019 &middot;
-                    <i class="far fa-clock"></i>&nbsp;3 min read
+                    Published at November 6, 2019 &middot;
+                    <i class="far fa-clock"></i>&nbsp;2 min read
                     <br>
                     
-                    Updated at November 3, 2019 &middot;
-                    <i class="far fa-clock"></i>&nbsp;3 min read
+                    Updated at November 6, 2019 &middot;
+                    <i class="far fa-clock"></i>&nbsp;2 min read
                     
                 </p>
                 
@@ -70,19 +70,12 @@
                         <div class="contents">
                                 <nav id="TableOfContents">
 <ul>
-<li><a href="#はじめに">はじめに</a></li>
-<li><a href="#marpの良い点">Marpの良い点</a></li>
-<li><a href="#実際に使ってみる">実際に使ってみる</a>
-<ul>
-<li><a href="#marp-cli">Marp-CLI</a></li>
-<li><a href="#marp-cli-docker">Marp-CLI(Docker)</a>
-<ul>
-<li><a href="#dockerコンテナでコンバートする際のfont問題">Dockerコンテナでコンバートする際のfont問題</a></li>
-<li><a href="#解決策">解決策</a></li>
-</ul></li>
-</ul></li>
+<li><a href="#違いについて">違いについて</a></li>
+<li><a href="#multiaz構成について">MultiAZ構成について</a></li>
+<li><a href="#クロスリージョンレプリケーションについて">クロスリージョンレプリケーションについて</a></li>
+<li><a href="#え-じゃあmultiazよりもいいんじゃね">え？じゃあMultiAZよりもいいんじゃね？</a></li>
 <li><a href="#さいごに">さいごに</a></li>
-<li><a href="#サンプル">サンプル</a></li>
+<li><a href="#参考">参考</a></li>
 </ul>
 </nav>
                         </div>          
@@ -93,106 +86,66 @@
                 
                 
 
-<h1 id="はじめに">はじめに</h1>
+<p>つい最近、表題について調べることが合ったため、忘備録として記載しておきます。</p>
 
-<p>ずっと前から、スライドを何とかMarkdownでかけないかをずっと考えていまして、昔はMarpを使っていました。<br />
-しかし、かゆいところに手が届かないのが欠点で、ここ最近は<code>revealjs</code>というライブラリのVSCode拡張機能版<code>cscode-reveal</code>を利用しておりました。<br />
-こちらもめちゃくちゃ良くて、htmlでイカしたスライドを作りたいなら、めちゃくちゃありな選択肢だと思います。</p>
+<h1 id="違いについて">違いについて</h1>
 
-<p>ずっと<code>cscode-reveal</code>を利用していたのですが、こちらはpdf化を行うときがうまく行かず、<code>pptx</code>や<code>pdf</code>の資料として作成するには少し辛いものがありました。そこで再度検索したところ、Marpがバージョンアップしており使いやすくなっていたので、今回紹介します。</p>
+<p>結論から書くと、<br />
+クロスリージョンレプリカはサブがリードレプリカなのに対して、マルチAZではスタンバイレプリカになっている。<br />
+という違いがあります。</p>
 
-<p><a href="https://github.com/marp-team/marp">公式Repository</a></p>
+<h1 id="multiaz構成について">MultiAZ構成について</h1>
 
-<h1 id="marpの良い点">Marpの良い点</h1>
+<p>RDSをマルチAZ構成で起動するとMasterとは別のAZにSlaveのRDSが立ち上げられ、同期レプリケーションが行われます。</p>
 
-<p>個人的には</p>
+<p>Masterがサーバダウンすれば、Slaveくんが変わりに担当してくれるわけです。</p>
 
-<ul>
-<li><a href="https://github.com/marp-team/marp-cli">Marp-CLI</a>の誕生</li>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode">Marp for VS Code</a>がある</li>
-<li><a href="https://hub.docker.com/r/marpteam/marp-cli">Dockerコンテナ</a>もあるよ</li>
-<li><a href="https://marpit.marp.app/">公式Document</a>が充実してきた</li>
-</ul>
+<h1 id="クロスリージョンレプリケーションについて">クロスリージョンレプリケーションについて</h1>
 
-<p>辺りがとても良いと思っており、助かってます。</p>
+<p>名の通り、複数のリージョンにまたがってRDSを建てる仕組みのことです。<br />
+各リージョンには、リードレプリカが設置されて、Masterがダウンすると、リードレプリカくんが代わりに担当してくれます。</p>
 
-<h1 id="実際に使ってみる">実際に使ってみる</h1>
+<h1 id="え-じゃあmultiazよりもいいんじゃね">え？じゃあMultiAZよりもいいんじゃね？</h1>
 
-<h2 id="marp-cli">Marp-CLI</h2>
+<p><del>そうなんです、MultiAZはオワコンです。</del><br />
+と思っていた時期が私にもありました。</p>
 
-<p>公式の言うとおりに、<code>npm</code>コマンドを用いてインストールする。<br />
-今回はグローバルにインストールしました。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">npm i -g @marp-team/marp-cli</code></pre></div>
-<p>公式のRepositoryに習ってとりあえずpdfを生成してみます。<br />
-MarkdownのSampleは最後に乗せています。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">marp <span class="o">[</span>変換するmarkdownファイル<span class="o">]</span> --pdf</code></pre></div>
-<p>上記コマンドで、pdf化が行えます。<br />
-結構いい感じでpdf化してくれてます。</p>
-
-<p><a href="https://amatsukiurato.github.io/resources/updated-marp/marp-sample.pdf">変換後のpdf</a></p>
-
-<p>他にも<code>--pptx</code>でパワポにもできたりするので、お試しあれ😏</p>
-
-<h2 id="marp-cli-docker">Marp-CLI(Docker)</h2>
-
-<p>こちらも、<a href="https://hub.docker.com/r/marpteam/marp-cli/">公式</a>の言うとおりにコマンドを実行します。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker run --rm -v <span class="nv">$PWD</span>:/home/marp/app/ -e <span class="nv">LANG</span><span class="o">=</span><span class="nv">$LANG</span> marpteam/marp-cli <span class="o">[</span>変換するmarkdownファイル<span class="o">]</span></code></pre></div>
-<p>dockerを利用しても、ちゃんとpdf化できていることが確認できます。</p>
-
-<p><a href="https://amatsukiurato.github.io/resources/updated-marp/marp-docker-sample.pdf">変換後のpdf</a></p>
-
-<h3 id="dockerコンテナでコンバートする際のfont問題">Dockerコンテナでコンバートする際のfont問題</h3>
-
-<p>日本語のフォントがコンテナ内部のものに依存しているからか、微妙なフォントになっています。
-dockerイメージに他のフォントがないからかも(alpine linuxだし)と思い、</p>
-
-<p><a href="https://stackoverflow.com/questions/56937689/alpine-linux-fonts">Alpine Linux fonts</a></p>
-
-<p>を参考にGoogle Fontsをインストールしたイメージを作成しましたが、うまくいきませんでした。</p>
-
-<h3 id="解決策">解決策</h3>
-
-<p>いろいろ試しましたが、styleを利用してフォントを外部インポートする方法でうまくコンバートできました。<br />
-以下の例ではgoogleFontをインポートしてます。Googleが提供しているフォントで良いのであれば、<a href="https://fonts.google.com/">こちら</a>でポチポチすれば下記のインポート用のコードまで作成してくれます。</p>
-<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">---
-marp: true
-&lt;!-- marpの設定 --&gt;
----
-&lt;style&gt;
-<span class="ni">@import</span> url(&#39;https://fonts.googleapis.com/css?family=Noto+Serif+JP&amp;display=swap&#39;);
-section {
-    font-family: &#39;Noto Serif JP&#39;, serif;
-}
-&lt;/style&gt;
-
-&lt;!-- 以下より資料用のテキストを記載する --&gt;</code></pre></div>
-<p><a href="https://amatsukiurato.github.io/resources/updated-marp/marp-docker-sample-custom-font.pdf">上記styleを含めてコンバートした際のpdf</a></p>
-
-<p>上記では、<code>Noto Serif JP</code>をインポートしてますが、おすすめは</p>
+<p>まず、クロスリージョンを行うには以下の制約があります。</p>
 
 <ul>
-<li>Noto Sans JP</li>
-<li>M PLUS 1p</li>
+<li><code>MySQL</code> <code>PostgreSQL</code> <code>MariaDB</code> <code>Amazon Aurora MySQL DB</code>にしか適応できない</li>
+<li>リージョン間の通信の遅延時間が長くなる</li>
+<li>Amazon RDS のデータ転送料金が発生する</li>
+<li>VPCが5つを超えるクロスリージョンリードレプリカのインスタンスについては保証されていない(ACLに制限が
+あるため)</li>
+<li>昇格プロセスが完了するまで数分以上かかる場合がある</li>
 </ul>
 
-<p>です。</p>
+<p>といったように、とりあえずクロスリージョンにすれば良いというわけでもないのです。</p>
+
+<p>具体的にMultiAZとクロスリージョンとで、起動にどれぐらいの差があるかは気になりますね。<br />
+気が向いたら検証してみます。</p>
 
 <h1 id="さいごに">さいごに</h1>
 
-<p>Marpみたいな、イイ感じじゃないものをいい感じにするツールはやっぱり最高だと思いました！<br />
-製作者に感謝🙇‍♂️</p>
+<p>DBの重要性やコスト感を考えて運用していくことが大事。<br />
+ユースケースに合ったモデルを選びましょう。</p>
 
-<h1 id="サンプル">サンプル</h1>
+<h1 id="参考">参考</h1>
 
-<script type="application/javascript" src="https://gist.github.com/AmatsukiUrato/f3f8ea85d6dbb8e20fd026cd858ca574.js"></script>
-
+<ul>
+<li><a href="https://dev.classmethod.jp/cloud/aws/rds-for-postgresql-cross-region-replication/">【新機能】RDS for PostgreSQLでもリージョン間レプリケーションが可能に！</a></li>
+<li><a href="https://docs.aws.amazon.com/ja_jp/AmazonRDS/latest/UserGuide/USER_ReadRepl.html#USER_ReadRepl.XRgn">別のAWSリージョンでのリードレプリカの作成 &gt; クロスリージョンレプリケーションの考慮事項</a></li>
+<li><a href="https://docs.aws.amazon.com/ja_jp/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Replication.CrossRegion.html">AWS リージョン間での Amazon Aurora MySQL DB クラスターのレプリケート</a></li>
+<li><a href="https://docs.aws.amazon.com/ja_jp/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html">Amazon RDS での高可用性 (マルチ AZ)</a></li>
+</ul>
 
 
 
             </div>
             
             <hr />
-            <div>Tags: <a class="tag is-link" href="https://amatsukiurato.github.io/tags/marp/">#Marp</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/nodejs/">#Nodejs</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/docker/">#Docker</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/extention/">#Extention</a></div>
+            <div>Tags: <a class="tag is-link" href="https://amatsukiurato.github.io/tags/amazon%20rds/">#Amazon RDS</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/db/">#DB</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/aws/">#AWS</a></div>
             <hr />
             
             <div>
@@ -339,7 +292,29 @@ section {
 </div>
     <br>
                 
+  
 
+
+
+<div class="card">
+    <div class="card-content">
+        <h1 class="title is-5">Related posts</h1>
+      
+      
+            <h1><a href="https://amatsukiurato.github.io/2019/game-tech-night-cloud2.0/">Amazon Game Tech Night Osakaに行ってみた</a></h1>
+            <time class="has-text-grey-light is-size-7">31 October 2019</time>
+      
+            <h1><a href="https://amatsukiurato.github.io/2019/resolved-routing-problem-on-route53/">Route53のルーティング問題を解決した話</a></h1>
+            <time class="has-text-grey-light is-size-7">15 July 2019</time>
+      
+            <h1><a href="https://amatsukiurato.github.io/2019/want-to-use-s3-redirect/">S3のリダイレクト機能でgithubのpageへ飛ばしたい</a></h1>
+            <time class="has-text-grey-light is-size-7">2 July 2019</time>
+      
+            <h1><a href="https://amatsukiurato.github.io/2019/migration-from-lightsail/">Light Sailからの移行</a></h1>
+            <time class="has-text-grey-light is-size-7">16 April 2019</time>
+      
+    </div>
+</div>
 
     
 <br>
