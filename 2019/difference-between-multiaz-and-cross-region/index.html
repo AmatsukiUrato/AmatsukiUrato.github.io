@@ -54,11 +54,11 @@
                 
                 <p class="subtitle is-size-6 has-text-grey-light">
                     Published at November 6, 2019 &middot;
-                    <i class="far fa-clock"></i>&nbsp;2 min read
+                    <i class="far fa-clock"></i>&nbsp;3 min read
                     <br>
                     
                     Updated at November 7, 2019 &middot;
-                    <i class="far fa-clock"></i>&nbsp;2 min read
+                    <i class="far fa-clock"></i>&nbsp;3 min read
                     
                 </p>
                 
@@ -124,6 +124,7 @@
 <li>VPCが5つを超えるクロスリージョンリードレプリカのインスタンスについては保証されていない(ACLに制限が
 あるため)</li>
 <li>昇格プロセスが完了するまで数分以上かかる場合がある</li>
+<li>RDSのリードレプリカは昇格するとスタンドアロンのRDSになるため、一般的なマスタ-スレイブ構成のようにフェールバックができない</li>
 </ul>
 
 <p>とりあえずクロスリージョンにすれば良いというわけでもないのです。<br />
