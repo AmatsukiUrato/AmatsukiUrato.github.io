@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amatsukiメモ  | Route53のルーティング問題を解決した話</title>
+    <title>Amatsukiメモ  | git-secretsでawsトークンの保護を検証してみた</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -50,15 +50,15 @@
     <div class="column is-9">
         <div class="tile is-child box">
             <div class="content">
-                <p class="title is-4">Route53のルーティング問題を解決した話</p>
+                <p class="title is-4">git-secretsでawsトークンの保護を検証してみた</p>
                 
                 <p class="subtitle is-size-6 has-text-grey-light">
-                    Published at July 15, 2019 &middot;
-                    <i class="far fa-clock"></i>&nbsp;1 min read
+                    Published at November 6, 2019 &middot;
+                    <i class="far fa-clock"></i>&nbsp;3 min read
                     <br>
                     
-                    Updated at October 31, 2019 &middot;
-                    <i class="far fa-clock"></i>&nbsp;1 min read
+                    Updated at November 7, 2019 &middot;
+                    <i class="far fa-clock"></i>&nbsp;3 min read
                     
                 </p>
                 
@@ -70,9 +70,14 @@
                         <div class="contents">
                                 <nav id="TableOfContents">
 <ul>
-<li><a href="#tl-dr">TL;DR</a></li>
-<li><a href="#概要">概要</a></li>
-<li><a href="#原因">原因</a></li>
+<li><a href="#はじめに">はじめに</a></li>
+<li><a href="#既にtokenがコミットされていた場合">既にtokenがコミットされていた場合</a></li>
+<li><a href="#既にtokenが混入してるコミットをプッシュした場合">既にtokenが混入してるコミットをプッシュした場合</a>
+<ul>
+<li><a href="#既にコミットしているものを検知する">既にコミットしているものを検知する</a></li>
+</ul></li>
+<li><a href="#さいごに">さいごに</a></li>
+<li><a href="#参考">参考</a></li>
 </ul>
 </nav>
                         </div>          
@@ -83,36 +88,95 @@
                 
                 
 
-<h1 id="tl-dr">TL;DR</h1>
+<h1 id="はじめに">はじめに</h1>
+
+<p>昨日、日課のはてなブックマークを漁っていたところ、Developers.IOさんの <a href="https://speakerdeck.com/cmusudakeisuke/awstefalsesekiyuriteidui-ce-quan-bu-sheng-ri-chu-ji-karazhong-ji-mate">AWSでのセキュリティ対策全部盛り[初級から中級まで]</a>というスライドを見つけました。</p>
+
+<script async class="speakerdeck-embed" data-id="aba22209644646ee9ff21ef72d5a439d" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+<p>こちらのスライドの中で、<code>git-secrets</code>というAWSなどのtoken情報を<code>git</code>に乗せてしまうのを防ぐソフトが紹介されており、以下のパターンの場合に正しく検知できるのかが気になったため検証しました。</p>
 
 <ul>
-<li>外部からホストゾーンのネームサーバを指定してあげないと、レコードが帰ってこなかった</li>
-<li>Route53のドメインのネームサーバとホストゾーンのネームサーバを一緒にする</li>
+<li>既にtokenがコミットされていた場合
+
+<ul>
+<li>どのように検知するのか？</li>
+</ul></li>
+<li>既にtokenが混入してるコミットをプッシュした際には検知できるのか</li>
 </ul>
 
-<h1 id="概要">概要</h1>
+<h1 id="既にtokenがコミットされていた場合">既にtokenがコミットされていた場合</h1>
 
-<p>前に[Route53] -&gt; [S3のリダイレクト] -&gt; [リダイレクト先ページ]<br />
-のルーティングを行おうと思いましたがうまく行きませんでした。<br />
-<a href="https://amatsukiurato.github.io/2019/want-to-use-s3-redirect/">該当記事</a></p>
+<p>検索したところ、一年前に検証している人がいたみたいです。</p>
 
-<h1 id="原因">原因</h1>
+<blockquote>
+<p>既存のリポジトリにあとからgit-secretsを対応させた場合、過去のcommit履歴を検査したいことがあるでしょう。その場合は、git secrets &ndash;scan-historyを行うことで、git historyをスキャンして検査することができます。まとめて以下に例示します。
+<a href="https://qiita.com/jqtype/items/9196e047eddb53d07a91">git-secretsはじめました</a></p>
+</blockquote>
 
-<p>Route53にて、登録していたドメインに記述されているネームサーバの一覧と
-ホストゾーンに記載されているNSレコードの値が違っていたため、
-正しくルーティングされなかったみたいです。<br />
-解決方法としては、下記画像のように値を揃えることによって、正しくルーティングが行えるようになりました。</p>
+<p>一応、自分でも確認しようと思います。</p>
 
-<p><img src="https://amatsukiurato.github.io/resources/resolved-routing-problem/route53_dns.png" alt="Route53の設定用画像" /></p>
+<p>まず、既にtokenがコミットされているgitリポジトリを下記コマンドにて作成します。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mkdir already-commit-token
+<span class="nb">cd</span> already-commit-tokenls
+git init
+<span class="nb">echo</span> <span class="nv">access</span><span class="o">=</span>AKIAWIKPCZ5G32A503XF &gt; secret.txt
+<span class="nb">echo</span> <span class="nv">secret</span><span class="o">=</span>G+9la481v3AbuEqs1Pr/eARTtnEI7zBQ4qtcvBxR &gt;&gt; secret.txt
+git add .
+git commit -m <span class="s2">&#34;commit credentials&#34;</span></code></pre></div>
+<p>試しに、何もせず<code>push</code>をしてみます。</p>
 
-<p>思っていたよりも単純なことでミスっていたので、基礎的な知識をもう少し深めたほうが良いと感じました。。</p>
+<p><img src="https://amatsukiurato.github.io/resources/tried-using-git-secrets/secret1.png" alt="push画像" /></p>
+
+<p>案の定<code>push</code>できてしまいました。</p>
+
+<h1 id="既にtokenが混入してるコミットをプッシュした場合">既にtokenが混入してるコミットをプッシュした場合</h1>
+
+<p>ここで、<code>git-secrets</code>を導入します。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git secrets --install
+git secrets --register-aws</code></pre></div>
+<p>そして<code>push</code>テストをしてみます。
+一度リモートに<code>push</code>しているので、新しいリポジトリを作るか、forcePushでリモートを掃除してください。私は新しいリモートに<code>push</code>しました。</p>
+
+<p><img src="https://amatsukiurato.github.io/resources/tried-using-git-secrets/secret2.png" alt="push画像2" /></p>
+
+<p>アップロードされているみたいですね😈<br />
+そもそも、<code>git-secrets</code>の概要が</p>
+
+<blockquote>
+<p>Prevents you from committing secrets and credentials into git repositories
+(シークレットとクレデンシャル情報をgitリポジトリへコミットするのを防ぎます)</p>
+</blockquote>
+
+<p>となっているので当たり前といえば、当たり前です。</p>
+
+<h2 id="既にコミットしているものを検知する">既にコミットしているものを検知する</h2>
+
+<p>以下のコマンドで実現可能です。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git secrets --scan-history</code></pre></div>
+<p><img src="https://amatsukiurato.github.io/resources/tried-using-git-secrets/secret3.png" alt="検知確認" /></p>
+
+<h1 id="さいごに">さいごに</h1>
+
+<p><code>git-secrets</code>を入れておけば基本的にtokenを<code>push</code>してもうたｗｗｗ<br />
+ｗもう終わりや😇😇😇</p>
+
+<p>にはならずに済みます。
+シークレットを<code>push</code>すること自体がほぼないと思うので、リポジトリ全体のsecret保護が行えるようになる</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git secrets --register-aws --global</code></pre></div>
+<p>を適応しておいて問題ないと思います。<br />
+(どうしても<code>push</code>しなければならない場合は<code>--no-verify</code>オプションをつければOK😙)</p>
+
+<h1 id="参考">参考</h1>
+
+<p><a href="https://qiita.com/jqtype/items/9196e047eddb53d07a91">git-secretsはじめました</a></p>
 
 
 
             </div>
             
             <hr />
-            <div>Tags: <a class="tag is-link" href="https://amatsukiurato.github.io/tags/route53/">#Route53</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/aws/">#AWS</a></div>
+            <div>Tags: <a class="tag is-link" href="https://amatsukiurato.github.io/tags/git/">#git</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/git-secrets/">#git-secrets</a></div>
             <hr />
             
             <div>
@@ -270,17 +334,8 @@
         <h1 class="title is-5">Related posts</h1>
       
       
-            <h1><a href="https://amatsukiurato.github.io/2019/difference-between-multiaz-and-cross-region/">マルチAZとクロスリージョンレプリケーションの違い</a></h1>
-            <time class="has-text-grey-light is-size-7">6 November 2019</time>
-      
-            <h1><a href="https://amatsukiurato.github.io/2019/game-tech-night-cloud2.0/">Amazon Game Tech Night Osakaに行ってみた</a></h1>
-            <time class="has-text-grey-light is-size-7">31 October 2019</time>
-      
-            <h1><a href="https://amatsukiurato.github.io/2019/want-to-use-s3-redirect/">S3のリダイレクト機能でgithubのpageへ飛ばしたい</a></h1>
-            <time class="has-text-grey-light is-size-7">2 July 2019</time>
-      
-            <h1><a href="https://amatsukiurato.github.io/2019/migration-from-lightsail/">Light Sailからの移行</a></h1>
-            <time class="has-text-grey-light is-size-7">16 April 2019</time>
+            <h1><a href="https://amatsukiurato.github.io/2019/adapted-hugo-gitinfo/">hugoの.GitInfoが適応された話(理由は不明です…)</a></h1>
+            <time class="has-text-grey-light is-size-7">20 October 2019</time>
       
     </div>
 </div>

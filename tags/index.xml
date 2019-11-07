@@ -38,6 +38,24 @@
     </item>
     
     <item>
+      <title>git</title>
+      <link>https://amatsukiurato.github.io/tags/git/</link>
+      <pubDate>Wed, 06 Nov 2019 21:54:53 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git-secrets</title>
+      <link>https://amatsukiurato.github.io/tags/git-secrets/</link>
+      <pubDate>Wed, 06 Nov 2019 21:54:53 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/tags/git-secrets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>A-Frame</title>
       <link>https://amatsukiurato.github.io/tags/a-frame/</link>
       <pubDate>Mon, 04 Nov 2019 13:47:45 +0900</pubDate>
@@ -83,7 +101,7 @@
     </item>
     
     <item>
-      <title>extention</title>
+      <title>Extention</title>
       <link>https://amatsukiurato.github.io/tags/extention/</link>
       <pubDate>Thu, 31 Oct 2019 22:41:35 +0900</pubDate>
       
@@ -209,16 +227,7 @@
     </item>
     
     <item>
-      <title>git</title>
-      <link>https://amatsukiurato.github.io/tags/git/</link>
-      <pubDate>Sun, 20 Oct 2019 12:47:18 +0900</pubDate>
-      
-      <guid>https://amatsukiurato.github.io/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
+      <title>hugo</title>
       <link>https://amatsukiurato.github.io/tags/hugo/</link>
       <pubDate>Sun, 20 Oct 2019 12:47:18 +0900</pubDate>
       
