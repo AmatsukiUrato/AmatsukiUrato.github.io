@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amatsukiメモ  | RaspberryPi 3 MODEL Bで遊ぶ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://amatsukiurato.github.io/css/blog.css" />
+    <link rel="stylesheet" href="https://amatsukiurato.github.io/css/syntax.css" />
+    
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143787598-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-143787598-1');
+    </script>
+</head>
+<body>
+
+    
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://amatsukiurato.github.io">Home</a>
+            <div class="navbar-item">
+                    
+                        Amatsukiメモ
+                    
+            </div>
+        </div>
+        <div class="navbar-end">
+                <a class="navbar-item nav-right" href="https://amatsukiurato.github.io/about">About</a>
+        </div>
+    </nav>
+    
+
+
+<div class="container">
+    <div class="section">
+    
+
+<div class="columns">
+    <div class="column is-9">
+        <div class="tile is-child box">
+            <div class="content">
+                <p class="title is-4">RaspberryPi 3 MODEL Bで遊ぶ</p>
+                
+                <div class="subtitle is-size-6 has-text-grey-light">
+                    <i class="fas fa-pen"></i>&nbsp;2017-2-1 |
+                    <i class="fas fa-redo-alt"></i>&nbsp;2019-11-10 |
+                    <i class="fas fa-clock"></i>&nbsp;2 min read
+                </div>
+                
+                <hr />
+                
+                <div class="card">
+                    <div class="card-content">
+                        <h1 class="title is-5">Contents</h1>
+                        <div class="contents">
+                            <nav id="TableOfContents">
+<ul>
+<li><a href="#noobsを使ってraspbianを入れる">NOOBSを使ってRaspbianを入れる</a></li>
+<li><a href="#raspbianを起動してsshdをraspbian起動時に起動させるようにする">Raspbianを起動してsshdをRaspbian起動時に起動させるようにする</a></li>
+<li><a href="#ip固定設定をする">IP固定設定をする</a></li>
+<li><a href="#uv4lのインストールをする">uv4lのインストールをする</a></li>
+<li><a href="#確認">確認</a></li>
+<li><a href="#ポート開放やその他">ポート開放やその他</a></li>
+</ul>
+</nav>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                
+
+                
+
+<div class="notification">
+旧サイトの記事を移行してきたものとなります。
+</div>
+
+<p>今日のご飯が何かを確認したいためのラズパイカメラ作成を行います</p>
+
+<p>この前RaspberryPi 3 Model Bを買ってそこら辺に転がってたUSBカメラと繋げて台所に出て来るご飯をブラウザ上から見られるようにしたのでその時の経緯を記載。</p>
+
+<h1 id="noobsを使ってraspbianを入れる">NOOBSを使ってRaspbianを入れる</h1>
+
+<p>お前初心者かよｗｗと煽っているわけではないです。<br />
+NOOBSとは、ラズパイ用に作られたDebianベースのOSであるRaspbianとかを簡単にインストールできるようにしたインストーラーです。<br />
+<a href="https://www.raspberrypi.org/downloads/noobs/">NOOBSダウンロードページ</a>でNOOBS落としてSDカードにブチ込んで終了。</p>
+
+<h1 id="raspbianを起動してsshdをraspbian起動時に起動させるようにする">Raspbianを起動してsshdをRaspbian起動時に起動させるようにする</h1>
+
+<p>※sudo apt-get install sysv-rc-confでsysv-rc-confを入れてRaspbian起動時設定してもうまくいきません。<br />
+どうやらRaspbianはsystemdで制御しないとだめみたいです。<br />
+<a href="https://teratail.com/questions/62910">参考</a></p>
+
+<h1 id="ip固定設定をする">IP固定設定をする</h1>
+
+<p>これはそこら辺ググったら出てくるので投げちゃいます。</p>
+
+<h1 id="uv4lのインストールをする">uv4lのインストールをする</h1>
+
+<p>uv4lっていうinstallしたらほぼほぼ何もしなくてもブラウザ上でWebカメラを見られるようにできるやつを使う。<br />
+<a href="https://qiita.com/sp_ice/items/7f15e262fffd69d3375c">Raspberry Pi3とUSB WEBカメラでストリーミング</a>を参考すればおｋ。</p>
+
+<h1 id="確認">確認</h1>
+
+<p>以下の画像のようになってたらおｋ。</p>
+
+<p><img src="https://amatsukiurato.github.io/resources/create-live-camera-by-raspberrypi-model-b/uv4l-homepage.png" alt="uv4l" /></p>
+
+<h1 id="ポート開放やその他">ポート開放やその他</h1>
+
+<p>僕はローカルのみでの運用なのであまり設定してないけどssh(22)とかuv4l(8090)で使うのポート変更&amp;開放をする。</p>
+
+<p>以上でおしまい！
+本当はpythonとか使って自分でWebカメラキャプチャ用のプログラムとか組みたかったんだけど調べてる途中で面倒になってやめました・・・ｗ
+今後機会があればまたやってみたいと思います。</p>
+
+
+
+            </div>
+            
+            <hr />
+            <div>Tags: <a class="tag is-link" href="https://amatsukiurato.github.io/tags/raspberrypi/">#RaspberryPi</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/uv4l/">#uv4l</a></div>
+            <hr />
+            
+            <div>
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+            </div>
+            <hr />
+            <div>
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-amatsukiurato-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            
+
+
+        </div>
+    </div>
+    <div class="column is-3">
+        <div class="card">
+    <div class="card-content">
+        <h1 class="title is-5">Tags</h1>
+        <div class="tags">
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/a-frame">a-frame</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/amazon-rds">amazon-rds</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/ar">ar</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/ar.js">ar.js</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/aws">aws</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/awsloft">awsloft</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/box">box</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/cloud2.0">cloud2.0</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/cloudstrage">cloudstrage</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/copyq">copyq</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/css">css</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/db">db</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/docker">docker</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/dropbox">dropbox</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/eclipse">eclipse</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/extention">extention</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/feeling">feeling</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/front">front</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/game">game</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/git">git</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/git-secrets">git-secrets</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/googledrive">googledrive</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/homebrew">homebrew</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/hugo">hugo</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/icloud">icloud</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/intellij">intellij</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/javascript">javascript</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/kaspersky">kaspersky</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/macos">macos</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/markdown">markdown</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/marp">marp</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/nodejs">nodejs</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/onedrive">onedrive</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/onsen-ui">onsen-ui</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/raspberrypi">raspberrypi</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/react">react</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/revealjs">revealjs</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/route53">route53</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/s3">s3</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/setting">setting</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/slow">slow</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/tab">tab</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/terminal">terminal</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/three.js">three.js</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/ubuntu">ubuntu</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/uv4l">uv4l</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/vscode">vscode</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/webpack">webpack</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E3%82%B7%E3%83%B3%E3%83%9C%E3%83%AA%E3%83%83%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%AF">シンボリックリンク</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E3%83%9D%E3%82%A8%E3%83%A0">ポエム</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E5%8B%89%E5%BC%B7">勉強</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E6%96%B0%E5%8D%92%E5%AF%BE%E5%BF%9C">新卒対応</a></span>
+        
+        </div>          
+    </div>
+</div><br>
+        <div class="card">
+    <div class="card-content">
+        <h1 class="title is-5">Recent posts</h1>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/study-three.js-1/">Three.jsを学習する【第一回】</a></h1>
+            <time class="has-text-grey-light is-size-7">9 November 2019</time>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/tried-using-git-secrets/">git-secretsのawsトークン保護を検証してみた</a></h1>
+            <time class="has-text-grey-light is-size-7">7 November 2019</time>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/difference-between-multiaz-and-cross-region/">マルチAZとクロスリージョンレプリケーションの違い</a></h1>
+            <time class="has-text-grey-light is-size-7">6 November 2019</time>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/try-to-create-ar-page/">ブラウザでARを使ってみた</a></h1>
+            <time class="has-text-grey-light is-size-7">4 November 2019</time>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/updated-marp/">Marpが前よりも使いやすくなっていたので、触ってみた</a></h1>
+            <time class="has-text-grey-light is-size-7">31 October 2019</time>
+        
+    </div>
+</div>
+    <br>
+                
+
+
+    
+<br>
+        <div class="card">
+    <div class="card-content">
+        <h1 class="title is-5">Archives</h1>
+        
+            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (18)<br>
+        
+            <a href="https://amatsukiurato.github.io/archives/2017">2017</a> (1)<br>
+        
+            <a href="https://amatsukiurato.github.io/archives/2016">2016</a> (3)<br>
+        
+    </div>
+</div>
+
+    </div>
+</div>
+
+    
+    </div>
+</div>
+
+<footer class="footer has-background-grey-darker has-text-white">
+    <div class="content has-text-centered">
+        <p>
+            <span class="icon is-large"><a href="https://twitter.com/AmatsukiUrato" class="mysocial" rel="me"><i class="fab fa-twitter fa-3x"></i></a></span>&nbsp;&nbsp;
+            <span class="icon is-large"><a href="https://github.com/AmatsukiUrato" class="mysocial" rel="me"><i class="fab fa-github fa-3x"></i></a></span>&nbsp;&nbsp;
+            <br><br>
+            Copyright &copy; Amatsukiメモ 2019 - Theme by <a href="https://jeffprod.com" class="mysocial">JeffProd.com</a>
+            - <a class="mysocial" href="https://amatsukiurato.github.io/about">About</a>
+        </p>
+    </div>
+</footer>
+
+<script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+</body>
+</html>
