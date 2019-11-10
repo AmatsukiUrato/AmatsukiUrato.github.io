@@ -9,12 +9,12 @@
   
   <url>
     <loc>https://amatsukiurato.github.io/</loc>
-    <lastmod>2019-11-10T15:34:22+09:00</lastmod>
+    <lastmod>2019-11-10T16:39:06+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://amatsukiurato.github.io/archives/</loc>
-    <lastmod>2019-11-10T15:34:22+09:00</lastmod>
+    <lastmod>2019-11-10T16:39:06+09:00</lastmod>
   </url>
   
   <url>
@@ -24,12 +24,12 @@
   
   <url>
     <loc>https://amatsukiurato.github.io/post/</loc>
-    <lastmod>2019-11-10T15:34:22+09:00</lastmod>
+    <lastmod>2019-11-10T16:39:06+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://amatsukiurato.github.io/tags/</loc>
-    <lastmod>2019-11-10T15:34:22+09:00</lastmod>
+    <lastmod>2019-11-10T16:39:06+09:00</lastmod>
   </url>
   
   <url>
@@ -224,7 +224,7 @@
   
   <url>
     <loc>https://amatsukiurato.github.io/about/</loc>
-    <lastmod>2019-11-04T14:57:30+09:00</lastmod>
+    <lastmod>2019-11-10T16:39:06+09:00</lastmod>
   </url>
   
   <url>
@@ -330,6 +330,66 @@
   <url>
     <loc>https://amatsukiurato.github.io/2019/migration-from-lightsail/</loc>
     <lastmod>2019-10-31T22:13:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/archives/2016/</loc>
+    <lastmod>2019-11-10T16:39:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/homebrew/</loc>
+    <lastmod>2019-11-10T16:39:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/macos/</loc>
+    <lastmod>2019-11-10T16:39:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/2016/fixed-homebrew-error-that-reinstall-macos/</loc>
+    <lastmod>2019-11-10T16:39:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/kaspersky/</loc>
+    <lastmod>2019-11-10T16:39:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/slow/</loc>
+    <lastmod>2019-11-10T16:39:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/terminal/</loc>
+    <lastmod>2019-11-10T16:39:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/2016/very-slow-kav-on-terminal/</loc>
+    <lastmod>2019-11-10T16:39:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/eclipse/</loc>
+    <lastmod>2019-11-10T16:39:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/2016/want-to-delete-tab-marker/</loc>
+    <lastmod>2019-11-10T16:39:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/setting/</loc>
+    <lastmod>2019-11-10T16:39:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/tab/</loc>
+    <lastmod>2019-11-10T16:39:06+09:00</lastmod>
   </url>
   
 </urlset>
