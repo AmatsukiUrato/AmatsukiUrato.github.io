@@ -52,15 +52,11 @@
             <div class="content">
                 <p class="title is-4">ブラウザでARを使ってみた</p>
                 
-                <p class="subtitle is-size-6 has-text-grey-light">
-                    Published at November 4, 2019 &middot;
-                    <i class="far fa-clock"></i>&nbsp;4 min read
-                    <br>
-                    
-                    Updated at November 7, 2019 &middot;
-                    <i class="far fa-clock"></i>&nbsp;4 min read
-                    
-                </p>
+                <div class="subtitle is-size-6 has-text-grey-light">
+                    <i class="fas fa-pen"></i>&nbsp;2019-11-4 |
+                    <i class="fas fa-redo-alt"></i>&nbsp;2019-11-10 |
+                    <i class="fas fa-clock"></i>&nbsp;4 min read
+                </div>
                 
                 <hr />
                 
@@ -68,7 +64,7 @@
                     <div class="card-content">
                         <h1 class="title is-5">Contents</h1>
                         <div class="contents">
-                                <nav id="TableOfContents">
+                            <nav id="TableOfContents">
 <ul>
 <li><a href="#はじめに">はじめに</a></li>
 <li><a href="#arの実現方法">ARの実現方法</a>
@@ -92,25 +88,25 @@
 <li><a href="#さいごに">さいごに</a></li>
 </ul>
 </nav>
-                        </div>          
+                        </div>
                     </div>
                 </div>
                 <hr>
                 
-                
+
                 
 
 <h1 id="はじめに">はじめに</h1>
 
 <p>ふと、名刺にARマーカーが記載されていて、<br />
-川島教授の顔みたいな(脳トレ)のが出てきたら、とても面白いなと思いついて触ってみました。</p>
+川島教授の顔みたいな（脳トレ）のが出てきたら、とてもおもしろいなと思いついて触ってみました。</p>
 
 <blockquote>
 <p><img src="https://www.nintendo.co.jp/ds/anmj/top/needfla.gif" alt="顔" /><br />
 <a href="https://www.nintendo.co.jp/ds/anmj/index.html">もっと脳を鍛える大人のDSトレーニング™</a></p>
 </blockquote>
 
-<p>(余談ですが、脳トレの<a href="https://topics.nintendo.co.jp/c/article/aa9b7d00-e021-11e9-b641-063b7ac45a6d.html">Switch版</a>がでるみたいです)</p>
+<p>（余談ですが、脳トレの<a href="https://topics.nintendo.co.jp/c/article/aa9b7d00-e021-11e9-b641-063b7ac45a6d.html">Switch版</a>がでるみたいです）</p>
 
 <h1 id="arの実現方法">ARの実現方法</h1>
 
@@ -140,7 +136,7 @@ iOSだと<code>ARkit</code>、Androidだと<code>ARCore</code>というSDKを使
 
 <p>こちらは、<code>AR.js</code>と<code>A-Frame.js</code>を活用したものが主流みたいです。
 <code>A-Frame.js</code>でオブジェクトをレンダリングして、それを<code>AR.js</code>でAR化しているっぽいです。<br />
-また、今回は使用していませんが<code>Three.js</code>(Webブラウザ上で3Dレンダリングできるようにするライブラリ)を組み合わせ</p>
+また、今回は使用していませんが<code>Three.js</code>（Webブラウザ上で3Dレンダリングできるようにするライブラリ）を組み合わせ</p>
 
 <h3 id="参考-1">参考</h3>
 
@@ -341,6 +337,8 @@ iOSだと<code>ARkit</code>、Androidだと<code>ARCore</code>というSDKを使
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/s3">s3</a></span>
         
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/three.js">three.js</a></span>
+        
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/ubuntu">ubuntu</a></span>
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/vscode">vscode</a></span>
@@ -362,6 +360,9 @@ iOSだと<code>ARkit</code>、Androidだと<code>ARCore</code>というSDKを使
     <div class="card-content">
         <h1 class="title is-5">Recent posts</h1>
         
+            <h1><a href="https://amatsukiurato.github.io/2019/study-three.js-1/">Three.jsを学習する【第一回】</a></h1>
+            <time class="has-text-grey-light is-size-7">9 November 2019</time>
+        
             <h1><a href="https://amatsukiurato.github.io/2019/tried-using-git-secrets/">git-secretsのawsトークン保護を検証してみた</a></h1>
             <time class="has-text-grey-light is-size-7">7 November 2019</time>
         
@@ -372,9 +373,6 @@ iOSだと<code>ARkit</code>、Androidだと<code>ARCore</code>というSDKを使
             <time class="has-text-grey-light is-size-7">4 November 2019</time>
         
             <h1><a href="https://amatsukiurato.github.io/2019/updated-marp/">Marpが前よりも使いやすくなっていたので、触ってみた</a></h1>
-            <time class="has-text-grey-light is-size-7">31 October 2019</time>
-        
-            <h1><a href="https://amatsukiurato.github.io/2019/game-tech-night-cloud2.0/">Amazon Game Tech Night Osakaに行ってみた</a></h1>
             <time class="has-text-grey-light is-size-7">31 October 2019</time>
         
     </div>
@@ -390,6 +388,9 @@ iOSだと<code>ARkit</code>、Androidだと<code>ARCore</code>というSDKを使
         <h1 class="title is-5">Related posts</h1>
       
       
+            <h1><a href="https://amatsukiurato.github.io/2019/study-three.js-1/">Three.jsを学習する【第一回】</a></h1>
+            <time class="has-text-grey-light is-size-7">9 November 2019</time>
+      
             <h1><a href="https://amatsukiurato.github.io/2019/change-onsen-ui-dialog-component-size/">Onsen-UIのDialogコンポーネントサイズを変更する</a></h1>
             <time class="has-text-grey-light is-size-7">4 July 2019</time>
       
@@ -402,7 +403,7 @@ iOSだと<code>ARkit</code>、Androidだと<code>ARCore</code>というSDKを使
     <div class="card-content">
         <h1 class="title is-5">Archives</h1>
         
-            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (17)<br>
+            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (18)<br>
         
     </div>
 </div>

@@ -60,10 +60,11 @@
                     <div class="media-content">
                         <div class="content">
                             <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/difference-between-multiaz-and-cross-region/">マルチAZとクロスリージョンレプリケーションの違い</a></p>
-                            <p class="subtitle is-size-6 has-text-grey-light">
-                                Published at November 6, 2019 &middot;
-                                <i class="far fa-clock"></i>&nbsp;3 min read
-                            </p>
+                            <div class="subtitle is-size-6 has-text-grey-light">
+                                <i class="fas fa-pen"></i>&nbsp;2019-11-6 |
+                                <i class="fas fa-redo-alt"></i>&nbsp;2019-11-7 |
+                                <i class="fas fa-clock"></i>&nbsp;3 min read
+                            </div>
                             <p>つい最近、表題について調べることが合ったため、忘備録として記載しておきます。 違いについて 結論から書くと、 クロスリージョンレプリカはサブがリードレプリカなのに対して、マルチAZではスタンバイレプリカになっている クロスリージョンレプリカは複数リージョンを利用するのに対し、マルチAZでは同一リージョンを利用する が大きな違いかなと思います。 MultiAZ構成について RDSをマルチAZ構成で起動するとMasterとは別のAZにSlaveのRDSが立ち上げられ、同期レプリケーションが行われます。俗に言うMa...</p>
                         </div>
                     </div>
@@ -74,10 +75,11 @@
                     <div class="media-content">
                         <div class="content">
                             <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/game-tech-night-cloud2.0/">Amazon Game Tech Night Osakaに行ってみた</a></p>
-                            <p class="subtitle is-size-6 has-text-grey-light">
-                                Published at October 31, 2019 &middot;
-                                <i class="far fa-clock"></i>&nbsp;2 min read
-                            </p>
+                            <div class="subtitle is-size-6 has-text-grey-light">
+                                <i class="fas fa-pen"></i>&nbsp;2019-10-31 |
+                                <i class="fas fa-redo-alt"></i>&nbsp;2019-10-31 |
+                                <i class="fas fa-clock"></i>&nbsp;2 min read
+                            </div>
                             <p>畑違いの業種なのですが、 AWS Pop-Up Loft Osakaが行われるとのことだったので、Game Tech Nightへ参加しました！ 会場は最初から最後まで、飲食ありのラフな感じで開催されておりました😊 登壇者は全員面白い発表をされていましたが、特に面白かったCloud2.0についての所感を記載しております。 もうそこまで迫っている！ Cloud2.0 時代の開発 info 登壇者 丹羽さん GS2のCEO HP https://gs2.io/ フルマネージドサービスを使おう 処理をフルマネージドで行うことで、復旧対策や管理までAWSが担保してくれる あえてロックインされにいく コントローラブルなも...</p>
                         </div>
                     </div>
@@ -88,10 +90,11 @@
                     <div class="media-content">
                         <div class="content">
                             <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/resolved-routing-problem-on-route53/">Route53のルーティング問題を解決した話</a></p>
-                            <p class="subtitle is-size-6 has-text-grey-light">
-                                Published at July 15, 2019 &middot;
-                                <i class="far fa-clock"></i>&nbsp;1 min read
-                            </p>
+                            <div class="subtitle is-size-6 has-text-grey-light">
+                                <i class="fas fa-pen"></i>&nbsp;2019-7-15 |
+                                <i class="fas fa-redo-alt"></i>&nbsp;2019-10-31 |
+                                <i class="fas fa-clock"></i>&nbsp;1 min read
+                            </div>
                             <p>TL;DR 外部からホストゾーンのネームサーバを指定してあげないと、レコードが帰ってこなかった Route53のドメインのネームサーバとホストゾーンのネームサーバを一緒にする 概要 前に[Route53] -&gt; [S3のリダイレクト] -&gt; [リダイレクト先ページ] のルーティングを行おうと思いましたがうまく行きませんでした。 該当記事 原因 Route53にて、登録していたドメインに記述されているネームサーバの一覧と ホストゾーンに記載されているNSレコードの値が違っていたため、 正しくルーティングされなかったみたいです。 解決方法と...</p>
                         </div>
                     </div>
@@ -102,10 +105,11 @@
                     <div class="media-content">
                         <div class="content">
                             <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/want-to-use-s3-redirect/">S3のリダイレクト機能でgithubのpageへ飛ばしたい</a></p>
-                            <p class="subtitle is-size-6 has-text-grey-light">
-                                Published at July 2, 2019 &middot;
-                                <i class="far fa-clock"></i>&nbsp;1 min read
-                            </p>
+                            <div class="subtitle is-size-6 has-text-grey-light">
+                                <i class="fas fa-pen"></i>&nbsp;2019-7-2 |
+                                <i class="fas fa-redo-alt"></i>&nbsp;2019-10-31 |
+                                <i class="fas fa-clock"></i>&nbsp;1 min read
+                            </div>
                             <p>表題の通りです。 完成してないです。 前に取得した.netのドメインを踏んだときにS3のリダイレクト機能を使ってこのページに飛べるようにしようと思い設定してました。 出来たこと s3のエンドポイント(httpのリンク)にアクセスするとgithubPageにリダイレクトする s3のエイリアスを作成する 出来てないところ .netドメインにアクセスしてもs3のリダイレクト用エンドポイントにまでたどり着かない not foundエラーが発生する Route53での設定が正しく行えていないと予想...</p>
                         </div>
                     </div>
@@ -116,10 +120,11 @@
                     <div class="media-content">
                         <div class="content">
                             <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/migration-from-lightsail/">Light Sailからの移行</a></p>
-                            <p class="subtitle is-size-6 has-text-grey-light">
-                                Published at April 16, 2019 &middot;
-                                <i class="far fa-clock"></i>&nbsp;2 min read
-                            </p>
+                            <div class="subtitle is-size-6 has-text-grey-light">
+                                <i class="fas fa-pen"></i>&nbsp;2019-4-16 |
+                                <i class="fas fa-redo-alt"></i>&nbsp;2019-10-31 |
+                                <i class="fas fa-clock"></i>&nbsp;2 min read
+                            </div>
                             <p>移行しました AWSのLight Sail + WordPressでやってましたが、 WordPressがだるすぎたので AWSの[AWS Amplify + Hugo]に移行しました。 現在は[github pages + Hugo] github pages とかをそのまま使うのも良かったけど、 AWSのサービスを触ってみたかったのでこっちで立ててみました。 Hugoに移って最初に記事書いていて思うけど、 やっぱMarkdownが最強なんだわ。 スラスラ書ける😎 一応WordPressでもMarkdownで書けるプラグイン📕は少し出てたけど、 めっちゃこれいいやん、みたいなプラグインは...</p>
                         </div>
                     </div>
@@ -203,6 +208,8 @@
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/s3">s3</a></span>
         
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/three.js">three.js</a></span>
+        
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/ubuntu">ubuntu</a></span>
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/vscode">vscode</a></span>
@@ -224,6 +231,9 @@
     <div class="card-content">
         <h1 class="title is-5">Recent posts</h1>
         
+            <h1><a href="https://amatsukiurato.github.io/2019/study-three.js-1/">Three.jsを学習する【第一回】</a></h1>
+            <time class="has-text-grey-light is-size-7">9 November 2019</time>
+        
             <h1><a href="https://amatsukiurato.github.io/2019/tried-using-git-secrets/">git-secretsのawsトークン保護を検証してみた</a></h1>
             <time class="has-text-grey-light is-size-7">7 November 2019</time>
         
@@ -236,9 +246,6 @@
             <h1><a href="https://amatsukiurato.github.io/2019/updated-marp/">Marpが前よりも使いやすくなっていたので、触ってみた</a></h1>
             <time class="has-text-grey-light is-size-7">31 October 2019</time>
         
-            <h1><a href="https://amatsukiurato.github.io/2019/game-tech-night-cloud2.0/">Amazon Game Tech Night Osakaに行ってみた</a></h1>
-            <time class="has-text-grey-light is-size-7">31 October 2019</time>
-        
     </div>
 </div>
     <br>
@@ -246,7 +253,7 @@
     <div class="card-content">
         <h1 class="title is-5">Archives</h1>
         
-            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (17)<br>
+            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (18)<br>
         
     </div>
 </div>

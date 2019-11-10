@@ -5,10 +5,19 @@
     <description>Recent content in Posts on Amatsukiメモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 07 Nov 2019 22:16:44 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 09 Nov 2019 17:35:48 +0900</lastBuildDate>
     
         <atom:link href="https://amatsukiurato.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Three.jsを学習する【第一回】</title>
+      <link>https://amatsukiurato.github.io/2019/study-three.js-1/</link>
+      <pubDate>Sat, 09 Nov 2019 17:35:48 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/2019/study-three.js-1/</guid>
+      <description>前回のブラウザでARを使ってみたを触って、オブジェクトをThree.jsで作りたいと思いました。 Three.jsを学習するにあたって、良さげなサイトがあったので、こちらを参考に学習していこうと思います。忘備録です。 functionをアロー関数に変える なんでアロー関数にしたいのかは、関数宣言 vs 関数式 | ES2015+を参照。 window.addEventListener(&amp;#39;load&amp;#39;, init); function init() { // 処理 } から const init = () =&amp;gt; { // 処理 } window.addEventListener(&amp;#39;load&amp;#39;, init); に変える。 Three.jsでオブジェクトを表示させるには レンダラーを作成する シーンを作成する 意味 レンダラー 描画するシステムのこと レン</description>
+    </item>
     
     <item>
       <title>git-secretsのawsトークン保護を検証してみた</title>
@@ -34,7 +43,7 @@
       <pubDate>Mon, 04 Nov 2019 13:47:45 +0900</pubDate>
       
       <guid>https://amatsukiurato.github.io/2019/try-to-create-ar-page/</guid>
-      <description>はじめに ふと、名刺にARマーカーが記載されていて、 川島教授の顔みたいな(脳トレ)のが出てきたら、とても面白いなと思いついて触ってみました。 もっと脳を鍛える大人のDSトレーニング™ (余談ですが、脳トレのSwitch版がでるみたいです) ARの実現方法 軽く検索したところ、Unityで実現する方法とWeb技術で実現する方法が見つかりました。 ネイティブで実現する方法もあると思いますが、今回はこの2つを見ていきます。 Unity どうやら、Vuforiaという外部ツールと連携して使うのが主流みたいです。 iOSだとARk</description>
+      <description>はじめに ふと、名刺にARマーカーが記載されていて、 川島教授の顔みたいな（脳トレ）のが出てきたら、とてもおもしろいなと思いついて触ってみました。 もっと脳を鍛える大人のDSトレーニング™ （余談ですが、脳トレのSwitch版がでるみたいです） ARの実現方法 軽く検索したところ、Unityで実現する方法とWeb技術で実現する方法が見つかりました。 ネイティブで実現する方法もあると思いますが、今回はこの2つを見ていきます。 Unity どうやら、Vuforiaという外部ツールと連携して使うのが主流みたいです。 iOSだとA</description>
     </item>
     
     <item>
