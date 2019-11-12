@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amatsukiメモ  | hugo</title>
+    <title>Amatsukiメモ  | go</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="https://amatsukiurato.github.io/css/blog.css" />
     <link rel="stylesheet" href="https://amatsukiurato.github.io/css/syntax.css" />
     
-    <link href="https://amatsukiurato.github.io/tags/hugo/index.xml" rel="alternate" type="application/rss+xml" title="Amatsukiメモ" />
-    <link href="https://amatsukiurato.github.io/tags/hugo/index.xml" rel="feed" type="application/rss+xml" title="Amatsukiメモ" />
+    <link href="https://amatsukiurato.github.io/tags/go/index.xml" rel="alternate" type="application/rss+xml" title="Amatsukiメモ" />
+    <link href="https://amatsukiurato.github.io/tags/go/index.xml" rel="feed" type="application/rss+xml" title="Amatsukiメモ" />
     
 
     
@@ -34,7 +34,7 @@
             <a class="navbar-item" href="https://amatsukiurato.github.io">Home</a>
             <div class="navbar-item">
                     
-                        #hugo
+                        #go
                     
             </div>
         </div>
@@ -66,36 +66,6 @@
                                 <i class="fas fa-clock"></i>&nbsp;2 min read
                             </div>
                             <p>TL;DR 以下の書き方で実装可（⚠️Bulmaでの実装） {{$year:=(div(subnow.Unix.Lastmod.Unix)31536000)}} {{ifle1$year}} &lt;div class=&#34;notification is-warning&#34;&gt; この記事は、掲載されてから {{$year}} 年間修正されておりません。 &lt;/div&gt; {{end}} Hugo公式の.Unixページを見よ はじめに 唐突に、「記事が老朽化している表示」はほしいなと思い、色々と検索して実装ができた感じです。Goのテンプレートエンジンにだけ詳しくなっていく… 方法 一番上に書いてあるとおり、 &lt;!-- 再掲 --&gt; {{$year:=(div(subnow.Unix.Lastmod.Unix)31536000)}} {{ifle1$year}} &lt;div class=&#34;notification is-warning&#34;&gt; この記事は、掲載されてから {{$year}} 年間修正されておりません。 &lt;/div&gt; {{end}} で実装できる。 多分読んだらわかると思いますが、一応解説します。 {{$year:=(div(subnow.Unix.Lastmod.Unix)31536000)}} ここでは、 現在時刻のUnix時...</p>
-                        </div>
-                    </div>
-                </article>
-                <br>
-
-                <article class="media">
-                    <div class="media-content">
-                        <div class="content">
-                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/adapted-hugo-gitinfo/">hugoの.GitInfoが適応された話(理由は不明です…)</a></p>
-                            <div class="subtitle is-size-6 has-text-grey-light">
-                                <i class="fas fa-pen"></i>&nbsp;2019-10-20 |
-                                <i class="fas fa-redo-alt"></i>&nbsp;2019-10-20 |
-                                <i class="fas fa-clock"></i>&nbsp;1 min read
-                            </div>
-                            <p>ずっと前から、記事の更新はgitのコミット履歴を使いたいと思っていたのですが、 .GitInfoの情報が記事にうまく反映されずnilになっていたため、手動で作業してました😇 .GitInfoが使えるようになった原因は恐らく、記事のパスを /content/post/[記事].md→/content/post/[分類用フォルダ]/[記事].md ※[]内はそれぞれの用途で変更する としたことです。 何故これで.GitInfoが適応されたのかは不明ですが、とにかくずっとやりたかったことなので、大満足😭...</p>
-                        </div>
-                    </div>
-                </article>
-                <br>
-
-                <article class="media">
-                    <div class="media-content">
-                        <div class="content">
-                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/migration-from-lightsail/">Light Sailからの移行</a></p>
-                            <div class="subtitle is-size-6 has-text-grey-light">
-                                <i class="fas fa-pen"></i>&nbsp;2019-4-16 |
-                                <i class="fas fa-redo-alt"></i>&nbsp;2019-10-31 |
-                                <i class="fas fa-clock"></i>&nbsp;2 min read
-                            </div>
-                            <p>移行しました AWSのLight Sail + WordPressでやってましたが、 WordPressがだるすぎたので AWSの[AWS Amplify + Hugo]に移行しました。 現在は[github pages + Hugo] github pages とかをそのまま使うのも良かったけど、 AWSのサービスを触ってみたかったのでこっちで立ててみました。 Hugoに移って最初に記事書いていて思うけど、 やっぱMarkdownが最強なんだわ。 スラスラ書ける😎 一応WordPressでもMarkdownで書けるプラグイン📕は少し出てたけど、 めっちゃこれいいやん、みたいなプラグインは...</p>
                         </div>
                     </div>
                 </article>

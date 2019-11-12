@@ -1,0 +1,23 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>template on Amatsukiメモ</title>
+    <link>https://amatsukiurato.github.io/tags/template/</link>
+    <description>Recent content in template on Amatsukiメモ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Tue, 12 Nov 2019 21:36:21 +0900</lastBuildDate>
+    
+        <atom:link href="https://amatsukiurato.github.io/tags/template/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugoで記事が一年以上過ぎた場合はnoticeを表示するようにした</title>
+      <link>https://amatsukiurato.github.io/2019/show-notification-if-now-greater-equal-updated-time/</link>
+      <pubDate>Tue, 12 Nov 2019 21:36:21 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/2019/show-notification-if-now-greater-equal-updated-time/</guid>
+      <description>TL;DR 以下の書き方で実装可（⚠️Bulmaでの実装） {{$year:=(div(subnow.Unix.Lastmod.Unix)31536000)}} {{ifle1$year}} &amp;lt;div class=&amp;#34;notification is-warning&amp;#34;&amp;gt; この記事は、掲載されてから {{$year}} 年間修正されておりません。 &amp;lt;/div&amp;gt; {{end}} Hugo公式の.Unixページを見よ はじめに 唐突に、「記事が老朽化している表示」はほしいなと思い、色々と検索して実装ができた感じです。Goのテンプレートエンジンにだけ詳しくなっていく… 方法 一番上に書いてあるとおり、 &amp;lt;!-- 再掲 --&amp;gt; {{$year:=(div(subnow.Unix.Lastmod.Unix)31536000)}} {{ifle1$year}} &amp;lt;div class=&amp;#34;notification is-warning&amp;#34;&amp;gt; この記事は、掲載されてから {{$year}} 年間修正されておりません。 &amp;lt;/div&amp;gt; {{end}} で実装できる。 多分読んだらわかると思いますが、一応解説します。 {{$year:=(div(subnow.Unix.Lastmod.Unix)31536000)}} ここでは、 現在時刻のUnix時</description>
+    </item>
+    
+  </channel>
+</rss>

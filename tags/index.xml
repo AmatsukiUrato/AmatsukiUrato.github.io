@@ -5,10 +5,37 @@
     <description>Recent content in Tags on Amatsukiメモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 09 Nov 2019 17:35:48 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 12 Nov 2019 21:36:21 +0900</lastBuildDate>
     
         <atom:link href="https://amatsukiurato.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>go</title>
+      <link>https://amatsukiurato.github.io/tags/go/</link>
+      <pubDate>Tue, 12 Nov 2019 21:36:21 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://amatsukiurato.github.io/tags/hugo/</link>
+      <pubDate>Tue, 12 Nov 2019 21:36:21 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>template</title>
+      <link>https://amatsukiurato.github.io/tags/template/</link>
+      <pubDate>Tue, 12 Nov 2019 21:36:21 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/tags/template/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>JavaScript</title>
@@ -110,7 +137,7 @@
     </item>
     
     <item>
-      <title>Extention</title>
+      <title>extention</title>
       <link>https://amatsukiurato.github.io/tags/extention/</link>
       <pubDate>Thu, 31 Oct 2019 22:41:35 +0900</pubDate>
       
@@ -232,15 +259,6 @@
       <pubDate>Sun, 27 Oct 2019 18:28:29 +0900</pubDate>
       
       <guid>https://amatsukiurato.github.io/tags/onedrive/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://amatsukiurato.github.io/tags/hugo/</link>
-      <pubDate>Sun, 20 Oct 2019 12:47:18 +0900</pubDate>
-      
-      <guid>https://amatsukiurato.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     
