@@ -110,7 +110,11 @@
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}</span></code></pre></div>
 <p>で実装できる。<br />
-多分読んだらわかると思いますが、一応解説します。</p>
+実際の表示はこんな感じ😗</p>
+
+<p><img src="https://amatsukiurato.github.io/resources/show-notification-if-now-greater-equal-updated-time/no-update-one-year.png" alt="display-warning" /></p>
+
+<p>多分上記のコードを読んだらわかると思いますが、一応解説します。</p>
 <div class="highlight"><pre class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="cp">{{</span><span class="w"> </span><span class="nx">$year</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">(</span><span class="nx">div</span><span class="w"> </span><span class="o">(</span><span class="nx">sub</span><span class="w"> </span><span class="nx">now</span><span class="na">.Unix</span><span class="w"> </span><span class="na">.Lastmod.Unix</span><span class="o">)</span><span class="w"> </span><span class="nx">31536000</span><span class="o">)</span><span class="w"> </span><span class="cp">}}</span></code></pre></div>
 <p>ここでは、</p>
 
