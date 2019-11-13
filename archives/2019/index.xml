@@ -5,10 +5,19 @@
     <description>Recent content in 2019 on Amatsukiメモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 12 Nov 2019 21:36:21 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 14 Nov 2019 00:42:17 +0900</lastBuildDate>
     
         <atom:link href="https://amatsukiurato.github.io/archives/2019/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使ってよかったVSCode13選&#43;3選の拡張機能紹介</title>
+      <link>https://amatsukiurato.github.io/2019/good-extentions/</link>
+      <pubDate>Thu, 14 Nov 2019 00:42:17 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/2019/good-extentions/</guid>
+      <description>一軍 この枠で紹介している拡張機能は、高い汎用性を持っており私自身も良く使っている拡張機能たちです。 Settings Sync♻️ VS Codeの拡張機能を移行する場合や、バックアップするときに大活躍！ とりあえず入れとけスタイルでオッケーな拡張機能。 かったるい移行作業をめちゃくちゃ楽にしてくれる。端末が壊れても安心だし、真っ先に入れても良い拡張機能かも。自分で管理しても良いけどね。 Download Page テキスト校正くん👨‍🎓 VS Code上にあるテキストを自動で添削してくれるスグレモノ。 どこかに議事録やまとめた文章を提出する前に少し確認す</description>
+    </item>
     
     <item>
       <title>Hugoで記事が一年以上過ぎた場合はnoticeを表示するようにした</title>

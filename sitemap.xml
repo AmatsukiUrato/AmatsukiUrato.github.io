@@ -4,17 +4,47 @@
   
   <url>
     <loc>https://amatsukiurato.github.io/archives/2019/</loc>
-    <lastmod>2019-11-12T22:44:38+09:00</lastmod>
+    <lastmod>2019-11-14T03:20:06+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://amatsukiurato.github.io/</loc>
-    <lastmod>2019-11-12T22:44:38+09:00</lastmod>
+    <lastmod>2019-11-14T03:20:06+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://amatsukiurato.github.io/archives/</loc>
-    <lastmod>2019-11-12T22:44:38+09:00</lastmod>
+    <lastmod>2019-11-14T03:20:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/extension/</loc>
+    <lastmod>2019-11-14T03:20:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/post/</loc>
+    <lastmod>2019-11-14T03:20:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/</loc>
+    <lastmod>2019-11-14T03:20:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/utility/</loc>
+    <lastmod>2019-11-14T03:20:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/tags/vscode/</loc>
+    <lastmod>2019-11-14T03:20:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://amatsukiurato.github.io/2019/good-extentions/</loc>
+    <lastmod>2019-11-14T03:20:06+09:00</lastmod>
   </url>
   
   <url>
@@ -29,16 +59,6 @@
   
   <url>
     <loc>https://amatsukiurato.github.io/2019/show-notification-if-now-greater-equal-updated-time/</loc>
-    <lastmod>2019-11-12T22:44:38+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://amatsukiurato.github.io/post/</loc>
-    <lastmod>2019-11-12T22:44:38+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://amatsukiurato.github.io/tags/</loc>
     <lastmod>2019-11-12T22:44:38+09:00</lastmod>
   </url>
   
@@ -269,11 +289,6 @@
   
   <url>
     <loc>https://amatsukiurato.github.io/tags/revealjs/</loc>
-    <lastmod>2019-10-31T22:13:09+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://amatsukiurato.github.io/tags/vscode/</loc>
     <lastmod>2019-10-31T22:13:09+09:00</lastmod>
   </url>
   
