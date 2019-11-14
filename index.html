@@ -85,7 +85,7 @@
                                     <p class="title has-text-grey-dark	 is-4">Hugoで記事が一年以上過ぎた場合はnoticeを表示するようにした</p>
                                     <div class="subtitle is-size-6 has-text-grey-light">
                                         <i class="fas fa-pen"></i>&nbsp;2019-11-12 |
-                                        <i class="fas fa-redo-alt"></i>&nbsp;2019-11-12 |
+                                        <i class="fas fa-redo-alt"></i>&nbsp;2019-11-14 |
                                         <i class="fas fa-clock"></i>&nbsp;2 min read
                                     </div>
                                     <p class="is-size-6">TL;DR 以下の書き方で実装可（⚠️Bulmaでの実装） {{$year:=(div(subnow.Unix.Lastmod.Unix)31536000)}} {{ifle1$year}} &lt;div class=&#34;notification is-warning&#34;&gt; この記事は、掲載されてから {{$year}} 年間修正されておりません。 &lt;/div&gt; {{end}} Hugo公式の.Unixページを見よ はじめに 唐突に、「記事が老朽化している表示」はほしいなと思い、色々と検索して実装ができた感じです。Goのテンプレートエンジンにだけ詳しくなっていく… 方法 一番上に書いてあるとおり、 &lt;!-- 再掲 --&gt; {{$year:=(div(subnow.Unix.Lastmod.Unix)31536000)}} {{ifle1$year}} &lt;div class=&#34;notification is-warning&#34;&gt; この記事は、掲載されてから {{$year}} 年間修正されておりません。 &lt;/div&gt; {{end}} で実装できる。 実際の表示はこんな感じ😗 多分上記のコードを読んだらわかると思いますが、一応解説し...</p>
