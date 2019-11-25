@@ -116,14 +116,14 @@
 <li>Ubuntu
 
 <ul>
-<li><YY>.<0M></li>
+<li>[YY].[0M]</li>
 <li>YY: 年</li>
 <li>0M: 月</li>
 </ul></li>
 <li>ArchLinux
 
 <ul>
-<li><YYYY>.<0M>.<0D></li>
+<li>[YYYY].[0M].[0D]</li>
 <li>YYYY: 年</li>
 <li>0M: 月</li>
 <li>0D: 日</li>
@@ -131,7 +131,7 @@
 <li>CentOS
 
 <ul>
-<li><A>.<B>.<CCCC></li>
+<li>[A].[B].[CCCC]</li>
 <li>恐らく
 
 <ul>
@@ -144,7 +144,7 @@
 <li><p>Windows 10</p>
 
 <ul>
-<li><AAAA></li>
+<li>[AAAA]</li>
 
 <li><p>A: Version</p>
 
@@ -154,7 +154,7 @@
 <li><p>Python</p>
 
 <ul>
-<li><A>.<B>.<CC></li>
+<li>[A].[B].[CC]</li>
 <li>A: Major:重要な変更リリース</li>
 <li>B: Minor:大きくない変更</li>
 <li>C: Micro:バグフィックス</li>
@@ -163,7 +163,7 @@
 <li><p>Node.js</p>
 
 <ul>
-<li><AA>.<BB>.<C></li>
+<li>[AA].[BB].[C]</li>
 <li>A: Major</li>
 <li>B: Minor</li>
 <li>C: Revision</li>
@@ -172,7 +172,7 @@
 <li><p>Ruby</p>
 
 <ul>
-<li><A>.<B>.<C></li>
+<li>[A].[B].[C]</li>
 <li>A: Major:メインのバージョンアップ</li>
 <li>B: Minor:互換性があるバージョンアップ</li>
 <li>C: Patch:バグフィックス</li>
@@ -181,7 +181,7 @@
 <li><p>Java</p>
 
 <ul>
-<li><AA>.<B>.<C>.<D>
+<li>[AA].[B].[C].[D]
 
 <ul>
 <li>A: Feature: 機能リリース</li>
@@ -202,7 +202,7 @@
 <li>Unity
 
 <ul>
-<li><YYYY>.<A>.<BB></li>
+<li>[YYYY].[A].[BB]</li>
 <li>Y: 年</li>
 <li>A: Major</li>
 <li>B: Minor</li>
@@ -211,7 +211,7 @@
 <li>IntelliJ
 
 <ul>
-<li><YYYY>.<Major>.<Minor></li>
+<li>[YYYY].[Major].[Minor]</li>
 <li>Y: 年</li>
 <li>A: Major</li>
 <li>B: Minor</li>
@@ -219,7 +219,7 @@
 <li>Chrome
 
 <ul>
-<li><AA>.<B<>.<CCCC>.<DD></li>
+<li>[AA].[B].[CCCC].[DD]</li>
 <li>A: Major</li>
 <li>B: Minor</li>
 <li>C: Build</li>
@@ -228,7 +228,7 @@
 <li>Docker
 
 <ul>
-<li><AA>.<BB>.<C></li>
+<li>[AA].[BB].[C]</li>
 <li>A: Major</li>
 <li>B: Minor</li>
 <li>C: Patch</li>
@@ -236,7 +236,7 @@
 <li>HearthStone(Game)
 
 <ul>
-<li><AA>.<B>.<C>.<DDDDD></li>
+<li>[AA].[B].[C].[DDDDD]</li>
 <li>A: Major</li>
 <li>B: Minor</li>
 <li>C: Patch</li>
@@ -259,9 +259,12 @@
 <p>色々なバージョンの付け方があって、面白かったです。
 複雑なバージョンをつけるのは、それはそれでロマンがありますが、やはり使用者にとってわかりやすくするのが一番だと思いました。</p>
 
-<p>セマンティックバージョニングでも、同じようなことが書かれています。
-&gt;このアイデアは新しいものでもなければ、革新的なものでもありません。実際、みなさんも似たような取り組みを既におこなっているかもしれません。問題は「似ている」のでは不十分だということです。正式な仕様書による取り決めがなければ、バージョンナンバーは依存性の管理において基本的には無意味です。上記のアイデアに対して名前と正確な定義を与えることよって、あなたの開発するソフトウェアにおいて、あなたの意図がユーザーに対して伝わりやすくなることでしょう。一度、これらの意図を正確にしてしまえば、柔軟な（しかし、柔軟すぎてはいけない）依存性の仕様を作ることができます。
-&gt;<a href="https://semver.org/lang/ja/">セマンティック バージョニング 2.0.0</a></p>
+<p>セマンティックバージョニングでも、同じようなことが書かれています。</p>
+
+<blockquote>
+<p>このアイデアは新しいものでもなければ、革新的なものでもありません。実際、みなさんも似たような取り組みを既におこなっているかもしれません。問題は「似ている」のでは不十分だということです。正式な仕様書による取り決めがなければ、バージョンナンバーは依存性の管理において基本的には無意味です。上記のアイデアに対して名前と正確な定義を与えることよって、あなたの開発するソフトウェアにおいて、あなたの意図がユーザーに対して伝わりやすくなることでしょう。一度、これらの意図を正確にしてしまえば、柔軟な（しかし、柔軟すぎてはいけない）依存性の仕様を作ることができます。
+]<a href="https://semver.org/lang/ja/">セマンティック バージョニング 2.0.0</a></p>
+</blockquote>
 
 <p>決してStains;Gateのダルみたいな命名はしてはいけない <del>（確かにかっこよくてロマンはあるけど）</del></p>
 
