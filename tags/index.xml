@@ -5,10 +5,28 @@
     <description>Recent content in Tags on Amatsukiメモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 14 Nov 2019 00:42:17 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 25 Nov 2019 21:20:19 +0900</lastBuildDate>
     
         <atom:link href="https://amatsukiurato.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tech</title>
+      <link>https://amatsukiurato.github.io/tags/tech/</link>
+      <pubDate>Mon, 25 Nov 2019 21:20:19 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/tags/tech/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Version</title>
+      <link>https://amatsukiurato.github.io/tags/version/</link>
+      <pubDate>Mon, 25 Nov 2019 21:20:19 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/tags/version/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Extension</title>
@@ -47,7 +65,7 @@
     </item>
     
     <item>
-      <title>Hugo</title>
+      <title>hugo</title>
       <link>https://amatsukiurato.github.io/tags/hugo/</link>
       <pubDate>Tue, 12 Nov 2019 21:36:21 +0900</pubDate>
       
@@ -164,7 +182,7 @@
     </item>
     
     <item>
-      <title>extention</title>
+      <title>Extention</title>
       <link>https://amatsukiurato.github.io/tags/extention/</link>
       <pubDate>Thu, 31 Oct 2019 22:41:35 +0900</pubDate>
       

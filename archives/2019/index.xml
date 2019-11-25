@@ -5,10 +5,19 @@
     <description>Recent content in 2019 on Amatsukiメモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 14 Nov 2019 00:42:17 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 25 Nov 2019 21:20:19 +0900</lastBuildDate>
     
         <atom:link href="https://amatsukiurato.github.io/archives/2019/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>いろんなソフトのバージョンの付け方を調べてみた</title>
+      <link>https://amatsukiurato.github.io/2019/what-kind-of-management-version/</link>
+      <pubDate>Mon, 25 Nov 2019 21:20:19 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/2019/what-kind-of-management-version/</guid>
+      <description>はじめに 今日、別部門の先輩から 「お前のところのプロジェクトはどんな感じでバージョンの番号つけてる？」 と聞かれたので、 「YYYYMMDD」で付けてます。 と返したのですが、世間ではどういった感じで付けてるかをしっかりと意識してみたことはないと思い、調べてみました。 さまざまな命名方法 丸投げになってしまいますが、めちゃくちゃまとめられた記事を見つけたのでこちらを見るとわかりやすいです。 バージョンにあれこれ考えを巡らせてみる 各ソフトウェアのバージョン定義 LTS版やStable版などの表記は省きます。 OS Ubuntu .</description>
+    </item>
     
     <item>
       <title>使ってよかったVSCode拡張機能14選&#43;3選の紹介</title>
