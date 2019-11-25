@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hugo on Amatsukiメモ</title>
+    <title>Hugo on Amatsukiメモ</title>
     <link>https://amatsukiurato.github.io/tags/hugo/</link>
-    <description>Recent content in hugo on Amatsukiメモ</description>
+    <description>Recent content in Hugo on Amatsukiメモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Tue, 12 Nov 2019 21:36:21 +0900</lastBuildDate>
