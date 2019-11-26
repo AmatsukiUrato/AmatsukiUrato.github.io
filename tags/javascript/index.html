@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja-jp">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,13 +20,14 @@
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143787598-1"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'UA-143787598-1');
+        gtag('config', 'UA-143787598-1');
     </script>
 </head>
+
 <body>
 
     
@@ -33,17 +35,57 @@
         <div class="navbar-brand">
             <a class="navbar-item" href="https://amatsukiurato.github.io">Home</a>
             <div class="navbar-item">
-                    
-                        #JavaScript
-                    
+                
+                #JavaScript
+                
             </div>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                data-target="navbar-sub">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
         </div>
-        <div class="navbar-end">
-                <a class="navbar-item nav-right" href="https://amatsukiurato.github.io/about">About</a>
-        </div>
+        <div id="navbar-sub" class="navbar-menu">
+            <div class="navbar-start">
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <a class="navbar-item nav-right" href="https://amatsukiurato.github.io/food">飯</a>
+                    <a class="navbar-item nav-right" href="https://amatsukiurato.github.io/about">About</a>
+                </div>
+            </div>
     </nav>
     
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', () => {
 
+            
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+            
+            if ($navbarBurgers.length > 0) {
+
+                
+                $navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+
+                        
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+
+                        
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+
+                    });
+                });
+            }
+
+        });
+    </script>
+</body>
 
 <div class="container">
     <div class="section">
