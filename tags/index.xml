@@ -5,10 +5,37 @@
     <description>Recent content in Tags on Amatsukiメモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 25 Nov 2019 21:20:19 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 26 Nov 2019 22:07:03 +0900</lastBuildDate>
     
         <atom:link href="https://amatsukiurato.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ランチ</title>
+      <link>https://amatsukiurato.github.io/tags/%E3%83%A9%E3%83%B3%E3%83%81/</link>
+      <pubDate>Tue, 26 Nov 2019 22:07:03 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/tags/%E3%83%A9%E3%83%B3%E3%83%81/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>大阪</title>
+      <link>https://amatsukiurato.github.io/tags/%E5%A4%A7%E9%98%AA/</link>
+      <pubDate>Tue, 26 Nov 2019 22:07:03 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/tags/%E5%A4%A7%E9%98%AA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>高級感</title>
+      <link>https://amatsukiurato.github.io/tags/%E9%AB%98%E7%B4%9A%E6%84%9F/</link>
+      <pubDate>Tue, 26 Nov 2019 22:07:03 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/tags/%E9%AB%98%E7%B4%9A%E6%84%9F/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Tech</title>
@@ -65,7 +92,7 @@
     </item>
     
     <item>
-      <title>hugo</title>
+      <title>Hugo</title>
       <link>https://amatsukiurato.github.io/tags/hugo/</link>
       <pubDate>Tue, 12 Nov 2019 21:36:21 +0900</pubDate>
       
