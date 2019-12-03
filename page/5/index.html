@@ -102,6 +102,48 @@
                     <div class="content">
                         <div class="card">
                             <div class="card-content">
+                                <a class="has-text-grey-dark" href="https://amatsukiurato.github.io/2019/fixed-revealjs-vscode-extention-on-windows10/">
+                                    <p class="title has-text-grey-dark	 is-4">Windows10のVSCodeでvscode Revealが正しく動かなかった問題の解決法</p>
+                                    <div class="subtitle is-size-6 has-text-grey-light">
+                                        <i class="fas fa-pen"></i>&nbsp;2019-7-18 |
+                                        <i class="fas fa-redo-alt"></i>&nbsp;2019-10-31 |
+                                        <i class="fas fa-clock"></i>&nbsp;1 min read
+                                    </div>
+                                    <p class="is-size-6">TL;DR 方法1 改行コードをLFに変える 方法2 拡張機能でLFで書かれている部分をCRLFで書き直す 原因 TL;DRでだいたい判ると思いますが、vscode-revealのスライド仕切りの---がデフォではLFの設定で登録されているのが問題でした。 revealjsの改行コード指摘ページ 日本語訳版 解決法 普通に使う場合は前者の方を実施したほうがいいと思います。 後者のやり方だと設定ファイルに書かない限り、正しく表示させる作業が毎日必要になります。 revealjsに読み込ませる改行コードを変える場合 拡張機能の設定画...</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <br>
+            
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <div class="card">
+                            <div class="card-content">
+                                <a class="has-text-grey-dark" href="https://amatsukiurato.github.io/2019/resolved-routing-problem-on-route53/">
+                                    <p class="title has-text-grey-dark	 is-4">Route53のルーティング問題を解決した話</p>
+                                    <div class="subtitle is-size-6 has-text-grey-light">
+                                        <i class="fas fa-pen"></i>&nbsp;2019-7-15 |
+                                        <i class="fas fa-redo-alt"></i>&nbsp;2019-10-31 |
+                                        <i class="fas fa-clock"></i>&nbsp;1 min read
+                                    </div>
+                                    <p class="is-size-6">TL;DR 外部からホストゾーンのネームサーバを指定してあげないと、レコードが帰ってこなかった Route53のドメインのネームサーバとホストゾーンのネームサーバを一緒にする 概要 前に[Route53] -&gt; [S3のリダイレクト] -&gt; [リダイレクト先ページ] のルーティングを行おうと思いましたがうまく行きませんでした。 該当記事 原因 Route53にて、登録していたドメインに記述されているネームサーバの一覧と ホストゾーンに記載されているNSレコードの値が違っていたため、 正しくルーティングされなかったみたいです。 解決方法と...</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <br>
+            
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <div class="card">
+                            <div class="card-content">
                                 <a class="has-text-grey-dark" href="https://amatsukiurato.github.io/2019/change-onsen-ui-dialog-component-size/">
                                     <p class="title has-text-grey-dark	 is-4">Onsen-UIのDialogコンポーネントサイズを変更する</p>
                                     <div class="subtitle is-size-6 has-text-grey-light">
@@ -131,48 +173,6 @@
                                         <i class="fas fa-clock"></i>&nbsp;1 min read
                                     </div>
                                     <p class="is-size-6">表題の通りです。 完成してないです。 前に取得した.netのドメインを踏んだときにS3のリダイレクト機能を使ってこのページに飛べるようにしようと思い設定してました。 出来たこと s3のエンドポイント(httpのリンク)にアクセスするとgithubPageにリダイレクトする s3のエイリアスを作成する 出来てないところ .netドメインにアクセスしてもs3のリダイレクト用エンドポイントにまでたどり着かない not foundエラーが発生する Route53での設定が正しく行えていないと予想...</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <br>
-            
-            <article class="media">
-                <div class="media-content">
-                    <div class="content">
-                        <div class="card">
-                            <div class="card-content">
-                                <a class="has-text-grey-dark" href="https://amatsukiurato.github.io/2019/copyq-like-clibor-can-use-on-ubuntu/">
-                                    <p class="title has-text-grey-dark	 is-4">UbuntuのClibor的存在CopyQ</p>
-                                    <div class="subtitle is-size-6 has-text-grey-light">
-                                        <i class="fas fa-pen"></i>&nbsp;2019-6-30 |
-                                        <i class="fas fa-redo-alt"></i>&nbsp;2019-10-31 |
-                                        <i class="fas fa-clock"></i>&nbsp;1 min read
-                                    </div>
-                                    <p class="is-size-6">概要 普段WindowsではClipBoardの履歴にcliborを使っています。 最近OSをubuntuで利用することがあり、ubuntuでコピー履歴管理を探していたところ、 Windows/MacOS/Linux対応のCopyQってのが見つかりました。 さわってみて Cliborみたいに、ショートカットにAlt*2とかの設定はできませんでしたが、 無変換に割り当てられたので概ね満足。 CopyQには、履歴管理以外にも機能があるみたいですが、 とりあえずやりたいことができたのでOK。 参考 https://qualiartz.jp/digitaltransformation/automation/recommend-oss-copyq-clipboard-manager/ https://www.tecmint.com/best-clipboard-managers-for-linux/...</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <br>
-            
-            <article class="media">
-                <div class="media-content">
-                    <div class="content">
-                        <div class="card">
-                            <div class="card-content">
-                                <a class="has-text-grey-dark" href="https://amatsukiurato.github.io/2019/why-did-webpack-hide-outputfile-on-intellij/">
-                                    <p class="title has-text-grey-dark	 is-4">IntelliJでwebpack導入後、フォルダが見えなくなる問題の解決法</p>
-                                    <div class="subtitle is-size-6 has-text-grey-light">
-                                        <i class="fas fa-pen"></i>&nbsp;2019-6-30 |
-                                        <i class="fas fa-redo-alt"></i>&nbsp;2019-10-31 |
-                                        <i class="fas fa-clock"></i>&nbsp;1 min read
-                                    </div>
-                                    <p class="is-size-6">TL;DR 設定からWebpackを開いて、configuration fileのパスを消す 原因 IntelliJが賢すぎた。 というのも、webpackのアウトプット先がintelliJ IDEA上でExcluded(非表示になりIntellij上から閲覧できなくなる)のは、 webpackの出力先フォルダだからです。 設定は以下の場所にあり、 Preferences | Languages &amp; Frameworks | JavaScript | Webpackwebpack のconfiguration file:の項目を空文字列にすることによってIntelliJ上から編集できるようになります。 消している理由は パフォーマンスのため...</p>
                                 </a>
                             </div>
                         </div>
@@ -283,6 +283,8 @@
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/onsen-ui">onsen-ui</a></span>
         
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/powershell">powershell</a></span>
+        
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/raspberrypi">raspberrypi</a></span>
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/react">react</a></span>
@@ -297,6 +299,8 @@
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/setting">setting</a></span>
         
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/setting">setting</a></span>
+        
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/slow">slow</a></span>
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/tab">tab</a></span>
@@ -304,6 +308,8 @@
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/tech">tech</a></span>
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/template">template</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/terminal">terminal</a></span>
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/terminal">terminal</a></span>
         
@@ -323,6 +329,10 @@
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/webpack">webpack</a></span>
         
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/windows">windows</a></span>
+        
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/windows-terminal">windows-terminal</a></span>
+        
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E3%82%B7%E3%83%B3%E3%83%9C%E3%83%AA%E3%83%83%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%AF">シンボリックリンク</a></span>
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E3%83%9D%E3%82%A8%E3%83%A0">ポエム</a></span>
@@ -338,6 +348,12 @@
     <div class="card-content">
         <h1 class="title is-5">Recent posts</h1>
         
+            <h1><a href="https://amatsukiurato.github.io/2019/reinvent-2019-12-4/">ReInvent 2019 12 4</a></h1>
+            <time class="has-text-grey-light is-size-7">4 December 2019</time>
+        
+            <h1><a href="https://amatsukiurato.github.io/2019/tried-to-change-powershell-color/">PowerShellの色を変えようと思ってたら、Windows Terminal(Preview)で変更してた</a></h1>
+            <time class="has-text-grey-light is-size-7">2 December 2019</time>
+        
             <h1><a href="https://amatsukiurato.github.io/2019/what-kind-of-management-version/">バージョンの付け方を調べてみた</a></h1>
             <time class="has-text-grey-light is-size-7">25 November 2019</time>
         
@@ -347,19 +363,13 @@
             <h1><a href="https://amatsukiurato.github.io/2019/show-notification-if-now-greater-equal-updated-time/">Hugoで記事が一年以上過ぎた場合はnoticeを表示するようにした</a></h1>
             <time class="has-text-grey-light is-size-7">12 November 2019</time>
         
-            <h1><a href="https://amatsukiurato.github.io/2019/study-three.js-1/">Three.jsを学習する【第一回】</a></h1>
-            <time class="has-text-grey-light is-size-7">9 November 2019</time>
-        
-            <h1><a href="https://amatsukiurato.github.io/2019/tried-using-git-secrets/">git-secretsのawsトークン保護を検証してみた</a></h1>
-            <time class="has-text-grey-light is-size-7">7 November 2019</time>
-        
     </div>
 </div><br>
         <div class="card">
     <div class="card-content">
         <h1 class="title is-5">Archives</h1>
         
-            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (21)<br>
+            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (23)<br>
         
             <a href="https://amatsukiurato.github.io/archives/2017">2017</a> (1)<br>
         

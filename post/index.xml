@@ -5,10 +5,28 @@
     <description>Recent content in Posts on Amatsukiメモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 25 Nov 2019 21:20:19 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 04 Dec 2019 02:39:00 +0900</lastBuildDate>
     
         <atom:link href="https://amatsukiurato.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ReInvent 2019 12 4</title>
+      <link>https://amatsukiurato.github.io/2019/reinvent-2019-12-4/</link>
+      <pubDate>Wed, 04 Dec 2019 02:39:00 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/2019/reinvent-2019-12-4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PowerShellの色を変えようと思ってたら、Windows Terminal(Preview)で変更してた</title>
+      <link>https://amatsukiurato.github.io/2019/tried-to-change-powershell-color/</link>
+      <pubDate>Mon, 02 Dec 2019 13:21:43 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/2019/tried-to-change-powershell-color/</guid>
+      <description>TL;DR Color Toolでもできるっぽいが、今後はWindows Terminalを使う Settingsのprofilesに設定を記述すると適応される 詳細はここを確認すること はじめに プライベートではMacBook Proを使用しているのですが、会社ではThinkPadのWindowsPCを開発PCとして利用しています。 ちょっとした作業をする際には、WSLを利用して行うようにしているのですが、どうしてもPowerShellで処理を走らせないと駄目な場面がでてきます。そこでようやくPowerShellを開くのですが</description>
+    </item>
     
     <item>
       <title>バージョンの付け方を調べてみた</title>

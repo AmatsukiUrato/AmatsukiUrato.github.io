@@ -5,10 +5,55 @@
     <description>Recent content in Tags on Amatsukiメモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 26 Nov 2019 22:07:03 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 02 Dec 2019 13:21:43 +0900</lastBuildDate>
     
         <atom:link href="https://amatsukiurato.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PowerShell</title>
+      <link>https://amatsukiurato.github.io/tags/powershell/</link>
+      <pubDate>Mon, 02 Dec 2019 13:21:43 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/tags/powershell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Setting</title>
+      <link>https://amatsukiurato.github.io/tags/setting/</link>
+      <pubDate>Mon, 02 Dec 2019 13:21:43 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/tags/setting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Terminal</title>
+      <link>https://amatsukiurato.github.io/tags/terminal/</link>
+      <pubDate>Mon, 02 Dec 2019 13:21:43 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/tags/terminal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>https://amatsukiurato.github.io/tags/windows/</link>
+      <pubDate>Mon, 02 Dec 2019 13:21:43 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows Terminal</title>
+      <link>https://amatsukiurato.github.io/tags/windows-terminal/</link>
+      <pubDate>Mon, 02 Dec 2019 13:21:43 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/tags/windows-terminal/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>ランチ</title>
@@ -524,29 +569,11 @@
     </item>
     
     <item>
-      <title>Terminal</title>
-      <link>https://amatsukiurato.github.io/tags/terminal/</link>
-      <pubDate>Fri, 19 Aug 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://amatsukiurato.github.io/tags/terminal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Eclipse</title>
       <link>https://amatsukiurato.github.io/tags/eclipse/</link>
       <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://amatsukiurato.github.io/tags/eclipse/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Setting</title>
-      <link>https://amatsukiurato.github.io/tags/setting/</link>
-      <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://amatsukiurato.github.io/tags/setting/</guid>
       <description></description>
     </item>
     

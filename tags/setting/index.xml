@@ -5,10 +5,19 @@
     <description>Recent content in Setting on Amatsukiメモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 15 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Dec 2019 13:21:43 +0900</lastBuildDate>
     
         <atom:link href="https://amatsukiurato.github.io/tags/setting/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PowerShellの色を変えようと思ってたら、Windows Terminal(Preview)で変更してた</title>
+      <link>https://amatsukiurato.github.io/2019/tried-to-change-powershell-color/</link>
+      <pubDate>Mon, 02 Dec 2019 13:21:43 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/2019/tried-to-change-powershell-color/</guid>
+      <description>TL;DR Color Toolでもできるっぽいが、今後はWindows Terminalを使う Settingsのprofilesに設定を記述すると適応される 詳細はここを確認すること はじめに プライベートではMacBook Proを使用しているのですが、会社ではThinkPadのWindowsPCを開発PCとして利用しています。 ちょっとした作業をする際には、WSLを利用して行うようにしているのですが、どうしてもPowerShellで処理を走らせないと駄目な場面がでてきます。そこでようやくPowerShellを開くのですが</description>
+    </item>
     
     <item>
       <title>Eclipseのタブを可視化するための &gt; を消したい</title>
