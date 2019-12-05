@@ -9,3 +9,7 @@ html,body {
     }
 .mysocial { color: hsl(0, 0%, 100%);}
 .mysocial:hover { color: hsl(0, 0%, 71%) }
+
+.card-break-all {
+    word-break: break-all;
+}
