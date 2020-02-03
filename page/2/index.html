@@ -102,27 +102,6 @@
                     <div class="content">
                         <div class="card">
                             <div class="card-content card-break-all">
-                                <a class="has-text-grey-dark" href="https://amatsukiurato.github.io/2019/show-notification-if-now-greater-equal-updated-time/">
-                                    <p class="title has-text-link is-4">Hugoで記事が一年以上過ぎた場合はnoticeを表示するようにした</p>
-                                    <div class="subtitle is-size-6 has-text-grey-light">
-                                        <i class="fas fa-pen"></i>&nbsp;2019-11-12 |
-                                        <i class="fas fa-redo-alt"></i>&nbsp;2019-11-14 |
-                                        <i class="fas fa-clock"></i>&nbsp;2 min read
-                                    </div>
-                                    <p class="is-size-6">TL;DR 以下の書き方で実装可（⚠️Bulmaでの実装） {{$year:=(div(subnow.Unix.Lastmod.Unix)31536000)}} {{ifle1$year}} &lt;div class=&#34;notification is-warning&#34;&gt; この記事は、掲載されてから {{$year}} 年間修正されておりません。 &lt;/div&gt; {{end}} Hugo公式の.Unixページを見よ はじめに 唐突に、「記事が老朽化している表示」はほしいなと思い、色々と検索して実装ができた感じです。Goのテンプレートエンジンにだけ詳しくなっていく… 方法 一番上に書いてあるとおり、 &lt;!-- 再掲 --&gt; {{$year:=(div(subnow.Unix.Lastmod.Unix)31536000)}} {{ifle1$year}} &lt;div class=&#34;notification is-warning&#34;&gt; この記事は、掲載されてから {{$year}} 年間修正されておりません。 &lt;/div&gt; {{end}} で実装できる。 実際の表示はこんな感じ😗 多分上記のコードを読んだらわかると思いますが、一応解説し...</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <br>
-            
-            <article class="media">
-                <div class="media-content">
-                    <div class="content">
-                        <div class="card">
-                            <div class="card-content card-break-all">
                                 <a class="has-text-grey-dark" href="https://amatsukiurato.github.io/2019/study-three.js-1/">
                                     <p class="title has-text-link is-4">Three.jsを学習する【第一回】</p>
                                     <div class="subtitle is-size-6 has-text-grey-light">
@@ -173,6 +152,27 @@
                                         <i class="fas fa-clock"></i>&nbsp;3 min read
                                     </div>
                                     <p class="is-size-6">つい最近、表題について調べることが合ったため、忘備録として記載しておきます。 違いについて 結論から書くと、 クロスリージョンレプリカはサブがリードレプリカなのに対して、マルチAZではスタンバイレプリカになっている クロスリージョンレプリカは複数リージョンを利用するのに対し、マルチAZでは同一リージョンを利用する が大きな違いかなと思います。 MultiAZ構成について RDSをマルチAZ構成で起動するとMasterとは別のAZにSlaveのRDSが立ち上げられ、同期レプリケーションが行われます。俗に言うMa...</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <br>
+            
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <div class="card">
+                            <div class="card-content card-break-all">
+                                <a class="has-text-grey-dark" href="https://amatsukiurato.github.io/2019/try-to-create-ar-page/">
+                                    <p class="title has-text-link is-4">ブラウザでARを使ってみた</p>
+                                    <div class="subtitle is-size-6 has-text-grey-light">
+                                        <i class="fas fa-pen"></i>&nbsp;2019-11-4 |
+                                        <i class="fas fa-redo-alt"></i>&nbsp;2019-11-10 |
+                                        <i class="fas fa-clock"></i>&nbsp;4 min read
+                                    </div>
+                                    <p class="is-size-6">はじめに ふと、名刺にARマーカーが記載されていて、 川島教授の顔みたいな（脳トレ）のが出てきたら、とてもおもしろいなと思いついて触ってみました。 もっと脳を鍛える大人のDSトレーニング™ （余談ですが、脳トレのSwitch版がでるみたいです） ARの実現方法 軽く検索したところ、Unityで実現する方法とWeb技術で実現する方法が見つかりました。 ネイティブで実現する方法もあると思いますが、今回はこの2つを見ていきます。 Unity どうやら、Vuforiaという外部ツールと連携して使うのが主流みたいです。 iOSだとA...</p>
                                 </a>
                             </div>
                         </div>
@@ -283,8 +283,6 @@
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/onsen-ui">onsen-ui</a></span>
         
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/poem">poem</a></span>
-        
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/powershell">powershell</a></span>
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/raspberrypi">raspberrypi</a></span>
@@ -350,9 +348,6 @@
     <div class="card-content">
         <h1 class="title is-5">Recent posts</h1>
         
-            <h1><a href="https://amatsukiurato.github.io/2020/subtle-post-is-better-than-nothing/">しょぼい記事の投稿でも、何もしないよりは良いと思う今日このごろ</a></h1>
-            <time class="has-text-grey-light is-size-7">29 January 2020</time>
-        
             <h1><a href="https://amatsukiurato.github.io/2019/tried-to-change-powershell-color/">PowerShellの色を変えようと思ってたら、Windows Terminal(Preview)で変更してた</a></h1>
             <time class="has-text-grey-light is-size-7">2 December 2019</time>
         
@@ -365,13 +360,14 @@
             <h1><a href="https://amatsukiurato.github.io/2019/show-notification-if-now-greater-equal-updated-time/">Hugoで記事が一年以上過ぎた場合はnoticeを表示するようにした</a></h1>
             <time class="has-text-grey-light is-size-7">12 November 2019</time>
         
+            <h1><a href="https://amatsukiurato.github.io/2019/study-three.js-1/">Three.jsを学習する【第一回】</a></h1>
+            <time class="has-text-grey-light is-size-7">9 November 2019</time>
+        
     </div>
 </div><br>
         <div class="card">
     <div class="card-content">
         <h1 class="title is-5">Archives</h1>
-        
-            <a href="https://amatsukiurato.github.io/archives/2020">2020</a> (1)<br>
         
             <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (22)<br>
         
