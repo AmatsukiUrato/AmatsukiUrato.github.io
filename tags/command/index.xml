@@ -1,0 +1,23 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>command on Amatsukiメモ</title>
+    <link>https://amatsukiurato.github.io/tags/command/</link>
+    <description>Recent content in command on Amatsukiメモ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Tue, 04 Feb 2020 02:40:26 +0900</lastBuildDate>
+    
+        <atom:link href="https://amatsukiurato.github.io/tags/command/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugoで一度publishしてしまったファイルをデプロイ時に消す</title>
+      <link>https://amatsukiurato.github.io/2020/how-to-clear-old-publish-files/</link>
+      <pubDate>Tue, 04 Feb 2020 02:40:26 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/2020/how-to-clear-old-publish-files/</guid>
+      <description>はじめに hugoでデプロイする際に、よくミスって不要記事をpublishしてしまうことがあります。 その後再度公開を行うと、出力元のフォルダからは消えているのにもかかわらず残り続けます。 今回はそれの解決を行いました。 （今まではpublic以下をスクリプトで消してた…） TL;DR hugo --cleanDestinationDirでおｋ How to ほぼほぼTL;DRで終わっちゃってますが、個人的にTL;DRがある記事のほうが手っ取り早く答えを見つけられると思っているので記載してます。 ググってもあんまり情報がなかったので、こ</description>
+    </item>
+    
+  </channel>
+</rss>

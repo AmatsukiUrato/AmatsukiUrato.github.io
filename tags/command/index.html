@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amatsukiメモ  | git</title>
+    <title>Amatsukiメモ  | command</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="https://amatsukiurato.github.io/css/blog.css" />
     <link rel="stylesheet" href="https://amatsukiurato.github.io/css/syntax.css" />
     
-    <link href="https://amatsukiurato.github.io/tags/git/index.xml" rel="alternate" type="application/rss+xml" title="Amatsukiメモ" />
-    <link href="https://amatsukiurato.github.io/tags/git/index.xml" rel="feed" type="application/rss+xml" title="Amatsukiメモ" />
+    <link href="https://amatsukiurato.github.io/tags/command/index.xml" rel="alternate" type="application/rss+xml" title="Amatsukiメモ" />
+    <link href="https://amatsukiurato.github.io/tags/command/index.xml" rel="feed" type="application/rss+xml" title="Amatsukiメモ" />
     
 
     
@@ -36,7 +36,7 @@
             <a class="navbar-item" href="https://amatsukiurato.github.io">Home</a>
             <div class="navbar-item">
                 
-                #git
+                #command
                 
             </div>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
@@ -101,26 +101,12 @@
                 <article class="media">
                     <div class="media-content">
                         <div class="content">
-                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/tried-using-git-secrets/">git-secretsのawsトークン保護を検証してみた</a></p>
+                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2020/how-to-clear-old-publish-files/">Hugoで一度publishしてしまったファイルをデプロイ時に消す</a></p>
                             <p class="subtitle is-size-6 has-text-grey-light">
-                                Published at November 7, 2019 &middot;
+                                Published at February 4, 2020 &middot;
                                 <i class="far fa-clock"></i>&nbsp;3 min read
                             </p>
-                            <p>はじめに 昨日、日課のはてなブックマークを漁っていたところ、Developers.IOさんの AWSでのセキュリティ対策全部盛り[初級から中級まで]というスライドを見つけました。 こちらのスライドの中で、git-secretsというAWSなどのtoken情報をgitに乗せてしまうのを防ぐソフトが紹介されており、以下のパターンの場合に正しく検知できるのかが気になったため検証しました。 既にtokenがコミットされていた場合 どのように検知するのか？ 既にtokenが混入してるコミットをプッシュした際には検...</p>
-                        </div>
-                    </div>
-                </article>
-                <br>
-
-                <article class="media">
-                    <div class="media-content">
-                        <div class="content">
-                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/adapted-hugo-gitinfo/">hugoの.GitInfoが適応された話(理由は不明です…)</a></p>
-                            <p class="subtitle is-size-6 has-text-grey-light">
-                                Published at October 20, 2019 &middot;
-                                <i class="far fa-clock"></i>&nbsp;1 min read
-                            </p>
-                            <p>ずっと前から、記事の更新はgitのコミット履歴を使いたいと思っていたのですが、 .GitInfoの情報が記事にうまく反映されずnilになっていたため、手動で作業してました😇 .GitInfoが使えるようになった原因は恐らく、記事のパスを /content/post/[記事].md→/content/post/[分類用フォルダ]/[記事].md ※[]内はそれぞれの用途で変更する としたことです。 何故これで.GitInfoが適応されたのかは不明ですが、とにかくずっとやりたかったことなので、大満足😭...</p>
+                            <p>はじめに hugoでデプロイする際に、よくミスって不要記事をpublishしてしまうことがあります。 その後再度公開を行うと、出力元のフォルダからは消えているのにもかかわらず残り続けます。 今回はそれの解決を行いました。 （今まではpublic以下をスクリプトで消してた…） TL;DR hugo --cleanDestinationDirでおｋ How to ほぼほぼTL;DRで終わっちゃってますが、個人的にTL;DRがある記事のほうが手っ取り早く答えを見つけられると思っているので記載してます。 ググってもあんまり情報がなかったので、こ...</p>
                         </div>
                     </div>
                 </article>

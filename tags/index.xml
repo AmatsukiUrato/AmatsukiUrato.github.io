@@ -5,10 +5,28 @@
     <description>Recent content in Tags on Amatsukiメモ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 03 Feb 2020 22:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 04 Feb 2020 02:40:26 +0900</lastBuildDate>
     
         <atom:link href="https://amatsukiurato.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>command</title>
+      <link>https://amatsukiurato.github.io/tags/command/</link>
+      <pubDate>Tue, 04 Feb 2020 02:40:26 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/tags/command/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://amatsukiurato.github.io/tags/hugo/</link>
+      <pubDate>Tue, 04 Feb 2020 02:40:26 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>poem</title>
@@ -146,15 +164,6 @@
     </item>
     
     <item>
-      <title>Hugo</title>
-      <link>https://amatsukiurato.github.io/tags/hugo/</link>
-      <pubDate>Tue, 12 Nov 2019 21:36:21 +0900</pubDate>
-      
-      <guid>https://amatsukiurato.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>template</title>
       <link>https://amatsukiurato.github.io/tags/template/</link>
       <pubDate>Tue, 12 Nov 2019 21:36:21 +0900</pubDate>
@@ -263,7 +272,7 @@
     </item>
     
     <item>
-      <title>extention</title>
+      <title>Extention</title>
       <link>https://amatsukiurato.github.io/tags/extention/</link>
       <pubDate>Thu, 31 Oct 2019 22:41:35 +0900</pubDate>
       
