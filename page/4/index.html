@@ -102,27 +102,6 @@
                     <div class="content">
                         <div class="card">
                             <div class="card-content card-break-all">
-                                <a class="has-text-grey-dark" href="https://amatsukiurato.github.io/2019/how-to-display-icloud-doc-on-home/">
-                                    <p class="title has-text-link is-4">iCloudのディレクトリをホームディレクトリに持ってくる方法</p>
-                                    <div class="subtitle is-size-6 has-text-grey-light">
-                                        <i class="fas fa-pen"></i>&nbsp;2019-10-29 |
-                                        <i class="fas fa-redo-alt"></i>&nbsp;2019-10-31 |
-                                        <i class="fas fa-clock"></i>&nbsp;1 min read
-                                    </div>
-                                    <p class="is-size-6">クラウドストレージを比較している途中で、 iCloudをhomeディレクトリに移す(シンボリックリンクを貼る)作業が少し手間だったので、メモとして載せてます。 ターミナルからアクセスしづらい問題 ターミナル上からiCloud Driveのファイルへアクセスしようとするには、 Users/[userName]/Library/Mobile\ Documents/com~apple~CloudDocs にまでアクセスしなければならないです。 一応シンボリックリンクは貼れますが、これも少し曲者でリンク元の方にスペースが入っているため、クォーテーションでくくってあげないとだめです(自分は気づかずに10分ぐらい悩んだ)。 ln -s &quot;/Users/$USER/Library/Mobile Documents/com~apple~CloudDocs&quot; iCloud 参考 Make...</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <br>
-            
-            <article class="media">
-                <div class="media-content">
-                    <div class="content">
-                        <div class="card">
-                            <div class="card-content card-break-all">
                                 <a class="has-text-grey-dark" href="https://amatsukiurato.github.io/2019/tried-to-use-box/">
                                     <p class="title has-text-link is-4">CloudStrageのBoxを使ってみた</p>
                                     <div class="subtitle is-size-6 has-text-grey-light">
@@ -173,6 +152,27 @@
                                         <i class="fas fa-clock"></i>&nbsp;3 min read
                                     </div>
                                     <p class="is-size-6">TL;DR 何かをやらせるときは極力その子がやりたいことに沿って学習させる ちゃんと意見を聞けていたら、その子からアクションを起こしてくれる 相手が自由にできるように幅をもたせておくことは大切 コミュニケーションを取る 相手のレベルを考える 自分も知識が広がるようなものを取り組むと👍 概要 9月頃から、上司から 「新卒の面倒を見てやってほしい」 「案件で使う技術を使えるようにしてほしい」 と唐突に言われ、 WTFと心で思いつつ学習プランを新卒と練り、１ヶ月半過ごしました。 新卒は経済学部出身なので、ちょろっと研修(2ヶ月)+OJ...</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <br>
+            
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <div class="card">
+                            <div class="card-content card-break-all">
+                                <a class="has-text-grey-dark" href="https://amatsukiurato.github.io/2019/how-to-select-multipulclass-material-ui/">
+                                    <p class="title has-text-link is-4">Material-uiのmakestyleにて、複数のクラスを動的に指定する方法</p>
+                                    <div class="subtitle is-size-6 has-text-grey-light">
+                                        <i class="fas fa-pen"></i>&nbsp;2019-10-14 |
+                                        <i class="fas fa-redo-alt"></i>&nbsp;2019-10-31 |
+                                        <i class="fas fa-clock"></i>&nbsp;1 min read
+                                    </div>
+                                    <p class="is-size-6">TL;DR classデータをstring配列として持つ 配列.join(' ')を該当のclassName={}の中に記述する 概要 最近、Reactについての勉強を行っていたところ、classの指定に手間取ってしまったのでメモ。 方法としては、探したところ、以下2つがあるみたい。 class名の配列を作成して、最後にjoinで配列の間にを入れて出力 classNameの中で、２つのclass名を呼び出す。 汎用性があるのは方法1のほうだと思われます。 面倒くさいのでソースベタ貼りしてます。 BoxはMaterial-ui...</p>
                                 </a>
                             </div>
                         </div>
@@ -350,9 +350,6 @@
     <div class="card-content">
         <h1 class="title is-5">Recent posts</h1>
         
-            <h1><a href="https://amatsukiurato.github.io/2020/hogehuga/">Hogehuga</a></h1>
-            <time class="has-text-grey-light is-size-7">4 February 2020</time>
-        
             <h1><a href="https://amatsukiurato.github.io/2020/subtle-post-is-better-than-nothing/">しょぼい記事の投稿でも、何もしないよりは良いと思う今日このごろ</a></h1>
             <time class="has-text-grey-light is-size-7">3 February 2020</time>
         
@@ -365,13 +362,16 @@
             <h1><a href="https://amatsukiurato.github.io/2019/good-extentions/">使ってよかったVSCode拡張機能14選&#43;3選の紹介</a></h1>
             <time class="has-text-grey-light is-size-7">14 November 2019</time>
         
+            <h1><a href="https://amatsukiurato.github.io/2019/show-notification-if-now-greater-equal-updated-time/">Hugoで記事が一年以上過ぎた場合はnoticeを表示するようにした</a></h1>
+            <time class="has-text-grey-light is-size-7">12 November 2019</time>
+        
     </div>
 </div><br>
         <div class="card">
     <div class="card-content">
         <h1 class="title is-5">Archives</h1>
         
-            <a href="https://amatsukiurato.github.io/archives/2020">2020</a> (2)<br>
+            <a href="https://amatsukiurato.github.io/archives/2020">2020</a> (1)<br>
         
             <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (22)<br>
         
