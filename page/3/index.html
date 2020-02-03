@@ -102,6 +102,48 @@
                     <div class="content">
                         <div class="card">
                             <div class="card-content card-break-all">
+                                <a class="has-text-grey-dark" href="https://amatsukiurato.github.io/2019/difference-between-multiaz-and-cross-region/">
+                                    <p class="title has-text-link is-4">マルチAZとクロスリージョンレプリケーションの違い</p>
+                                    <div class="subtitle is-size-6 has-text-grey-light">
+                                        <i class="fas fa-pen"></i>&nbsp;2019-11-6 |
+                                        <i class="fas fa-redo-alt"></i>&nbsp;2019-11-7 |
+                                        <i class="fas fa-clock"></i>&nbsp;3 min read
+                                    </div>
+                                    <p class="is-size-6">つい最近、表題について調べることが合ったため、忘備録として記載しておきます。 違いについて 結論から書くと、 クロスリージョンレプリカはサブがリードレプリカなのに対して、マルチAZではスタンバイレプリカになっている クロスリージョンレプリカは複数リージョンを利用するのに対し、マルチAZでは同一リージョンを利用する が大きな違いかなと思います。 MultiAZ構成について RDSをマルチAZ構成で起動するとMasterとは別のAZにSlaveのRDSが立ち上げられ、同期レプリケーションが行われます。俗に言うMa...</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <br>
+            
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <div class="card">
+                            <div class="card-content card-break-all">
+                                <a class="has-text-grey-dark" href="https://amatsukiurato.github.io/2019/try-to-create-ar-page/">
+                                    <p class="title has-text-link is-4">ブラウザでARを使ってみた</p>
+                                    <div class="subtitle is-size-6 has-text-grey-light">
+                                        <i class="fas fa-pen"></i>&nbsp;2019-11-4 |
+                                        <i class="fas fa-redo-alt"></i>&nbsp;2019-11-10 |
+                                        <i class="fas fa-clock"></i>&nbsp;4 min read
+                                    </div>
+                                    <p class="is-size-6">はじめに ふと、名刺にARマーカーが記載されていて、 川島教授の顔みたいな（脳トレ）のが出てきたら、とてもおもしろいなと思いついて触ってみました。 もっと脳を鍛える大人のDSトレーニング™ （余談ですが、脳トレのSwitch版がでるみたいです） ARの実現方法 軽く検索したところ、Unityで実現する方法とWeb技術で実現する方法が見つかりました。 ネイティブで実現する方法もあると思いますが、今回はこの2つを見ていきます。 Unity どうやら、Vuforiaという外部ツールと連携して使うのが主流みたいです。 iOSだとA...</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <br>
+            
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <div class="card">
+                            <div class="card-content card-break-all">
                                 <a class="has-text-grey-dark" href="https://amatsukiurato.github.io/2019/updated-marp/">
                                     <p class="title has-text-link is-4">Marpが前よりも使いやすくなっていたので、触ってみた</p>
                                     <div class="subtitle is-size-6 has-text-grey-light">
@@ -131,48 +173,6 @@
                                         <i class="fas fa-clock"></i>&nbsp;2 min read
                                     </div>
                                     <p class="is-size-6">畑違いの業種なのですが、 AWS Pop-Up Loft Osakaが行われるとのことだったので、Game Tech Nightへ参加しました！ 会場は最初から最後まで、飲食ありのラフな感じで開催されておりました😊 登壇者は全員おもしろい発表をされていましたが、とくに面白かったCloud2.0についての所感を記載しております。 もうそこまで迫っている！ Cloud2.0時代の開発 info 登壇者 丹羽さん/GS2のCEO HP https://gs2.io/ フルマネージドサービスを使おう 処理をフルマネージドにすることで、復旧対策や管理までAWSが担保してくれる あえてロックインされにい...</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <br>
-            
-            <article class="media">
-                <div class="media-content">
-                    <div class="content">
-                        <div class="card">
-                            <div class="card-content card-break-all">
-                                <a class="has-text-grey-dark" href="https://amatsukiurato.github.io/2019/how-to-display-icloud-doc-on-home/">
-                                    <p class="title has-text-link is-4">iCloudのディレクトリをホームディレクトリに持ってくる方法</p>
-                                    <div class="subtitle is-size-6 has-text-grey-light">
-                                        <i class="fas fa-pen"></i>&nbsp;2019-10-29 |
-                                        <i class="fas fa-redo-alt"></i>&nbsp;2019-10-31 |
-                                        <i class="fas fa-clock"></i>&nbsp;1 min read
-                                    </div>
-                                    <p class="is-size-6">クラウドストレージを比較している途中で、 iCloudをhomeディレクトリに移す(シンボリックリンクを貼る)作業が少し手間だったので、メモとして載せてます。 ターミナルからアクセスしづらい問題 ターミナル上からiCloud Driveのファイルへアクセスしようとするには、 Users/[userName]/Library/Mobile\ Documents/com~apple~CloudDocs にまでアクセスしなければならないです。 一応シンボリックリンクは貼れますが、これも少し曲者でリンク元の方にスペースが入っているため、クォーテーションでくくってあげないとだめです(自分は気づかずに10分ぐらい悩んだ)。 ln -s &quot;/Users/$USER/Library/Mobile Documents/com~apple~CloudDocs&quot; iCloud 参考 Make...</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <br>
-            
-            <article class="media">
-                <div class="media-content">
-                    <div class="content">
-                        <div class="card">
-                            <div class="card-content card-break-all">
-                                <a class="has-text-grey-dark" href="https://amatsukiurato.github.io/2019/tried-to-use-box/">
-                                    <p class="title has-text-link is-4">CloudStrageのBoxを使ってみた</p>
-                                    <div class="subtitle is-size-6 has-text-grey-light">
-                                        <i class="fas fa-pen"></i>&nbsp;2019-10-27 |
-                                        <i class="fas fa-redo-alt"></i>&nbsp;2019-10-31 |
-                                        <i class="fas fa-clock"></i>&nbsp;4 min read
-                                    </div>
-                                    <p class="is-size-6">最近MacBookProを買ったこともあり、ローカルの環境を見直しておりました。 その際にバックアップ用のクラウドストレージを再検討してみたところ、Boxが良さげだったので使ってみた話です。 TL;DR 無料でクラウドストレージを利用する場合の検討です ファイルの特徴で併用していくのが良さげ 無難に行くならDropBox、容量がほしいならBox 同期時間を気にしないならOneDrive Apple製品統一ならiCloud Driveでもいいかも 以前はDropBoxを利用していた Dropboxはローカルで同期させる際も普...</p>
                                 </a>
                             </div>
                         </div>
@@ -283,6 +283,8 @@
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/onsen-ui">onsen-ui</a></span>
         
+            <span class="tag"><a href="https://amatsukiurato.github.io/tags/poem">poem</a></span>
+        
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/powershell">powershell</a></span>
         
             <span class="tag"><a href="https://amatsukiurato.github.io/tags/raspberrypi">raspberrypi</a></span>
@@ -348,6 +350,12 @@
     <div class="card-content">
         <h1 class="title is-5">Recent posts</h1>
         
+            <h1><a href="https://amatsukiurato.github.io/2020/hogehuga/">Hogehuga</a></h1>
+            <time class="has-text-grey-light is-size-7">4 February 2020</time>
+        
+            <h1><a href="https://amatsukiurato.github.io/2020/subtle-post-is-better-than-nothing/">しょぼい記事の投稿でも、何もしないよりは良いと思う今日このごろ</a></h1>
+            <time class="has-text-grey-light is-size-7">3 February 2020</time>
+        
             <h1><a href="https://amatsukiurato.github.io/2019/tried-to-change-powershell-color/">PowerShellの色を変えようと思ってたら、Windows Terminal(Preview)で変更してた</a></h1>
             <time class="has-text-grey-light is-size-7">2 December 2019</time>
         
@@ -357,17 +365,13 @@
             <h1><a href="https://amatsukiurato.github.io/2019/good-extentions/">使ってよかったVSCode拡張機能14選&#43;3選の紹介</a></h1>
             <time class="has-text-grey-light is-size-7">14 November 2019</time>
         
-            <h1><a href="https://amatsukiurato.github.io/2019/show-notification-if-now-greater-equal-updated-time/">Hugoで記事が一年以上過ぎた場合はnoticeを表示するようにした</a></h1>
-            <time class="has-text-grey-light is-size-7">12 November 2019</time>
-        
-            <h1><a href="https://amatsukiurato.github.io/2019/study-three.js-1/">Three.jsを学習する【第一回】</a></h1>
-            <time class="has-text-grey-light is-size-7">9 November 2019</time>
-        
     </div>
 </div><br>
         <div class="card">
     <div class="card-content">
         <h1 class="title is-5">Archives</h1>
+        
+            <a href="https://amatsukiurato.github.io/archives/2020">2020</a> (2)<br>
         
             <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (22)<br>
         
