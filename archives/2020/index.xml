@@ -1,0 +1,23 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2020 on Amatsukiメモ</title>
+    <link>https://amatsukiurato.github.io/archives/2020/</link>
+    <description>Recent content in 2020 on Amatsukiメモ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 29 Jan 2020 02:31:45 +0900</lastBuildDate>
+    
+        <atom:link href="https://amatsukiurato.github.io/archives/2020/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>しょぼい記事の投稿でも、何もしないよりは良いと思う今日このごろ</title>
+      <link>https://amatsukiurato.github.io/2020/subtle-post-is-better-than-nothing/</link>
+      <pubDate>Wed, 29 Jan 2020 02:31:45 +0900</pubDate>
+      
+      <guid>https://amatsukiurato.github.io/2020/subtle-post-is-better-than-nothing/</guid>
+      <description>はじめに ここ一ヶ月、何も更新できていませんでした。 ネタはあったのですが、明日書けばいいや病にかかってしまい結局何もできていなかったという感じです。今回の問題をちょっと自分なりに振り返ってみようと思いました。 TL;DR 環境を変えよう♻️ 記事の量は自分に合わせよう📄 業務は程々に、僅かな時間をみつけて勉強時間をこしらえる🏃‍♂️ 原因 「さぁ書こう」という環境に身を置かなかった 自分は基本的に家にいると、一日中動画かゲームをしてしまします🎮 勉強とか読書とかは、なんかめちゃくちゃやりたいという周期がありまして、その周</description>
+    </item>
+    
+  </channel>
+</rss>
