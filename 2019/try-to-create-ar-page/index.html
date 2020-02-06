@@ -1,502 +1,93 @@
-<!DOCTYPE html>
-<html lang="ja-jp">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ぎじゅつわふたー  | ブラウザでARを使ってみた</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="shortcut icon" href="https://amatsukiurato.github.io/favicon/favicon.ico" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
-    <link rel="stylesheet" href="https://amatsukiurato.github.io/css/blog.css" />
-    <link rel="stylesheet" href="https://amatsukiurato.github.io/css/syntax.css" />
-    
-
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143787598-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-143787598-1');
-    </script>
-</head>
-
-<body>
-
-    
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="https://amatsukiurato.github.io">Home</a>
-            <div class="navbar-item">
-                
-                ぎじゅつわふたー
-                
-            </div>
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                data-target="navbar-sub">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
-        <div id="navbar-sub" class="navbar-menu">
-            <div class="navbar-start">
-            </div>
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <a class="navbar-item nav-right" href="https://amatsukiurato.github.io/food">飯</a>
-                    <a class="navbar-item nav-right" href="https://amatsukiurato.github.io/about">About</a>
-                </div>
-            </div>
-    </nav>
-    
-    <script>
-        
-        document.addEventListener('DOMContentLoaded', () => {
-
-            
-            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-            
-            if ($navbarBurgers.length > 0) {
-
-                
-                $navbarBurgers.forEach(el => {
-                    el.addEventListener('click', () => {
-
-                        
-                        const target = el.dataset.target;
-                        const $target = document.getElementById(target);
-
-                        
-                        el.classList.toggle('is-active');
-                        $target.classList.toggle('is-active');
-
-                    });
-                });
-            }
-
-        });
-    </script>
-</body>
-
-<div class="container">
-    <div class="section">
-    
-
-<div class="columns">
-    <div class="column is-9">
-        <div class="tile is-child box">
-            <div class="content">
-                <p class="title is-4">ブラウザでARを使ってみた</p>
-                
-                <div class="subtitle is-size-6 has-text-grey-light">
-                    <i class="fas fa-pen"></i>&nbsp;2019-11-4 |
-                    <i class="fas fa-redo-alt"></i>&nbsp;2020-2-7 |
-                    <i class="fas fa-clock"></i>&nbsp;4 min read
-                </div>
-                
-                <hr />
-                
-                <div class="card">
-                    <div class="card-content">
-                        <h1 class="title is-5">Contents</h1>
-                        <div class="contents">
-                            <nav id="TableOfContents">
-  <ul>
-    <li><a href="#unity">Unity</a>
-      <ul>
-        <li><a href="#参考">参考</a></li>
-      </ul>
-    </li>
-    <li><a href="#web">Web</a>
-      <ul>
-        <li><a href="#参考-1">参考</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#スマホから繋げない問題">スマホから繋げない問題</a></li>
-    <li><a href="#スマホ側から動作させる">スマホ側から動作させる</a></li>
-    <li><a href="#pcのカメラで動作させる">PCのカメラで動作させる</a></li>
-  </ul>
-</nav>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                
-                
-                
-
-                <h1 id="はじめに">はじめに</h1>
-<p>ふと、名刺にARマーカーが記載されていて、<br>
-川島教授の顔みたいな（脳トレ）のが出てきたら、とてもおもしろいなと思いついて触ってみました。</p>
-<blockquote>
-<p><img src="https://www.nintendo.co.jp/ds/anmj/top/needfla.gif" alt="顔"><br>
-<a href="https://www.nintendo.co.jp/ds/anmj/index.html">もっと脳を鍛える大人のDSトレーニング™</a></p>
-</blockquote>
-<p>（余談ですが、脳トレの<a href="https://topics.nintendo.co.jp/c/article/aa9b7d00-e021-11e9-b641-063b7ac45a6d.html">Switch版</a>がでるみたいです）</p>
-<h1 id="arの実現方法">ARの実現方法</h1>
-<p>軽く検索したところ、Unityで実現する方法とWeb技術で実現する方法が見つかりました。<br>
-ネイティブで実現する方法もあると思いますが、今回はこの2つを見ていきます。</p>
-<h2 id="unity">Unity</h2>
-<p>どうやら、<code>Vuforia</code>という外部ツールと連携して使うのが主流みたいです。
-iOSだと<code>ARkit</code>、Androidだと<code>ARCore</code>というSDKを使って作成できるみたいですが、<code>Vuforia</code>はこれらをラップしてくれているみたい。</p>
-<blockquote>
-<p><img src="https://onetech.jp/blog/wp-content/uploads/2019/10/Vuforia-ar-develop-Engine-1024x586.png" alt="Vuforia図">
-<a href="https://onetech.jp/blog/vuforia-ar-application-development-library-features-6002">VUFORIAとは何か？ARアプリ開発に便利なライブラリの特徴 &gt; Vuforiaとは</a></p>
-</blockquote>
-<h3 id="参考">参考</h3>
-<ul>
-<li><a href="https://onetech.jp/blog/vuforia-ar-application-development-library-features-6002">VUFORIAとは何か？ARアプリ開発に便利なライブラリの特徴</a></li>
-<li><a href="https://unity3d.com/jp/partners/google/arcore">ARCore</a></li>
-<li><a href="https://qiita.com/rio_matsui/items/32cd036684d7c32f57f9">【Unity】UnityインストールからARアプリ作成まで(iOS, Android)【Vuforia】</a></li>
-<li><a href="http://makers.hatenablog.com/entry/2013/12/27/191636">【３０分でできる】Unityで簡単にARアプリを作る</a></li>
-</ul>
-<h2 id="web">Web</h2>
-<p>こちらは、<code>AR.js</code>と<code>A-Frame.js</code>を活用したものが主流みたいです。
-<code>A-Frame.js</code>でオブジェクトをレンダリングして、それを<code>AR.js</code>でAR化しているっぽいです。<br>
-また、今回は使用していませんが<code>Three.js</code>（Webブラウザ上で3Dレンダリングできるようにするライブラリ）を組み合わせ</p>
-<h3 id="参考-1">参考</h3>
-<ul>
-<li><a href="https://qiita.com/mkoku/items/c635566e829c303a7d3f">A-FrameとAR.jsで超簡単AR（PC・スマホ・マルチマーカー対応）</a></li>
-<li><a href="https://qiita.com/sakaryu/items/769a2a538baf7e4ee1c7">【AR.js入門】簡単にWebARで遊んでみた【A-Frame使うよ】</a></li>
-<li><a href="https://iti.hatenablog.jp/entry/2017/12/04/090023">🐶AR.jsを使ってWebAR年賀状を作る🐶</a></li>
-</ul>
-<h1 id="どっちにするか">どっちにするか</h1>
-<p>Unityにするなら、アセットなどのデータを使えると思うので資産的にはすごく大きいと思いますが、Unityということは、アプリにする必要があると考えとります(UnityのWebGLビルドがどうとかは未調査です)。</p>
-<p>今回は簡単に実行できてほかったのと、自分がWeb技術を中心に触っていることから、Web技術で作る方針にしました。</p>
-<h1 id="実際に動かしてみる">実際に動かしてみる</h1>
-<p>とりあえず、「<a href="https://qiita.com/mkoku/items/c635566e829c303a7d3f">A-FrameとAR.jsで超簡単AR（PC・スマホ・マルチマーカー対応）</a>」を参考に作ります。
-上記リンクを参考に作ったソースはこちらです(ほぼコピペ🤔)。</p>
-<blockquote>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"></code></pre></div></blockquote>
-<p>&lt;!doctype HTML&gt;</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<h2 id="スマホから繋げない問題">スマホから繋げない問題</h2>
-<p><del>上記を参考に、<code>index.html</code>を作成します。とりあえずのテストなので、<code>nginx</code>のDockerコンテナを使って立てました。</del></p>
-<p><del>下記Dockerコマンドを叩くカレントディレクトリに<code>index.html</code>をおいておけば<code>localhost:8080</code>または、同一ネットワークから<code>[dockerを起動しているPCのip]:8080</code>で接続が可能になります。</del></p>
-<p><del><code>docker run --name nignx -v $PWD:/usr/share/nginx/html -d -p 8080:80 -h 0.0.0.0 nginx</code></del></p>
-<p><del>自分のスマホでアクセスしてみます。<br>
-&hellip;<br>
-表示されない…だと!?<br>
-やっぱりhttps通信じゃないのが原因なんですかね？</del><br>
-<figure>
-    <img src="https://amatsukiurato.github.io/resources/try-to-create-ar-page/not-supported.png" width="400px"/> 
-</figure>
-</p>
-<p>https通信が行えていないことが原因でうまく行ってませんでした。<br>
-同一ネットワーク内からなら行けるんじゃねという謎の考えのせい😭</p>
-<h2 id="スマホ側から動作させる">スマホ側から動作させる</h2>
-<p><a href="https://iti.hatenablog.jp/entry/2017/12/04/090023">🐶AR.jsを使ってWebAR年賀状を作る🐶</a><br>
-を参考にして、rubyのワンライナーでhttpsサーバを立てたところ、うまくいきました(圧倒的感謝…!!)。</p>
-<p>下記ワンライナーはカレントディレクトリのデータを外部に公開してくれるものみたいです。</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="n">ruby</span> <span class="o">-</span><span class="n">rwebrick</span> <span class="o">-</span><span class="n">rwebrick</span><span class="o">/</span><span class="n">https</span> <span class="o">-</span><span class="n">e</span> <span class="s1">&#39;WEBrick::HTTPServer.new(:DocumentRoot =&gt; &#34;./&#34;, :Port =&gt; 8000, :SSLEnable =&gt; true, :SSLCertName =&gt; [[&#34;CN&#34;, WEBrick::Utils::getservername]] ).start&#39;</span>
+<!doctype html><html lang=ja-jp><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>ぎじゅつわふたー | ブラウザでARを使ってみた</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=https://amatsukiurato.github.io/favicon/favicon.ico><link href="https://fonts.googleapis.com/css?family=Open+Sans" rel=stylesheet><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css><link rel=stylesheet href=https://amatsukiurato.github.io/css/blog.css><link rel=stylesheet href=https://amatsukiurato.github.io/css/syntax.css><script async src="https://www.googletagmanager.com/gtag/js?id=UA-143787598-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-143787598-1');</script></head><body><nav class=navbar role=navigation aria-label="main navigation"><div class=navbar-brand><a class=navbar-item href=https://amatsukiurato.github.io>Home</a><div class=navbar-item>ぎじゅつわふたー</div><a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=navbar-sub><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a></div><div id=navbar-sub class=navbar-menu><div class=navbar-start></div><div class=navbar-end><div class=navbar-item><a class="navbar-item nav-right" href=https://amatsukiurato.github.io/food>飯</a>
+<a class="navbar-item nav-right" href=https://amatsukiurato.github.io/about>About</a></div></div></nav><script>document.addEventListener('DOMContentLoaded',()=>{const $navbarBurgers=Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'),0);if($navbarBurgers.length>0){$navbarBurgers.forEach(el=>{el.addEventListener('click',()=>{const target=el.dataset.target;const $target=document.getElementById(target);el.classList.toggle('is-active');$target.classList.toggle('is-active');});});}});</script></body><div class=container><div class=section><div class=columns><div class="column is-9"><div class="tile is-child box"><div class=content><p class="title is-4">ブラウザでARを使ってみた</p><div class="subtitle is-size-6 has-text-grey-light"><i class="fas fa-pen"></i>&nbsp;2019-11-4 |
+<i class="fas fa-redo-alt"></i>&nbsp;2020-2-7 |
+<i class="fas fa-clock"></i>&nbsp;4 min read</div><hr><div class=card><div class=card-content><h1 class="title is-5">Contents</h1><div class=contents><nav id=TableOfContents><ul><li><a href=#unity>Unity</a><ul><li><a href=#参考>参考</a></li></ul></li><li><a href=#web>Web</a><ul><li><a href=#参考-1>参考</a></li></ul></li></ul><ul><li><a href=#スマホから繋げない問題>スマホから繋げない問題</a></li><li><a href=#スマホ側から動作させる>スマホ側から動作させる</a></li><li><a href=#pcのカメラで動作させる>PCのカメラで動作させる</a></li></ul></nav></div></div></div><hr><h1 id=はじめに>はじめに</h1><p>ふと、名刺にARマーカーが記載されていて、<br>川島教授の顔みたいな（脳トレ）のが出てきたら、とてもおもしろいなと思いついて触ってみました。</p><blockquote><p><img src=https://www.nintendo.co.jp/ds/anmj/top/needfla.gif alt=顔><br><a href=https://www.nintendo.co.jp/ds/anmj/index.html>もっと脳を鍛える大人のDSトレーニング™</a></p></blockquote><p>（余談ですが、脳トレの<a href=https://topics.nintendo.co.jp/c/article/aa9b7d00-e021-11e9-b641-063b7ac45a6d.html>Switch版</a>がでるみたいです）</p><h1 id=arの実現方法>ARの実現方法</h1><p>軽く検索したところ、Unityで実現する方法とWeb技術で実現する方法が見つかりました。<br>ネイティブで実現する方法もあると思いますが、今回はこの2つを見ていきます。</p><h2 id=unity>Unity</h2><p>どうやら、<code>Vuforia</code>という外部ツールと連携して使うのが主流みたいです。
+iOSだと<code>ARkit</code>、Androidだと<code>ARCore</code>というSDKを使って作成できるみたいですが、<code>Vuforia</code>はこれらをラップしてくれているみたい。</p><blockquote><p><img src=https://onetech.jp/blog/wp-content/uploads/2019/10/Vuforia-ar-develop-Engine-1024x586.png alt=Vuforia図>
+<a href=https://onetech.jp/blog/vuforia-ar-application-development-library-features-6002>VUFORIAとは何か？ARアプリ開発に便利なライブラリの特徴 > Vuforiaとは</a></p></blockquote><h3 id=参考>参考</h3><ul><li><a href=https://onetech.jp/blog/vuforia-ar-application-development-library-features-6002>VUFORIAとは何か？ARアプリ開発に便利なライブラリの特徴</a></li><li><a href=https://unity3d.com/jp/partners/google/arcore>ARCore</a></li><li><a href=https://qiita.com/rio_matsui/items/32cd036684d7c32f57f9>【Unity】UnityインストールからARアプリ作成まで(iOS, Android)【Vuforia】</a></li><li><a href=http://makers.hatenablog.com/entry/2013/12/27/191636>【３０分でできる】Unityで簡単にARアプリを作る</a></li></ul><h2 id=web>Web</h2><p>こちらは、<code>AR.js</code>と<code>A-Frame.js</code>を活用したものが主流みたいです。
+<code>A-Frame.js</code>でオブジェクトをレンダリングして、それを<code>AR.js</code>でAR化しているっぽいです。<br>また、今回は使用していませんが<code>Three.js</code>（Webブラウザ上で3Dレンダリングできるようにするライブラリ）を組み合わせ</p><h3 id=参考-1>参考</h3><ul><li><a href=https://qiita.com/mkoku/items/c635566e829c303a7d3f>A-FrameとAR.jsで超簡単AR（PC・スマホ・マルチマーカー対応）</a></li><li><a href=https://qiita.com/sakaryu/items/769a2a538baf7e4ee1c7>【AR.js入門】簡単にWebARで遊んでみた【A-Frame使うよ】</a></li><li><a href=https://iti.hatenablog.jp/entry/2017/12/04/090023>🐶AR.jsを使ってWebAR年賀状を作る🐶</a></li></ul><h1 id=どっちにするか>どっちにするか</h1><p>Unityにするなら、アセットなどのデータを使えると思うので資産的にはすごく大きいと思いますが、Unityということは、アプリにする必要があると考えとります(UnityのWebGLビルドがどうとかは未調査です)。</p><p>今回は簡単に実行できてほかったのと、自分がWeb技術を中心に触っていることから、Web技術で作る方針にしました。</p><h1 id=実際に動かしてみる>実際に動かしてみる</h1><p>とりあえず、「<a href=https://qiita.com/mkoku/items/c635566e829c303a7d3f>A-FrameとAR.jsで超簡単AR（PC・スマホ・マルチマーカー対応）</a>」を参考に作ります。
+上記リンクを参考に作ったソースはこちらです(ほぼコピペ🤔)。</p><blockquote><div class=highlight><pre class=chroma><code class=language-html data-lang=html></code></pre></div></blockquote><p>&lt;!doctype HTML></p><h2 id=スマホから繋げない問題>スマホから繋げない問題</h2><p><del>上記を参考に、<code>index.html</code>を作成します。とりあえずのテストなので、<code>nginx</code>のDockerコンテナを使って立てました。</del></p><p><del>下記Dockerコマンドを叩くカレントディレクトリに<code>index.html</code>をおいておけば<code>localhost:8080</code>または、同一ネットワークから<code>[dockerを起動しているPCのip]:8080</code>で接続が可能になります。</del></p><p><del><code>docker run --name nignx -v $PWD:/usr/share/nginx/html -d -p 8080:80 -h 0.0.0.0 nginx</code></del></p><p><del>自分のスマホでアクセスしてみます。<br>&mldr;<br>表示されない…だと!?<br>やっぱりhttps通信じゃないのが原因なんですかね？</del><br><figure><img src=https://amatsukiurato.github.io/resources/try-to-create-ar-page/not-supported.png width=400px></figure></p><p>https通信が行えていないことが原因でうまく行ってませんでした。<br>同一ネットワーク内からなら行けるんじゃねという謎の考えのせい😭</p><h2 id=スマホ側から動作させる>スマホ側から動作させる</h2><p><a href=https://iti.hatenablog.jp/entry/2017/12/04/090023>🐶AR.jsを使ってWebAR年賀状を作る🐶</a><br>を参考にして、rubyのワンライナーでhttpsサーバを立てたところ、うまくいきました(圧倒的感謝…!!)。</p><p>下記ワンライナーはカレントディレクトリのデータを外部に公開してくれるものみたいです。</p><div class=highlight><pre class=chroma><code class=language-ruby data-lang=ruby><span class=n>ruby</span> <span class=o>-</span><span class=n>rwebrick</span> <span class=o>-</span><span class=n>rwebrick</span><span class=o>/</span><span class=n>https</span> <span class=o>-</span><span class=n>e</span> <span class=s1>&#39;WEBrick::HTTPServer.new(:DocumentRoot =&gt; &#34;./&#34;, :Port =&gt; 8000, :SSLEnable =&gt; true, :SSLCertName =&gt; [[&#34;CN&#34;, WEBrick::Utils::getservername]] ).start&#39;</span>
 </code></pre></div><p>実際に接続してみた画像がこちらです。
-今回はとりあえず、自分のInfoをテキストで表示するところまで行いました。</p>
-<figure>
-    <img src="https://amatsukiurato.github.io/resources/try-to-create-ar-page/can-display-ar-sp.png"
-         alt="can-display-ar-sp" width="400px"/> 
-</figure>
-
-<h2 id="pcのカメラで動作させる">PCのカメラで動作させる</h2>
-<p>MacBookProのカメラで無理やり確認したやつも載せておきます。</p>
-<p><img src="https://amatsukiurato.github.io/resources/try-to-create-ar-page/can-display-ar-pc.png" alt="can-display-ar-pc"></p>
-<h1 id="さいごに">さいごに</h1>
-<p>とりあえず、ARマーカーを使って文字を表示できるところまでは実装できました(ほぼほぼ自分が書いたところがない🙈)。<br>
-結局、解説ページの後をなぞって終わりになってしまったので、次やるときは、もう少し違うものを表示させてみたいです。<code>Three.js</code>を触って見るものも面白いかもしれないです。</p>
-
-
-
-            </div>
-            
-            <hr />
-            <div>Tags: <a class="tag is-link" href="https://amatsukiurato.github.io/tags/ar/">#AR</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/ar.js/">#AR.js</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/a-frame/">#A-Frame</a> <a class="tag is-link" href="https://amatsukiurato.github.io/tags/javascript/">#JavaScript</a></div>
-            <hr />
-            
-            <div>
-                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-            </div>
-            <hr />
-            <div>
-            <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "https-amatsukiurato-github-io" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-            </div>
-            
-
-
-        </div>
-    </div>
-    <div class="column is-3">
-        <div class="card">
-    <div class="card-content">
-        <h1 class="title is-5">Tags</h1>
-        <div class="tags">
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/a-frame">a-frame</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/amazon-rds">amazon-rds</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/ar">ar</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/ar.js">ar.js</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/aws">aws</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/aws">aws</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/aws">aws</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/aws">aws</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/aws">aws</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/awsloft">awsloft</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/box">box</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/cloud2.0">cloud2.0</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/cloudstrage">cloudstrage</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/command">command</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/copyq">copyq</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/css">css</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/db">db</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/docker">docker</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/dropbox">dropbox</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/eclipse">eclipse</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/extension">extension</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/extention">extention</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/extention">extention</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/feeling">feeling</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/front">front</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/game">game</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/git">git</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/git">git</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/git-secrets">git-secrets</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/go">go</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/googledrive">googledrive</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/homebrew">homebrew</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/hugo">hugo</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/hugo">hugo</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/hugo">hugo</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/hugo">hugo</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/icloud">icloud</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/icloud">icloud</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/intellij">intellij</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/javascript">javascript</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/javascript">javascript</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/javascript">javascript</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/kaspersky">kaspersky</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/macos">macos</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/markdown">markdown</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/marp">marp</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/nodejs">nodejs</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/onedrive">onedrive</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/onsen-ui">onsen-ui</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/poem">poem</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/powershell">powershell</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/raspberrypi">raspberrypi</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/react">react</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/revealjs">revealjs</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/route53">route53</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/route53">route53</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/s3">s3</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/setting">setting</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/setting">setting</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/slow">slow</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/tab">tab</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/tech">tech</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/template">template</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/terminal">terminal</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/terminal">terminal</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/three.js">three.js</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/ubuntu">ubuntu</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/utility">utility</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/uv4l">uv4l</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/version">version</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/vscode">vscode</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/vscode">vscode</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/webpack">webpack</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/windows">windows</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/windows-terminal">windows-terminal</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E3%82%B7%E3%83%B3%E3%83%9C%E3%83%AA%E3%83%83%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%AF">シンボリックリンク</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E3%83%9D%E3%82%A8%E3%83%A0">ポエム</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E5%8B%89%E5%BC%B7">勉強</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E6%96%B0%E5%8D%92%E5%AF%BE%E5%BF%9C">新卒対応</a></span>
-        
-        </div>
-    </div>
-</div><br>
-        <div class="card">
-    <div class="card-content">
-        <h1 class="title is-5">Recent posts</h1>
-        
-            <h1><a href="https://amatsukiurato.github.io/2020/how-to-clear-old-publish-files/">Hugoで一度publishしてしまったファイルをデプロイ時に消す</a></h1>
-            <time class="has-text-grey-light is-size-7">4 February 2020</time>
-        
-            <h1><a href="https://amatsukiurato.github.io/2020/subtle-post-is-better-than-nothing/">しょぼい記事の投稿でも、何もしないよりは良いと思う今日このごろ</a></h1>
-            <time class="has-text-grey-light is-size-7">3 February 2020</time>
-        
-            <h1><a href="https://amatsukiurato.github.io/2019/tried-to-change-powershell-color/">PowerShellの色を変えようと思ってたら、Windows Terminal(Preview)で変更してた</a></h1>
-            <time class="has-text-grey-light is-size-7">2 December 2019</time>
-        
-            <h1><a href="https://amatsukiurato.github.io/2019/what-kind-of-management-version/">バージョンの付け方を調べてみた</a></h1>
-            <time class="has-text-grey-light is-size-7">25 November 2019</time>
-        
-            <h1><a href="https://amatsukiurato.github.io/2019/good-extentions/">使ってよかったVSCode拡張機能14選&#43;3選の紹介</a></h1>
-            <time class="has-text-grey-light is-size-7">14 November 2019</time>
-        
-    </div>
-</div><br>
-                
-  
-
-
-
-<div class="card">
-    <div class="card-content">
-        <h1 class="title is-5">Related posts</h1>
-      
-      
-            <h1><a href="https://amatsukiurato.github.io/2019/study-three.js-1/">Three.jsを学習する【第一回】</a></h1>
-            <time class="has-text-grey-light is-size-7">9 November 2019</time>
-      
-            <h1><a href="https://amatsukiurato.github.io/2019/change-onsen-ui-dialog-component-size/">Onsen-UIのDialogコンポーネントサイズを変更する</a></h1>
-            <time class="has-text-grey-light is-size-7">4 July 2019</time>
-      
-    </div>
-</div>
-
-    
-<br>
-        <div class="card">
-    <div class="card-content">
-        <h1 class="title is-5">Archives</h1>
-        
-            <a href="https://amatsukiurato.github.io/archives/2020">2020</a> (2)<br>
-        
-            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (22)<br>
-        
-            <a href="https://amatsukiurato.github.io/archives/2017">2017</a> (1)<br>
-        
-            <a href="https://amatsukiurato.github.io/archives/2016">2016</a> (3)<br>
-        
-    </div>
-</div>
-
-    </div>
-</div>
-
-    
-    </div>
-</div>
-
-<footer class="footer has-background-grey-darker has-text-white">
-    <div class="content has-text-centered">
-        <p>
-            <span class="icon is-large"><a href="https://twitter.com/AmatsukiUrato" class="mysocial" rel="me"><i class="fab fa-twitter fa-3x"></i></a></span>&nbsp;&nbsp;
-            <span class="icon is-large"><a href="https://github.com/AmatsukiUrato" class="mysocial" rel="me"><i class="fab fa-github fa-3x"></i></a></span>&nbsp;&nbsp;
-            <br><br>
-            Copyright &copy; ぎじゅつわふたー 2020 - Theme by <a href="https://jeffprod.com" class="mysocial">JeffProd.com</a>
-            - <a class="mysocial" href="https://amatsukiurato.github.io/about">About</a>
-        </p>
-    </div>
-</footer>
-
-<script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
-</body>
-</html>
+今回はとりあえず、自分のInfoをテキストで表示するところまで行いました。</p><figure><img src=https://amatsukiurato.github.io/resources/try-to-create-ar-page/can-display-ar-sp.png alt=can-display-ar-sp width=400px></figure><h2 id=pcのカメラで動作させる>PCのカメラで動作させる</h2><p>MacBookProのカメラで無理やり確認したやつも載せておきます。</p><p><img src=https://amatsukiurato.github.io/resources/try-to-create-ar-page/can-display-ar-pc.png alt=can-display-ar-pc></p><h1 id=さいごに>さいごに</h1><p>とりあえず、ARマーカーを使って文字を表示できるところまでは実装できました(ほぼほぼ自分が書いたところがない🙈)。<br>結局、解説ページの後をなぞって終わりになってしまったので、次やるときは、もう少し違うものを表示させてみたいです。<code>Three.js</code>を触って見るものも面白いかもしれないです。</p></div><hr><div>Tags: <a class="tag is-link" href=https://amatsukiurato.github.io/tags/ar/>#AR</a> <a class="tag is-link" href=https://amatsukiurato.github.io/tags/ar.js/>#AR.js</a> <a class="tag is-link" href=https://amatsukiurato.github.io/tags/a-frame/>#A-Frame</a> <a class="tag is-link" href=https://amatsukiurato.github.io/tags/javascript/>#JavaScript</a></div><hr><div><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class=twitter-share-button data-show-count=false>Tweet</a><script async src=https://platform.twitter.com/widgets.js></script>
+<a href=https://b.hatena.ne.jp/entry/ class=hatena-bookmark-button data-hatena-bookmark-layout=basic-label data-hatena-bookmark-lang=ja title=このエントリーをはてなブックマークに追加><img src=https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png alt=このエントリーをはてなブックマークに追加 width=20 height=20 style=border:none></a><script type=text/javascript src=https://b.st-hatena.com/js/bookmark_button.js async></script></div><hr><div><div id=disqus_thread></div><script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return;}
+var d=document,s=d.createElement('script');s.async=true;s.src='//'+"https-amatsukiurato-github-io"+'.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div><div class="column is-3"><div class=card><div class=card-content><h1 class="title is-5">Tags</h1><div class=tags><span class=tag><a href=https://amatsukiurato.github.io/tags/a-frame>a-frame</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/amazon-rds>amazon-rds</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/ar>ar</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/ar.js>ar.js</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/aws>aws</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/aws>aws</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/aws>aws</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/aws>aws</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/aws>aws</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/awsloft>awsloft</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/box>box</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/cloud2.0>cloud2.0</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/cloudstrage>cloudstrage</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/command>command</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/copyq>copyq</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/css>css</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/db>db</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/docker>docker</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/dropbox>dropbox</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/eclipse>eclipse</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/extension>extension</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/extention>extention</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/extention>extention</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/feeling>feeling</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/front>front</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/game>game</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/git>git</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/git>git</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/git-secrets>git-secrets</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/go>go</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/googledrive>googledrive</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/homebrew>homebrew</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/hugo>hugo</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/hugo>hugo</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/hugo>hugo</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/hugo>hugo</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/icloud>icloud</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/icloud>icloud</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/intellij>intellij</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/javascript>javascript</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/javascript>javascript</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/javascript>javascript</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/kaspersky>kaspersky</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/macos>macos</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/markdown>markdown</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/marp>marp</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/nodejs>nodejs</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/onedrive>onedrive</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/onsen-ui>onsen-ui</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/poem>poem</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/powershell>powershell</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/raspberrypi>raspberrypi</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/react>react</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/revealjs>revealjs</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/route53>route53</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/route53>route53</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/s3>s3</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/setting>setting</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/setting>setting</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/slow>slow</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/tab>tab</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/tech>tech</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/template>template</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/terminal>terminal</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/terminal>terminal</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/three.js>three.js</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/ubuntu>ubuntu</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/utility>utility</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/uv4l>uv4l</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/version>version</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/vscode>vscode</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/vscode>vscode</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/webpack>webpack</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/windows>windows</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/windows-terminal>windows-terminal</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/%E3%82%B7%E3%83%B3%E3%83%9C%E3%83%AA%E3%83%83%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%AF>シンボリックリンク</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/%E3%83%9D%E3%82%A8%E3%83%A0>ポエム</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/%E5%8B%89%E5%BC%B7>勉強</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/%E6%96%B0%E5%8D%92%E5%AF%BE%E5%BF%9C>新卒対応</a></span></div></div></div><br><div class=card><div class=card-content><h1 class="title is-5">Recent posts</h1><h1><a href=https://amatsukiurato.github.io/2020/how-to-clear-old-publish-files/>Hugoで一度publishしてしまったファイルをデプロイ時に消す</a></h1><time class="has-text-grey-light is-size-7">4 February 2020</time><h1><a href=https://amatsukiurato.github.io/2020/subtle-post-is-better-than-nothing/>しょぼい記事の投稿でも、何もしないよりは良いと思う今日このごろ</a></h1><time class="has-text-grey-light is-size-7">3 February 2020</time><h1><a href=https://amatsukiurato.github.io/2019/tried-to-change-powershell-color/>PowerShellの色を変えようと思ってたら、Windows Terminal(Preview)で変更してた</a></h1><time class="has-text-grey-light is-size-7">2 December 2019</time><h1><a href=https://amatsukiurato.github.io/2019/what-kind-of-management-version/>バージョンの付け方を調べてみた</a></h1><time class="has-text-grey-light is-size-7">25 November 2019</time><h1><a href=https://amatsukiurato.github.io/2019/good-extentions/>使ってよかったVSCode拡張機能14選+3選の紹介</a></h1><time class="has-text-grey-light is-size-7">14 November 2019</time></div></div><br><div class=card><div class=card-content><h1 class="title is-5">Related posts</h1><h1><a href=https://amatsukiurato.github.io/2019/study-three.js-1/>Three.jsを学習する【第一回】</a></h1><time class="has-text-grey-light is-size-7">9 November 2019</time><h1><a href=https://amatsukiurato.github.io/2019/change-onsen-ui-dialog-component-size/>Onsen-UIのDialogコンポーネントサイズを変更する</a></h1><time class="has-text-grey-light is-size-7">4 July 2019</time></div></div><br><div class=card><div class=card-content><h1 class="title is-5">Archives</h1><a href=https://amatsukiurato.github.io/archives/2020>2020</a> (2)<br><a href=https://amatsukiurato.github.io/archives/2019>2019</a> (22)<br><a href=https://amatsukiurato.github.io/archives/2017>2017</a> (1)<br><a href=https://amatsukiurato.github.io/archives/2016>2016</a> (3)<br></div></div></div></div></div></div><footer class="footer has-background-grey-darker has-text-white"><div class="content has-text-centered"><p><span class="icon is-large"><a href=https://twitter.com/AmatsukiUrato class=mysocial rel=me><i class="fab fa-twitter fa-3x"></i></a></span>&nbsp;&nbsp;
+<span class="icon is-large"><a href=https://github.com/AmatsukiUrato class=mysocial rel=me><i class="fab fa-github fa-3x"></i></a></span>&nbsp;&nbsp;<br><br>Copyright &copy; ぎじゅつわふたー 2020 - Theme by <a href=https://jeffprod.com class=mysocial>JeffProd.com</a>
+- <a class=mysocial href=https://amatsukiurato.github.io/about>About</a></p></div></footer><script defer src=https://use.fontawesome.com/releases/v5.1.0/js/all.js></script></body></html>

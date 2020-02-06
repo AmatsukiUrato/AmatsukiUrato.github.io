@@ -1,385 +1,87 @@
-<!DOCTYPE html>
-<html lang="ja-jp">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ぎじゅつわふたー  | Hugo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="shortcut icon" href="https://amatsukiurato.github.io/favicon/favicon.ico" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
-    <link rel="stylesheet" href="https://amatsukiurato.github.io/css/blog.css" />
-    <link rel="stylesheet" href="https://amatsukiurato.github.io/css/syntax.css" />
-    
-    <link href="https://amatsukiurato.github.io/tags/hugo/index.xml" rel="alternate" type="application/rss+xml" title="ぎじゅつわふたー" />
-    <link href="https://amatsukiurato.github.io/tags/hugo/index.xml" rel="feed" type="application/rss+xml" title="ぎじゅつわふたー" />
-    
-
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143787598-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-143787598-1');
-    </script>
-</head>
-
-<body>
-
-    
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="https://amatsukiurato.github.io">Home</a>
-            <div class="navbar-item">
-                
-                #Hugo
-                
-            </div>
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                data-target="navbar-sub">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
-        <div id="navbar-sub" class="navbar-menu">
-            <div class="navbar-start">
-            </div>
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <a class="navbar-item nav-right" href="https://amatsukiurato.github.io/food">飯</a>
-                    <a class="navbar-item nav-right" href="https://amatsukiurato.github.io/about">About</a>
-                </div>
-            </div>
-    </nav>
-    
-    <script>
-        
-        document.addEventListener('DOMContentLoaded', () => {
-
-            
-            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-            
-            if ($navbarBurgers.length > 0) {
-
-                
-                $navbarBurgers.forEach(el => {
-                    el.addEventListener('click', () => {
-
-                        
-                        const target = el.dataset.target;
-                        const $target = document.getElementById(target);
-
-                        
-                        el.classList.toggle('is-active');
-                        $target.classList.toggle('is-active');
-
-                    });
-                });
-            }
-
-        });
-    </script>
-</body>
-
-<div class="container">
-    <div class="section">
-    
-
-
-
-<div class="columns">
-    <div class="column is-9">
-        <div class="tile is-child box">
-            <div class="content">
-
-                <article class="media">
-                    <div class="media-content">
-                        <div class="content">
-                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2020/how-to-clear-old-publish-files/">Hugoで一度publishしてしまったファイルをデプロイ時に消す</a></p>
-                            <p class="subtitle is-size-6 has-text-grey-light">
-                                Published at February 4, 2020 &middot;
-                                <i class="far fa-clock"></i>&nbsp;3 min read
-                            </p>
-                            <p>はじめに hugoでデプロイする際に、よくミスって不要記事をpublishしてしまうことがあります。 その後再度公開を行うと、出力元のフォルダからは消えているのにもかかわらず残り続けます。 今回はそれの解決を行いました。 （今まではpublic以下をスクリプトで消してた…） TL;DR hugo --cleanDestinationDirでおｋ How to ほぼほぼTL;DRで終わっちゃってますが、個人的にTL;DRがある記事のほうが手っ取り早く答えを見つけられると思っているので記載してます。 ググってもあんまり情報がなかったので、こ...</p>
-                        </div>
-                    </div>
-                </article>
-                <br>
-
-                <article class="media">
-                    <div class="media-content">
-                        <div class="content">
-                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/show-notification-if-now-greater-equal-updated-time/">Hugoで記事が一年以上過ぎた場合はnoticeを表示するようにした</a></p>
-                            <p class="subtitle is-size-6 has-text-grey-light">
-                                Published at November 12, 2019 &middot;
-                                <i class="far fa-clock"></i>&nbsp;2 min read
-                            </p>
-                            <p>TL;DR 以下の書き方で実装可（⚠️Bulmaでの実装） {{$year:=(div(subnow.Unix.Lastmod.Unix)31536000)}} {{ifle1$year}} &lt;div class=&#34;notification is-warning&#34;&gt; この記事は、掲載されてから {{$year}} 年間修正されておりません。 &lt;/div&gt; {{end}} Hugo公式の.Unixページを見よ はじめに 唐突に、「記事が老朽化している表示」はほしいなと思い、色々と検索して実装ができた感じです。Goのテンプレートエンジンにだけ詳しくなっていく… 方法 一番上に書いてあるとおり、 &lt;!-- 再掲 --&gt; {{$year:=(div(subnow.Unix.Lastmod.Unix)31536000)}} {{ifle1$year}} &lt;div class=&#34;notification is-warning&#34;&gt; この記事は、掲載されてから {{$year}} 年間修正されておりません。 &lt;/div&gt; {{end}} で実装できる。 実際の表示はこんな感じ😗 多分上記のコードを読んだらわかると思いますが、一応解説し...</p>
-                        </div>
-                    </div>
-                </article>
-                <br>
-
-                <article class="media">
-                    <div class="media-content">
-                        <div class="content">
-                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/adapted-hugo-gitinfo/">hugoの.GitInfoが適応された話(理由は不明です…)</a></p>
-                            <p class="subtitle is-size-6 has-text-grey-light">
-                                Published at October 20, 2019 &middot;
-                                <i class="far fa-clock"></i>&nbsp;1 min read
-                            </p>
-                            <p>ずっと前から、記事の更新はgitのコミット履歴を使いたいと思っていたのですが、 .GitInfoの情報が記事にうまく反映されずnilになっていたため、手動で作業してました😇 .GitInfoが使えるようになった原因は恐らく、記事のパスを /content/post/[記事].md→/content/post/[分類用フォルダ]/[記事].md ※[]内はそれぞれの用途で変更する としたことです。 何故これで.GitInfoが適応されたのかは不明ですが、とにかくずっとやりたかったことなので、大満足😭...</p>
-                        </div>
-                    </div>
-                </article>
-                <br>
-
-                <article class="media">
-                    <div class="media-content">
-                        <div class="content">
-                            <p class="title is-4"><a href="https://amatsukiurato.github.io/2019/migration-from-lightsail/">Light Sailからの移行</a></p>
-                            <p class="subtitle is-size-6 has-text-grey-light">
-                                Published at April 16, 2019 &middot;
-                                <i class="far fa-clock"></i>&nbsp;2 min read
-                            </p>
-                            <p>移行しました AWSのLight Sail + WordPressでやってましたが、 WordPressがだるすぎたので AWSの~~[AWS Amplify + Hugo]に移行しました。~~ 現在は[github pages + Hugo] github pages とかをそのまま使うのも良かったけど、 AWSのサービスを触ってみたかったのでこっちで立ててみました。 Hugoに移って最初に記事書いていて思うけど、 やっぱMarkdownが最強なんだわ。 スラスラ書ける😎 一応WordPressでもMarkdownで書けるプラグイン📕は少し出てたけど、 めっちゃこれいいやん、みたいなプラ...</p>
-                        </div>
-                    </div>
-                </article>
-                <br>
-
-            </div>
-        </div>
-    </div>
-    <div class="column is-3">
-        <div class="card">
-    <div class="card-content">
-        <h1 class="title is-5">Tags</h1>
-        <div class="tags">
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/a-frame">a-frame</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/amazon-rds">amazon-rds</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/ar">ar</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/ar.js">ar.js</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/aws">aws</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/aws">aws</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/aws">aws</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/aws">aws</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/aws">aws</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/awsloft">awsloft</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/box">box</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/cloud2.0">cloud2.0</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/cloudstrage">cloudstrage</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/command">command</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/copyq">copyq</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/css">css</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/db">db</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/docker">docker</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/dropbox">dropbox</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/eclipse">eclipse</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/extension">extension</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/extention">extention</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/extention">extention</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/feeling">feeling</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/front">front</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/game">game</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/git">git</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/git">git</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/git-secrets">git-secrets</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/go">go</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/googledrive">googledrive</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/homebrew">homebrew</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/hugo">hugo</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/hugo">hugo</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/hugo">hugo</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/hugo">hugo</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/icloud">icloud</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/icloud">icloud</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/intellij">intellij</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/javascript">javascript</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/javascript">javascript</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/javascript">javascript</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/kaspersky">kaspersky</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/macos">macos</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/markdown">markdown</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/marp">marp</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/nodejs">nodejs</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/onedrive">onedrive</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/onsen-ui">onsen-ui</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/poem">poem</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/powershell">powershell</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/raspberrypi">raspberrypi</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/react">react</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/revealjs">revealjs</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/route53">route53</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/route53">route53</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/s3">s3</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/setting">setting</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/setting">setting</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/slow">slow</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/tab">tab</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/tech">tech</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/template">template</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/terminal">terminal</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/terminal">terminal</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/three.js">three.js</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/ubuntu">ubuntu</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/utility">utility</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/uv4l">uv4l</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/version">version</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/vscode">vscode</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/vscode">vscode</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/webpack">webpack</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/windows">windows</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/windows-terminal">windows-terminal</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E3%82%B7%E3%83%B3%E3%83%9C%E3%83%AA%E3%83%83%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%AF">シンボリックリンク</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E3%83%9D%E3%82%A8%E3%83%A0">ポエム</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E5%8B%89%E5%BC%B7">勉強</a></span>
-        
-            <span class="tag"><a href="https://amatsukiurato.github.io/tags/%E6%96%B0%E5%8D%92%E5%AF%BE%E5%BF%9C">新卒対応</a></span>
-        
-        </div>
-    </div>
-</div><br>
-        <div class="card">
-    <div class="card-content">
-        <h1 class="title is-5">Recent posts</h1>
-        
-            <h1><a href="https://amatsukiurato.github.io/2020/how-to-clear-old-publish-files/">Hugoで一度publishしてしまったファイルをデプロイ時に消す</a></h1>
-            <time class="has-text-grey-light is-size-7">4 February 2020</time>
-        
-            <h1><a href="https://amatsukiurato.github.io/2020/subtle-post-is-better-than-nothing/">しょぼい記事の投稿でも、何もしないよりは良いと思う今日このごろ</a></h1>
-            <time class="has-text-grey-light is-size-7">3 February 2020</time>
-        
-            <h1><a href="https://amatsukiurato.github.io/2019/tried-to-change-powershell-color/">PowerShellの色を変えようと思ってたら、Windows Terminal(Preview)で変更してた</a></h1>
-            <time class="has-text-grey-light is-size-7">2 December 2019</time>
-        
-            <h1><a href="https://amatsukiurato.github.io/2019/what-kind-of-management-version/">バージョンの付け方を調べてみた</a></h1>
-            <time class="has-text-grey-light is-size-7">25 November 2019</time>
-        
-            <h1><a href="https://amatsukiurato.github.io/2019/good-extentions/">使ってよかったVSCode拡張機能14選&#43;3選の紹介</a></h1>
-            <time class="has-text-grey-light is-size-7">14 November 2019</time>
-        
-    </div>
-</div><br>
-        <div class="card">
-    <div class="card-content">
-        <h1 class="title is-5">Archives</h1>
-        
-            <a href="https://amatsukiurato.github.io/archives/2020">2020</a> (2)<br>
-        
-            <a href="https://amatsukiurato.github.io/archives/2019">2019</a> (22)<br>
-        
-            <a href="https://amatsukiurato.github.io/archives/2017">2017</a> (1)<br>
-        
-            <a href="https://amatsukiurato.github.io/archives/2016">2016</a> (3)<br>
-        
-    </div>
-</div>
-
-    </div>
-</div>
-
-
-    </div>
-</div>
-
-<footer class="footer has-background-grey-darker has-text-white">
-    <div class="content has-text-centered">
-        <p>
-            <span class="icon is-large"><a href="https://twitter.com/AmatsukiUrato" class="mysocial" rel="me"><i class="fab fa-twitter fa-3x"></i></a></span>&nbsp;&nbsp;
-            <span class="icon is-large"><a href="https://github.com/AmatsukiUrato" class="mysocial" rel="me"><i class="fab fa-github fa-3x"></i></a></span>&nbsp;&nbsp;
-            <br><br>
-            Copyright &copy; ぎじゅつわふたー 2020 - Theme by <a href="https://jeffprod.com" class="mysocial">JeffProd.com</a>
-            - <a class="mysocial" href="https://amatsukiurato.github.io/about">About</a>
-        </p>
-    </div>
-</footer>
-
-<script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
-</body>
-</html>
+<!doctype html><html lang=ja-jp><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>ぎじゅつわふたー | Hugo</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=https://amatsukiurato.github.io/favicon/favicon.ico><link href="https://fonts.googleapis.com/css?family=Open+Sans" rel=stylesheet><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css><link rel=stylesheet href=https://amatsukiurato.github.io/css/blog.css><link rel=stylesheet href=https://amatsukiurato.github.io/css/syntax.css><link href=https://amatsukiurato.github.io/tags/hugo/index.xml rel=alternate type=application/rss+xml title=ぎじゅつわふたー><link href=https://amatsukiurato.github.io/tags/hugo/index.xml rel=feed type=application/rss+xml title=ぎじゅつわふたー><script async src="https://www.googletagmanager.com/gtag/js?id=UA-143787598-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-143787598-1');</script></head><body><nav class=navbar role=navigation aria-label="main navigation"><div class=navbar-brand><a class=navbar-item href=https://amatsukiurato.github.io>Home</a><div class=navbar-item>#Hugo</div><a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=navbar-sub><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a></div><div id=navbar-sub class=navbar-menu><div class=navbar-start></div><div class=navbar-end><div class=navbar-item><a class="navbar-item nav-right" href=https://amatsukiurato.github.io/food>飯</a>
+<a class="navbar-item nav-right" href=https://amatsukiurato.github.io/about>About</a></div></div></nav><script>document.addEventListener('DOMContentLoaded',()=>{const $navbarBurgers=Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'),0);if($navbarBurgers.length>0){$navbarBurgers.forEach(el=>{el.addEventListener('click',()=>{const target=el.dataset.target;const $target=document.getElementById(target);el.classList.toggle('is-active');$target.classList.toggle('is-active');});});}});</script></body><div class=container><div class=section><div class=columns><div class="column is-9"><div class="tile is-child box"><div class=content><article class=media><div class=media-content><div class=content><p class="title is-4"><a href=https://amatsukiurato.github.io/2020/how-to-clear-old-publish-files/>Hugoで一度publishしてしまったファイルをデプロイ時に消す</a></p><p class="subtitle is-size-6 has-text-grey-light">Published at February 4, 2020 &#183;
+<i class="far fa-clock"></i>&nbsp;3 min read</p><p>はじめに hugoでデプロイする際に、よくミスって不要記事をpublishしてしまうことがあります。 その後再度公開を行うと、出力元のフォルダからは消えているのにもかかわらず残り続けます。 今回はそれの解決を行いました。 （今まではpublic以下をスクリプトで消してた…） TL;DR hugo --cleanDestinationDirでおｋ How to ほぼほぼTL;DRで終わっちゃってますが、個人的にTL;DRがある記事のほうが手っ取り早く答えを見つけられると思っているので記載してます。 ググってもあんまり情報がなかったので、こ...</p></div></div></article><br><article class=media><div class=media-content><div class=content><p class="title is-4"><a href=https://amatsukiurato.github.io/2019/show-notification-if-now-greater-equal-updated-time/>Hugoで記事が一年以上過ぎた場合はnoticeを表示するようにした</a></p><p class="subtitle is-size-6 has-text-grey-light">Published at November 12, 2019 &#183;
+<i class="far fa-clock"></i>&nbsp;2 min read</p><p>TL;DR 以下の書き方で実装可（⚠️Bulmaでの実装） {{$year:=(div(subnow.Unix.Lastmod.Unix)31536000)}} {{ifle1$year}} &lt;div class="notification is-warning"> この記事は、掲載されてから {{$year}} 年間修正されておりません。 &lt;/div> {{end}} Hugo公式の.Unixページを見よ はじめに 唐突に、「記事が老朽化している表示」はほしいなと思い、色々と検索して実装ができた感じです。Goのテンプレートエンジンにだけ詳しくなっていく… 方法 一番上に書いてあるとおり、 &lt;!-- 再掲 --> {{$year:=(div(subnow.Unix.Lastmod.Unix)31536000)}} {{ifle1$year}} &lt;div class="notification is-warning"> この記事は、掲載されてから {{$year}} 年間修正されておりません。 &lt;/div> {{end}} で実装できる。 実際の表示はこんな感じ😗 多分上記のコードを読んだらわかると思いますが、一応解説し...</p></div></div></article><br><article class=media><div class=media-content><div class=content><p class="title is-4"><a href=https://amatsukiurato.github.io/2019/adapted-hugo-gitinfo/>hugoの.GitInfoが適応された話(理由は不明です…)</a></p><p class="subtitle is-size-6 has-text-grey-light">Published at October 20, 2019 &#183;
+<i class="far fa-clock"></i>&nbsp;1 min read</p><p>ずっと前から、記事の更新はgitのコミット履歴を使いたいと思っていたのですが、 .GitInfoの情報が記事にうまく反映されずnilになっていたため、手動で作業してました😇 .GitInfoが使えるようになった原因は恐らく、記事のパスを /content/post/[記事].md→/content/post/[分類用フォルダ]/[記事].md ※[]内はそれぞれの用途で変更する としたことです。 何故これで.GitInfoが適応されたのかは不明ですが、とにかくずっとやりたかったことなので、大満足😭...</p></div></div></article><br><article class=media><div class=media-content><div class=content><p class="title is-4"><a href=https://amatsukiurato.github.io/2019/migration-from-lightsail/>Light Sailからの移行</a></p><p class="subtitle is-size-6 has-text-grey-light">Published at April 16, 2019 &#183;
+<i class="far fa-clock"></i>&nbsp;2 min read</p><p>移行しました AWSのLight Sail + WordPressでやってましたが、 WordPressがだるすぎたので AWSの~~[AWS Amplify + Hugo]に移行しました。~~ 現在は[github pages + Hugo] github pages とかをそのまま使うのも良かったけど、 AWSのサービスを触ってみたかったのでこっちで立ててみました。 Hugoに移って最初に記事書いていて思うけど、 やっぱMarkdownが最強なんだわ。 スラスラ書ける😎 一応WordPressでもMarkdownで書けるプラグイン📕は少し出てたけど、 めっちゃこれいいやん、みたいなプラ...</p></div></div></article><br></div></div></div><div class="column is-3"><div class=card><div class=card-content><h1 class="title is-5">Tags</h1><div class=tags><span class=tag><a href=https://amatsukiurato.github.io/tags/a-frame>a-frame</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/amazon-rds>amazon-rds</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/ar>ar</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/ar.js>ar.js</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/aws>aws</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/aws>aws</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/aws>aws</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/aws>aws</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/aws>aws</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/awsloft>awsloft</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/box>box</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/cloud2.0>cloud2.0</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/cloudstrage>cloudstrage</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/command>command</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/copyq>copyq</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/css>css</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/db>db</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/docker>docker</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/dropbox>dropbox</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/eclipse>eclipse</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/extension>extension</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/extention>extention</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/extention>extention</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/feeling>feeling</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/front>front</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/game>game</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/git>git</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/git>git</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/git-secrets>git-secrets</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/go>go</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/googledrive>googledrive</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/homebrew>homebrew</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/hugo>hugo</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/hugo>hugo</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/hugo>hugo</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/hugo>hugo</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/icloud>icloud</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/icloud>icloud</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/intellij>intellij</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/javascript>javascript</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/javascript>javascript</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/javascript>javascript</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/kaspersky>kaspersky</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/macos>macos</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/markdown>markdown</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/marp>marp</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/nodejs>nodejs</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/onedrive>onedrive</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/onsen-ui>onsen-ui</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/poem>poem</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/powershell>powershell</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/raspberrypi>raspberrypi</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/react>react</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/revealjs>revealjs</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/route53>route53</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/route53>route53</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/s3>s3</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/setting>setting</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/setting>setting</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/slow>slow</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/tab>tab</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/tech>tech</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/template>template</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/terminal>terminal</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/terminal>terminal</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/three.js>three.js</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/ubuntu>ubuntu</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/utility>utility</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/uv4l>uv4l</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/version>version</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/vscode>vscode</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/vscode>vscode</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/webpack>webpack</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/windows>windows</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/windows-terminal>windows-terminal</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/%E3%82%B7%E3%83%B3%E3%83%9C%E3%83%AA%E3%83%83%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%AF>シンボリックリンク</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/%E3%83%9D%E3%82%A8%E3%83%A0>ポエム</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/%E5%8B%89%E5%BC%B7>勉強</a></span>
+<span class=tag><a href=https://amatsukiurato.github.io/tags/%E6%96%B0%E5%8D%92%E5%AF%BE%E5%BF%9C>新卒対応</a></span></div></div></div><br><div class=card><div class=card-content><h1 class="title is-5">Recent posts</h1><h1><a href=https://amatsukiurato.github.io/2020/how-to-clear-old-publish-files/>Hugoで一度publishしてしまったファイルをデプロイ時に消す</a></h1><time class="has-text-grey-light is-size-7">4 February 2020</time><h1><a href=https://amatsukiurato.github.io/2020/subtle-post-is-better-than-nothing/>しょぼい記事の投稿でも、何もしないよりは良いと思う今日このごろ</a></h1><time class="has-text-grey-light is-size-7">3 February 2020</time><h1><a href=https://amatsukiurato.github.io/2019/tried-to-change-powershell-color/>PowerShellの色を変えようと思ってたら、Windows Terminal(Preview)で変更してた</a></h1><time class="has-text-grey-light is-size-7">2 December 2019</time><h1><a href=https://amatsukiurato.github.io/2019/what-kind-of-management-version/>バージョンの付け方を調べてみた</a></h1><time class="has-text-grey-light is-size-7">25 November 2019</time><h1><a href=https://amatsukiurato.github.io/2019/good-extentions/>使ってよかったVSCode拡張機能14選+3選の紹介</a></h1><time class="has-text-grey-light is-size-7">14 November 2019</time></div></div><br><div class=card><div class=card-content><h1 class="title is-5">Archives</h1><a href=https://amatsukiurato.github.io/archives/2020>2020</a> (2)<br><a href=https://amatsukiurato.github.io/archives/2019>2019</a> (22)<br><a href=https://amatsukiurato.github.io/archives/2017>2017</a> (1)<br><a href=https://amatsukiurato.github.io/archives/2016>2016</a> (3)<br></div></div></div></div></div></div><footer class="footer has-background-grey-darker has-text-white"><div class="content has-text-centered"><p><span class="icon is-large"><a href=https://twitter.com/AmatsukiUrato class=mysocial rel=me><i class="fab fa-twitter fa-3x"></i></a></span>&nbsp;&nbsp;
+<span class="icon is-large"><a href=https://github.com/AmatsukiUrato class=mysocial rel=me><i class="fab fa-github fa-3x"></i></a></span>&nbsp;&nbsp;<br><br>Copyright &copy; ぎじゅつわふたー 2020 - Theme by <a href=https://jeffprod.com class=mysocial>JeffProd.com</a>
+- <a class=mysocial href=https://amatsukiurato.github.io/about>About</a></p></div></footer><script defer src=https://use.fontawesome.com/releases/v5.1.0/js/all.js></script></body></html>
