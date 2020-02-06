@@ -16,7 +16,7 @@
       <pubDate>Mon, 31 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://amatsukiurato.github.io/2016/fixed-homebrew-error-that-reinstall-macos/</guid>
-      <description>旧サイトの記事を移行してきたものとなります。 ==&amp;gt; Using the sandbox Error: /usr/local/opt/jpeg not present or broken Please reinstall jpeg. Sorry :( why!?? 結構悩みましたが、以下のコマンドで直りました。 brew unlink jpeg &amp;amp;&amp;amp; brew link jpeg こういう系の問題って目的の記事とかが見つかれば一瞬なんですけど、 見つかるまで永遠に解決しないので本当に辛い・・・。 参考:Library not loaded: /usr/local/opt/jpeg/lib/libjpeg.8.dylib #323</description>
+      <description>==&amp;gt; Using the sandbox Error: /usr/local/opt/jpeg not present or broken Please reinstall jpeg. Sorry :( why!?? 結構悩みましたが、以下のコマンドで直りました。 brew unlink jpeg &amp;amp;&amp;amp; brew link jpeg こういう系の問題って目的の記事とかが見つかれば一瞬なんですけど、 見つかるまで永遠に解決しないので本当に辛い・・・。 参考:Library not loaded: /usr/local/opt/jpeg/lib/libjpeg.8.dylib #323</description>
     </item>
     
   </channel>

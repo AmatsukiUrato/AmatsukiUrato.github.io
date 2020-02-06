@@ -97,7 +97,7 @@
                 
                 <div class="subtitle is-size-6 has-text-grey-light">
                     <i class="fas fa-pen"></i>&nbsp;2017-2-1 |
-                    <i class="fas fa-redo-alt"></i>&nbsp;2019-11-10 |
+                    <i class="fas fa-redo-alt"></i>&nbsp;2020-2-7 |
                     <i class="fas fa-clock"></i>&nbsp;2 min read
                 </div>
                 
@@ -107,16 +107,7 @@
                     <div class="card-content">
                         <h1 class="title is-5">Contents</h1>
                         <div class="contents">
-                            <nav id="TableOfContents">
-<ul>
-<li><a href="#noobsを使ってraspbianを入れる">NOOBSを使ってRaspbianを入れる</a></li>
-<li><a href="#raspbianを起動してsshdをraspbian起動時に起動させるようにする">Raspbianを起動してsshdをRaspbian起動時に起動させるようにする</a></li>
-<li><a href="#ip固定設定をする">IP固定設定をする</a></li>
-<li><a href="#uv4lのインストールをする">uv4lのインストールをする</a></li>
-<li><a href="#確認">確認</a></li>
-<li><a href="#ポート開放やその他">ポート開放やその他</a></li>
-</ul>
-</nav>
+                            <nav id="TableOfContents"></nav>
                         </div>
                     </div>
                 </div>
@@ -125,47 +116,27 @@
                 
                 
 
-                
-
-<div class="notification">
-旧サイトの記事を移行してきたものとなります。
-</div>
-
+                <!-- raw HTML omitted -->
 <p>今日のご飯が何かを確認したいためのラズパイカメラ作成を行います</p>
-
 <p>この前RaspberryPi 3 Model Bを買ってそこら辺に転がってたUSBカメラと繋げて台所に出て来るご飯をブラウザ上から見られるようにしたのでその時の経緯を記載。</p>
-
 <h1 id="noobsを使ってraspbianを入れる">NOOBSを使ってRaspbianを入れる</h1>
-
-<p>お前初心者かよｗｗと煽っているわけではないです。<br />
-NOOBSとは、ラズパイ用に作られたDebianベースのOSであるRaspbianとかを簡単にインストールできるようにしたインストーラーです。<br />
+<p>お前初心者かよｗｗと煽っているわけではないです。<br>
+NOOBSとは、ラズパイ用に作られたDebianベースのOSであるRaspbianとかを簡単にインストールできるようにしたインストーラーです。<br>
 <a href="https://www.raspberrypi.org/downloads/noobs/">NOOBSダウンロードページ</a>でNOOBS落としてSDカードにブチ込んで終了。</p>
-
 <h1 id="raspbianを起動してsshdをraspbian起動時に起動させるようにする">Raspbianを起動してsshdをRaspbian起動時に起動させるようにする</h1>
-
-<p><code>sudo apt-get install sysv-rc-conf</code>で<code>sysv-rc-conf</code>を入れてRaspbian起動時設定してもうまくいきません。<br />
-どうやらRaspbianは<code>systemd</code>で制御しないとだめみたいです。<br />
+<p><code>sudo apt-get install sysv-rc-conf</code>で<code>sysv-rc-conf</code>を入れてRaspbian起動時設定してもうまくいきません。<br>
+どうやらRaspbianは<code>systemd</code>で制御しないとだめみたいです。<br>
 <a href="https://teratail.com/questions/62910">参考</a></p>
-
 <h1 id="ip固定設定をする">IP固定設定をする</h1>
-
 <p>これはそこら辺ググったら出てくるので投げちゃいます。</p>
-
 <h1 id="uv4lのインストールをする">uv4lのインストールをする</h1>
-
-<p>uv4lっていうinstallしたらほぼほぼ何もしなくてもブラウザ上でWebカメラを見られるようにできるやつを使う。<br />
+<p>uv4lっていうinstallしたらほぼほぼ何もしなくてもブラウザ上でWebカメラを見られるようにできるやつを使う。<br>
 <a href="https://qiita.com/sp_ice/items/7f15e262fffd69d3375c">Raspberry Pi3とUSB WEBカメラでストリーミング</a>を参考すればおｋ。</p>
-
 <h1 id="確認">確認</h1>
-
 <p>以下の画像のようになってたらおｋ。</p>
-
-<p><img src="https://amatsukiurato.github.io/resources/create-live-camera-by-raspberrypi-model-b/uv4l-homepage.png" alt="uv4l" /></p>
-
+<p><img src="https://amatsukiurato.github.io/resources/create-live-camera-by-raspberrypi-model-b/uv4l-homepage.png" alt="uv4l"></p>
 <h1 id="ポート開放やその他">ポート開放やその他</h1>
-
 <p>僕はローカルのみでの運用なのであまり設定してないけどssh(22)とかuv4l(8090)で使うのポート変更&amp;開放をする。</p>
-
 <p>以上でおしまい！
 本当はpythonとか使って自分でWebカメラキャプチャ用のプログラムとか組みたかったんだけど調べてる途中で面倒になってやめました・・・ｗ
 今後機会があればまたやってみたいと思います。</p>

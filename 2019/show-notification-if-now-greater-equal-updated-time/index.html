@@ -97,7 +97,7 @@
                 
                 <div class="subtitle is-size-6 has-text-grey-light">
                     <i class="fas fa-pen"></i>&nbsp;2019-11-12 |
-                    <i class="fas fa-redo-alt"></i>&nbsp;2019-11-14 |
+                    <i class="fas fa-redo-alt"></i>&nbsp;2020-2-7 |
                     <i class="fas fa-clock"></i>&nbsp;2 min read
                 </div>
                 
@@ -107,14 +107,7 @@
                     <div class="card-content">
                         <h1 class="title is-5">Contents</h1>
                         <div class="contents">
-                            <nav id="TableOfContents">
-<ul>
-<li><a href="#tl-dr">TL;DR</a></li>
-<li><a href="#はじめに">はじめに</a></li>
-<li><a href="#方法">方法</a></li>
-<li><a href="#参考">参考</a></li>
-</ul>
-</nav>
+                            <nav id="TableOfContents"></nav>
                         </div>
                     </div>
                 </div>
@@ -123,27 +116,20 @@
                 
                 
 
-                
-
-<h1 id="tl-dr">TL;DR</h1>
-
+                <h1 id="tldr">TL;DR</h1>
 <p>以下の書き方で実装可（⚠️<code>Bulma</code>での実装）</p>
 <div class="highlight"><pre class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="cp">{{</span><span class="w"> </span><span class="nx">$year</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">(</span><span class="nx">div</span><span class="w"> </span><span class="o">(</span><span class="nx">sub</span><span class="w"> </span><span class="nx">now</span><span class="na">.Unix</span><span class="w"> </span><span class="na">.Lastmod.Unix</span><span class="o">)</span><span class="w"> </span><span class="nx">31536000</span><span class="o">)</span><span class="w"> </span><span class="cp">}}</span>
 <span class="cp">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">le</span><span class="w"> </span><span class="nx">1</span><span class="w"> </span><span class="nx">$year</span><span class="w"> </span><span class="cp">}}</span>
 <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;notification is-warning&#34;</span><span class="p">&gt;</span>
     この記事は、掲載されてから <span class="cp">{{</span><span class="w"> </span><span class="nx">$year</span><span class="w"> </span><span class="cp">}}</span> 年間修正されておりません。
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}</span></code></pre></div>
-<ul>
+<span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}</span>
+</code></pre></div><ul>
 <li>Hugo公式の<code>.Unix</code>ページを見よ</li>
 </ul>
-
 <h1 id="はじめに">はじめに</h1>
-
 <p>唐突に、「記事が老朽化している表示」はほしいなと思い、色々と検索して実装ができた感じです。<code>Go</code>のテンプレートエンジンにだけ詳しくなっていく…</p>
-
 <h1 id="方法">方法</h1>
-
 <p>一番上に書いてあるとおり、</p>
 <div class="highlight"><pre class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="c">&lt;!-- 再掲 --&gt;</span>
 <span class="cp">{{</span><span class="w"> </span><span class="nx">$year</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">(</span><span class="nx">div</span><span class="w"> </span><span class="o">(</span><span class="nx">sub</span><span class="w"> </span><span class="nx">now</span><span class="na">.Unix</span><span class="w"> </span><span class="na">.Lastmod.Unix</span><span class="o">)</span><span class="w"> </span><span class="nx">31536000</span><span class="o">)</span><span class="w"> </span><span class="cp">}}</span>
@@ -151,31 +137,23 @@
 <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;notification is-warning&#34;</span><span class="p">&gt;</span>
     この記事は、掲載されてから <span class="cp">{{</span><span class="w"> </span><span class="nx">$year</span><span class="w"> </span><span class="cp">}}</span> 年間修正されておりません。
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}</span></code></pre></div>
-<p>で実装できる。<br />
+<span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}</span>
+</code></pre></div><p>で実装できる。<br>
 実際の表示はこんな感じ😗</p>
-
-<p><img src="https://amatsukiurato.github.io/resources/show-notification-if-now-greater-equal-updated-time/no-update-one-year.png" alt="display-warning" /></p>
-
+<p><img src="https://amatsukiurato.github.io/resources/show-notification-if-now-greater-equal-updated-time/no-update-one-year.png" alt="display-warning"></p>
 <p>多分上記のコードを読んだらわかると思いますが、一応解説します。</p>
-<div class="highlight"><pre class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="cp">{{</span><span class="w"> </span><span class="nx">$year</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">(</span><span class="nx">div</span><span class="w"> </span><span class="o">(</span><span class="nx">sub</span><span class="w"> </span><span class="nx">now</span><span class="na">.Unix</span><span class="w"> </span><span class="na">.Lastmod.Unix</span><span class="o">)</span><span class="w"> </span><span class="nx">31536000</span><span class="o">)</span><span class="w"> </span><span class="cp">}}</span></code></pre></div>
-<p>ここでは、</p>
-
+<div class="highlight"><pre class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="cp">{{</span><span class="w"> </span><span class="nx">$year</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">(</span><span class="nx">div</span><span class="w"> </span><span class="o">(</span><span class="nx">sub</span><span class="w"> </span><span class="nx">now</span><span class="na">.Unix</span><span class="w"> </span><span class="na">.Lastmod.Unix</span><span class="o">)</span><span class="w"> </span><span class="nx">31536000</span><span class="o">)</span><span class="w"> </span><span class="cp">}}</span>
+</code></pre></div><p>ここでは、</p>
 <ol>
 <li>現在時刻のUnix時刻と最終更新のUnix時刻を取得して、引く</li>
 <li>記事を更新してから何秒経過したのかがわかるので、31536000秒（一年=365日で計算）で割り、時刻を年単位変換します。</li>
 <li>$year変数に代入</li>
 </ol>
-
 <p>を行っています。</p>
-
 <p>後は、1年以上かどうかでif文判定して表示している感じです。
 Hugoの<code>.Unix</code>ページに書いてあったのになぜもっと早く見ておけばよかった。公式ページでは1日を算出しています。</p>
-
 <p>計算が面倒くさい人用に、早見表を参考に置いてます。</p>
-
 <h1 id="参考">参考</h1>
-
 <ul>
 <li><a href="https://www.rougebleu.net/%E4%BD%95%E7%A7%92%EF%BC%9F/">「早見表」すぐわかる1分～100年まで何秒なのか一覧表</a></li>
 <li><a href="https://gohugo.io/functions/unix/">Hugo &gt; .Unix</a></li>

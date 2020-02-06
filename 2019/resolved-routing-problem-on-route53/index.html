@@ -97,7 +97,7 @@
                 
                 <div class="subtitle is-size-6 has-text-grey-light">
                     <i class="fas fa-pen"></i>&nbsp;2019-7-15 |
-                    <i class="fas fa-redo-alt"></i>&nbsp;2019-10-31 |
+                    <i class="fas fa-redo-alt"></i>&nbsp;2020-2-7 |
                     <i class="fas fa-clock"></i>&nbsp;1 min read
                 </div>
                 
@@ -107,13 +107,7 @@
                     <div class="card-content">
                         <h1 class="title is-5">Contents</h1>
                         <div class="contents">
-                            <nav id="TableOfContents">
-<ul>
-<li><a href="#tl-dr">TL;DR</a></li>
-<li><a href="#概要">概要</a></li>
-<li><a href="#原因">原因</a></li>
-</ul>
-</nav>
+                            <nav id="TableOfContents"></nav>
                         </div>
                     </div>
                 </div>
@@ -122,30 +116,21 @@
                 
                 
 
-                
-
-<h1 id="tl-dr">TL;DR</h1>
-
+                <h1 id="tldr">TL;DR</h1>
 <ul>
 <li>外部からホストゾーンのネームサーバを指定してあげないと、レコードが帰ってこなかった</li>
 <li>Route53のドメインのネームサーバとホストゾーンのネームサーバを一緒にする</li>
 </ul>
-
 <h1 id="概要">概要</h1>
-
-<p>前に[Route53] -&gt; [S3のリダイレクト] -&gt; [リダイレクト先ページ]<br />
-のルーティングを行おうと思いましたがうまく行きませんでした。<br />
+<p>前に[Route53] -&gt; [S3のリダイレクト] -&gt; [リダイレクト先ページ]<br>
+のルーティングを行おうと思いましたがうまく行きませんでした。<br>
 <a href="https://amatsukiurato.github.io/2019/want-to-use-s3-redirect/">該当記事</a></p>
-
 <h1 id="原因">原因</h1>
-
 <p>Route53にて、登録していたドメインに記述されているネームサーバの一覧と
 ホストゾーンに記載されているNSレコードの値が違っていたため、
-正しくルーティングされなかったみたいです。<br />
+正しくルーティングされなかったみたいです。<br>
 解決方法としては、下記画像のように値を揃えることによって、正しくルーティングが行えるようになりました。</p>
-
-<p><img src="https://amatsukiurato.github.io/resources/resolved-routing-problem/route53_dns.png" alt="Route53の設定用画像" /></p>
-
+<p><img src="https://amatsukiurato.github.io/resources/resolved-routing-problem/route53_dns.png" alt="Route53の設定用画像"></p>
 <p>思っていたよりも単純なことでミスっていたので、基礎的な知識をもう少し深めたほうが良いと感じました。。</p>
 
 

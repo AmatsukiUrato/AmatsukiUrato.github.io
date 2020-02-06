@@ -97,7 +97,7 @@
                 
                 <div class="subtitle is-size-6 has-text-grey-light">
                     <i class="fas fa-pen"></i>&nbsp;2019-7-4 |
-                    <i class="fas fa-redo-alt"></i>&nbsp;2019-10-31 |
+                    <i class="fas fa-redo-alt"></i>&nbsp;2020-2-7 |
                     <i class="fas fa-clock"></i>&nbsp;1 min read
                 </div>
                 
@@ -108,15 +108,9 @@
                         <h1 class="title is-5">Contents</h1>
                         <div class="contents">
                             <nav id="TableOfContents">
-<ul>
-<li><a href="#tl-dr">TL;DR</a></li>
-<li><a href="#概要">概要</a></li>
-<li><a href="#解決方法">解決方法🤗</a></li>
-<li><a href="#実行結果">実行結果🎥</a>
-<ul>
-<li><a href="#ソースコード">ソースコード📓</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#ソースコード">ソースコード📓</a></li>
+  </ul>
 </nav>
                         </div>
                     </div>
@@ -126,46 +120,34 @@
                 
                 
 
-                
-
-<h1 id="tl-dr">TL;DR</h1>
-
+                <h1 id="tldr">TL;DR</h1>
 <ul>
 <li>Onsen-UI読み込み後に出力されるDialogをコピーして手動で使う</li>
 <li>Dialog群の形だけ取得しているので、Show, Hide共にこちら側で呼ぶ必要あり</li>
 <li>Onsen-UIのタグオブジェクトから、Onsen-UI側で用意されている<code>show()</code>, <code>hide()</code>などが呼び出せる
-
 <ul>
 <li>これを使って自分で制御を行う</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h1 id="概要">概要</h1>
-
 <p>以下の画像のような、アラートのサイズを変更したいのにできない。
 Onsen-UIの公式リファレンスを見てもDialogの項目にそれっぽい動作をしてくれるDialogはない。。
-<img src="https://amatsukiurato.github.io/resources/change-onsen-ui-dialog-component-size/alert.png" alt="onsenui-alert" /></p>
-
+<img src="https://amatsukiurato.github.io/resources/change-onsen-ui-dialog-component-size/alert.png" alt="onsenui-alert"></p>
 <h1 id="解決方法">解決方法🤗</h1>
-
 <ol>
 <li><code>ons.notification.alert();</code>を実行して、でOnsen-UIの要素を取得する。</li>
 <li>要素をhtmlに貼り付ける。</li>
 <li><code>ons-alert-dialog</code>に<code>id</code>をつけて、手動でDialogの表示/非表示を制御する。</li>
 </ol>
-
-<p>onsタグのオブジェクトをjsで取得すると、<code>show()</code>や<code>hide()</code>などのメソッドが使用できるようになる。<br />
+<p>onsタグのオブジェクトをjsで取得すると、<code>show()</code>や<code>hide()</code>などのメソッドが使用できるようになる。<br>
 <a href="https://onsen.io/v2/api/js/ons-modal.html#method-show">https://onsen.io/v2/api/js/ons-modal.html#method-show</a></p>
-
 <h1 id="実行結果">実行結果🎥</h1>
-
 <p>以下の動画では<code>width=&quot;90%&quot;</code>で設定しています
-<video style="width:100%;" autoplay controls loop>
-　　<source src="https://amatsukiurato.github.io/resources/change-onsen-ui-dialog-component-size/alertDialog.webm" />
-</video></p>
-
+<!-- raw HTML omitted -->
+　　<!-- raw HTML omitted -->
+<!-- raw HTML omitted --></p>
 <h2 id="ソースコード">ソースコード📓</h2>
-
 <script type="application/javascript" src="https://gist.github.com/AmatsukiUrato/e7c0e76959c13aa28c779f60a4de71e2.js"></script>
 
 

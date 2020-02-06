@@ -97,7 +97,7 @@
                 
                 <div class="subtitle is-size-6 has-text-grey-light">
                     <i class="fas fa-pen"></i>&nbsp;2019-10-14 |
-                    <i class="fas fa-redo-alt"></i>&nbsp;2019-10-31 |
+                    <i class="fas fa-redo-alt"></i>&nbsp;2020-2-7 |
                     <i class="fas fa-clock"></i>&nbsp;1 min read
                 </div>
                 
@@ -107,15 +107,7 @@
                     <div class="card-content">
                         <h1 class="title is-5">Contents</h1>
                         <div class="contents">
-                            <nav id="TableOfContents">
-<ul>
-<li><a href="#tl-dr">TL;DR</a></li>
-<li><a href="#概要">概要</a></li>
-<li><a href="#最後に各クラスをjoinでくっつける方法">最後に各クラスをjoinでくっつける方法</a></li>
-<li><a href="#classnameに２つのclass名を直接入れる方法">classNameに２つのclass名を直接入れる方法</a></li>
-<li><a href="#参考">参考</a></li>
-</ul>
-</nav>
+                            <nav id="TableOfContents"></nav>
                         </div>
                     </div>
                 </div>
@@ -124,68 +116,58 @@
                 
                 
 
-                
-
-<h1 id="tl-dr">TL;DR</h1>
-
+                <h1 id="tldr">TL;DR</h1>
 <ol>
 <li>classデータをstring配列として持つ</li>
 <li><code>配列.join(' ')</code>を該当の<code>className={}</code>の中に記述する</li>
 </ol>
-
 <h1 id="概要">概要</h1>
-
 <p>最近、Reactについての勉強を行っていたところ、<code>class</code>の指定に手間取ってしまったのでメモ。
 方法としては、探したところ、以下2つがあるみたい。</p>
-
 <ol>
-<li>class名の配列を作成して、最後にjoinで配列の間にを入れて出力</li>
+<li>class名の配列を作成して、最後にjoinで配列の間に<code> </code>を入れて出力</li>
 <li><code>className</code>の中で、２つのclass名を呼び出す。</li>
 </ol>
-
 <p>汎用性があるのは方法1のほうだと思われます。</p>
-
-<p>面倒くさいのでソースベタ貼りしてます。<br />
+<p>面倒くさいのでソースベタ貼りしてます。<br>
 <code>Box</code>は<code>Material-ui</code>のUtil-componentです。</p>
-
 <h1 id="最後に各クラスをjoinでくっつける方法">最後に各クラスをjoinでくっつける方法</h1>
 <div class="highlight"><pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="k">return</span> <span class="p">(</span>
     <span class="o">&lt;</span><span class="nx">Box</span> <span class="nx">display</span><span class="o">=</span><span class="s2">&#34;flex&#34;</span> <span class="nx">alignItems</span><span class="o">=</span><span class="s2">&#34;center&#34;</span> <span class="nx">justifyContent</span><span class="o">=</span><span class="s2">&#34;center&#34;</span>
         <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">block</span><span class="p">}</span><span class="o">&gt;</span>
-        <span class="p">{(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="kr">const</span> <span class="nx">discClass</span>: <span class="kt">string</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">classes</span><span class="p">.</span><span class="nx">disc</span><span class="p">];</span>
+        <span class="p">{</span><span class="p">(</span><span class="p">(</span><span class="p">)</span> <span class="o">=</span><span class="o">&gt;</span> <span class="p">{</span>
+            <span class="kr">const</span> <span class="nx">discClass</span>: <span class="kt">string</span><span class="p">[</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">classes</span><span class="p">.</span><span class="nx">disc</span><span class="p">]</span><span class="p">;</span>
 
             <span class="k">if</span> <span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">discStatus</span> <span class="o">===</span> <span class="nx">DiscStatus</span><span class="p">.</span><span class="nx">White</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">discClass</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">classes</span><span class="p">.</span><span class="nx">discWhite</span><span class="p">);</span>
+                <span class="nx">discClass</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">classes</span><span class="p">.</span><span class="nx">discWhite</span><span class="p">)</span><span class="p">;</span>
             <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">discStatus</span> <span class="o">===</span> <span class="nx">DiscStatus</span><span class="p">.</span><span class="nx">Black</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">discClass</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">classes</span><span class="p">.</span><span class="nx">discBlack</span><span class="p">);</span>
+                <span class="nx">discClass</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">classes</span><span class="p">.</span><span class="nx">discBlack</span><span class="p">)</span><span class="p">;</span>
             <span class="p">}</span>
             <span class="k">return</span> <span class="o">&lt;</span><span class="nx">Box</span> <span class="nx">component</span><span class="o">=</span><span class="s2">&#34;div&#34;</span> 
                         <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleOnClickDisc</span><span class="p">}</span> 
-                        <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">discClass</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)}</span><span class="o">&gt;&lt;</span><span class="err">/Box&gt;</span>
-        <span class="p">})()}</span>
-    <span class="o">&lt;</span><span class="err">/Box&gt;</span>
-<span class="p">);</span></code></pre></div>
-<h1 id="classnameに２つのclass名を直接入れる方法">classNameに２つのclass名を直接入れる方法</h1>
+                        <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">discClass</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="p">}</span><span class="o">&gt;</span><span class="o">&lt;</span><span class="err">/</span><span class="err">B</span><span class="err">o</span><span class="err">x</span><span class="err">&gt;</span>
+        <span class="p">}</span><span class="p">)</span><span class="p">(</span><span class="p">)</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="err">/</span><span class="err">B</span><span class="err">o</span><span class="err">x</span><span class="err">&gt;</span>
+<span class="p">)</span><span class="p">;</span>
+</code></pre></div><h1 id="classnameに２つのclass名を直接入れる方法">classNameに２つのclass名を直接入れる方法</h1>
 <div class="highlight"><pre class="chroma"><code class="language-tsx" data-lang="tsx"><span class="k">return</span> <span class="p">(</span>
     <span class="o">&lt;</span><span class="nx">Box</span> <span class="nx">display</span><span class="o">=</span><span class="s2">&#34;flex&#34;</span> <span class="nx">alignItems</span><span class="o">=</span><span class="s2">&#34;center&#34;</span> <span class="nx">justifyContent</span><span class="o">=</span><span class="s2">&#34;center&#34;</span>
         <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">block</span><span class="p">}</span><span class="o">&gt;</span>
-        <span class="p">{(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="p">{</span><span class="p">(</span><span class="p">(</span><span class="p">)</span> <span class="o">=</span><span class="o">&gt;</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">discStatus</span> <span class="o">===</span> <span class="nx">DiscStatus</span><span class="p">.</span><span class="nx">White</span><span class="p">)</span> <span class="p">{</span>
                 <span class="k">return</span> <span class="o">&lt;</span><span class="nx">Box</span> <span class="nx">component</span><span class="o">=</span><span class="s2">&#34;div&#34;</span>
-                    <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="sb">`</span><span class="si">${</span><span class="nx">classes</span><span class="p">.</span><span class="nx">disc</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">classes</span><span class="p">.</span><span class="nx">discWhite</span><span class="si">}</span><span class="sb">`</span><span class="p">}</span><span class="o">&gt;&lt;</span><span class="err">/Box&gt;</span>
+                    <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="sb">`</span><span class="si">${</span><span class="nx">classes</span><span class="p">.</span><span class="nx">disc</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">classes</span><span class="p">.</span><span class="nx">discWhite</span><span class="si">}</span><span class="sb">`</span><span class="p">}</span><span class="o">&gt;</span><span class="o">&lt;</span><span class="err">/</span><span class="err">B</span><span class="err">o</span><span class="err">x</span><span class="err">&gt;</span>
             <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">discStatus</span> <span class="o">===</span> <span class="nx">DiscStatus</span><span class="p">.</span><span class="nx">Black</span><span class="p">)</span> <span class="p">{</span>
                 <span class="k">return</span> <span class="o">&lt;</span><span class="nx">Box</span> <span class="nx">component</span><span class="o">=</span><span class="s2">&#34;div&#34;</span>
-                    <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="sb">`</span><span class="si">${</span><span class="nx">classes</span><span class="p">.</span><span class="nx">disc</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">classes</span><span class="p">.</span><span class="nx">discBlack</span><span class="si">}</span><span class="sb">`</span><span class="p">}</span><span class="o">&gt;&lt;</span><span class="err">/Box&gt;</span>
+                    <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="sb">`</span><span class="si">${</span><span class="nx">classes</span><span class="p">.</span><span class="nx">disc</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">classes</span><span class="p">.</span><span class="nx">discBlack</span><span class="si">}</span><span class="sb">`</span><span class="p">}</span><span class="o">&gt;</span><span class="o">&lt;</span><span class="err">/</span><span class="err">B</span><span class="err">o</span><span class="err">x</span><span class="err">&gt;</span>
             <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">discStatus</span> <span class="o">===</span> <span class="nx">DiscStatus</span><span class="p">.</span><span class="nx">Empty</span><span class="p">)</span> <span class="p">{</span>
                 <span class="k">return</span> <span class="o">&lt;</span><span class="nx">Box</span> <span class="nx">component</span><span class="o">=</span><span class="s2">&#34;div&#34;</span>
-                    <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">disc</span><span class="p">}</span><span class="o">&gt;&lt;</span><span class="err">/Box&gt;</span>
+                    <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">disc</span><span class="p">}</span><span class="o">&gt;</span><span class="o">&lt;</span><span class="err">/</span><span class="err">B</span><span class="err">o</span><span class="err">x</span><span class="err">&gt;</span>
             <span class="p">}</span>
-        <span class="p">})()}</span>
-    <span class="o">&lt;</span><span class="err">/Box&gt;</span>
-<span class="p">);</span></code></pre></div>
-<h1 id="参考">参考</h1>
-
+        <span class="p">}</span><span class="p">)</span><span class="p">(</span><span class="p">)</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="err">/</span><span class="err">B</span><span class="err">o</span><span class="err">x</span><span class="err">&gt;</span>
+<span class="p">)</span><span class="p">;</span>
+</code></pre></div><h1 id="参考">参考</h1>
 <p><a href="https://material-ui.com/styles/basics/">https://material-ui.com/styles/basics/</a></p>
 
 

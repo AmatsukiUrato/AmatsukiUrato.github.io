@@ -97,7 +97,7 @@
                 
                 <div class="subtitle is-size-6 has-text-grey-light">
                     <i class="fas fa-pen"></i>&nbsp;2019-10-31 |
-                    <i class="fas fa-redo-alt"></i>&nbsp;2019-11-10 |
+                    <i class="fas fa-redo-alt"></i>&nbsp;2020-2-7 |
                     <i class="fas fa-clock"></i>&nbsp;2 min read
                 </div>
                 
@@ -108,16 +108,12 @@
                         <h1 class="title is-5">Contents</h1>
                         <div class="contents">
                             <nav id="TableOfContents">
-<ul>
-<li><a href="#もうそこまで迫っている-cloud2-0時代の開発">もうそこまで迫っている！ Cloud2.0時代の開発</a>
-<ul>
-<li><a href="#info">info</a></li>
-<li><a href="#フルマネージドサービスを使おう">フルマネージドサービスを使おう</a></li>
-<li><a href="#イベントに対してプログラミングを行う">イベントに対してプログラミングを行う</a></li>
-<li><a href="#より耐久性の高いものにする">より耐久性の高いものにする</a></li>
-</ul></li>
-<li><a href="#さいごに">さいごに</a></li>
-</ul>
+  <ul>
+    <li><a href="#info">info</a></li>
+    <li><a href="#フルマネージドサービスを使おう">フルマネージドサービスを使おう</a></li>
+    <li><a href="#イベントに対してプログラミングを行う">イベントに対してプログラミングを行う</a></li>
+    <li><a href="#より耐久性の高いものにする">より耐久性の高いものにする</a></li>
+  </ul>
 </nav>
                         </div>
                     </div>
@@ -127,44 +123,34 @@
                 
                 
 
-                
-
-<p>畑違いの業種なのですが、<br />
+                <p>畑違いの業種なのですが、<br>
 AWS Pop-Up Loft Osakaが行われるとのことだったので、Game Tech Nightへ参加しました！</p>
-
-<p>会場は最初から最後まで、飲食ありのラフな感じで開催されておりました😊<br />
+<p>会場は最初から最後まで、飲食ありのラフな感じで開催されておりました😊<br>
 登壇者は全員おもしろい発表をされていましたが、とくに面白かったCloud2.0についての所感を記載しております。</p>
-
-<h1 id="もうそこまで迫っている-cloud2-0時代の開発">もうそこまで迫っている！ Cloud2.0時代の開発</h1>
-
+<h1 id="もうそこまで迫っている-cloud20時代の開発">もうそこまで迫っている！ Cloud2.0時代の開発</h1>
 <h2 id="info">info</h2>
-
 <ul>
 <li>登壇者
-
 <ul>
 <li>丹羽さん/GS2のCEO</li>
-</ul></li>
+</ul>
+</li>
 <li>HP
-
 <ul>
 <li><a href="https://gs2.io/">https://gs2.io/</a></li>
-</ul></li>
 </ul>
-
-<script async class="speakerdeck-embed" data-id="50f13b6a8ff1443e9a71615e7a0aab9d" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
-
+</li>
+</ul>
+<!-- raw HTML omitted -->
 <h2 id="フルマネージドサービスを使おう">フルマネージドサービスを使おう</h2>
-
 <ul>
 <li>処理をフルマネージドにすることで、復旧対策や管理までAWSが担保してくれる
-
 <ul>
 <li>あえてロックインされにいく</li>
-</ul></li>
+</ul>
+</li>
 <li>コントローラブルなものを利用する=問題が発生したら、自分で解決しなければならない。</li>
 <li>フルマネージドのサービスを利用して自身の責務をなくす
-
 <ul>
 <li>API Gateway</li>
 <li>App Sync</li>
@@ -174,39 +160,34 @@ AWS Pop-Up Loft Osakaが行われるとのことだったので、Game Tech Nigh
 <li>SQS</li>
 <li>Kinesis Data Firehose</li>
 <li>Athena</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h2 id="イベントに対してプログラミングを行う">イベントに対してプログラミングを行う</h2>
-
-<p>マイクロサービスを利用し、イベント駆動開発を行う。<br />
+<p>マイクロサービスを利用し、イベント駆動開発を行う。<br>
 アプリ開発者は、自分のやりたいこと（XXのときの処理）だけを書けば良い形になる。
 マイクロサービスが落ちたときの担保は、途中の通信処理をQueueに入れて行う。</p>
-
 <h2 id="より耐久性の高いものにする">より耐久性の高いものにする</h2>
-
 <ul>
 <li>ステートレスに設計することが大切
-
 <ul>
 <li><strong>ステートフルで設計を行うと耐障害性が下がる</strong></li>
 <li>運用不要にするにはサーバ側で状態を持ってはいけない</li>
-</ul></li>
+</ul>
+</li>
 <li>状態管理用データをどこかへ避難させることが重要
-
 <ul>
 <li>Lambdaを利用する場合
-
 <ul>
 <li>DynamoDBへ逃がす（コスト高）</li>
 <li>Step Functionsを利用する（コスト高）</li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>クライアントに情報を持たす（ロールバックされても良いデータのみ）</li>
 </ul>
-
 <h1 id="さいごに">さいごに</h1>
-
 <p>来月のSoftwareDesignにCloud2.0に関しての記事が掲載されるみたいです</p>
 
 

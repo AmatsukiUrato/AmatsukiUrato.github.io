@@ -97,7 +97,7 @@
                 
                 <div class="subtitle is-size-6 has-text-grey-light">
                     <i class="fas fa-pen"></i>&nbsp;2019-11-6 |
-                    <i class="fas fa-redo-alt"></i>&nbsp;2019-11-7 |
+                    <i class="fas fa-redo-alt"></i>&nbsp;2020-2-7 |
                     <i class="fas fa-clock"></i>&nbsp;3 min read
                 </div>
                 
@@ -107,16 +107,7 @@
                     <div class="card-content">
                         <h1 class="title is-5">Contents</h1>
                         <div class="contents">
-                            <nav id="TableOfContents">
-<ul>
-<li><a href="#違いについて">違いについて</a></li>
-<li><a href="#multiaz構成について">MultiAZ構成について</a></li>
-<li><a href="#クロスリージョンレプリケーションについて">クロスリージョンレプリケーションについて</a></li>
-<li><a href="#え-じゃあmultiazよりもいいんじゃね">え？じゃあMultiAZよりもいいんじゃね？</a></li>
-<li><a href="#さいごに">さいごに</a></li>
-<li><a href="#参考">参考</a></li>
-</ul>
-</nav>
+                            <nav id="TableOfContents"></nav>
                         </div>
                     </div>
                 </div>
@@ -125,39 +116,24 @@
                 
                 
 
-                
-
-<p>つい最近、表題について調べることが合ったため、忘備録として記載しておきます。</p>
-
+                <p>つい最近、表題について調べることが合ったため、忘備録として記載しておきます。</p>
 <h1 id="違いについて">違いについて</h1>
-
 <p>結論から書くと、</p>
-
 <ul>
 <li>クロスリージョンレプリカはサブがリードレプリカなのに対して、マルチAZではスタンバイレプリカになっている</li>
 <li>クロスリージョンレプリカは複数リージョンを利用するのに対し、マルチAZでは同一リージョンを利用する</li>
 </ul>
-
 <p>が大きな違いかなと思います。</p>
-
 <h1 id="multiaz構成について">MultiAZ構成について</h1>
-
 <p>RDSをマルチAZ構成で起動するとMasterとは別のAZにSlaveのRDSが立ち上げられ、同期レプリケーションが行われます。俗に言うMaster-Slave構成。</p>
-
 <p>Masterがサーバダウンすれば、Slaveくんが変わりに担当してくれるわけです。</p>
-
 <h1 id="クロスリージョンレプリケーションについて">クロスリージョンレプリケーションについて</h1>
-
-<p>名の通り、複数のリージョンにまたがってRDSを建てる仕組みのことです。<br />
+<p>名の通り、複数のリージョンにまたがってRDSを建てる仕組みのことです。<br>
 各リージョンには、リードレプリカが設置されて、Masterがダウンすると、リードレプリカくんが代わりに担当してくれます。</p>
-
-<h1 id="え-じゃあmultiazよりもいいんじゃね">え？じゃあMultiAZよりもいいんじゃね？</h1>
-
-<p><del>そうなんです、MultiAZはオワコンです。</del><br />
+<h1 id="えじゃあmultiazよりもいいんじゃね">え？じゃあMultiAZよりもいいんじゃね？</h1>
+<p><del>そうなんです、MultiAZはオワコンです。</del><br>
 と思っていた時期が私にもありました。</p>
-
 <p>クロスリージョンを行うには以下の制約があります。</p>
-
 <ul>
 <li><code>MySQL</code> <code>PostgreSQL</code> <code>MariaDB</code> <code>Amazon Aurora MySQL DB</code>にしか適応できない</li>
 <li>リージョン間の通信の遅延時間が長くなる</li>
@@ -167,30 +143,24 @@
 <li>昇格プロセスが完了するまで数分以上かかる場合がある</li>
 <li>RDSのリードレプリカは昇格するとスタンドアロンのRDSになるため、一般的なマスタ-スレイブ構成のようにフェールバックができない</li>
 </ul>
-
-<p>とりあえずクロスリージョンにすれば良いというわけでもないのです。<br />
+<p>とりあえずクロスリージョンにすれば良いというわけでもないのです。<br>
 コストや時間、RDSのDBエンジンなども考慮に入れないとベストな選択はできなさそうです。</p>
-
-<p>昇格プロセスについては、数分かかるとAWSのドキュメントに記載してあったので、書いてます。<br />
-具体的にMultiAZとクロスリージョンとで、起動にどれぐらいの差があるかは気になりますね。<br />
+<p>昇格プロセスについては、数分かかるとAWSのドキュメントに記載してあったので、書いてます。<br>
+具体的にMultiAZとクロスリージョンとで、起動にどれぐらいの差があるかは気になりますね。<br>
 気が向いたら検証してみます。</p>
-
 <h1 id="さいごに">さいごに</h1>
-
-<p>DBの重要性やコスト感を考えて運用していくことが大事。<br />
+<p>DBの重要性やコスト感を考えて運用していくことが大事。<br>
 ユースケースに合ったモデルを選びましょう。</p>
-
 <h1 id="参考">参考</h1>
-
 <ul>
 <li><a href="https://dev.classmethod.jp/cloud/aws/rds-for-postgresql-cross-region-replication/">【新機能】RDS for PostgreSQLでもリージョン間レプリケーションが可能に！</a></li>
 <li>AWS公式
-
 <ul>
 <li><a href="https://docs.aws.amazon.com/ja_jp/AmazonRDS/latest/UserGuide/USER_ReadRepl.html#USER_ReadRepl.XRgn">別のAWSリージョンでのリードレプリカの作成 &gt; クロスリージョンレプリケーションの考慮事項</a></li>
 <li><a href="https://docs.aws.amazon.com/ja_jp/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Replication.CrossRegion.html">AWS リージョン間での Amazon Aurora MySQL DB クラスターのレプリケート</a></li>
 <li><a href="https://docs.aws.amazon.com/ja_jp/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html">Amazon RDS での高可用性 (マルチ AZ)</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 

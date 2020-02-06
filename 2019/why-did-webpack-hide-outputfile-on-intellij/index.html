@@ -97,7 +97,7 @@
                 
                 <div class="subtitle is-size-6 has-text-grey-light">
                     <i class="fas fa-pen"></i>&nbsp;2019-6-30 |
-                    <i class="fas fa-redo-alt"></i>&nbsp;2019-10-31 |
+                    <i class="fas fa-redo-alt"></i>&nbsp;2020-2-7 |
                     <i class="fas fa-clock"></i>&nbsp;1 min read
                 </div>
                 
@@ -107,13 +107,7 @@
                     <div class="card-content">
                         <h1 class="title is-5">Contents</h1>
                         <div class="contents">
-                            <nav id="TableOfContents">
-<ul>
-<li><a href="#tl-dr">TL;DR</a></li>
-<li><a href="#原因">原因</a></li>
-<li><a href="#参考">参考</a></li>
-</ul>
-</nav>
+                            <nav id="TableOfContents"></nav>
                         </div>
                     </div>
                 </div>
@@ -122,35 +116,23 @@
                 
                 
 
-                
-
-<h1 id="tl-dr">TL;DR</h1>
-
+                <h1 id="tldr">TL;DR</h1>
 <p>設定からWebpackを開いて、configuration fileのパスを消す</p>
-
 <h1 id="原因">原因</h1>
-
-<p><strong>IntelliJ</strong>が賢すぎた。<br />
-というのも、webpackのアウトプット先がintelliJ IDEA上でExcluded(非表示になりIntellij上から閲覧できなくなる)のは、<br />
+<p><strong>IntelliJ</strong>が賢すぎた。<br>
+というのも、webpackのアウトプット先がintelliJ IDEA上でExcluded(非表示になりIntellij上から閲覧できなくなる)のは、<br>
 webpackの出力先フォルダだからです。</p>
-
-<p>設定は以下の場所にあり、<br />
+<p>設定は以下の場所にあり、<br>
 <code>Preferences | Languages &amp; Frameworks | JavaScript | Webpackwebpack</code>  の<code>configuration file:</code>の項目を空文字列にすることによってIntelliJ上から編集できるようになります。</p>
-
-<p><img src="https://amatsukiurato.github.io/resources/why-did-webpack-hide-outputfile-on-intellij/intellij-webpack.png" alt="intellijのsetting画像" /></p>
-
+<p><img src="https://amatsukiurato.github.io/resources/why-did-webpack-hide-outputfile-on-intellij/intellij-webpack.png" alt="intellijのsetting画像"></p>
 <p>消している理由は</p>
-
 <ol>
-<li>パフォーマンスのため<br /></li>
+<li>パフォーマンスのため</li>
 <li>そもそも編集する必要がないため</li>
 </ol>
-
-<p>みたいですね。<br />
+<p>みたいですね。<br>
 これ解決するのに結構時間かかりました…</p>
-
 <h1 id="参考">参考</h1>
-
 <p><a href="https://youtrack.jetbrains.com/issue/WEB-35875">intellij bundlei_jsが消える理由</a></p>
 
 

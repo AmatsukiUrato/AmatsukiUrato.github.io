@@ -97,7 +97,7 @@
                 
                 <div class="subtitle is-size-6 has-text-grey-light">
                     <i class="fas fa-pen"></i>&nbsp;2019-11-9 |
-                    <i class="fas fa-redo-alt"></i>&nbsp;2019-11-10 |
+                    <i class="fas fa-redo-alt"></i>&nbsp;2020-2-7 |
                     <i class="fas fa-clock"></i>&nbsp;1 min read
                 </div>
                 
@@ -108,21 +108,17 @@
                         <h1 class="title is-5">Contents</h1>
                         <div class="contents">
                             <nav id="TableOfContents">
-<ul>
-<li><a href="#functionをアロー関数に変える">functionをアロー関数に変える</a></li>
-<li><a href="#three-jsでオブジェクトを表示させるには">Three.jsでオブジェクトを表示させるには</a></li>
-<li><a href="#意味">意味</a>
-<ul>
-<li><a href="#レンダラー">レンダラー</a></li>
-<li><a href="#シーン">シーン</a></li>
-<li><a href="#カメラ">カメラ</a></li>
-<li><a href="#メッシュ">メッシュ</a>
-<ul>
-<li><a href="#ジオメトリ">ジオメトリ</a></li>
-<li><a href="#マテリアル">マテリアル</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#レンダラー">レンダラー</a></li>
+    <li><a href="#シーン">シーン</a></li>
+    <li><a href="#カメラ">カメラ</a></li>
+    <li><a href="#メッシュ">メッシュ</a>
+      <ul>
+        <li><a href="#ジオメトリ">ジオメトリ</a></li>
+        <li><a href="#マテリアル">マテリアル</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
                         </div>
                     </div>
@@ -132,64 +128,42 @@
                 
                 
 
-                
-
-<p>前回の<a href="https://amatsukiurato.github.io/2019/try-to-create-ar-page/">ブラウザでARを使ってみた</a>を触って、オブジェクトを<code>Three.js</code>で作りたいと思いました。</p>
-
+                <p>前回の<a href="https://amatsukiurato.github.io/2019/try-to-create-ar-page/">ブラウザでARを使ってみた</a>を触って、オブジェクトを<code>Three.js</code>で作りたいと思いました。</p>
 <p><code>Three.js</code>を学習するにあたって、<a href="https://ics.media/tutorial-three/quickstart/">良さげなサイト</a>があったので、こちらを参考に学習していこうと思います。忘備録です。</p>
-
 <h1 id="functionをアロー関数に変える">functionをアロー関数に変える</h1>
-
 <p>なんでアロー関数にしたいのかは、<a href="https://qiita.com/raccy/items/aac3b8e3981564bbd1fa">関数宣言 vs 関数式 | ES2015+</a>を参照。</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="nx">init</span><span class="p">);</span>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="nx">init</span><span class="p">)</span><span class="p">;</span>
 
-<span class="kd">function</span> <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
+<span class="kd">function</span> <span class="nx">init</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// 処理
 </span><span class="c1"></span><span class="p">}</span>
-</code></pre></div>
-<p>から</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="k">const</span> <span class="nx">init</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</code></pre></div><p>から</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">init</span> <span class="o">=</span> <span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="c1">// 処理
 </span><span class="c1"></span><span class="p">}</span>
-<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="nx">init</span><span class="p">);</span>
-</code></pre></div>
-<p>に変える。</p>
-
-<h1 id="three-jsでオブジェクトを表示させるには">Three.jsでオブジェクトを表示させるには</h1>
-
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="nx">init</span><span class="p">)</span><span class="p">;</span>
+</code></pre></div><p>に変える。</p>
+<h1 id="threejsでオブジェクトを表示させるには">Three.jsでオブジェクトを表示させるには</h1>
 <ol>
 <li>レンダラーを作成する</li>
 <li>シーンを作成する</li>
 </ol>
-
 <h1 id="意味">意味</h1>
-
 <h2 id="レンダラー">レンダラー</h2>
-
 <blockquote>
-<p>描画するシステムのこと<br />
+<p>描画するシステムのこと<br>
 <a href="https://www.weblio.jp/content/%E3%83%AC%E3%83%B3%E3%83%80%E3%83%A9">レンダリングエンジン</a></p>
 </blockquote>
-
 <h2 id="シーン">シーン</h2>
-
 <p>3D空間のこと。オブジェクトの置き場になる。</p>
-
 <h2 id="カメラ">カメラ</h2>
-
 <p>どの位置から撮影するかを決めるシステムのこと。</p>
-
 <h2 id="メッシュ">メッシュ</h2>
-
-<p>表示オブジェクトのこと。<br />
+<p>表示オブジェクトのこと。<br>
 メッシュを作成するには、ジオメトリとマテリアルが必要。</p>
-
 <h3 id="ジオメトリ">ジオメトリ</h3>
-
 <p>形状のこと</p>
-
 <h3 id="マテリアル">マテリアル</h3>
-
 <p>色、質感などの情報のこと</p>
 
 

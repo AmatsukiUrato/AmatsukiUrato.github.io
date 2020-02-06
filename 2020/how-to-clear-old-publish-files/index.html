@@ -97,7 +97,7 @@
                 
                 <div class="subtitle is-size-6 has-text-grey-light">
                     <i class="fas fa-pen"></i>&nbsp;2020-2-4 |
-                    <i class="fas fa-redo-alt"></i>&nbsp;2020-2-4 |
+                    <i class="fas fa-redo-alt"></i>&nbsp;2020-2-7 |
                     <i class="fas fa-clock"></i>&nbsp;3 min read
                 </div>
                 
@@ -107,15 +107,7 @@
                     <div class="card-content">
                         <h1 class="title is-5">Contents</h1>
                         <div class="contents">
-                            <nav id="TableOfContents">
-<ul>
-<li><a href="#はじめに">はじめに</a></li>
-<li><a href="#tl-dr">TL;DR</a></li>
-<li><a href="#how-to">How to</a></li>
-<li><a href="#さいごに">さいごに</a></li>
-<li><a href="#参考">参考</a></li>
-</ul>
-</nav>
+                            <nav id="TableOfContents"></nav>
                         </div>
                     </div>
                 </div>
@@ -124,26 +116,18 @@
                 
                 
 
-                
-
-<h1 id="はじめに">はじめに</h1>
-
+                <h1 id="はじめに">はじめに</h1>
 <p><code>hugo</code>でデプロイする際に、よくミスって不要記事をpublishしてしまうことがあります。
 その後再度公開を行うと、出力元のフォルダからは消えているのにもかかわらず残り続けます。</p>
-
-<p>今回はそれの解決を行いました。<br />
+<p>今回はそれの解決を行いました。<br>
 （今まではpublic以下をスクリプトで消してた…）</p>
-
-<h1 id="tl-dr">TL;DR</h1>
-
+<h1 id="tldr">TL;DR</h1>
 <ul>
 <li><code>hugo --cleanDestinationDir</code>でおｋ</li>
 </ul>
-
 <h1 id="how-to">How to</h1>
-
-<p>ほぼほぼTL;DRで終わっちゃってますが、個人的にTL;DRがある記事のほうが手っ取り早く答えを見つけられると思っているので記載してます。<br />
-ググってもあんまり情報がなかったので、こういうときはとりあえず、helpを見ようということで見たら乗ってました✌️<br />
+<p>ほぼほぼTL;DRで終わっちゃってますが、個人的にTL;DRがある記事のほうが手っ取り早く答えを見つけられると思っているので記載してます。<br>
+ググってもあんまり情報がなかったので、こういうときはとりあえず、helpを見ようということで見たら乗ってました✌️<br>
 以下が<code>hugo server -h</code>の内容です（Version : Hugo Static Site Generator v0.58.3）。該当箇所は一応矢印で強調してます。</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Hugo provides its own webserver which builds and serves the site.
 While hugo server is high performance, it is a webserver with limited options.
@@ -200,7 +184,7 @@ its are <span class="s2">&#34;ns&#34;</span>, <span class="s2">&#34;us&#34;</spa
 </span><span class="s1">      --noHTTPCache            prevent HTTP caching
 </span><span class="s1">      --noTimes                don&#39;</span>t sync modification <span class="nb">time</span> of files
       --path-warnings          print warnings on duplicate target paths etc.
-  -p, --port int               port on which the server will listen <span class="o">(</span>default <span class="m">1313</span><span class="o">)</span>
+  -p, --port int               port on which the server will listen <span class="o">(</span>default 1313<span class="o">)</span>
       --renderToDisk           render to Destination path <span class="o">(</span>default is render to memory <span class="p">&amp;</span> serve from there<span class="o">)</span>
       --templateMetrics        display metrics about template executions
       --templateMetricsHints   calculate some improvement hints when combined with --templateMetrics
@@ -220,17 +204,13 @@ Global Flags:
   -s, --source string        filesystem path to <span class="nb">read</span> files relative from
       --themesDir string     filesystem path to themes directory
   -v, --verbose              verbose output
-      --verboseLog           verbose logging</code></pre></div>
-<p>一応該当箇所の日本語訳も書いておくと、<br />
-「スタティックなディレクトリにはないやつを出力先フォルダから消すでー」<br />
+      --verboseLog           verbose logging
+</code></pre></div><p>一応該当箇所の日本語訳も書いておくと、<br>
+「スタティックなディレクトリにはないやつを出力先フォルダから消すでー」<br>
 といった感じです。そのまんまですね。</p>
-
 <h1 id="さいごに">さいごに</h1>
-
 <p>ちゃんと、公式の、ドキュメントは、読もう📔</p>
-
 <h1 id="参考">参考</h1>
-
 <ul>
 <li>helpコマンド</li>
 <li><a href="https://gohugo.io/commands/hugo_server/">公式</a></li>

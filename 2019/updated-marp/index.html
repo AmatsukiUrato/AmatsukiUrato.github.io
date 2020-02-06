@@ -97,7 +97,7 @@
                 
                 <div class="subtitle is-size-6 has-text-grey-light">
                     <i class="fas fa-pen"></i>&nbsp;2019-10-31 |
-                    <i class="fas fa-redo-alt"></i>&nbsp;2019-11-3 |
+                    <i class="fas fa-redo-alt"></i>&nbsp;2020-2-7 |
                     <i class="fas fa-clock"></i>&nbsp;3 min read
                 </div>
                 
@@ -108,21 +108,15 @@
                         <h1 class="title is-5">Contents</h1>
                         <div class="contents">
                             <nav id="TableOfContents">
-<ul>
-<li><a href="#はじめに">はじめに</a></li>
-<li><a href="#marpの良い点">Marpの良い点</a></li>
-<li><a href="#実際に使ってみる">実際に使ってみる</a>
-<ul>
-<li><a href="#marp-cli">Marp-CLI</a></li>
-<li><a href="#marp-cli-docker">Marp-CLI(Docker)</a>
-<ul>
-<li><a href="#dockerコンテナでコンバートする際のfont問題">Dockerコンテナでコンバートする際のfont問題</a></li>
-<li><a href="#解決策">解決策</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#さいごに">さいごに</a></li>
-<li><a href="#サンプル">サンプル</a></li>
-</ul>
+  <ul>
+    <li><a href="#marp-cli">Marp-CLI</a></li>
+    <li><a href="#marp-clidocker">Marp-CLI(Docker)</a>
+      <ul>
+        <li><a href="#dockerコンテナでコンバートする際のfont問題">Dockerコンテナでコンバートする際のfont問題</a></li>
+        <li><a href="#解決策">解決策</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
                         </div>
                     </div>
@@ -132,68 +126,45 @@
                 
                 
 
-                
-
-<h1 id="はじめに">はじめに</h1>
-
-<p>ずっと前から、スライドを何とかMarkdownでかけないかをずっと考えていまして、昔はMarpを使っていました。<br />
-しかし、かゆいところに手が届かないのが欠点で、ここ最近は<code>revealjs</code>というライブラリのVSCode拡張機能版<code>cscode-reveal</code>を利用しておりました。<br />
+                <h1 id="はじめに">はじめに</h1>
+<p>ずっと前から、スライドを何とかMarkdownでかけないかをずっと考えていまして、昔はMarpを使っていました。<br>
+しかし、かゆいところに手が届かないのが欠点で、ここ最近は<code>revealjs</code>というライブラリのVSCode拡張機能版<code>cscode-reveal</code>を利用しておりました。<br>
 こちらもめちゃくちゃ良くて、htmlでイカしたスライドを作りたいなら、めちゃくちゃありな選択肢だと思います。</p>
-
 <p>ずっと<code>cscode-reveal</code>を利用していたのですが、こちらはpdf化を行うときがうまく行かず、<code>pptx</code>や<code>pdf</code>の資料として作成するには少し辛いものがありました。そこで再度検索したところ、Marpがバージョンアップしており使いやすくなっていたので、今回紹介します。</p>
-
 <p><a href="https://github.com/marp-team/marp">公式Repository</a></p>
-
 <h1 id="marpの良い点">Marpの良い点</h1>
-
 <p>個人的には</p>
-
 <ul>
 <li><a href="https://github.com/marp-team/marp-cli">Marp-CLI</a>の誕生</li>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode">Marp for VS Code</a>がある</li>
 <li><a href="https://hub.docker.com/r/marpteam/marp-cli">Dockerコンテナ</a>もあるよ</li>
 <li><a href="https://marpit.marp.app/">公式Document</a>が充実してきた</li>
 </ul>
-
 <p>辺りがとても良いと思っており、助かってます。</p>
-
 <h1 id="実際に使ってみる">実際に使ってみる</h1>
-
 <h2 id="marp-cli">Marp-CLI</h2>
-
-<p>公式の言うとおりに、<code>npm</code>コマンドを用いてインストールする。<br />
+<p>公式の言うとおりに、<code>npm</code>コマンドを用いてインストールする。<br>
 今回はグローバルにインストールしました。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">npm i -g @marp-team/marp-cli</code></pre></div>
-<p>公式のRepositoryに習ってとりあえずpdfを生成してみます。<br />
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">npm i -g @marp-team/marp-cli
+</code></pre></div><p>公式のRepositoryに習ってとりあえずpdfを生成してみます。<br>
 MarkdownのSampleは最後に乗せています。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">marp <span class="o">[</span>変換するmarkdownファイル<span class="o">]</span> --pdf</code></pre></div>
-<p>上記コマンドで、pdf化が行えます。<br />
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">marp <span class="o">[</span>変換するmarkdownファイル<span class="o">]</span> --pdf
+</code></pre></div><p>上記コマンドで、pdf化が行えます。<br>
 結構いい感じでpdf化してくれてます。</p>
-
 <p><a href="https://amatsukiurato.github.io/resources/updated-marp/marp-sample.pdf">変換後のpdf</a></p>
-
 <p>他にも<code>--pptx</code>でパワポにもできたりするので、お試しあれ😏</p>
-
-<h2 id="marp-cli-docker">Marp-CLI(Docker)</h2>
-
+<h2 id="marp-clidocker">Marp-CLI(Docker)</h2>
 <p>こちらも、<a href="https://hub.docker.com/r/marpteam/marp-cli/">公式</a>の言うとおりにコマンドを実行します。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker run --rm -v <span class="nv">$PWD</span>:/home/marp/app/ -e <span class="nv">LANG</span><span class="o">=</span><span class="nv">$LANG</span> marpteam/marp-cli <span class="o">[</span>変換するmarkdownファイル<span class="o">]</span></code></pre></div>
-<p>dockerを利用しても、ちゃんとpdf化できていることが確認できます。</p>
-
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker run --rm -v <span class="nv">$PWD</span>:/home/marp/app/ -e <span class="nv">LANG</span><span class="o">=</span><span class="nv">$LANG</span> marpteam/marp-cli <span class="o">[</span>変換するmarkdownファイル<span class="o">]</span>
+</code></pre></div><p>dockerを利用しても、ちゃんとpdf化できていることが確認できます。</p>
 <p><a href="https://amatsukiurato.github.io/resources/updated-marp/marp-docker-sample.pdf">変換後のpdf</a></p>
-
 <h3 id="dockerコンテナでコンバートする際のfont問題">Dockerコンテナでコンバートする際のfont問題</h3>
-
 <p>日本語のフォントがコンテナ内部のものに依存しているからか、微妙なフォントになっています。
 dockerイメージに他のフォントがないからかも(alpine linuxだし)と思い、</p>
-
 <p><a href="https://stackoverflow.com/questions/56937689/alpine-linux-fonts">Alpine Linux fonts</a></p>
-
 <p>を参考にGoogle Fontsをインストールしたイメージを作成しましたが、うまくいきませんでした。</p>
-
 <h3 id="解決策">解決策</h3>
-
-<p>いろいろ試しましたが、styleを利用してフォントを外部インポートする方法でうまくコンバートできました。<br />
+<p>いろいろ試しましたが、styleを利用してフォントを外部インポートする方法でうまくコンバートできました。<br>
 以下の例ではgoogleFontをインポートしてます。Googleが提供しているフォントで良いのであれば、<a href="https://fonts.google.com/">こちら</a>でポチポチすれば下記のインポート用のコードまで作成してくれます。</p>
 <div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">---
 marp: true
@@ -206,25 +177,18 @@ section {
 }
 &lt;/style&gt;
 
-&lt;!-- 以下より資料用のテキストを記載する --&gt;</code></pre></div>
-<p><a href="https://amatsukiurato.github.io/resources/updated-marp/marp-docker-sample-custom-font.pdf">上記styleを含めてコンバートした際のpdf</a></p>
-
+&lt;!-- 以下より資料用のテキストを記載する --&gt;
+</code></pre></div><p><a href="https://amatsukiurato.github.io/resources/updated-marp/marp-docker-sample-custom-font.pdf">上記styleを含めてコンバートした際のpdf</a></p>
 <p>上記では、<code>Noto Serif JP</code>をインポートしてますが、おすすめは</p>
-
 <ul>
 <li>Noto Sans JP</li>
 <li>M PLUS 1p</li>
 </ul>
-
 <p>です。</p>
-
 <h1 id="さいごに">さいごに</h1>
-
-<p>Marpみたいな、イイ感じじゃないものをいい感じにするツールはやっぱり最高だと思いました！<br />
+<p>Marpみたいな、イイ感じじゃないものをいい感じにするツールはやっぱり最高だと思いました！<br>
 製作者に感謝🙇‍♂️</p>
-
 <h1 id="サンプル">サンプル</h1>
-
 <script type="application/javascript" src="https://gist.github.com/AmatsukiUrato/f3f8ea85d6dbb8e20fd026cd858ca574.js"></script>
 
 

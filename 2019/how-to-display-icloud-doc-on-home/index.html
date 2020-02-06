@@ -97,7 +97,7 @@
                 
                 <div class="subtitle is-size-6 has-text-grey-light">
                     <i class="fas fa-pen"></i>&nbsp;2019-10-29 |
-                    <i class="fas fa-redo-alt"></i>&nbsp;2019-10-31 |
+                    <i class="fas fa-redo-alt"></i>&nbsp;2020-2-7 |
                     <i class="fas fa-clock"></i>&nbsp;1 min read
                 </div>
                 
@@ -107,12 +107,7 @@
                     <div class="card-content">
                         <h1 class="title is-5">Contents</h1>
                         <div class="contents">
-                            <nav id="TableOfContents">
-<ul>
-<li><a href="#ターミナルからアクセスしづらい問題">ターミナルからアクセスしづらい問題</a></li>
-<li><a href="#参考">参考</a></li>
-</ul>
-</nav>
+                            <nav id="TableOfContents"></nav>
                         </div>
                     </div>
                 </div>
@@ -121,27 +116,16 @@
                 
                 
 
-                
-
-<p>クラウドストレージを比較している途中で、<br />
+                <p>クラウドストレージを比較している途中で、<br>
 iCloudをhomeディレクトリに移す(シンボリックリンクを貼る)作業が少し手間だったので、メモとして載せてます。</p>
-
 <h1 id="ターミナルからアクセスしづらい問題">ターミナルからアクセスしづらい問題</h1>
-
 <p>ターミナル上からiCloud Driveのファイルへアクセスしようとするには、</p>
-
 <pre><code>Users/[userName]/Library/Mobile\ Documents/com~apple~CloudDocs
-</code></pre>
-
-<p>にまでアクセスしなければならないです。<br />
-一応シンボリックリンクは貼れますが、これも少し曲者でリンク元の方にスペースが入っているため、クォーテーションでくくってあげないとだめです(自分は気づかずに10分ぐらい悩んだ)。</p>
-
+</code></pre><p>にまでアクセスしなければならないです。<br>
+一応シンボリックリンクは貼れますが、これも少し曲者でリンク元の方にスペース<code> </code>が入っているため、クォーテーションでくくってあげないとだめです(自分は気づかずに10分ぐらい悩んだ)。</p>
 <pre><code>ln -s &quot;/Users/$USER/Library/Mobile Documents/com~apple~CloudDocs&quot; iCloud
-</code></pre>
-
-<h1 id="参考">参考</h1>
-
-<p><a href="https://levlaz.org/make-a-symbolic-link-to-your-icloud-drive/">Make A Symbolic Link to Your iCloud Drive</a><br />
+</code></pre><h1 id="参考">参考</h1>
+<p><a href="https://levlaz.org/make-a-symbolic-link-to-your-icloud-drive/">Make A Symbolic Link to Your iCloud Drive</a><br>
 <a href="https://qiita.com/mom0tomo/items/aba245bcd4ce07e9a48f">ターミナルからiCloud driveに移動する方法</a></p>
 
 

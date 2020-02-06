@@ -97,7 +97,7 @@
                 
                 <div class="subtitle is-size-6 has-text-grey-light">
                     <i class="fas fa-pen"></i>&nbsp;2019-11-4 |
-                    <i class="fas fa-redo-alt"></i>&nbsp;2019-11-10 |
+                    <i class="fas fa-redo-alt"></i>&nbsp;2020-2-7 |
                     <i class="fas fa-clock"></i>&nbsp;4 min read
                 </div>
                 
@@ -108,28 +108,24 @@
                         <h1 class="title is-5">Contents</h1>
                         <div class="contents">
                             <nav id="TableOfContents">
-<ul>
-<li><a href="#はじめに">はじめに</a></li>
-<li><a href="#arの実現方法">ARの実現方法</a>
-<ul>
-<li><a href="#unity">Unity</a>
-<ul>
-<li><a href="#参考">参考</a></li>
-</ul></li>
-<li><a href="#web">Web</a>
-<ul>
-<li><a href="#参考-1">参考</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#どっちにするか">どっちにするか</a></li>
-<li><a href="#実際に動かしてみる">実際に動かしてみる</a>
-<ul>
-<li><a href="#スマホから繋げない問題">スマホから繋げない問題</a></li>
-<li><a href="#スマホ側から動作させる">スマホ側から動作させる</a></li>
-<li><a href="#pcのカメラで動作させる">PCのカメラで動作させる</a></li>
-</ul></li>
-<li><a href="#さいごに">さいごに</a></li>
-</ul>
+  <ul>
+    <li><a href="#unity">Unity</a>
+      <ul>
+        <li><a href="#参考">参考</a></li>
+      </ul>
+    </li>
+    <li><a href="#web">Web</a>
+      <ul>
+        <li><a href="#参考-1">参考</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#スマホから繋げない問題">スマホから繋げない問題</a></li>
+    <li><a href="#スマホ側から動作させる">スマホ側から動作させる</a></li>
+    <li><a href="#pcのカメラで動作させる">PCのカメラで動作させる</a></li>
+  </ul>
 </nav>
                         </div>
                     </div>
@@ -139,133 +135,83 @@
                 
                 
 
-                
-
-<h1 id="はじめに">はじめに</h1>
-
-<p>ふと、名刺にARマーカーが記載されていて、<br />
+                <h1 id="はじめに">はじめに</h1>
+<p>ふと、名刺にARマーカーが記載されていて、<br>
 川島教授の顔みたいな（脳トレ）のが出てきたら、とてもおもしろいなと思いついて触ってみました。</p>
-
 <blockquote>
-<p><img src="https://www.nintendo.co.jp/ds/anmj/top/needfla.gif" alt="顔" /><br />
+<p><img src="https://www.nintendo.co.jp/ds/anmj/top/needfla.gif" alt="顔"><br>
 <a href="https://www.nintendo.co.jp/ds/anmj/index.html">もっと脳を鍛える大人のDSトレーニング™</a></p>
 </blockquote>
-
 <p>（余談ですが、脳トレの<a href="https://topics.nintendo.co.jp/c/article/aa9b7d00-e021-11e9-b641-063b7ac45a6d.html">Switch版</a>がでるみたいです）</p>
-
 <h1 id="arの実現方法">ARの実現方法</h1>
-
-<p>軽く検索したところ、Unityで実現する方法とWeb技術で実現する方法が見つかりました。<br />
+<p>軽く検索したところ、Unityで実現する方法とWeb技術で実現する方法が見つかりました。<br>
 ネイティブで実現する方法もあると思いますが、今回はこの2つを見ていきます。</p>
-
 <h2 id="unity">Unity</h2>
-
 <p>どうやら、<code>Vuforia</code>という外部ツールと連携して使うのが主流みたいです。
 iOSだと<code>ARkit</code>、Androidだと<code>ARCore</code>というSDKを使って作成できるみたいですが、<code>Vuforia</code>はこれらをラップしてくれているみたい。</p>
-
 <blockquote>
-<p><img src="https://onetech.jp/blog/wp-content/uploads/2019/10/Vuforia-ar-develop-Engine-1024x586.png" alt="Vuforia図" />
+<p><img src="https://onetech.jp/blog/wp-content/uploads/2019/10/Vuforia-ar-develop-Engine-1024x586.png" alt="Vuforia図">
 <a href="https://onetech.jp/blog/vuforia-ar-application-development-library-features-6002">VUFORIAとは何か？ARアプリ開発に便利なライブラリの特徴 &gt; Vuforiaとは</a></p>
 </blockquote>
-
 <h3 id="参考">参考</h3>
-
 <ul>
 <li><a href="https://onetech.jp/blog/vuforia-ar-application-development-library-features-6002">VUFORIAとは何か？ARアプリ開発に便利なライブラリの特徴</a></li>
 <li><a href="https://unity3d.com/jp/partners/google/arcore">ARCore</a></li>
 <li><a href="https://qiita.com/rio_matsui/items/32cd036684d7c32f57f9">【Unity】UnityインストールからARアプリ作成まで(iOS, Android)【Vuforia】</a></li>
 <li><a href="http://makers.hatenablog.com/entry/2013/12/27/191636">【３０分でできる】Unityで簡単にARアプリを作る</a></li>
 </ul>
-
 <h2 id="web">Web</h2>
-
 <p>こちらは、<code>AR.js</code>と<code>A-Frame.js</code>を活用したものが主流みたいです。
-<code>A-Frame.js</code>でオブジェクトをレンダリングして、それを<code>AR.js</code>でAR化しているっぽいです。<br />
+<code>A-Frame.js</code>でオブジェクトをレンダリングして、それを<code>AR.js</code>でAR化しているっぽいです。<br>
 また、今回は使用していませんが<code>Three.js</code>（Webブラウザ上で3Dレンダリングできるようにするライブラリ）を組み合わせ</p>
-
 <h3 id="参考-1">参考</h3>
-
 <ul>
 <li><a href="https://qiita.com/mkoku/items/c635566e829c303a7d3f">A-FrameとAR.jsで超簡単AR（PC・スマホ・マルチマーカー対応）</a></li>
 <li><a href="https://qiita.com/sakaryu/items/769a2a538baf7e4ee1c7">【AR.js入門】簡単にWebARで遊んでみた【A-Frame使うよ】</a></li>
 <li><a href="https://iti.hatenablog.jp/entry/2017/12/04/090023">🐶AR.jsを使ってWebAR年賀状を作る🐶</a></li>
 </ul>
-
 <h1 id="どっちにするか">どっちにするか</h1>
-
 <p>Unityにするなら、アセットなどのデータを使えると思うので資産的にはすごく大きいと思いますが、Unityということは、アプリにする必要があると考えとります(UnityのWebGLビルドがどうとかは未調査です)。</p>
-
 <p>今回は簡単に実行できてほかったのと、自分がWeb技術を中心に触っていることから、Web技術で作る方針にしました。</p>
-
 <h1 id="実際に動かしてみる">実際に動かしてみる</h1>
-
 <p>とりあえず、「<a href="https://qiita.com/mkoku/items/c635566e829c303a7d3f">A-FrameとAR.jsで超簡単AR（PC・スマホ・マルチマーカー対応）</a>」を参考に作ります。
 上記リンクを参考に作ったソースはこちらです(ほぼコピペ🤔)。</p>
-
 <blockquote>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!doctype HTML&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://aframe.io/releases/0.8.2/aframe.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="c">&lt;!-- スクリプト読み込み --&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">body</span> <span class="na">style</span><span class="o">=</span><span class="s">&#39;margin:0px; overflow:hidden;&#39;</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">a-scene</span> <span class="na">embedded</span> <span class="na">arjs</span><span class="o">=</span><span class="s">&#34;debugUIEnabled:false;trackingMethod:best;&#34;</span> <span class="na">vr-mode-ui</span><span class="o">=</span><span class="s">&#34;enabled: false&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">a-marker</span> <span class="na">preset</span><span class="o">=</span><span class="s">&#34;hiro&#34;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">a-text</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;Name: Urato Amatsuki\nTwitter: @AmatsukiUrato\nGithub: AmatsukiUrato&#34;</span> <span class="na">position</span><span class="o">=</span><span class="s">&#34;0 0.5 0&#34;</span> <span class="na">align</span><span class="o">=</span><span class="s">&#34;center&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">a-text</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">a-marker</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">a-entity</span> <span class="na">camera</span><span class="p">&gt;&lt;/</span><span class="nt">a-entity</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">a-scene</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></div>
-<p>a-textの部分以外は、参考先のhtmlを使用しております。</p>
-</blockquote>
-
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"></code></pre></div></blockquote>
+<p>&lt;!doctype HTML&gt;</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h2 id="スマホから繋げない問題">スマホから繋げない問題</h2>
-
 <p><del>上記を参考に、<code>index.html</code>を作成します。とりあえずのテストなので、<code>nginx</code>のDockerコンテナを使って立てました。</del></p>
-
 <p><del>下記Dockerコマンドを叩くカレントディレクトリに<code>index.html</code>をおいておけば<code>localhost:8080</code>または、同一ネットワークから<code>[dockerを起動しているPCのip]:8080</code>で接続が可能になります。</del></p>
-
 <p><del><code>docker run --name nignx -v $PWD:/usr/share/nginx/html -d -p 8080:80 -h 0.0.0.0 nginx</code></del></p>
-
-<p><del>自分のスマホでアクセスしてみます。<br />
-&hellip;<br />
-表示されない…だと!?<br />
-やっぱりhttps通信じゃないのが原因なんですかね？</del><br />
+<p><del>自分のスマホでアクセスしてみます。<br>
+&hellip;<br>
+表示されない…だと!?<br>
+やっぱりhttps通信じゃないのが原因なんですかね？</del><br>
 <figure>
     <img src="https://amatsukiurato.github.io/resources/try-to-create-ar-page/not-supported.png" width="400px"/> 
 </figure>
 </p>
-
-<p>https通信が行えていないことが原因でうまく行ってませんでした。<br />
+<p>https通信が行えていないことが原因でうまく行ってませんでした。<br>
 同一ネットワーク内からなら行けるんじゃねという謎の考えのせい😭</p>
-
 <h2 id="スマホ側から動作させる">スマホ側から動作させる</h2>
-
-<p><a href="https://iti.hatenablog.jp/entry/2017/12/04/090023">🐶AR.jsを使ってWebAR年賀状を作る🐶</a><br />
+<p><a href="https://iti.hatenablog.jp/entry/2017/12/04/090023">🐶AR.jsを使ってWebAR年賀状を作る🐶</a><br>
 を参考にして、rubyのワンライナーでhttpsサーバを立てたところ、うまくいきました(圧倒的感謝…!!)。</p>
-
 <p>下記ワンライナーはカレントディレクトリのデータを外部に公開してくれるものみたいです。</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="n">ruby</span> <span class="o">-</span><span class="n">rwebrick</span> <span class="o">-</span><span class="n">rwebrick</span><span class="o">/</span><span class="n">https</span> <span class="o">-</span><span class="n">e</span> <span class="s1">&#39;WEBrick::HTTPServer.new(:DocumentRoot =&gt; &#34;./&#34;, :Port =&gt; 8000, :SSLEnable =&gt; true, :SSLCertName =&gt; [[&#34;CN&#34;, WEBrick::Utils::getservername]] ).start&#39;</span></code></pre></div>
-<p>実際に接続してみた画像がこちらです。
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="n">ruby</span> <span class="o">-</span><span class="n">rwebrick</span> <span class="o">-</span><span class="n">rwebrick</span><span class="o">/</span><span class="n">https</span> <span class="o">-</span><span class="n">e</span> <span class="s1">&#39;WEBrick::HTTPServer.new(:DocumentRoot =&gt; &#34;./&#34;, :Port =&gt; 8000, :SSLEnable =&gt; true, :SSLCertName =&gt; [[&#34;CN&#34;, WEBrick::Utils::getservername]] ).start&#39;</span>
+</code></pre></div><p>実際に接続してみた画像がこちらです。
 今回はとりあえず、自分のInfoをテキストで表示するところまで行いました。</p>
-
 <figure>
     <img src="https://amatsukiurato.github.io/resources/try-to-create-ar-page/can-display-ar-sp.png"
          alt="can-display-ar-sp" width="400px"/> 
 </figure>
 
-
 <h2 id="pcのカメラで動作させる">PCのカメラで動作させる</h2>
-
 <p>MacBookProのカメラで無理やり確認したやつも載せておきます。</p>
-
-<p><img src="https://amatsukiurato.github.io/resources/try-to-create-ar-page/can-display-ar-pc.png" alt="can-display-ar-pc" /></p>
-
+<p><img src="https://amatsukiurato.github.io/resources/try-to-create-ar-page/can-display-ar-pc.png" alt="can-display-ar-pc"></p>
 <h1 id="さいごに">さいごに</h1>
-
-<p>とりあえず、ARマーカーを使って文字を表示できるところまでは実装できました(ほぼほぼ自分が書いたところがない🙈)。<br />
+<p>とりあえず、ARマーカーを使って文字を表示できるところまでは実装できました(ほぼほぼ自分が書いたところがない🙈)。<br>
 結局、解説ページの後をなぞって終わりになってしまったので、次やるときは、もう少し違うものを表示させてみたいです。<code>Three.js</code>を触って見るものも面白いかもしれないです。</p>
 
 

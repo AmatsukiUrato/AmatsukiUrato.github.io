@@ -124,7 +124,7 @@
       <pubDate>Tue, 29 Oct 2019 05:47:19 +0900</pubDate>
       
       <guid>https://amatsukiurato.github.io/2019/how-to-display-icloud-doc-on-home/</guid>
-      <description>クラウドストレージを比較している途中で、 iCloudをhomeディレクトリに移す(シンボリックリンクを貼る)作業が少し手間だったので、メモとして載せてます。 ターミナルからアクセスしづらい問題 ターミナル上からiCloud Driveのファイルへアクセスしようとするには、 Users/[userName]/Library/Mobile\ Documents/com~apple~CloudDocs にまでアクセスしなければならないです。 一応シンボリックリンクは貼れますが、これも少し曲者でリンク元の方にスペースが入っているため、クォーテーションでくくってあげないとだめです(自分は気づかずに10分ぐらい悩んだ)。 ln -s &amp;quot;/Users/$USER/Library/Mobile Documents/com~apple~CloudDocs&amp;quot; iCloud 参考 Make</description>
+      <description>クラウドストレージを比較している途中で、 iCloudをhomeディレクトリに移す(シンボリックリンクを貼る)作業が少し手間だったので、メモとして載せてます。 ターミナルからアクセスしづらい問題 ターミナル上からiCloud Driveのファイルへアクセスしようとするには、 Users/[userName]/Library/Mobile\ Documents/com~apple~CloudDocs にまでアクセスしなければならないです。 一応シンボリックリンクは貼れますが、これも少し曲者でリンク元の方にスペース が入っているため、クォーテーションでくくってあげないとだめです(自分は気づかずに10分ぐらい悩んだ)。 ln -s &amp;quot;/Users/$USER/Library/Mobile Documents/com~apple~CloudDocs&amp;quot; iCloud 参考 Make</description>
     </item>
     
     <item>
@@ -160,7 +160,7 @@
       <pubDate>Mon, 14 Oct 2019 15:28:36 +0900</pubDate>
       
       <guid>https://amatsukiurato.github.io/2019/how-to-select-multipulclass-material-ui/</guid>
-      <description>TL;DR classデータをstring配列として持つ 配列.join(&#39; &#39;)を該当のclassName={}の中に記述する 概要 最近、Reactについての勉強を行っていたところ、classの指定に手間取ってしまったのでメモ。 方法としては、探したところ、以下2つがあるみたい。 class名の配列を作成して、最後にjoinで配列の間にを入れて出力 classNameの中で、２つのclass名を呼び出す。 汎用性があるのは方法1のほうだと思われます。 面倒くさいのでソースベタ貼りしてます。 BoxはMaterial-ui</description>
+      <description>TL;DR classデータをstring配列として持つ 配列.join(&#39; &#39;)を該当のclassName={}の中に記述する 概要 最近、Reactについての勉強を行っていたところ、classの指定に手間取ってしまったのでメモ。 方法としては、探したところ、以下2つがあるみたい。 class名の配列を作成して、最後にjoinで配列の間に を入れて出力 classNameの中で、２つのclass名を呼び出す。 汎用性があるのは方法1のほうだと思われます。 面倒くさいのでソースベタ貼りしてます。 BoxはMaterial-ui</description>
     </item>
     
     <item>
@@ -223,7 +223,7 @@
       <pubDate>Tue, 16 Apr 2019 04:52:33 +0900</pubDate>
       
       <guid>https://amatsukiurato.github.io/2019/migration-from-lightsail/</guid>
-      <description>移行しました AWSのLight Sail + WordPressでやってましたが、 WordPressがだるすぎたので AWSの[AWS Amplify + Hugo]に移行しました。 現在は[github pages + Hugo] github pages とかをそのまま使うのも良かったけど、 AWSのサービスを触ってみたかったのでこっちで立ててみました。 Hugoに移って最初に記事書いていて思うけど、 やっぱMarkdownが最強なんだわ。 スラスラ書ける😎 一応WordPressでもMarkdownで書けるプラグイン📕は少し出てたけど、 めっちゃこれいいやん、みたいなプラグインは</description>
+      <description>移行しました AWSのLight Sail + WordPressでやってましたが、 WordPressがだるすぎたので AWSの~~[AWS Amplify + Hugo]に移行しました。~~ 現在は[github pages + Hugo] github pages とかをそのまま使うのも良かったけど、 AWSのサービスを触ってみたかったのでこっちで立ててみました。 Hugoに移って最初に記事書いていて思うけど、 やっぱMarkdownが最強なんだわ。 スラスラ書ける😎 一応WordPressでもMarkdownで書けるプラグイン📕は少し出てたけど、 めっちゃこれいいやん、みたいなプラ</description>
     </item>
     
     <item>
@@ -232,7 +232,7 @@
       <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>https://amatsukiurato.github.io/2017/create-live-camera-by-raspberrypi-model-b/</guid>
-      <description>旧サイトの記事を移行してきたものとなります。 今日のご飯が何かを確認したいためのラズパイカメラ作成を行います この前RaspberryPi 3 Model Bを買ってそこら辺に転がってたUSBカメラと繋げて台所に出て来るご飯をブラウザ上から見られるようにしたのでその時の経緯を記載。 NOOBSを使ってRaspbianを入れる お前初心者かよｗｗと煽っているわけではないです。 NOOBSとは、ラズパイ用に作られたDebianベースのOSであるRaspbianとかを簡単にインストールできるようにしたインストーラーです。 NO</description>
+      <description>今日のご飯が何かを確認したいためのラズパイカメラ作成を行います この前RaspberryPi 3 Model Bを買ってそこら辺に転がってたUSBカメラと繋げて台所に出て来るご飯をブラウザ上から見られるようにしたのでその時の経緯を記載。 NOOBSを使ってRaspbianを入れる お前初心者かよｗｗと煽っているわけではないです。 NOOBSとは、ラズパイ用に作られたDebianベースのOSであるRaspbianとかを簡単にインストールできるようにしたインストーラーです。 NOOBSダウンロードページでNOOBS落として</description>
     </item>
     
     <item>
@@ -241,7 +241,7 @@
       <pubDate>Mon, 31 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://amatsukiurato.github.io/2016/fixed-homebrew-error-that-reinstall-macos/</guid>
-      <description>旧サイトの記事を移行してきたものとなります。 ==&amp;gt; Using the sandbox Error: /usr/local/opt/jpeg not present or broken Please reinstall jpeg. Sorry :( why!?? 結構悩みましたが、以下のコマンドで直りました。 brew unlink jpeg &amp;amp;&amp;amp; brew link jpeg こういう系の問題って目的の記事とかが見つかれば一瞬なんですけど、 見つかるまで永遠に解決しないので本当に辛い・・・。 参考:Library not loaded: /usr/local/opt/jpeg/lib/libjpeg.8.dylib #323</description>
+      <description>==&amp;gt; Using the sandbox Error: /usr/local/opt/jpeg not present or broken Please reinstall jpeg. Sorry :( why!?? 結構悩みましたが、以下のコマンドで直りました。 brew unlink jpeg &amp;amp;&amp;amp; brew link jpeg こういう系の問題って目的の記事とかが見つかれば一瞬なんですけど、 見つかるまで永遠に解決しないので本当に辛い・・・。 参考:Library not loaded: /usr/local/opt/jpeg/lib/libjpeg.8.dylib #323</description>
     </item>
     
     <item>
@@ -250,7 +250,7 @@
       <pubDate>Fri, 19 Aug 2016 00:00:00 +0000</pubDate>
       
       <guid>https://amatsukiurato.github.io/2016/very-slow-kav-on-terminal/</guid>
-      <description>旧サイトの記事を移行してきたものとなります。 TL;DR サポセンに連絡しましたが、現在調査中で 2015年版を利用すればなんとかなるかもとのこと。 2019年現在は直っている可能性があります（未検証）。 概要 Kaspersky for Macが入っているPCにrbenvを入れると、ターミナルの動作がめちゃくちゃ重たくなります。 起動に8sもかかると、使い物にならないので カスペルスキーのサポセンにぶん投げてました。 rbenvの測定を行ったのが、以下の画像です。 回答 2015年版を使えば直るかもしれないので、そっちを使ってくださいとのこと。 自</description>
+      <description>TL;DR サポセンに連絡しましたが、現在調査中で 2015年版を利用すればなんとかなるかもとのこと。 2019年現在は直っている可能性があります（未検証）。 概要 Kaspersky for Macが入っているPCにrbenvを入れると、ターミナルの動作がめちゃくちゃ重たくなります。 起動に8sもかかると、使い物にならないので カスペルスキーのサポセンにぶん投げてました。 rbenvの測定を行ったのが、以下の画像です。 回答 2015年版を使えば直るかもしれないので、そっちを使ってくださいとのこと。 自分はマルウェア対策ソフトを、Aviraにいっ</description>
     </item>
     
     <item>
@@ -259,7 +259,7 @@
       <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://amatsukiurato.github.io/2016/want-to-delete-tab-marker/</guid>
-      <description>旧サイトの記事を移行してきたものとなります。 Eclipseのタブを可視化した際に表示される、&amp;gt;を消したかった。 これがあると個人的には見づらいです。 Eclipseの改行、タブ文字非表示 こちらに解決法がありました。 JStyleってのを弄れば良かったらしいです。</description>
+      <description>Eclipseの改行、タブ文字非表示 こちらに解決法がありました。 JStyleってのを弄れば良かったらしいです。</description>
     </item>
     
   </channel>
