@@ -2,8 +2,84 @@
 gtag('js',new Date());gtag('config','UA-143787598-1');</script></head><body><nav class=navbar role=navigation aria-label="main navigation"><div class=navbar-brand><a class=navbar-item href=https://amatsukiurato.github.io>Home</a><div class=navbar-item>ぎじゅつわふたー</div><a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=navbar-sub><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a></div><div id=navbar-sub class=navbar-menu><div class=navbar-start></div><div class=navbar-end><div class=navbar-item><a class="navbar-item nav-right" href=https://amatsukiurato.github.io/food>飯</a>
 <a class="navbar-item nav-right" href=https://amatsukiurato.github.io/about>About</a></div></div></nav><script>document.addEventListener('DOMContentLoaded',()=>{const $navbarBurgers=Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'),0);if($navbarBurgers.length>0){$navbarBurgers.forEach(el=>{el.addEventListener('click',()=>{const target=el.dataset.target;const $target=document.getElementById(target);el.classList.toggle('is-active');$target.classList.toggle('is-active');});});}});</script></body><div class=container><div class=section><div class=columns><div class="column is-9"><div class="tile is-child box"><div class=content><p class="title is-4">Hugoで一度publishしてしまったファイルをデプロイ時に消す</p><div class="subtitle is-size-6 has-text-grey-light"><i class="fas fa-pen"></i>&nbsp;2020-2-4 |
 <i class="fas fa-redo-alt"></i>&nbsp;2020-2-9 |
-<i class="fas fa-clock"></i>&nbsp;3 min read</div><hr><div class=card><div class=card-content><h1 class="title is-5">Contents</h1><div class=contents><nav id=TableOfContents></nav></div></div></div><hr><h1 id=はじめに>はじめに</h1><p><code>hugo</code>でデプロイする際に、よくミスって不要記事をpublishしてしまうことがあります。
-その後再度公開を行うと、出力元のフォルダからは消えているのにもかかわらず残り続けます。</p><p>今回はそれの解決を行いました。<br>（今まではpublic以下をスクリプトで消してた…）</p><h1 id=tldr>TL;DR</h1><ul><li><code>hugo --cleanDestinationDir</code>でおｋ</li></ul><h1 id=how-to>How to</h1><p>ほぼほぼTL;DRで終わっちゃってますが、個人的にTL;DRがある記事のほうが手っ取り早く答えを見つけられると思っているので記載してます。<br>ググってもあんまり情報がなかったので、こういうときはとりあえず、helpを見ようということで見たら乗ってました✌️<br>以下が<code>hugo server -h</code>の内容です（Version : Hugo Static Site Generator v0.58.3）。該当箇所は一応矢印で強調してます。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>Hugo provides its own webserver which builds and serves the site.
+<i class="fas fa-clock"></i>&nbsp;3 min read</div><hr><div class=card><div class=card-content><h1 class="title is-5">Contents</h1><div class=contents><nav id=TableOfContents><ol><li><a href=#はじめに>はじめに</a></li><li><a href=#tldr>TL;DR</a></li><li><a href=#how-to>How to</a></li><li><a href=#さいごに>さいごに</a></li><li><a href=#参考>参考</a></li></ol></nav></div></div></div><hr><h1 id=はじめに>はじめに</h1><p><code>hugo</code>でデプロイする際に、よくミスって不要記事をpublishしてしまうことがあります。
+その後再度公開を行うと、出力元のフォルダからは消えているのにもかかわらず残り続けます。</p><p>今回はそれの解決を行いました。<br>（今まではpublic以下をスクリプトで消してた…）</p><h1 id=tldr>TL;DR</h1><ul><li><code>hugo --cleanDestinationDir</code>でおｋ</li></ul><h1 id=how-to>How to</h1><p>ほぼほぼTL;DRで終わっちゃってますが、個人的にTL;DRがある記事のほうが手っ取り早く答えを見つけられると思っているので記載してます。<br>ググってもあんまり情報がなかったので、こういうときはとりあえず、helpを見ようということで見たら乗ってました✌️<br>以下が<code>hugo server -h</code>の内容です（Version : Hugo Static Site Generator v0.58.3）。該当箇所は一応矢印で強調してます。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span><span class=lnt>76
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>Hugo provides its own webserver which builds and serves the site.
 While hugo server is high performance, it is a webserver with limited options.
 Many run it in production, but the standard behavior is <span class=k>for</span> people to use it
 in development and use a more full featured server such as Nginx or Caddy.
@@ -79,7 +155,7 @@ Global Flags:
       --themesDir string     filesystem path to themes directory
   -v, --verbose              verbose output
       --verboseLog           verbose logging
-</code></pre></div><p>一応該当箇所の日本語訳も書いておくと、<br>「スタティックなディレクトリにはないやつを出力先フォルダから消すでー」<br>といった感じです。そのまんまですね。</p><h1 id=さいごに>さいごに</h1><p>ちゃんと、公式の、ドキュメントは、読もう📔</p><h1 id=参考>参考</h1><ul><li>helpコマンド</li><li><a href=https://gohugo.io/commands/hugo_server/>公式</a></li></ul></div><hr><div>Tags: <a class="tag is-link" href=https://amatsukiurato.github.io/tags/hugo/>#hugo</a> <a class="tag is-link" href=https://amatsukiurato.github.io/tags/command/>#command</a></div><hr><div><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class=twitter-share-button data-show-count=false>Tweet</a><script async src=https://platform.twitter.com/widgets.js></script>
+</code></pre></td></tr></table></div></div><p>一応該当箇所の日本語訳も書いておくと、<br>「スタティックなディレクトリにはないやつを出力先フォルダから消すでー」<br>といった感じです。そのまんまですね。</p><h1 id=さいごに>さいごに</h1><p>ちゃんと、公式の、ドキュメントは、読もう📔</p><h1 id=参考>参考</h1><ul><li>helpコマンド</li><li><a href=https://gohugo.io/commands/hugo_server/>公式</a></li></ul></div><hr><div>Tags: <a class="tag is-link" href=https://amatsukiurato.github.io/tags/hugo/>#hugo</a> <a class="tag is-link" href=https://amatsukiurato.github.io/tags/command/>#command</a></div><hr><div><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class=twitter-share-button data-show-count=false>Tweet</a><script async src=https://platform.twitter.com/widgets.js></script>
 <a href=https://b.hatena.ne.jp/entry/ class=hatena-bookmark-button data-hatena-bookmark-layout=basic-label data-hatena-bookmark-lang=ja title=このエントリーをはてなブックマークに追加><img src=https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png alt=このエントリーをはてなブックマークに追加 width=20 height=20 style=border:none></a><script type=text/javascript src=https://b.st-hatena.com/js/bookmark_button.js async></script></div><hr><div><div id=disqus_thread></div><script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return;}
 var d=document,s=d.createElement('script');s.async=true;s.src='//'+"https-amatsukiurato-github-io"+'.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div><div class="column is-3"><div class=card><div class=card-content><h1 class="title is-5">Tags</h1><div class=tags><span class=tag><a href=https://amatsukiurato.github.io/tags/a-frame>a-frame</a></span>
 <span class=tag><a href=https://amatsukiurato.github.io/tags/amazon-rds>amazon-rds</a></span>
