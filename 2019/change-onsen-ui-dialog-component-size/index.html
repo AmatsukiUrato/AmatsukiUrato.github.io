@@ -1,7 +1,7 @@
 <!doctype html><html lang=ja-jp><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>ぎじゅつわふたー | Onsen-UIのDialogコンポーネントサイズを変更する</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=https://matsu4ki.github.io/favicon/favicon.ico><link href="https://fonts.googleapis.com/css?family=Open+Sans" rel=stylesheet><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css><link rel=stylesheet href=https://matsu4ki.github.io/css/blog.css><link rel=stylesheet href=https://matsu4ki.github.io/css/syntax.css><script async src="https://www.googletagmanager.com/gtag/js?id=UA-143787598-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());gtag('config','UA-143787598-1');</script></head><body><nav class=navbar role=navigation aria-label="main navigation"><div class=navbar-brand><a class=navbar-item href=https://matsu4ki.github.io>Home</a><div class=navbar-item>ぎじゅつわふたー</div><a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=navbar-sub><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a></div><div id=navbar-sub class=navbar-menu><div class=navbar-start></div><div class=navbar-end><div class=navbar-item><a class="navbar-item nav-right" href=https://matsu4ki.github.io/food>飯</a>
 <a class="navbar-item nav-right" href=https://matsu4ki.github.io/about>About</a></div></div></nav><script>document.addEventListener('DOMContentLoaded',()=>{const $navbarBurgers=Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'),0);if($navbarBurgers.length>0){$navbarBurgers.forEach(el=>{el.addEventListener('click',()=>{const target=el.dataset.target;const $target=document.getElementById(target);el.classList.toggle('is-active');$target.classList.toggle('is-active');});});}});</script></body><div class=container><div class=section><div class=columns><div class="column is-9"><div class="tile is-child box"><div class=content><p class="title is-4">Onsen-UIのDialogコンポーネントサイズを変更する</p><div class="subtitle is-size-6 has-text-grey-light"><i class="fas fa-pen"></i>&nbsp;2019-7-4 |
-<i class="fas fa-redo-alt"></i>&nbsp;2020-2-26 |
+<i class="fas fa-redo-alt"></i>&nbsp;2020-2-27 |
 <i class="fas fa-clock"></i>&nbsp;1 min read</div><hr><div class=card><div class=card-content><h1 class="title is-5">Contents</h1><div class=contents><nav id=TableOfContents><ol><li><a href=#tldr>TL;DR</a></li><li><a href=#概要>概要</a></li><li><a href=#解決方法>解決方法🤗</a></li><li><a href=#実行結果>実行結果🎥</a><ol><li><a href=#ソースコード>ソースコード📓</a></li></ol></li></ol></nav></div></div></div><hr><h2 id=tldr>TL;DR</h2><ul><li>Onsen-UI読み込み後に出力されるDialogをコピーして手動で使う</li><li>Dialog群の形だけ取得しているので、Show, Hide共にこちら側で呼ぶ必要あり</li><li>Onsen-UIのタグオブジェクトから、Onsen-UI側で用意されている<code>show()</code>, <code>hide()</code>などが呼び出せる<ul><li>これを使って自分で制御を行う</li></ul></li></ul><h2 id=概要>概要</h2><p>以下の画像のような、アラートのサイズを変更したいのにできない。
 Onsen-UIの公式リファレンスを見てもDialogの項目にそれっぽい動作をしてくれるDialogはない。。
 <img src=https://matsu4ki.github.io/resources/change-onsen-ui-dialog-component-size/alert.png alt=onsenui-alert></p><h2 id=解決方法>解決方法🤗</h2><ol><li><code>ons.notification.alert();</code>を実行して、でOnsen-UIの要素を取得する。</li><li>要素をhtmlに貼り付ける。</li><li><code>ons-alert-dialog</code>に<code>id</code>をつけて、手動でDialogの表示/非表示を制御する。</li></ol><p>onsタグのオブジェクトをjsで取得すると、<code>show()</code>や<code>hide()</code>などのメソッドが使用できるようになる。<br><a href=https://onsen.io/v2/api/js/ons-modal.html#method-show>https://onsen.io/v2/api/js/ons-modal.html#method-show</a></p><h2 id=実行結果>実行結果🎥</h2><p>以下の動画では<code>width="90%"</code>で設定しています
@@ -11,51 +11,51 @@ Onsen-UIの公式リファレンスを見てもDialogの項目にそれっぽい
 var d=document,s=d.createElement('script');s.async=true;s.src='//'+"tech-wafter"+'.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div><div class="column is-3"><div class=card><div class=card-content><h1 class="title is-5">Tags</h1><div class=tags><span class=tag><a href=https://matsu4ki.github.io/tags/hugo/>Hugo</a>&nbsp;|&nbsp;6</span>
 <span class=tag><a href=https://matsu4ki.github.io/tags/aws/>AWS</a>&nbsp;|&nbsp;5</span>
 <span class=tag><a href=https://matsu4ki.github.io/tags/javascript/>JavaScript</a>&nbsp;|&nbsp;4</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/extention/>Extention</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/setting/>Setting</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/route53/>Route53</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/vscode/>VSCode</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/icloud/>iCloud</a>&nbsp;|&nbsp;2</span>
 <span class=tag><a href=https://matsu4ki.github.io/tags/git/>git</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/route53/>Route53</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/setting/>Setting</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/icloud/>iCloud</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/vscode/>VSCode</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/extention/>Extention</a>&nbsp;|&nbsp;2</span>
 <span class=tag><a href=https://matsu4ki.github.io/tags/terminal/>Terminal</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/revealjs/>revealjs</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/cloud2.0/>Cloud2.0</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/eclipse/>Eclipse</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/react/>React</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/ubuntu/>Ubuntu</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/onedrive/>OneDrive</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/db/>DB</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/%E3%83%9D%E3%82%A8%E3%83%A0/>ポエム</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/template/>template</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/tech/>Tech</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/box/>Box</a>&nbsp;|&nbsp;1</span>
 <span class=tag><a href=https://matsu4ki.github.io/tags/nodejs/>Nodejs</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/ar.js/>AR.js</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/lt/>LT</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/googledrive/>GoogleDrive</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/raspberrypi/>RaspberryPi</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/markdown/>markdown</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/gas/>Gas</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/docker/>Docker</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/marp/>Marp</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/extension/>Extension</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/read/>read</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/amazon-rds/>Amazon RDS</a>&nbsp;|&nbsp;1</span>
 <span class=tag><a href=https://matsu4ki.github.io/tags/kaspersky/>Kaspersky</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/homebrew/>Homebrew</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/googledrive/>GoogleDrive</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/dropbox/>DropBox</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/db/>DB</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/%E3%82%B7%E3%83%B3%E3%83%9C%E3%83%AA%E3%83%83%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%AF/>シンボリックリンク</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/ci/>ci</a>&nbsp;|&nbsp;1</span>
 <span class=tag><a href=https://matsu4ki.github.io/tags/git-secrets/>git-secrets</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/powershell/>PowerShell</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/webpack/>Webpack</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/raspberrypi/>RaspberryPi</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/cloudstrage/>CloudStrage</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/poem/>poem</a>&nbsp;|&nbsp;1</span>
 <span class=tag><a href=https://matsu4ki.github.io/tags/github-action/>github-action</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/version/>Version</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/%E5%8B%89%E5%BC%B7/>勉強</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/s3/>S3</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/docker/>Docker</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/tech/>Tech</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/windows/>Windows</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/feeling/>Feeling</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/three.js/>Three.js</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/markdown/>markdown</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/extension/>Extension</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/cloud2.0/>Cloud2.0</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/slow/>Slow</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/intellij/>IntelliJ</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/revealjs/>revealjs</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/onedrive/>OneDrive</a>&nbsp;|&nbsp;1</span>
 <span class=tag><a href=https://matsu4ki.github.io/tags/book/>book</a>&nbsp;|&nbsp;1</span>
 <span class=tag><a href=https://matsu4ki.github.io/tags/css/>CSS</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/version/>Version</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/%E3%83%9D%E3%82%A8%E3%83%A0/>ポエム</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/react/>React</a>&nbsp;|&nbsp;1</span>
 <span class=tag><a href=https://matsu4ki.github.io/tags/onsen-ui/>Onsen-UI</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/a-frame/>A-Frame</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/poem/>poem</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/go/>go</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/feeling/>Feeling</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/copyq/>CopyQ</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/dropbox/>DropBox</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://matsu4ki.github.io/tags/slow/>Slow</a>&nbsp;|&nbsp;1</span></div></div></div><br><div class=card><div class=card-content><h1 class="title is-5">Recent posts</h1><h1><a href=https://matsu4ki.github.io/2020/read-after-digital/>アフターデジタルを読んだ</a></h1><time class="has-text-grey-light is-size-7">26 February 2020</time><h1><a href=https://matsu4ki.github.io/2020/tried-lightningtalk-in-the-office/>社内のLT大会に参加してみた（自分のテーマは[Gasを用いた確認作業の自動化]）</a></h1><time class="has-text-grey-light is-size-7">25 February 2020</time><h1><a href=https://matsu4ki.github.io/2020/hugo-can-show-numberline-on-code-by-config/>configの設定からHugoで表示するコードに番号を表示する</a></h1><time class="has-text-grey-light is-size-7">18 February 2020</time><h1><a href=https://matsu4ki.github.io/2020/build-hugo-homepage-by-github-action/>Github-Actionsでhugoのデプロイを自動化してみた</a></h1><time class="has-text-grey-light is-size-7">10 February 2020</time><h1><a href=https://matsu4ki.github.io/2020/how-to-clear-old-publish-files/>Hugoで一度publishしてしまったファイルをデプロイ時に消す</a></h1><time class="has-text-grey-light is-size-7">4 February 2020</time></div></div><br><div class=card><div class=card-content><h1 class="title is-5">Related posts</h1><h1><a href=https://matsu4ki.github.io/2019/study-three.js-1/>Three.jsを学習する【第一回】</a></h1><time class="has-text-grey-light is-size-7">9 November 2019</time><h1><a href=https://matsu4ki.github.io/2019/try-to-create-ar-page/>ブラウザでARを使ってみた</a></h1><time class="has-text-grey-light is-size-7">4 November 2019</time></div></div><br><div class=card><div class=card-content><h1 class="title is-5">Archives</h1><a href=https://matsu4ki.github.io/archives/2020>2020</a> (6)<br><a href=https://matsu4ki.github.io/archives/2019>2019</a> (22)<br><a href=https://matsu4ki.github.io/archives/2017>2017</a> (1)<br><a href=https://matsu4ki.github.io/archives/2016>2016</a> (3)<br></div></div></div></div></div></div><footer class="footer has-background-grey-darker has-text-white"><div class="content has-text-centered"><p><a class=mysocial href=https://matsu4ki.github.io/about>About</a></p><p><span class="icon is-large"><a href=https://twitter.com/AmatsukiUrato class=mysocial rel=me><i class="fab fa-twitter fa-3x"></i></a></span>&nbsp;&nbsp;
+<span class=tag><a href=https://matsu4ki.github.io/tags/marp/>Marp</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/%E5%8B%89%E5%BC%B7/>勉強</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/lt/>LT</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/template/>template</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/front/>Front</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/%E6%96%B0%E5%8D%92%E5%AF%BE%E5%BF%9C/>新卒対応</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/awsloft/>AWSLoft</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://matsu4ki.github.io/tags/ubuntu/>Ubuntu</a>&nbsp;|&nbsp;1</span></div></div></div><br><div class=card><div class=card-content><h1 class="title is-5">Recent posts</h1><h1><a href=https://matsu4ki.github.io/2020/read-after-digital/>アフターデジタルを読んだ</a></h1><time class="has-text-grey-light is-size-7">26 February 2020</time><h1><a href=https://matsu4ki.github.io/2020/tried-lightningtalk-in-the-office/>社内のLT大会に参加してみた（自分のテーマは[Gasを用いた確認作業の自動化]）</a></h1><time class="has-text-grey-light is-size-7">25 February 2020</time><h1><a href=https://matsu4ki.github.io/2020/hugo-can-show-numberline-on-code-by-config/>configの設定からHugoで表示するコードに番号を表示する</a></h1><time class="has-text-grey-light is-size-7">18 February 2020</time><h1><a href=https://matsu4ki.github.io/2020/build-hugo-homepage-by-github-action/>Github-Actionsでhugoのデプロイを自動化してみた</a></h1><time class="has-text-grey-light is-size-7">10 February 2020</time><h1><a href=https://matsu4ki.github.io/2020/how-to-clear-old-publish-files/>Hugoで一度publishしてしまったファイルをデプロイ時に消す</a></h1><time class="has-text-grey-light is-size-7">4 February 2020</time></div></div><br><div class=card><div class=card-content><h1 class="title is-5">Related posts</h1><h1><a href=https://matsu4ki.github.io/2019/study-three.js-1/>Three.jsを学習する【第一回】</a></h1><time class="has-text-grey-light is-size-7">9 November 2019</time><h1><a href=https://matsu4ki.github.io/2019/try-to-create-ar-page/>ブラウザでARを使ってみた</a></h1><time class="has-text-grey-light is-size-7">4 November 2019</time></div></div><br><div class=card><div class=card-content><h1 class="title is-5">Archives</h1><a href=https://matsu4ki.github.io/archives/2020>2020</a> (6)<br><a href=https://matsu4ki.github.io/archives/2019>2019</a> (22)<br><a href=https://matsu4ki.github.io/archives/2017>2017</a> (1)<br><a href=https://matsu4ki.github.io/archives/2016>2016</a> (3)<br></div></div></div></div></div></div><footer class="footer has-background-grey-darker has-text-white"><div class="content has-text-centered"><p><a class=mysocial href=https://matsu4ki.github.io/about>About</a></p><p><span class="icon is-large"><a href=https://twitter.com/AmatsukiUrato class=mysocial rel=me><i class="fab fa-twitter fa-3x"></i></a></span>&nbsp;&nbsp;
 <span class="icon is-large"><a href=https://github.com/matsu4ki class=mysocial rel=me><i class="fab fa-github fa-3x"></i></a></span>&nbsp;&nbsp;</p><p>Copyright &copy; ぎじゅつわふたー 2018-2020<br>Theme by <a href=https://jeffprod.com class=mysocial>JeffProd.com</a></p><p>Code licensed under <a href=https://matsu4ki.github.io/about#%E3%83%96%E3%83%AD%E3%82%B0%E3%81%AE%E8%A8%98%E4%BA%8B%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6>Multi License</a><br>Documentation under <a rel=license href=http://creativecommons.org/licenses/by/4.0/><img alt=クリエイティブ・コモンズ・ライセンス style=border-width:0 src=https://i.creativecommons.org/l/by/4.0/88x31.png></a></p></div></footer><script defer src=https://use.fontawesome.com/releases/v5.1.0/js/all.js></script></body></html>
