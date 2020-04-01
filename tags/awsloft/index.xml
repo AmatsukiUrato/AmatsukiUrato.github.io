@@ -1,1 +1,23 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AWSLoft on ぎじゅつわふたー</title><link>https://tech-wafter.net/tags/awsloft/</link><description>Recent content in AWSLoft on ぎじゅつわふたー</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><lastBuildDate>Thu, 31 Oct 2019 02:19:44 +0900</lastBuildDate><atom:link href="https://tech-wafter.net/tags/awsloft/index.xml" rel="self" type="application/rss+xml"/><item><title>Amazon Game Tech Night Osakaに行ってみた</title><link>https://tech-wafter.net/2019/game-tech-night-cloud2.0/</link><pubDate>Thu, 31 Oct 2019 02:19:44 +0900</pubDate><guid>https://tech-wafter.net/2019/game-tech-night-cloud2.0/</guid><description>畑違いの業種なのですが、 AWS Pop-Up Loft Osakaが行われるとのことだったので、Game Tech Nightへ参加しました！ 会場は最初から最後まで、飲食ありのラフな感じで開催されておりました😊 登壇者は全員おもしろい発表をされていましたが、とくに面白かったCloud2.0についての所感を記載しております。 もうそこまで迫っている！ Cloud2.0時代の開発 info 登壇者 丹羽さん/GS2のCEO HP https://gs2.io/ フルマネージドサービスを使おう 処理をフルマネージドにすることで、復旧対策や管理までAWSが担保してくれる あえてロックインされにい</description></item></channel></rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWSLoft on ぎじゅつわふたー</title>
+    <link>https://tech-wafter.net/tags/awsloft/</link>
+    <description>Recent content in AWSLoft on ぎじゅつわふたー</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Thu, 31 Oct 2019 02:19:44 +0900</lastBuildDate>
+    
+        <atom:link href="https://tech-wafter.net/tags/awsloft/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Amazon Game Tech Night Osakaに行ってみた</title>
+      <link>https://tech-wafter.net/2019/game-tech-night-cloud2.0/</link>
+      <pubDate>Thu, 31 Oct 2019 02:19:44 +0900</pubDate>
+      
+      <guid>https://tech-wafter.net/2019/game-tech-night-cloud2.0/</guid>
+      <description>畑違いの業種なのですが、 AWS Pop-Up Loft Osakaが行われるとのことだったので、Game Tech Nightへ参加しました！ 会場は最初から最後まで、飲食ありのラフな感じで開催されておりました😊 登壇者は全員おもしろい発表をされていましたが、とくに面白かったCloud2.0についての所感を記載しております。 もうそこまで迫っている！ Cloud2.0時代の開発 info 登壇者 丹羽さん/GS2のCEO HP https://gs2.io/ フルマネージドサービスを使おう 処理をフルマネージドにすることで、復旧対策や管理までAWSが担保してくれる あえてロックインされにい</description>
+    </item>
+    
+  </channel>
+</rss>
