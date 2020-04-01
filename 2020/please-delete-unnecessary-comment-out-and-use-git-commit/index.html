@@ -1,447 +1,66 @@
-<!DOCTYPE html>
-<html lang="ja-jp">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ぎじゅつわふたー  | 不要ソースコードをコメントアウトするなら、削除して履歴を残して😭</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="shortcut icon" href="https://tech-wafter.net/favicon/favicon.ico" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
-    <link rel="stylesheet" href="https://tech-wafter.net/css/blog.css" />
-    <link rel="stylesheet" href="https://tech-wafter.net/css/syntax.css" />
-    
-
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143787598-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-143787598-1');
-    </script>
-</head>
-
-<body>
-
-    
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="https://tech-wafter.net">Home</a>
-            <div class="navbar-item">
-                
-                ぎじゅつわふたー
-                
-            </div>
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                data-target="navbar-sub">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
-        <div id="navbar-sub" class="navbar-menu">
-            <div class="navbar-start">
-            </div>
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <a class="navbar-item nav-right" href="https://tech-wafter.net/food">飯</a>
-                    <a class="navbar-item nav-right" href="https://tech-wafter.net/about">About</a>
-                </div>
-            </div>
-    </nav>
-    
-    <script>
-        
-        document.addEventListener('DOMContentLoaded', () => {
-
-            
-            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-            
-            if ($navbarBurgers.length > 0) {
-
-                
-                $navbarBurgers.forEach(el => {
-                    el.addEventListener('click', () => {
-
-                        
-                        const target = el.dataset.target;
-                        const $target = document.getElementById(target);
-
-                        
-                        el.classList.toggle('is-active');
-                        $target.classList.toggle('is-active');
-
-                    });
-                });
-            }
-
-        });
-    </script>
-</body>
-
-<div class="container">
-    <div class="section">
-    
-
-<div class="columns">
-    <div class="column is-9">
-        <div class="tile is-child box">
-            <div class="content">
-                <p class="title is-4">不要ソースコードをコメントアウトするなら、削除して履歴を残して😭</p>
-                
-                <div class="subtitle is-size-6 has-text-grey-light">
-                    <i class="fas fa-pen"></i>&nbsp;2020-3-31 |
-                    <i class="fas fa-redo-alt"></i>&nbsp;2020-4-1 |
-                    <i class="fas fa-clock"></i>&nbsp;5 min read
-                </div>
-                
-                <hr />
-                
-                
-                <div class="card">
-                    <div class="card-content">
-                        <h1 class="title is-5">Contents</h1>
-                        <div class="contents">
-                            <nav id="TableOfContents">
-  <ol>
-    <li><a href="#はじめに">はじめに</a></li>
-    <li><a href="#tldr">TL;DR</a></li>
-    <li><a href="#1そのまま残す">1.そのまま残す</a>
-      <ol>
-        <li><a href="#既存コードへの対応策">既存コードへの対応策</a></li>
-      </ol>
-    </li>
-    <li><a href="#2コメントアウトする">2.コメントアウトする</a>
-      <ol>
-        <li><a href="#既存コードへの対応策-1">既存コードへの対応策</a></li>
-      </ol>
-    </li>
-    <li><a href="#3削除する">3.削除する</a></li>
-    <li><a href="#さいごに">さいごに</a></li>
-    <li><a href="#参考">参考</a></li>
-  </ol>
-</nav>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                
-                
-                
-                
-
-                <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">信じられないだろうが、バージョン管理システムへの登録や更新も「非効率的」とか「無駄な工数」とか抜かすSEもプログラマも多い。</p>&mdash; Yuichi Onodera (@mokemoke6502) <a href="https://twitter.com/mokemoke6502/status/1242821172779089922?ref_src=twsrc%5Etfw">March 25, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<p>に対して、</p>
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">gitは使ってるけどコメントが<br>・画面の修正をした<br>・バグを直した<br>・一旦コミット<br>とかの意味がほぼ無いコメントで埋もれてるgitは見かける <a href="https://t.co/9A6NV7nwoA">https://t.co/9A6NV7nwoA</a></p>&mdash; matsuaki (@matsu4ki) <a href="https://twitter.com/matsu4ki/status/1243170931935023106?ref_src=twsrc%5Etfw">March 26, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<p>と引用リツイートしたのですが、もう少し自分で整理しておきたいと思い記事にしました。</p>
-<h2 id="はじめに">はじめに</h2>
-<p>gitでソースコード管理をしている際、仕様変更などで特定の関数自体が不要になる場合があります。
-その時、対応しているエンジニアが取れる行動としては、</p>
-<ol>
-<li>放置</li>
-<li>コメントアウト</li>
-<li>削除</li>
-</ol>
-<p>の3つがあると思います。
-今回はこの3つの対応について話していこうと思います。</p>
-<h2 id="tldr">TL;DR</h2>
-<ul>
-<li>とりあえずどこかに、なぜそうしたかの理由を書いておく</li>
-<li>不要なソースコードは削除して、コミット履歴に理由を書いといてね。</li>
-</ul>
-<h2 id="1そのまま残す">1.そのまま残す</h2>
-<p>これが一番最悪なパターンです。</p>
-<p>使われていないのに残っているということは、それだけムダな容量を取っているということになります。また、変更しないため、gitの変更履歴にも残りません。コミットからなぜこのソースコードが消されていないのかの理由も探すこともできないのです。もしこのケースになっているソースコードが散乱しているシステムに出くわした場合、ソースコード的にもPJメンバー的にもやばいと思います。ほぼ間違いなくソースコードは管理されていません。</p>
-<h3 id="既存コードへの対応策">既存コードへの対応策</h3>
-<p>バッサリと未使用のソースコードは削除するべきです。</p>
-<p>そのPJに該当ソースコードが使われていた理由を知っているPJメンバーがいる場合は別ですが、基本的には使用目的のサルベージは不可能だと思って問題ないです。また、使用目的が不明なので再利用される可能性も限りなく低いです。</p>
-<p>ただし、削除する前に本当に使われていないかの検証を行う必要があります。
-PJ全体で問題定義を行うところから入ったほうが良いでしょう。</p>
-<h2 id="2コメントアウトする">2.コメントアウトする</h2>
-<p>こちらもあまり良いとは言えません。</p>
-<p>コードがコメントアウトされていることによってわかる情報は、</p>
-<ul>
-<li>今は利用されていない</li>
-</ul>
-<p>のみとなります。コメントアウトされた理由としては、</p>
-<ul>
-<li>再度利用される可能性がある</li>
-<li>とりあえず動作させたいから</li>
-<li>メモ</li>
-</ul>
-<p>などが考えられますが、どれなのかは第三者から到底把握できるものではありません。また、このようにコメントアウトするエンジニアのコミット履歴を確認しても「とりあえずコミット」や「一旦コミット」と意味のないコメントを記載しているか、別のコミットに滑り込ませている場合が体感として多いです。</p>
-<h3 id="既存コードへの対応策-1">既存コードへの対応策</h3>
-<p>こちらも、問題1と同様に削除するべきだと思います。
-しかし、こちらは使用されていないことが分かっているので問題1よりはスムーズに削除できると思います。注意事項も問題1と同じです。</p>
-<p>どうしてもコメントアウトを行う場合は、なぜコメントアウトにするのかをコメントアウトするソースの先頭やコミットのコメントに<strong>必ず記載してください</strong>。</p>
-<p>また、メモなどでコメントアウトしている場合は<code>NOTE:</code>を、動作が明瞭でないソースコードには<code>XXX:</code>などのアノテーションコメントを入れることも検討しましょう。IDE側で検索やハイライトが行えるため見通しが良くなります。</p>
-<h2 id="3削除する">3.削除する</h2>
-<p>ソースコード管理ツールを利用している状況下では、この選択が一番良いです。</p>
-<p>削除する際には、なぜ削除を行うのかという理由をコメントで残しておきましょう。
+<!doctype html><html lang=ja-jp><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>ぎじゅつわふたー | 不要ソースコードをコメントアウトするなら、削除して履歴を残して😭</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=https://tech-wafter.net/favicon/favicon.ico><link href="https://fonts.googleapis.com/css?family=Open+Sans" rel=stylesheet><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css><link rel=stylesheet href=https://tech-wafter.net/css/blog.css><link rel=stylesheet href=https://tech-wafter.net/css/syntax.css><script async src="https://www.googletagmanager.com/gtag/js?id=UA-143787598-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-143787598-1');</script></head><body><nav class=navbar role=navigation aria-label="main navigation"><div class=navbar-brand><a class=navbar-item href=https://tech-wafter.net>Home</a><div class=navbar-item>ぎじゅつわふたー</div><a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=navbar-sub><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a></div><div id=navbar-sub class=navbar-menu><div class=navbar-start></div><div class=navbar-end><div class=navbar-item><a class="navbar-item nav-right" href=https://tech-wafter.net/food>飯</a>
+<a class="navbar-item nav-right" href=https://tech-wafter.net/about>About</a></div></div></nav><script>document.addEventListener('DOMContentLoaded',()=>{const $navbarBurgers=Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'),0);if($navbarBurgers.length>0){$navbarBurgers.forEach(el=>{el.addEventListener('click',()=>{const target=el.dataset.target;const $target=document.getElementById(target);el.classList.toggle('is-active');$target.classList.toggle('is-active');});});}});</script></body><div class=container><div class=section><div class=columns><div class="column is-9"><div class="tile is-child box"><div class=content><p class="title is-4">不要ソースコードをコメントアウトするなら、削除して履歴を残して😭</p><div class="subtitle is-size-6 has-text-grey-light"><i class="fas fa-pen"></i>&nbsp;2020-3-31 |
+<i class="fas fa-redo-alt"></i>&nbsp;2020-4-1 |
+<i class="fas fa-clock"></i>&nbsp;5 min read</div><hr><div class=card><div class=card-content><h1 class="title is-5">Contents</h1><div class=contents><nav id=TableOfContents><ol><li><a href=#はじめに>はじめに</a></li><li><a href=#tldr>TL;DR</a></li><li><a href=#1そのまま残す>1.そのまま残す</a><ol><li><a href=#既存コードへの対応策>既存コードへの対応策</a></li></ol></li><li><a href=#2コメントアウトする>2.コメントアウトする</a><ol><li><a href=#既存コードへの対応策-1>既存コードへの対応策</a></li></ol></li><li><a href=#3削除する>3.削除する</a></li><li><a href=#さいごに>さいごに</a></li><li><a href=#参考>参考</a></li></ol></nav></div></div></div><hr><blockquote class=twitter-tweet><p lang=ja dir=ltr>信じられないだろうが、バージョン管理システムへの登録や更新も「非効率的」とか「無駄な工数」とか抜かすSEもプログラマも多い。</p>&mdash; Yuichi Onodera (@mokemoke6502) <a href="https://twitter.com/mokemoke6502/status/1242821172779089922?ref_src=twsrc%5Etfw">March 25, 2020</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script><p>に対して、</p><blockquote class=twitter-tweet><p lang=ja dir=ltr>gitは使ってるけどコメントが<br>・画面の修正をした<br>・バグを直した<br>・一旦コミット<br>とかの意味がほぼ無いコメントで埋もれてるgitは見かける <a href=https://t.co/9A6NV7nwoA>https://t.co/9A6NV7nwoA</a></p>&mdash; matsuaki (@matsu4ki) <a href="https://twitter.com/matsu4ki/status/1243170931935023106?ref_src=twsrc%5Etfw">March 26, 2020</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script><p>と引用リツイートしたのですが、もう少し自分で整理しておきたいと思い記事にしました。</p><h2 id=はじめに>はじめに</h2><p>gitでソースコード管理をしている際、仕様変更などで特定の関数自体が不要になる場合があります。
+その時、対応しているエンジニアが取れる行動としては、</p><ol><li>放置</li><li>コメントアウト</li><li>削除</li></ol><p>の3つがあると思います。
+今回はこの3つの対応について話していこうと思います。</p><h2 id=tldr>TL;DR</h2><ul><li>とりあえずどこかに、なぜそうしたかの理由を書いておく</li><li>不要なソースコードは削除して、コミット履歴に理由を書いといてね。</li></ul><h2 id=1そのまま残す>1.そのまま残す</h2><p>これが一番最悪なパターンです。</p><p>使われていないのに残っているということは、それだけムダな容量を取っているということになります。また、変更しないため、gitの変更履歴にも残りません。コミットからなぜこのソースコードが消されていないのかの理由も探すこともできないのです。もしこのケースになっているソースコードが散乱しているシステムに出くわした場合、ソースコード的にもPJメンバー的にもやばいと思います。ほぼ間違いなくソースコードは管理されていません。</p><h3 id=既存コードへの対応策>既存コードへの対応策</h3><p>バッサリと未使用のソースコードは削除するべきです。</p><p>そのPJに該当ソースコードが使われていた理由を知っているPJメンバーがいる場合は別ですが、基本的には使用目的のサルベージは不可能だと思って問題ないです。また、使用目的が不明なので再利用される可能性も限りなく低いです。</p><p>ただし、削除する前に本当に使われていないかの検証を行う必要があります。
+PJ全体で問題定義を行うところから入ったほうが良いでしょう。</p><h2 id=2コメントアウトする>2.コメントアウトする</h2><p>こちらもあまり良いとは言えません。</p><p>コードがコメントアウトされていることによってわかる情報は、</p><ul><li>今は利用されていない</li></ul><p>のみとなります。コメントアウトされた理由としては、</p><ul><li>再度利用される可能性がある</li><li>とりあえず動作させたいから</li><li>メモ</li></ul><p>などが考えられますが、どれなのかは第三者から到底把握できるものではありません。また、このようにコメントアウトするエンジニアのコミット履歴を確認しても「とりあえずコミット」や「一旦コミット」と意味のないコメントを記載しているか、別のコミットに滑り込ませている場合が体感として多いです。</p><h3 id=既存コードへの対応策-1>既存コードへの対応策</h3><p>こちらも、問題1と同様に削除するべきだと思います。
+しかし、こちらは使用されていないことが分かっているので問題1よりはスムーズに削除できると思います。注意事項も問題1と同じです。</p><p>どうしてもコメントアウトを行う場合は、なぜコメントアウトにするのかをコメントアウトするソースの先頭やコミットのコメントに<strong>必ず記載してください</strong>。</p><p>また、メモなどでコメントアウトしている場合は<code>NOTE:</code>を、動作が明瞭でないソースコードには<code>XXX:</code>などのアノテーションコメントを入れることも検討しましょう。IDE側で検索やハイライトが行えるため見通しが良くなります。</p><h2 id=3削除する>3.削除する</h2><p>ソースコード管理ツールを利用している状況下では、この選択が一番良いです。</p><p>削除する際には、なぜ削除を行うのかという理由をコメントで残しておきましょう。
 また、コミットは削除のみで行うことにも注意しておきたいです。他の変更と混ぜてしまうと何の変更を行ったのかが分かりづらくなります。
-再利用される可能性がある場合は、チケットなどにコミット番号を残しておくと良いと思います。gitはコミット番号で簡単に検索することができるので、コミット番号と簡易的な説明以外は必要ないかもです。</p>
-<h2 id="さいごに">さいごに</h2>
-<p>大事なことは、数カ月後に誰が見てもなぜこのような処理にしたのかを把握できる状態にしておくことです。</p>
-<p>なので、既存のソースコードをリファクタリングで削除する際にも、必ず「XXの経緯でリファクタリングを行うことになり、削除した」などのコメントを残すことが大切だと思います。Backlogなどのプロジェクト管理ツールを利用している場合は、対応チケットの番号を記載し、具体的なやり取りはチケットに記載する方法でも問題ないです。</p>
-<p>また、今後運用していく際にで同じ轍を踏まないようにするため</p>
-<ul>
-<li>wikiなどのドキュメントに運用方法を記載する</li>
-<li>ソースコードレビューでリジェクトする</li>
-<li>PJ管理ツールへのリンクがないコミットはコミットできないようにする</li>
-<li>PJのソースコードを定期的にアナライズする</li>
-</ul>
-<p>などの対策も必要です。
+再利用される可能性がある場合は、チケットなどにコミット番号を残しておくと良いと思います。gitはコミット番号で簡単に検索することができるので、コミット番号と簡易的な説明以外は必要ないかもです。</p><h2 id=さいごに>さいごに</h2><p>大事なことは、数カ月後に誰が見てもなぜこのような処理にしたのかを把握できる状態にしておくことです。</p><p>なので、既存のソースコードをリファクタリングで削除する際にも、必ず「XXの経緯でリファクタリングを行うことになり、削除した」などのコメントを残すことが大切だと思います。Backlogなどのプロジェクト管理ツールを利用している場合は、対応チケットの番号を記載し、具体的なやり取りはチケットに記載する方法でも問題ないです。</p><p>また、今後運用していく際にで同じ轍を踏まないようにするため</p><ul><li>wikiなどのドキュメントに運用方法を記載する</li><li>ソースコードレビューでリジェクトする</li><li>PJ管理ツールへのリンクがないコミットはコミットできないようにする</li><li>PJのソースコードを定期的にアナライズする</li></ul><p>などの対策も必要です。
 とはいえ、実際にやるとやはり大変です。
-まずは既存メンバーのコメントを見直すなど、できることから行っていくことが大切だと思います。</p>
-<h2 id="参考">参考</h2>
-<ul>
-<li><a href="https://qiita.com/taka-kawa/items/673716d77795c937d422">TODO: 以外のアノテーションコメントをまとめた - Qiita</a></li>
-</ul>
-
-
-
-            </div>
-            
-            <hr />
-            <div>Tags: <a class="tag is-link" href="https://tech-wafter.net/tags/git/">#git</a> <a class="tag is-link" href="https://tech-wafter.net/tags/git%e7%ae%a1%e7%90%86/">#git管理</a> <a class="tag is-link" href="https://tech-wafter.net/tags/%e9%81%8b%e7%94%a8/">#運用</a></div>
-            <hr />
-            
-            <div>
-                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-            </div>
-            <hr />
-            <div>
-            <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "tech-wafter" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-            </div>
-            
-
-
-        </div>
-    </div>
-    <div class="column is-3">
-        <div class="card">
-    <div class="card-content">
-        <h1 class="title is-5">Tags</h1>
-        <div class="tags">
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/hugo/">Hugo</a>&nbsp;|&nbsp;6</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/aws/">AWS</a>&nbsp;|&nbsp;5</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/git/">git</a>&nbsp;|&nbsp;4</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/vscode/">VSCode</a>&nbsp;|&nbsp;3</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/javascript/">JavaScript</a>&nbsp;|&nbsp;3</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/extention/">Extention</a>&nbsp;|&nbsp;2</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/ci/">ci</a>&nbsp;|&nbsp;2</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/intellij/">IntelliJ</a>&nbsp;|&nbsp;2</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/setting/">Setting</a>&nbsp;|&nbsp;2</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/github-action/">github-action</a>&nbsp;|&nbsp;2</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/terminal/">Terminal</a>&nbsp;|&nbsp;2</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/poem/">poem</a>&nbsp;|&nbsp;2</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/route53/">Route53</a>&nbsp;|&nbsp;2</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/icloud/">iCloud</a>&nbsp;|&nbsp;2</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/slow/">Slow</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/copyq/">CopyQ</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/uv4l/">uv4l</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/onsen-ui/">Onsen-UI</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/windows/">Windows</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/diff/">diff</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/study/">study</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/fornewbie/">forNewbie</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/chrome/">chrome</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/docker/">Docker</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/windows-terminal/">Windows Terminal</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/homebrew/">Homebrew</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/marp/">Marp</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/awsloft/">AWSLoft</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/cloud2.0/">Cloud2.0</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/powershell/">PowerShell</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/eclipse/">Eclipse</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/onedrive/">OneDrive</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/react/">React</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/markdown/">markdown</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/version/">Version</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/read/">read</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/lt/">LT</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/revealjs/">revealjs</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/github-pages/">github-pages</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/ubuntu/">Ubuntu</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/s3/">S3</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/cloudstrage/">CloudStrage</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/go/">go</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/amazon-rds/">Amazon RDS</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/kaspersky/">Kaspersky</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/three.js/">Three.js</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/googledrive/">GoogleDrive</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/command/">command</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/webpack/">webpack</a>&nbsp;|&nbsp;1</span>
-            
-            <span class="tag"><a href="https://tech-wafter.net/tags/game/">Game</a>&nbsp;|&nbsp;1</span>
-            
-        </div>
-    </div>
-</div><br>
-        <div class="card">
-    <div class="card-content">
-        <h1 class="title is-5">Recent posts</h1>
-        
-            <h1><a href="https://tech-wafter.net/2020/reopen-devtools-console-on-source-tab/">DevToolsにあるSourceタブ内で閉じてしまったconsoleを再度開く（Chrome）</a></h1>
-            <time class="has-text-grey-light is-size-7">31 March 2020</time>
-        
-            <h1><a href="https://tech-wafter.net/2020/please-delete-unnecessary-comment-out-and-use-git-commit/">不要ソースコードをコメントアウトするなら、削除して履歴を残して😭</a></h1>
-            <time class="has-text-grey-light is-size-7">31 March 2020</time>
-        
-            <h1><a href="https://tech-wafter.net/2020/try-to-hard-to-display-intellij-like-annotate-diff/">VSCode上でIntelliJライクなgitのannotate diffができるらしい</a></h1>
-            <time class="has-text-grey-light is-size-7">24 March 2020</time>
-        
-            <h1><a href="https://tech-wafter.net/2020/deploy-custom-domain-github-pages-on-github-actions/">GitHub-ActionsでカスタムドメインのGitHub-Pagesをデプロイすると、カスタムドメインの登録が消える</a></h1>
-            <time class="has-text-grey-light is-size-7">1 March 2020</time>
-        
-            <h1><a href="https://tech-wafter.net/2020/read-after-digital/">アフターデジタルを読んだ</a></h1>
-            <time class="has-text-grey-light is-size-7">26 February 2020</time>
-        
-    </div>
-</div><br>
-                
-  
-
-
-
-<div class="card">
-    <div class="card-content">
-        <h1 class="title is-5">Related posts</h1>
-      
-      
-            <h1><a href="https://tech-wafter.net/2020/try-to-hard-to-display-intellij-like-annotate-diff/">VSCode上でIntelliJライクなgitのannotate diffができるらしい</a></h1>
-            <time class="has-text-grey-light is-size-7">24 March 2020</time>
-      
-            <h1><a href="https://tech-wafter.net/2019/tried-using-git-secrets/">git-secretsのawsトークン保護を検証してみた</a></h1>
-            <time class="has-text-grey-light is-size-7">7 November 2019</time>
-      
-            <h1><a href="https://tech-wafter.net/2019/adapted-hugo-gitinfo/">hugoの.GitInfoが適応された話(理由は不明です…)</a></h1>
-            <time class="has-text-grey-light is-size-7">20 October 2019</time>
-      
-    </div>
-</div>
-
-    
-<br>
-        <div class="card">
-    <div class="card-content">
-        <h1 class="title is-5">Archives</h1>
-        
-            <a href="https://tech-wafter.net/archives/2020">2020</a> (10)<br>
-        
-            <a href="https://tech-wafter.net/archives/2019">2019</a> (22)<br>
-        
-            <a href="https://tech-wafter.net/archives/2017">2017</a> (1)<br>
-        
-            <a href="https://tech-wafter.net/archives/2016">2016</a> (3)<br>
-        
-    </div>
-</div>
-
-    </div>
-</div>
-
-    
-    </div>
-</div>
-
-<footer class="footer has-background-grey-darker has-text-white">
-    <div class="content has-text-centered">
-        <p>
-            <a class="mysocial" href="https://tech-wafter.net/about">About</a>
-        </p>
-        <p>
-            <span class="icon is-large"><a href="https://twitter.com/AmatsukiUrato" class="mysocial" rel="me"><i class="fab fa-twitter fa-3x"></i></a></span>&nbsp;&nbsp;
-            <span class="icon is-large"><a href="https://github.com/matsu4ki" class="mysocial" rel="me"><i class="fab fa-github fa-3x"></i></a></span>&nbsp;&nbsp;
-            <span class="icon is-large"><a href="https://tech-wafter.net/index.xml" class="mysocial" rel="me"><i class="fas fa-rss fa-3x"></i></a></span>&nbsp;&nbsp;
-        </p>
-        <p>
-            Copyright &copy; ぎじゅつわふたー 2018-2020
-            <br>
-            Theme by <a href="https://jeffprod.com" class="mysocial">JeffProd.com</a>
-        </p>
-        <p>
-            Code licensed under <a href="https://tech-wafter.net/about#%E3%83%96%E3%83%AD%E3%82%B0%E3%81%AE%E8%A8%98%E4%BA%8B%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">Multi License</a><br>
-            Documentation under <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="クリエイティブ・コモンズ・ライセンス" style="vertical-align: middle;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
-        </p>
-    </div>
-</footer>
-
-<script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
-</body>
-</html>
+まずは既存メンバーのコメントを見直すなど、できることから行っていくことが大切だと思います。</p><h2 id=参考>参考</h2><ul><li><a href=https://qiita.com/taka-kawa/items/673716d77795c937d422>TODO: 以外のアノテーションコメントをまとめた - Qiita</a></li></ul></div><hr><div>Tags: <a class="tag is-link" href=https://tech-wafter.net/tags/git/>#git</a> <a class="tag is-link" href=https://tech-wafter.net/tags/git%e7%ae%a1%e7%90%86/>#git管理</a> <a class="tag is-link" href=https://tech-wafter.net/tags/%e9%81%8b%e7%94%a8/>#運用</a></div><hr><div><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class=twitter-share-button data-show-count=false>Tweet</a><script async src=https://platform.twitter.com/widgets.js></script>
+<a href=https://b.hatena.ne.jp/entry/ class=hatena-bookmark-button data-hatena-bookmark-layout=basic-label data-hatena-bookmark-lang=ja title=このエントリーをはてなブックマークに追加><img src=https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png alt=このエントリーをはてなブックマークに追加 width=20 height=20 style=border:none></a><script type=text/javascript src=https://b.st-hatena.com/js/bookmark_button.js async></script></div><hr><div><div id=disqus_thread></div><script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return;}
+var d=document,s=d.createElement('script');s.async=true;s.src='//'+"tech-wafter"+'.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div><div class="column is-3"><div class=card><div class=card-content><h1 class="title is-5">Tags</h1><div class=tags><span class=tag><a href=https://tech-wafter.net/tags/hugo/>Hugo</a>&nbsp;|&nbsp;6</span>
+<span class=tag><a href=https://tech-wafter.net/tags/aws/>AWS</a>&nbsp;|&nbsp;5</span>
+<span class=tag><a href=https://tech-wafter.net/tags/git/>git</a>&nbsp;|&nbsp;4</span>
+<span class=tag><a href=https://tech-wafter.net/tags/javascript/>JavaScript</a>&nbsp;|&nbsp;3</span>
+<span class=tag><a href=https://tech-wafter.net/tags/vscode/>VSCode</a>&nbsp;|&nbsp;3</span>
+<span class=tag><a href=https://tech-wafter.net/tags/poem/>poem</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/setting/>Setting</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/extention/>Extention</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/icloud/>iCloud</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/ci/>ci</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/terminal/>Terminal</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/route53/>Route53</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/github-action/>github-action</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/intellij/>IntelliJ</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/tab/>Tab</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/css/>CSS</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/tech/>Tech</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/db/>DB</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/git%E7%AE%A1%E7%90%86/>git管理</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/awsloft/>AWSLoft</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/docker/>Docker</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/s3/>S3</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/ar/>AR</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/uv4l/>uv4l</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/three.js/>Three.js</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/powershell/>PowerShell</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/amazon-rds/>Amazon RDS</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/react/>React</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/webpack/>webpack</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/template/>template</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/cloud2.0/>Cloud2.0</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/windows/>Windows</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/fornewbie/>forNewbie</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/%E3%82%B7%E3%83%B3%E3%83%9C%E3%83%AA%E3%83%83%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%AF/>シンボリックリンク</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/windows-terminal/>Windows Terminal</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/feeling/>Feeling</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/read/>read</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/kaspersky/>Kaspersky</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/box/>Box</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/lt/>LT</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/nodejs/>Nodejs</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/ar.js/>AR.js</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/study/>study</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/homebrew/>Homebrew</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/chrome/>chrome</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/book/>book</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/onedrive/>OneDrive</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/blame/>blame</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/onsen-ui/>Onsen-UI</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/diff/>diff</a>&nbsp;|&nbsp;1</span></div></div></div><br><div class=card><div class=card-content><h1 class="title is-5">Recent posts</h1><h1><a href=https://tech-wafter.net/2020/reopen-devtools-console-on-source-tab/>DevToolsにあるSourceタブ内で閉じてしまったconsoleを再度開く（Chrome）</a></h1><time class="has-text-grey-light is-size-7">31 March 2020</time><h1><a href=https://tech-wafter.net/2020/please-delete-unnecessary-comment-out-and-use-git-commit/>不要ソースコードをコメントアウトするなら、削除して履歴を残して😭</a></h1><time class="has-text-grey-light is-size-7">31 March 2020</time><h1><a href=https://tech-wafter.net/2020/try-to-hard-to-display-intellij-like-annotate-diff/>VSCode上でIntelliJライクなgitのannotate diffができるらしい</a></h1><time class="has-text-grey-light is-size-7">24 March 2020</time><h1><a href=https://tech-wafter.net/2020/deploy-custom-domain-github-pages-on-github-actions/>GitHub-ActionsでカスタムドメインのGitHub-Pagesをデプロイすると、カスタムドメインの登録が消える</a></h1><time class="has-text-grey-light is-size-7">1 March 2020</time><h1><a href=https://tech-wafter.net/2020/read-after-digital/>アフターデジタルを読んだ</a></h1><time class="has-text-grey-light is-size-7">26 February 2020</time></div></div><br><div class=card><div class=card-content><h1 class="title is-5">Related posts</h1><h1><a href=https://tech-wafter.net/2020/try-to-hard-to-display-intellij-like-annotate-diff/>VSCode上でIntelliJライクなgitのannotate diffができるらしい</a></h1><time class="has-text-grey-light is-size-7">24 March 2020</time><h1><a href=https://tech-wafter.net/2019/tried-using-git-secrets/>git-secretsのawsトークン保護を検証してみた</a></h1><time class="has-text-grey-light is-size-7">7 November 2019</time><h1><a href=https://tech-wafter.net/2019/adapted-hugo-gitinfo/>hugoの.GitInfoが適応された話(理由は不明です…)</a></h1><time class="has-text-grey-light is-size-7">20 October 2019</time></div></div><br><div class=card><div class=card-content><h1 class="title is-5">Archives</h1><a href=https://tech-wafter.net/archives/2020>2020</a> (10)<br><a href=https://tech-wafter.net/archives/2019>2019</a> (22)<br><a href=https://tech-wafter.net/archives/2017>2017</a> (1)<br><a href=https://tech-wafter.net/archives/2016>2016</a> (3)<br></div></div></div></div></div></div><footer class="footer has-background-grey-darker has-text-white"><div class="content has-text-centered"><p><a class=mysocial href=https://tech-wafter.net/about>About</a></p><p><span class="icon is-large"><a href=https://twitter.com/AmatsukiUrato class=mysocial rel=me><i class="fab fa-twitter fa-3x"></i></a></span>&nbsp;&nbsp;
+<span class="icon is-large"><a href=https://github.com/matsu4ki class=mysocial rel=me><i class="fab fa-github fa-3x"></i></a></span>&nbsp;&nbsp;
+<span class="icon is-large"><a href=https://tech-wafter.net/index.xml class=mysocial rel=me><i class="fas fa-rss fa-3x"></i></a></span>&nbsp;&nbsp;</p><p>Copyright &copy; ぎじゅつわふたー 2018-2020<br>Theme by <a href=https://jeffprod.com class=mysocial>JeffProd.com</a></p><p>Code licensed under <a href=https://tech-wafter.net/about#%E3%83%96%E3%83%AD%E3%82%B0%E3%81%AE%E8%A8%98%E4%BA%8B%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6>Multi License</a><br>Documentation under <a rel=license href=http://creativecommons.org/licenses/by/4.0/><img alt=クリエイティブ・コモンズ・ライセンス style=vertical-align:middle src=https://i.creativecommons.org/l/by/4.0/88x31.png></a></p></div></footer><script defer src=https://use.fontawesome.com/releases/v5.1.0/js/all.js></script></body></html>
