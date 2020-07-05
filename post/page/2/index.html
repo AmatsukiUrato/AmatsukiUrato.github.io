@@ -7,61 +7,61 @@ gtag('js',new Date());gtag('config','UA-143787598-1');</script></head><body><nav
 <i class="fas fa-clock"></i>&nbsp;1 min read</div><p class=is-size-6>メモ。以下にあります。 windows と違って散らばってるのが少し面倒くさいですね。 また、CommunityEdition と UltimateEdition では微妙に path が違います。 とはそれぞれ、リリース年とリリース月替入ります。 UltimateEdition Path target File path config ~/Library/Preferences/IntelliJIdea&lt;YYYY>.&lt;M> System ~/Library/Caches/IntelliJIdea&lt;YYYY>.&lt;M> Plugins ~/Library/Application Support/IntelliJIdea&lt;YYYY>.&lt;M> Logs ~/Library/Logs/IntelliJIdea&lt;YYYY>.&lt;M> Logs に関して、IntelliJ IDEA 9 以前のものは System location に保存されているみたいです。 CommunityEdition Path target File path config ? System ~/Library/Caches/JetBrains/IdeaIC&lt;YYYY>.&lt;M> Plugins ~/Library/Application Support/JetBrains/IdeaIC&lt;YYYY>.&lt;M> Logs ~/Library/Logs/JetBrains/IdeaIC&lt;YYYY>.&lt;M> CE では JetBrains というフォルダを間に噛ますみたいですね。 config だけは表示されませんでした。こっちは Plugin と違って import/export があるので、良いっちゃ良いのですが、少し気持ち悪いですね。 参考 macos - Where is IntelliJ IDEA config stored in OSX? - Stack...</p></a></div></div></div></div></article><br><article class=media><div class=media-content><div class=content><div class=card><div class="card-content card-break-all"><a class=has-text-grey-dark href=https://tech-wafter.net/2020/read-maybe-transmitted-sentence-improve-your-engineer-writing-skills/><p class="title has-text-link is-4">伝わる!...かもしれない。エンジニアの文章力向上を読んだ</p><div class="subtitle is-size-6 has-text-grey-light"><i class="fas fa-pen"></i>&nbsp;2020-5-27 |
 <i class="fas fa-redo-alt"></i>&nbsp;2020-5-28 |
 <i class="fas fa-clock"></i>&nbsp;3 min read</div><p class=is-size-6>はじめに 一昨日辺りに、エンジニアのための日本語文章テクニックを読んだので、引き続き日本語文章系の本を読んだ感じです。 文章での注意点 誤字・脱字をしない 表記を統一する カタカナ語の伸ばし棒有無 カタカナ or 英語 何も考えずに漢字を使うのはやめる 適切に接続語を使う 翻訳調の書き方をしない 言い換えられないかを検討する 抽象的な書き方をやめる できるだけ具体的に書く 抽象的に書いたほうがわかりやすくなる場合もあるので、相手に合わせるのがベスト 数字を入れる 主語と述語を近づける 文章は長くしすぎない 二重否定は使わない 物事を伝え...</p></a></div></div></div></div></article><br><article class=media><div class=media-content><div class=content><div class=card><div class="card-content card-break-all"><a class=has-text-grey-dark href=https://tech-wafter.net/2020/what-is-artifact/><p class="title has-text-link is-4">GradleのArtifactとはなんぞや</p><div class="subtitle is-size-6 has-text-grey-light"><i class="fas fa-pen"></i>&nbsp;2020-5-27 |
-<i class="fas fa-redo-alt"></i>&nbsp;2020-6-1 |
+<i class="fas fa-redo-alt"></i>&nbsp;2020-7-6 |
 <i class="fas fa-clock"></i>&nbsp;1 min read</div><p class=is-size-6>毎回忘れるのでメモ。 Artifact とはなんぞや 該当プロジェクトが、一意に参照できるようにするためのもの。 プロジェクトの名前やライブラリの名前になることが多いと思う。 java のライブラリ管理はドメイン名と Artifact で行われており、それぞれをつなげたのものファイル名にする。 そのため、example.com というドメインを所持している会社の foo-library というライブラリを配布する場合、 1 2 3 com/ └── example └── foo-library といった形になる。 また、Gradle の設定ファイルであるbuild.gradleには、ドメイン部分の 1 group = 'com.example' が記載される。 じゃあ Name っ...</p></a></div></div></div></div></article><br><article class=media><div class=media-content><div class=content><div class=card><div class="card-content card-break-all"><a class=has-text-grey-dark href=https://tech-wafter.net/2020/read-japanese-sentence-technique-for-engineer/><p class="title has-text-link is-4">エンジニアのための日本語文章テクニックを読んだ</p><div class="subtitle is-size-6 has-text-grey-light"><i class="fas fa-pen"></i>&nbsp;2020-5-25 |
 <i class="fas fa-redo-alt"></i>&nbsp;2020-5-28 |
 <i class="fas fa-clock"></i>&nbsp;2 min read</div><p class=is-size-6>はじめに 結構前に買った本を読んだので、メモおよび感想を書きました。 お昼の一時間にぱぱっと読めるぐらいの量なので、気軽に読めました 👍 読みやすい文章とは 読みやすい文章 = 流し読みできる文章 読みやすい文章 ≠ 魅力的な文章 流し読みできる文章のメリット 読みやすさ 読んでもらいやすさ 流し読みで読める文章じゃないと、まともに読んでもらえない。 読みやすい文章にするには 読点を使う 読点を上手に使うことが重要になる。 読点は、 文章の強弱や区切りを明確化するため に存在している。 以下の箇所に読点を入れると良くなる。 要因と結果の間...</p></a></div></div></div></div></article><br><article class=media><div class=media-content><div class=content><div class=card><div class="card-content card-break-all"><a class=has-text-grey-dark href=https://tech-wafter.net/2020/use-windows-package-managers/><p class="title has-text-link is-4">wingetのプレビュー版が公開されたので、他のパッケージ管理ソフトとかと一緒に使ってみる</p><div class="subtitle is-size-6 has-text-grey-light"><i class="fas fa-pen"></i>&nbsp;2020-5-20 |
 <i class="fas fa-redo-alt"></i>&nbsp;2020-5-21 |
 <i class="fas fa-clock"></i>&nbsp;3 min read</div><p class=is-size-6>はじめに 2020-5-13 に Microsoft より、 winget のプレビュー版が公開されたので、 これを気に windows で使えるパッケージソフトをひととおり試してみました。 今回は VS Code のインストールを行っていきます。 試したパッケージマネージャは winget chocolatey scoop AppGet Npackd です。 winget を使う GitHub のページから Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle をダウンロードする 起動してインストール powershell を起動して vscode をインストールをする 1 winget install vscode これで vscode がインストールされます。 結構楽にインストールできましたが、アンインストールは今のところないっぽいです。 因みに、パッケージ名が複数あった場合は同じ名前が複数個あると言われるので、Id を入...</p></a></div></div></div></div></article><br></div></div><div class="column is-3"><div class=card><div class=card-content><h1 class="title is-5">Tags</h1><div class=tags><span class=tag><a href=https://tech-wafter.net/tags/hugo/>Hugo</a>&nbsp;|&nbsp;7</span>
-<span class=tag><a href=https://tech-wafter.net/tags/setting/>Setting</a>&nbsp;|&nbsp;5</span>
 <span class=tag><a href=https://tech-wafter.net/tags/aws/>AWS</a>&nbsp;|&nbsp;5</span>
+<span class=tag><a href=https://tech-wafter.net/tags/setting/>Setting</a>&nbsp;|&nbsp;5</span>
 <span class=tag><a href=https://tech-wafter.net/tags/git/>git</a>&nbsp;|&nbsp;4</span>
-<span class=tag><a href=https://tech-wafter.net/tags/intellij/>intellij</a>&nbsp;|&nbsp;3</span>
 <span class=tag><a href=https://tech-wafter.net/tags/ci/>ci</a>&nbsp;|&nbsp;3</span>
-<span class=tag><a href=https://tech-wafter.net/tags/vscode/>VSCode</a>&nbsp;|&nbsp;3</span>
+<span class=tag><a href=https://tech-wafter.net/tags/intellij/>intellij</a>&nbsp;|&nbsp;3</span>
 <span class=tag><a href=https://tech-wafter.net/tags/javascript/>JavaScript</a>&nbsp;|&nbsp;3</span>
-<span class=tag><a href=https://tech-wafter.net/tags/extention/>Extention</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/poem/>poem</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/%E6%97%A5%E6%9C%AC%E8%AA%9E/>日本語</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/vscode/>VSCode</a>&nbsp;|&nbsp;3</span>
+<span class=tag><a href=https://tech-wafter.net/tags/github-action/>github-action</a>&nbsp;|&nbsp;2</span>
 <span class=tag><a href=https://tech-wafter.net/tags/kaspersky/>kaspersky</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/terminal/>Terminal</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/webpack/>webpack</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/markdown/>markdown</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/icloud/>iCloud</a>&nbsp;|&nbsp;2</span>
 <span class=tag><a href=https://tech-wafter.net/tags/%E6%9B%B8%E3%81%8D%E6%96%B9/>書き方</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/homebrew/>Homebrew</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/route53/>Route53</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/poem/>poem</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/springboot/>SpringBoot</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/terminal/>Terminal</a>&nbsp;|&nbsp;2</span>
 <span class=tag><a href=https://tech-wafter.net/tags/command/>command</a>&nbsp;|&nbsp;2</span>
 <span class=tag><a href=https://tech-wafter.net/tags/%E7%A9%8D%E6%9C%AC%E5%87%A6%E7%90%86/>積本処理</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/github-action/>github-action</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/extention/>Extention</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/%E6%97%A5%E6%9C%AC%E8%AA%9E/>日本語</a>&nbsp;|&nbsp;2</span>
 <span class=tag><a href=https://tech-wafter.net/tags/keyboard/>keyboard</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/springboot/>SpringBoot</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/icloud/>iCloud</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/homebrew/>Homebrew</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/markdown/>markdown</a>&nbsp;|&nbsp;2</span>
 <span class=tag><a href=https://tech-wafter.net/tags/windows/>windows</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/route53/>Route53</a>&nbsp;|&nbsp;2</span>
 <span class=tag><a href=https://tech-wafter.net/tags/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B87/>技術書典7</a>&nbsp;|&nbsp;2</span>
 <span class=tag><a href=https://tech-wafter.net/tags/css/>css</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/chrome/>chrome</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/springsecurity/>SpringSecurity</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/security/>security</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/port%E9%96%8B%E6%94%BE/>port開放</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/diff/>diff</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/macos/>MacOS</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/karabiner-elements/>Karabiner-Elements</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/onedrive/>OneDrive</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/extension/>Extension</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/chocolatey/>chocolatey</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/front/>Front</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/utility/>Utility</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/yarn/>yarn</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/github-pages/>github-pages</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/gradle/>gradle</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/collectinformation/>collectInformation</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/go/>go</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/db/>DB</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/nodejs/>Nodejs</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/uv4l/>uv4l</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/webpack/>webpack</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/git%E7%AE%A1%E7%90%86/>git管理</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/dropbox/>DropBox</a>&nbsp;|&nbsp;1</span>
 <span class=tag><a href=https://tech-wafter.net/tags/raspberrypi/>RaspberryPi</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/version/>Version</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/location/>location</a>&nbsp;|&nbsp;1</span></div></div></div><br><div class=card><div class=card-content><h1 class="title is-5">Recent posts</h1><h1><a href=https://tech-wafter.net/2020/solved-problem-that-can-not-use-package-managers/>kasperskyが入っているMacでhomebrewなどのパッケージ管理ソフトを使いinstallするとエラーがでる問題を解決した</a></h1><time class="has-text-grey-light is-size-7">5 July 2020</time><h1><a href=https://tech-wafter.net/2020/how-to-add-firewall-rules-on-vm/>GCPのVMに新しいfirewallの設定を適応させる</a></h1><time class="has-text-grey-light is-size-7">21 June 2020</time><h1><a href=https://tech-wafter.net/2020/bootstrap5-alpha-released/>Bootstrap5のα版がリリースされました</a></h1><time class="has-text-grey-light is-size-7">19 June 2020</time><h1><a href=https://tech-wafter.net/2020/solved-problem-couldnt-ignore-static-resources-in-spring-security/>SpringSecurityのconfigureにて、静的ファイルが対象外にならない</a></h1><time class="has-text-grey-light is-size-7">1 June 2020</time><h1><a href=https://tech-wafter.net/2020/set-license-on-package-json/>yarn実行時にwarning: No license fieldが出ていたのでlicenseをセットした</a></h1><time class="has-text-grey-light is-size-7">31 May 2020</time></div></div><br><div class=card><div class=card-content><h1 class="title is-5">Archives</h1><a href=https://tech-wafter.net/archives/2020>2020</a> (27)<br><a href=https://tech-wafter.net/archives/2019>2019</a> (22)<br><a href=https://tech-wafter.net/archives/2017>2017</a> (1)<br><a href=https://tech-wafter.net/archives/2016>2016</a> (3)<br></div></div></div></div><div class=columns><div class="column is-9"><nav class="pagination is-centered is-rounded" role=navigation aria-label=pagination><a class=pagination-previous href=https://tech-wafter.net/post/>Previous</a>
+<span class=tag><a href=https://tech-wafter.net/tags/springsecurity/>SpringSecurity</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/three.js/>Three.js</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/mac/>mac</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/react/>React</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/lt/>LT</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/shell/>shell</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/uv4l/>uv4l</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/study/>study</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/console/>console</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/game/>Game</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/macos/>MacOS</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/docker/>Docker</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/gradle/>gradle</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/windows-terminal/>Windows Terminal</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/memo/>memo</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/template/>template</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/scoop/>scoop</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/read/>read</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/thymeleaf/>ThymeLeaf</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/extension/>Extension</a>&nbsp;|&nbsp;1</span></div></div></div><br><div class=card><div class=card-content><h1 class="title is-5">Recent posts</h1><h1><a href=https://tech-wafter.net/2020/solved-problem-that-can-not-use-package-managers/>kasperskyが入っているMacでhomebrewなどのパッケージ管理ソフトを使いinstallするとエラーがでる問題を解決した</a></h1><time class="has-text-grey-light is-size-7">5 July 2020</time><h1><a href=https://tech-wafter.net/2020/how-to-add-firewall-rules-on-vm/>GCPのVMに新しいfirewallの設定を適応させる</a></h1><time class="has-text-grey-light is-size-7">21 June 2020</time><h1><a href=https://tech-wafter.net/2020/bootstrap5-alpha-released/>Bootstrap5のα版がリリースされました</a></h1><time class="has-text-grey-light is-size-7">19 June 2020</time><h1><a href=https://tech-wafter.net/2020/solved-problem-couldnt-ignore-static-resources-in-spring-security/>SpringSecurityのconfigureにて、静的ファイルが対象外にならない</a></h1><time class="has-text-grey-light is-size-7">1 June 2020</time><h1><a href=https://tech-wafter.net/2020/set-license-on-package-json/>yarn実行時にwarning: No license fieldが出ていたのでlicenseをセットした</a></h1><time class="has-text-grey-light is-size-7">31 May 2020</time></div></div><br><div class=card><div class=card-content><h1 class="title is-5">Archives</h1><a href=https://tech-wafter.net/archives/2020>2020</a> (27)<br><a href=https://tech-wafter.net/archives/2019>2019</a> (22)<br><a href=https://tech-wafter.net/archives/2017>2017</a> (1)<br><a href=https://tech-wafter.net/archives/2016>2016</a> (3)<br></div></div></div></div><div class=columns><div class="column is-9"><nav class="pagination is-centered is-rounded" role=navigation aria-label=pagination><a class=pagination-previous href=https://tech-wafter.net/post/>Previous</a>
 <a class=pagination-next href=https://tech-wafter.net/post/page/3/>Next</a><ul class=pagination-list><li class=pagination__item><a class=pagination-link aria-label="Goto page 1" href=https://tech-wafter.net/post/>1</a></li><li class=pagination__item><a class="pagination-link is-current" aria-label="Goto page 2" href=https://tech-wafter.net/post/page/2/>2</a></li><li class=pagination__item><a class=pagination-link aria-label="Goto page 3" href=https://tech-wafter.net/post/page/3/>3</a></li><li class=pagination__item><a class=pagination-link aria-label="Goto page 4" href=https://tech-wafter.net/post/page/4/>4</a></li><li class=pagination__item><a class=pagination-link aria-label="Goto page 5" href=https://tech-wafter.net/post/page/5/>5</a></li><li class=pagination__item><a class=pagination-link aria-label="Goto page 6" href=https://tech-wafter.net/post/page/6/>6</a></li><li class=pagination__item><a class=pagination-link aria-label="Goto page 7" href=https://tech-wafter.net/post/page/7/>7</a></li><li class=pagination__item><a class=pagination-link aria-label="Goto page 8" href=https://tech-wafter.net/post/page/8/>8</a></li><li class=pagination__item><a class=pagination-link aria-label="Goto page 9" href=https://tech-wafter.net/post/page/9/>9</a></li></ul></nav></div></div></div></div><footer class="footer has-background-grey-darker has-text-white"><div class="content has-text-centered"><p><a class=mysocial href=https://tech-wafter.net/about>About</a></p><p><span class="icon is-large"><a href=https://twitter.com/matsu4ki class=mysocial rel=me><i class="fab fa-twitter fa-3x"></i></a></span>&nbsp;&nbsp;
 <span class="icon is-large"><a href=https://github.com/matsu4ki class=mysocial rel=me><i class="fab fa-github fa-3x"></i></a></span>&nbsp;&nbsp;
 <span class="icon is-large"><a href=https://tech-wafter.net/index.xml class=mysocial rel=me><i class="fas fa-rss fa-3x"></i></a></span></p><p>Copyright &copy; ぎじゅつわふたー 2018-2020<br>Theme by <a href=https://jeffprod.com class=mysocial>JeffProd.com</a></p><p>Documentation under <a rel=license href=http://creativecommons.org/licenses/by/4.0/><img alt=クリエイティブ・コモンズ・ライセンス style=vertical-align:middle src=https://i.creativecommons.org/l/by/4.0/88x31.png></a></p><p>Code licensed under
