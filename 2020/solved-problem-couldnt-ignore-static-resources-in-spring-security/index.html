@@ -1,5 +1,5 @@
 <!doctype html><html lang=ja-jp><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>ぎじゅつわふたー | SpringSecurityのconfigureにて、静的ファイルが対象外にならない</title><meta name=description content="概要 SpringSecurity を導入している SpringBoot のプロジェクトにて、静的ファイルを対象外にするための設定が反映されてなかったです。 原因 静的リソースフォルダとして扱われるフォルダ内が、ルートとして扱われるみたいです。 1 2 3 4 src/main/resources/public └── js/ └── css/ └── file1/ 上記のようなフォルダ構成の場合で、js と css を open にしたい場合は下記のように設定します。 1 2 3 4 @Override public void configure(WebSecurity web) throws Exception { web.ignoring().antMatchers(&#34;/js/**&#34;, &#34;/css/**&#34;); } public で指定しても、SpringSecurity の保護対象外にならないです。 1 2 3 4 5 @Override public void configure(WebSecurity web) throws Exception { // 意味ない web.ignoring().antMatchers(&#34;/public/**&#34;); }"><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=https://tech-wafter.net/favicon/favicon.ico><link href="https://fonts.googleapis.com/css?family=Open+Sans" rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css><link rel=stylesheet href=https://tech-wafter.net/css/blog.css><link rel=stylesheet href=https://tech-wafter.net/css/syntax.css><script data-ad-client=ca-pub-2205075653104812 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-143787598-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','UA-143787598-1');</script><meta property="og:site_name" content="ぎじゅつわふたー"><meta property="og:title" content="SpringSecurityのconfigureにて、静的ファイルが対象外にならない"><meta property="og:url" content="https://tech-wafter.net/2020/solved-problem-couldnt-ignore-static-resources-in-spring-security/"><meta property="og:type" content="article"><meta name=twitter:card content="summary_large_image"><meta property="twitter:title" content="SpringSecurityのconfigureにて、静的ファイルが対象外にならない"><meta property="og:description" content><meta property="twitter:description" content><meta property="og:image" content="https://tech-wafter.net/thumbnails/2020-08-10-card2.png"><meta property="og:image:url" content="https://tech-wafter.net/thumbnails/2020-08-10-card2.png"></head><body><nav class=navbar role=navigation aria-label="main navigation"><div class=navbar-brand><a class=navbar-item href=https://tech-wafter.net>Home</a><div class=navbar-item>ぎじゅつわふたー</div><a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=navbar-sub><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a></div><div id=navbar-sub class=navbar-menu><div class=navbar-start></div><div class=navbar-end><div class=navbar-item><a class="navbar-item nav-right" href=https://tech-wafter.net/food>飯</a>
+gtag('js',new Date());gtag('config','UA-143787598-1');</script><meta property="og:site_name" content="ぎじゅつわふたー"><meta property="og:title" content="SpringSecurityのconfigureにて、静的ファイルが対象外にならない"><meta property="og:url" content="https://tech-wafter.net/2020/solved-problem-couldnt-ignore-static-resources-in-spring-security/"><meta property="og:type" content="article"><meta name=twitter:card content="summary_large_image"><meta property="twitter:title" content="SpringSecurityのconfigureにて、静的ファイルが対象外にならない"><meta property="og:description" content><meta property="twitter:description" content><meta property="og:image" content="https://tech-wafter.net/thumbnails/2020-08-10-card2.png"><meta property="og:image:url" content="https://tech-wafter.net/thumbnails/2020-08-10-card2.png"><script>"use strict";!function(){var t=window.driftt=window.drift=window.driftt||[];if(!t.init){if(t.invoked)return void(window.console&&console.error&&console.error("Drift snippet included twice."));t.invoked=!0,t.methods=["identify","config","track","reset","debug","show","ping","page","hide","off","on"],t.factory=function(e){return function(){var n=Array.prototype.slice.call(arguments);return n.unshift(e),t.push(n),t;};},t.methods.forEach(function(e){t[e]=t.factory(e);}),t.load=function(t){var e=3e5,n=Math.ceil(new Date()/e)*e,o=document.createElement("script");o.type="text/javascript",o.async=!0,o.crossorigin="anonymous",o.src="https://js.driftt.com/include/"+n+"/"+t+".js";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(o,i);};}}();drift.SNIPPET_VERSION='0.3.1';drift.load('7pgw7w5wfryv');</script></head><body><nav class=navbar role=navigation aria-label="main navigation"><div class=navbar-brand><a class=navbar-item href=https://tech-wafter.net>Home</a><div class=navbar-item>ぎじゅつわふたー</div><a role=button class="navbar-burger burger" aria-label=menu aria-expanded=false data-target=navbar-sub><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a></div><div id=navbar-sub class=navbar-menu><div class=navbar-start></div><div class=navbar-end><div class=navbar-item><a class="navbar-item nav-right" href=https://tech-wafter.net/food>飯</a>
 <a class="navbar-item nav-right" href=https://tech-wafter.net/about>About</a></div></div></nav><script>document.addEventListener('DOMContentLoaded',()=>{const $navbarBurgers=Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'),0);if($navbarBurgers.length>0){$navbarBurgers.forEach(el=>{el.addEventListener('click',()=>{const target=el.dataset.target;const $target=document.getElementById(target);el.classList.toggle('is-active');$target.classList.toggle('is-active');});});}});</script></body><div class=container><div class=section><style>#TableOfContents ol{margin-left:2em;margin-top:.2em;margin-bottom:.5em}</style><div class=columns><div class="column is-9"><div class=box><div class=content><p class="title is-4">SpringSecurityのconfigureにて、静的ファイルが対象外にならない</p><div class="subtitle is-size-6 has-text-grey-light"><i class="fas fa-pen"></i>&nbsp;2020-6-1 |
 <i class="fas fa-redo-alt"></i>&nbsp;2020-7-14 |
 <i class="fas fa-clock"></i>&nbsp;1 min read</div><div><a class="tag is-info" href=https://tech-wafter.net/tags/springboot/>SpringBoot</a>
@@ -34,53 +34,53 @@ gtag('js',new Date());gtag('config','UA-143787598-1');</script><meta property="o
 <script type=text/javascript src=https://b.st-hatena.com/js/bookmark_button.js async></script></div><hr><div><div id=disqus_thread></div><script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return;}
 var d=document,s=d.createElement('script');s.async=true;s.src='//'+"tech-wafter"+'.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div><div><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-2205075653104812 data-ad-slot=9778538748 data-ad-format=auto data-full-width-responsive=true></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div><div class="column is-3"><div class=card><div class=card-content><h1 class="title is-5"><a href=https://tech-wafter.net/tags class=has-text-grey-dark>Tags</a></h1><div class=tags><span class=tag><a href=https://tech-wafter.net/tags/hugo/>Hugo</a>&nbsp;|&nbsp;7</span>
 <span class=tag><a href=https://tech-wafter.net/tags/aws/>AWS</a>&nbsp;|&nbsp;5</span>
-<span class=tag><a href=https://tech-wafter.net/tags/setting/>Setting</a>&nbsp;|&nbsp;5</span>
 <span class=tag><a href=https://tech-wafter.net/tags/git/>git</a>&nbsp;|&nbsp;5</span>
-<span class=tag><a href=https://tech-wafter.net/tags/vscode/>VSCode</a>&nbsp;|&nbsp;3</span>
-<span class=tag><a href=https://tech-wafter.net/tags/ci/>ci</a>&nbsp;|&nbsp;3</span>
+<span class=tag><a href=https://tech-wafter.net/tags/setting/>Setting</a>&nbsp;|&nbsp;5</span>
 <span class=tag><a href=https://tech-wafter.net/tags/intellij/>intellij</a>&nbsp;|&nbsp;3</span>
+<span class=tag><a href=https://tech-wafter.net/tags/vscode/>VSCode</a>&nbsp;|&nbsp;3</span>
 <span class=tag><a href=https://tech-wafter.net/tags/javascript/>JavaScript</a>&nbsp;|&nbsp;3</span>
+<span class=tag><a href=https://tech-wafter.net/tags/ci/>ci</a>&nbsp;|&nbsp;3</span>
+<span class=tag><a href=https://tech-wafter.net/tags/poem/>poem</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/windows/>windows</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/extention/>Extention</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/icloud/>iCloud</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/github-actions/>github-actions</a>&nbsp;|&nbsp;2</span>
 <span class=tag><a href=https://tech-wafter.net/tags/command/>command</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/terminal/>Terminal</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B87/>技術書典7</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/kaspersky/>kaspersky</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/%E6%9B%B8%E3%81%8D%E6%96%B9/>書き方</a>&nbsp;|&nbsp;2</span>
 <span class=tag><a href=https://tech-wafter.net/tags/homebrew/>Homebrew</a>&nbsp;|&nbsp;2</span>
 <span class=tag><a href=https://tech-wafter.net/tags/markdown/>markdown</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/poem/>poem</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/terminal/>Terminal</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/%E6%9B%B8%E3%81%8D%E6%96%B9/>書き方</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/kaspersky/>kaspersky</a>&nbsp;|&nbsp;2</span>
 <span class=tag><a href=https://tech-wafter.net/tags/route53/>Route53</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/extention/>Extention</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/webpack/>webpack</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B87/>技術書典7</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/%E7%A9%8D%E6%9C%AC%E5%87%A6%E7%90%86/>積本処理</a>&nbsp;|&nbsp;2</span>
 <span class=tag><a href=https://tech-wafter.net/tags/keyboard/>keyboard</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/github-actions/>github-actions</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/%E7%A9%8D%E6%9C%AC%E5%87%A6%E7%90%86/>積本処理</a>&nbsp;|&nbsp;2</span>
 <span class=tag><a href=https://tech-wafter.net/tags/springboot/>SpringBoot</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/icloud/>iCloud</a>&nbsp;|&nbsp;2</span>
 <span class=tag><a href=https://tech-wafter.net/tags/%E6%97%A5%E6%9C%AC%E8%AA%9E/>日本語</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/windows/>windows</a>&nbsp;|&nbsp;2</span>
+<span class=tag><a href=https://tech-wafter.net/tags/webpack/>webpack</a>&nbsp;|&nbsp;2</span>
 <span class=tag><a href=https://tech-wafter.net/tags/css/>css</a>&nbsp;|&nbsp;2</span>
-<span class=tag><a href=https://tech-wafter.net/tags/springsecurity/>SpringSecurity</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/site/>site</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/shell/>shell</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/db/>DB</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/firewall/>firewall</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/zsh/>zsh</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/tab/>Tab</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/%E9%81%8B%E7%94%A8/>運用</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/mac/>mac</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/a-frame/>A-Frame</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/lt/>LT</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/elixir/>elixir</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/revealjs/>revealjs</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/onsen-ui/>Onsen-UI</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/chocolatey/>chocolatey</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/uv4l/>uv4l</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/powershell/>PowerShell</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/blame/>blame</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/phoenix/>phoenix</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/pkg/>pkg</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/node/>node</a>&nbsp;|&nbsp;1</span>
 <span class=tag><a href=https://tech-wafter.net/tags/console/>console</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/eclipse/>Eclipse</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/location/>location</a>&nbsp;|&nbsp;1</span>
-<span class=tag><a href=https://tech-wafter.net/tags/windows-terminal/>Windows Terminal</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/ar.js/>AR.js</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/read/>read</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/npm/>npm</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/slow/>Slow</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/powershell/>PowerShell</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/game/>Game</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/db/>DB</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/fornewbie/>forNewbie</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/book/>book</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/extension/>Extension</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/chocolatey/>chocolatey</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/utility/>Utility</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/gradle/>gradle</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/awsloft/>AWSLoft</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/history/>history</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/copyq/>CopyQ</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/ubuntu/>Ubuntu</a>&nbsp;|&nbsp;1</span>
+<span class=tag><a href=https://tech-wafter.net/tags/googledrive/>GoogleDrive</a>&nbsp;|&nbsp;1</span>
 <span class=tag><a href=https://tech-wafter.net/tags/box/>Box</a>&nbsp;|&nbsp;1</span></div></div></div><br><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-2205075653104812 data-ad-slot=4015038180 data-ad-format=auto data-full-width-responsive=true></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><br><div class=card><div class=card-content><h1 class="title is-5">Recent posts</h1><h1><a href=https://tech-wafter.net/2020/tried-git-defaultbranch/>gitのデフォルトブランチを試した</a></h1><time class="has-text-grey-light is-size-7">29 July 2020</time><h1><a href=https://tech-wafter.net/2020/what-is-brunch-used-by-phoenix-framework/>ElixirのPhoenixフレームワークで利用されているbrunchとは</a></h1><time class="has-text-grey-light is-size-7">20 July 2020</time><h1><a href=https://tech-wafter.net/2020/solved-problem-that-can-not-use-package-managers/>kasperskyが入っているMacでhomebrewなどのパッケージ管理ソフトを使いinstallするとエラーがでる問題を解決した</a></h1><time class="has-text-grey-light is-size-7">5 July 2020</time><h1><a href=https://tech-wafter.net/2020/how-to-add-firewall-rules-on-vm/>GCPのVMに新しいfirewallの設定を適応させる</a></h1><time class="has-text-grey-light is-size-7">21 June 2020</time><h1><a href=https://tech-wafter.net/2020/bootstrap5-alpha-released/>Bootstrap5のα版がリリースされました</a></h1><time class="has-text-grey-light is-size-7">19 June 2020</time></div></div><br><div class=card><div class=card-content><h1 class="title is-5">Related posts</h1><h1><a href=https://tech-wafter.net/2020/wanna-introduce-webpack-thymeleaf-scss-on-springboot-pj/>SpringBoot上でwebpack環境+ThymeLeafをしたい</a></h1><time class="has-text-grey-light is-size-7">31 May 2020</time></div></div><br><div class=card><div class=card-content><h1 class="title is-5">Archives</h1><a href=https://tech-wafter.net/archives/2020>2020</a> (29)<br><a href=https://tech-wafter.net/archives/2019>2019</a> (22)<br><a href=https://tech-wafter.net/archives/2017>2017</a> (1)<br><a href=https://tech-wafter.net/archives/2016>2016</a> (3)<br></div></div></div></div></div></div><footer class="footer has-background-grey-darker has-text-white"><div class="content has-text-centered"><p><a class=mysocial href=https://tech-wafter.net/about>About</a></p><p><span class="icon is-large"><a href=https://twitter.com/matsu4ki class=mysocial rel=me><i class="fab fa-twitter fa-3x"></i></a></span>&nbsp;&nbsp;
 <span class="icon is-large"><a href=https://github.com/matsu4ki class=mysocial rel=me><i class="fab fa-github fa-3x"></i></a></span>&nbsp;&nbsp;
 <span class="icon is-large"><a href=https://tech-wafter.net/index.xml class=mysocial rel=me><i class="fas fa-rss fa-3x"></i></a></span></p><p class=mb-1>Copyright &copy; ぎじゅつわふたー 2018-2020</p><p class=mb-1>Documentation under <a rel=license href=http://creativecommons.org/licenses/by/4.0/><img alt=クリエイティブ・コモンズ・ライセンス style=vertical-align:middle src=https://i.creativecommons.org/l/by/4.0/88x31.png></a></p><p>Code licensed under
